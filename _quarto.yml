@@ -40,6 +40,8 @@ book:
     - 04-evaluacion-retroalimentacion.qmd
     - 05-inclusion-educativa.qmd
     - 06-riesgos-etica.qmd
+    - 07-buenas-practicas.qmd
+    - 08-.qmd
     # Para agregar un nuevo capitulo duplica un archivo .qmd y agregalo aqui:
     # ej: - 07-analisis-cualitativo.qmd
     # Guarda anexos extensos en apendices/ y listalos aqui.
