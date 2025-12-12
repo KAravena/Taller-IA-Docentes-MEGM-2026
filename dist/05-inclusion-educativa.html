@@ -162,9 +162,9 @@ p {
   }
 
   #quarto-sidebar .sidebar-header {
-    padding-bottom: 0.5rem;
+    padding-bottom: 0.1rem;
     border-bottom: 1px solid rgba(17, 24, 39, 0.06);
-    margin-bottom: 0.8rem;
+    margin-bottom: 0.2rem;
   }
 
   #quarto-sidebar .sidebar-title a {
@@ -174,7 +174,7 @@ p {
     line-height: 1.24 !important;
     letter-spacing: 0.018em !important;
     color: var(--ink);
-    margin-bottom: 0.2rem;
+    margin-bottom: 0.05rem;
     font-family: "Times New Roman", "TeX Gyre Termes", "Libre Baskerville", Georgia, serif;
   }
 
@@ -232,8 +232,26 @@ p {
     display: none !important;
   }
 
+  /* Ocultar la barra de búsqueda en la barra lateral */
+  #quarto-sidebar .sidebar-search {
+    display: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    height: 0 !important;
+  }
+
   #quarto-sidebar .sidebar-menu-container {
-    margin-top: 0.4rem;
+    margin-top: 0; /* Pega el índice justo bajo los botones */
+  }
+
+  /* Elimina cualquier margen superior del contenedor de la lista */
+  #quarto-sidebar .sidebar-menu-container ul {
+    margin-top: 0 !important;
+  }
+
+  /* Reduce el espaciado superior global para acercar el índice hacia arriba */
+  #quarto-sidebar {
+    padding-top: 0.35rem;
   }
 
   #quarto-sidebar .sidebar-menu-container .sidebar-item-text,
@@ -1409,17 +1427,19 @@ document.addEventListener("DOMContentLoaded", () => {
   // Estilo responsivo: sin scroll horizontal y ocupando ancho disponible
   const style = document.createElement("style");
   style.innerHTML = `
+    /* Que el TOC use todo el ancho disponible y nunca genere scroll horizontal */
     nav#TOC, nav.toc-active {
       width: 100%;
-      max-width: min(600px, 90vw);
+      max-width: none;
       min-width: 0;
-      padding-right: 0.8rem;
+      padding-right: 1rem;
       box-sizing: border-box;
-      overflow-x: hidden;
+      overflow-x: hidden !important;
     }
     nav#TOC *, nav.toc-active * {
       max-width: 100%;
-      white-space: normal;
+      white-space: normal !important;
+      overflow-wrap: anywhere;
       word-break: break-word;
     }
     nav#TOC .toc-entry a, nav.toc-active .toc-entry a {
@@ -1429,7 +1449,6 @@ document.addEventListener("DOMContentLoaded", () => {
   document.head.appendChild(style);
 });
 </script>
-
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";

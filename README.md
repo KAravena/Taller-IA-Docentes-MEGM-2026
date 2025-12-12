@@ -1,6 +1,6 @@
 # Taller “IA al servicio pedagógico: herramientas prácticas para el trabajo docente”
 
-[▶ Ver versión web del taller](https://karavena.github.io/Taller-IA-Docentes-MEGM-2026/dist/02-prompts-docentes.html)
+[▶ Ver versión web del taller](https://karavena.github.io/Taller-IA-Docentes-MEGM-2026/dist/)
 
 Repositorio Quarto del taller desarrollado para la **Escuela de Verano 2026 del Museo de la Educación Gabriela Mistral**, orientado a profesoras y profesores de educación básica y media que quieren incorporar la inteligencia artificial como apoyo a su trabajo cotidiano, desde una mirada **crítica, situada y pedagógica**.
 

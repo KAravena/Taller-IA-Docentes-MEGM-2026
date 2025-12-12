@@ -43,9 +43,9 @@
   }
 
   #quarto-sidebar .sidebar-header {
-    padding-bottom: 0.5rem;
+    padding-bottom: 0.1rem;
     border-bottom: 1px solid rgba(17, 24, 39, 0.06);
-    margin-bottom: 0.8rem;
+    margin-bottom: 0.2rem;
   }
 
   #quarto-sidebar .sidebar-title a {
@@ -55,7 +55,7 @@
     line-height: 1.24 !important;
     letter-spacing: 0.018em !important;
     color: var(--ink);
-    margin-bottom: 0.2rem;
+    margin-bottom: 0.05rem;
     font-family: "Times New Roman", "TeX Gyre Termes", "Libre Baskerville", Georgia, serif;
   }
 
@@ -113,8 +113,26 @@
     display: none !important;
   }
 
+  /* Ocultar la barra de búsqueda en la barra lateral */
+  #quarto-sidebar .sidebar-search {
+    display: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    height: 0 !important;
+  }
+
   #quarto-sidebar .sidebar-menu-container {
-    margin-top: 0.4rem;
+    margin-top: 0; /* Pega el índice justo bajo los botones */
+  }
+
+  /* Elimina cualquier margen superior del contenedor de la lista */
+  #quarto-sidebar .sidebar-menu-container ul {
+    margin-top: 0 !important;
+  }
+
+  /* Reduce el espaciado superior global para acercar el índice hacia arriba */
+  #quarto-sidebar {
+    padding-top: 0.35rem;
   }
 
   #quarto-sidebar .sidebar-menu-container .sidebar-item-text,

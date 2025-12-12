@@ -1793,6 +1793,241 @@ aprendizaje:}
 
 \chapter{IA e inclusión educativa}\label{ia-e-inclusiuxf3n-educativa}
 
+\section{Ajuste de lenguaje, formato y extensión de
+materiales}\label{ajuste-de-lenguaje-formato-y-extensiuxf3n-de-materiales}
+
+En muchos cursos, el primer obstáculo para la participación de las y los
+estudiantes es el \textbf{lenguaje y el formato} de los materiales:
+textos muy largos, vocabulario técnico, consignas confusas o poco
+accesibles. La IA puede apoyar como asistente de edición, ayudando a
+simplificar, acortar, ampliar o reestructurar materiales sin cambiar el
+contenido central definido por el equipo pedagógico.
+
+Usada de forma crítica, la IA permite generar \textbf{versiones
+paralelas} de un mismo recurso (más breve, más explicada, más visual,
+etc.), de modo que el profesorado pueda elegir cuál se ajusta mejor a
+las características de su curso, o bien ofrecer varias alternativas
+dentro de la misma clase.
+
+\textbf{Usos posibles:}
+
+\begin{itemize}
+\tightlist
+\item
+  Simplificar el vocabulario de un texto, manteniendo las ideas
+  principales.
+\item
+  Reducir la extensión de un documento largo a una versión ``para
+  estudiantes'' o ``para las familias''.
+\item
+  Reescribir consignas de actividades para que sean más claras y
+  explícitas.
+\item
+  Cambiar el formato de presentación (párrafos → viñetas, cuadro
+  comparativo, glosario, etc.).
+\item
+  Generar versiones con apoyos adicionales: ejemplos, definiciones
+  breves, recordatorios de conceptos clave.
+\end{itemize}
+
+\textbf{Ejemplo de prompt para ajustar lenguaje, formato y extensión de
+un material:}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{Actúa como profesor/a de }\CommentTok{[}\OtherTok{ASIGNATURA}\CommentTok{]}\NormalTok{ con experiencia en educación inclusiva en escuelas públicas chilenas.}
+
+\NormalTok{Tu objetivo es ayudarme a adaptar el siguiente texto para que sea más accesible a estudiantes de }\CommentTok{[}\OtherTok{NIVEL}\CommentTok{]}\NormalTok{ en el marco de las Bases Curriculares.}
+
+\NormalTok{Contexto:}
+\SpecialStringTok{{-} }\NormalTok{Curso diverso en niveles de lectura, con presencia de estudiantes del PIE.}
+\SpecialStringTok{{-} }\NormalTok{El texto original es una explicación sobre }\CommentTok{[}\OtherTok{TEMA}\CommentTok{]}\NormalTok{ pensada para adultos.}
+\SpecialStringTok{{-} }\NormalTok{Lo necesito para trabajarlo en una clase de }\CommentTok{[}\OtherTok{N°}\CommentTok{]}\NormalTok{ minutos.}
+
+\NormalTok{Instrucciones:}
+\SpecialStringTok{1. }\NormalTok{Genera una primera versión del texto:}
+\SpecialStringTok{   {-} }\NormalTok{Con lenguaje más sencillo, sin perder las ideas principales.}
+\SpecialStringTok{   {-} }\NormalTok{De extensión máxima de }\CommentTok{[}\OtherTok{N°}\CommentTok{]}\NormalTok{ palabras.}
+\SpecialStringTok{   {-} }\NormalTok{Organizada en párrafos breves y con viñetas cuando sea útil.}
+\SpecialStringTok{2. }\NormalTok{Genera una segunda versión:}
+\SpecialStringTok{   {-} }\NormalTok{En formato de “ficha de estudio” con:}
+\SpecialStringTok{     {-} }\NormalTok{Definiciones clave.}
+\SpecialStringTok{     {-} }\NormalTok{Ejemplos cotidianos.}
+\SpecialStringTok{     {-} }\NormalTok{3 preguntas de autoevaluación para estudiantes.}
+\SpecialStringTok{3. }\NormalTok{Si consideras que falta algún concepto básico para que se entienda el texto, indícalo al final en 3–4 líneas, sin agregarlo dentro del texto principal.}
+
+\NormalTok{Formato de salida:}
+\SpecialStringTok{{-} }\NormalTok{Título: “Versión simplificada para }\CommentTok{[}\OtherTok{NIVEL}\CommentTok{]}\NormalTok{”.}
+\SpecialStringTok{{-} }\NormalTok{Luego, la ficha de estudio bajo el título “Ficha de apoyo”.}
+
+\NormalTok{Criterios y restricciones:}
+\SpecialStringTok{{-} }\NormalTok{No cambies el contenido disciplinar central; solo ajusta lenguaje, formato y extensión.}
+\SpecialStringTok{{-} }\NormalTok{No incluyas imágenes ni recursos que requieran conexión a internet.}
+\SpecialStringTok{{-} }\NormalTok{Usa ejemplos cercanos a la realidad de estudiantes en escuelas chilenas.}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{Ejemplos de adaptaciones para distintas trayectorias y
+necesidades}\label{ejemplos-de-adaptaciones-para-distintas-trayectorias-y-necesidades}
+
+En un mismo curso conviven estudiantes con trayectorias muy diversas:
+quienes han cambiado de escuela con frecuencia, quienes participan en
+programas de integración escolar, quienes tienen responsabilidades de
+cuidado en sus hogares, quienes se están incorporando recientemente al
+sistema escolar chileno, entre muchas otras realidades. La IA puede
+ayudar a pensar \textbf{variantes de actividades y materiales} que
+dialoguen con esta diversidad, siempre bajo el criterio profesional
+docente y resguardando la confidencialidad de información sensible.
+
+El propósito no es etiquetar estudiantes (``los buenos'', ``los malos'',
+``los que saben, los que no''), sino contar con un abanico de opciones
+que permita ajustar apoyos y desafíos sin perder de vista el currículum
+común ni la pertenencia al grupo curso.
+
+\textbf{Usos posibles:}
+
+\begin{itemize}
+\tightlist
+\item
+  Proponer actividades alternativas para estudiantes con ausencias
+  prolongadas o reincorporaciones tardías.
+\item
+  Sugerir apoyos adicionales para quienes se están adaptando al idioma o
+  al sistema escolar chileno.
+\item
+  Ajustar tareas para estudiantes que viven situaciones de cuidado,
+  trabajo u otras responsabilidades.
+\item
+  Diseñar actividades que se puedan realizar tanto en el aula como en el
+  hogar, según la realidad de cada estudiante.
+\item
+  Generar ejemplos y contextos cercanos a distintas realidades
+  territoriales y culturales.
+\end{itemize}
+
+\textbf{Ejemplo de prompt para generar adaptaciones según trayectorias
+diversas:}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{Actúa como especialista en educación inclusiva y en diseño universal para el aprendizaje en contexto escolar chileno.}
+
+\NormalTok{Tu objetivo es proponer adaptaciones de una actividad de }\CommentTok{[}\OtherTok{ASIGNATURA}\CommentTok{]}\NormalTok{ sobre }\CommentTok{[}\OtherTok{TEMA}\CommentTok{]}\NormalTok{ para estudiantes con trayectorias y necesidades diversas, manteniendo el mismo objetivo de aprendizaje.}
+
+\NormalTok{Contexto:}
+\SpecialStringTok{{-} }\NormalTok{Curso: }\CommentTok{[}\OtherTok{NIVEL, por ejemplo “8º básico”}\CommentTok{]}\NormalTok{ en escuela }\CommentTok{[}\OtherTok{pública/subvencionada/particular}\CommentTok{]}\NormalTok{.}
+\SpecialStringTok{{-} }\NormalTok{En el grupo hay:}
+\SpecialStringTok{  {-} }\NormalTok{Estudiantes que han tenido ausencias prolongadas.}
+\SpecialStringTok{  {-} }\NormalTok{Estudiantes recién incorporados al sistema escolar chileno.}
+\SpecialStringTok{  {-} }\NormalTok{Estudiantes que participan en el PIE.}
+\SpecialStringTok{{-} }\NormalTok{Recursos disponibles: }\CommentTok{[}\OtherTok{pizarra, cuadernos, proyector, impresora, etc.}\CommentTok{]}\NormalTok{.}
+
+\NormalTok{Actividad original:}
+\CommentTok{[}\OtherTok{PEGAR AQUÍ LA DESCRIPCIÓN DE LA ACTIVIDAD DE CLASE QUE YA DISEÑÓ EL/LA DOCENTE}\CommentTok{]}\NormalTok{.}
+
+\NormalTok{Instrucciones:}
+\SpecialStringTok{1. }\NormalTok{Propón al menos 3 adaptaciones posibles de la actividad original:}
+\SpecialStringTok{   {-} }\NormalTok{Adaptación A: pensada para estudiantes con ausencias prolongadas.}
+\SpecialStringTok{   {-} }\NormalTok{Adaptación B: pensada para estudiantes recién incorporados al sistema escolar chileno.}
+\SpecialStringTok{   {-} }\NormalTok{Adaptación C: pensada para estudiantes que requieren mayor apoyo estructurado (por ejemplo, del PIE).}
+\SpecialStringTok{2. }\NormalTok{Para cada adaptación, indica:}
+\SpecialStringTok{   {-} }\NormalTok{Propósito.}
+\SpecialStringTok{   {-} }\NormalTok{Pasos principales de la actividad.}
+\SpecialStringTok{   {-} }\NormalTok{Tipo de apoyo que se ofrece (andamiajes, ejemplos, materiales de apoyo, etc.).}
+\SpecialStringTok{   {-} }\NormalTok{Cómo se vincula explícitamente con el mismo objetivo de aprendizaje de la actividad original.}
+
+\NormalTok{Formato de salida:}
+\SpecialStringTok{{-} }\NormalTok{Subtítulos: “Adaptación A”, “Adaptación B” y “Adaptación C”.}
+\SpecialStringTok{{-} }\NormalTok{Bajo cada subtítulo, un párrafo de 8–10 líneas describiendo la propuesta.}
+
+\NormalTok{Criterios y restricciones:}
+\SpecialStringTok{{-} }\NormalTok{No cambies el objetivo de aprendizaje; solo ajusta la forma de abordarlo.}
+\SpecialStringTok{{-} }\NormalTok{No incluyas datos personales ni ejemplos que permitan identificar estudiantes específicos.}
+\SpecialStringTok{{-} }\NormalTok{Usa lenguaje claro y respetuoso, evitando etiquetas como “buenos/malos alumnos”.}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{Posibilidades y límites en contextos de integración y educación
+especial}\label{posibilidades-y-luxedmites-en-contextos-de-integraciuxf3n-y-educaciuxf3n-especial}
+
+En contextos de integración y educación especial, la IA abre
+oportunidades relevantes: permite generar materiales con distintos
+niveles de apoyo, crear ejemplos personalizados, proponer formatos
+alternativos (audio, viñetas, esquemas), entre otros. Sin embargo,
+también existen límites importantes: la IA no conoce a las y los
+estudiantes, no reemplaza la evaluación diagnóstica ni las decisiones
+del equipo PIE, y puede reproducir sesgos o proponer estrategias poco
+adecuadas si no se la orienta bien.
+
+Por eso es clave usar estas herramientas como \textbf{soporte para el
+trabajo del equipo educativo}, nunca como sustituto de la observación
+profesional, de los acuerdos con las familias o de los planes
+individualizados (PII, adecuaciones curriculares, etc.).
+
+\textbf{Usos posibles:}
+
+\begin{itemize}
+\tightlist
+\item
+  Sugerir ideas de adaptaciones curriculares no significativas, que
+  luego el equipo revisa y valida.
+\item
+  Generar materiales de apoyo complementarios (glosarios, tarjetas
+  visuales, pasos de una rutina, etc.).
+\item
+  Proponer formas alternativas de demostrar aprendizaje (productos
+  orales, visuales, manipulativos).
+\item
+  Sistematizar acuerdos del equipo PIE en un lenguaje claro para
+  compartir con el resto del profesorado.
+\item
+  Redactar borradores de orientaciones generales para familias sobre
+  cómo apoyar tareas en casa.
+\end{itemize}
+
+\textbf{Ejemplo de prompt para explorar posibilidades y límites en un
+curso con PIE:}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{Actúa como profesional de apoyo en un Programa de Integración Escolar (PIE) con experiencia en adecuaciones curriculares no significativas.}
+
+\NormalTok{Tu objetivo es sugerir ideas de apoyo pedagógico para un curso de }\CommentTok{[}\OtherTok{NIVEL}\CommentTok{]}\NormalTok{ que trabaja el contenido }\CommentTok{[}\OtherTok{TEMA}\CommentTok{]}\NormalTok{ en la asignatura de }\CommentTok{[}\OtherTok{ASIGNATURA}\CommentTok{]}\NormalTok{, respetando el currículum común y el trabajo del equipo PIE.}
+
+\NormalTok{Contexto:}
+\SpecialStringTok{{-} }\NormalTok{Escuela pública con PIE.}
+\SpecialStringTok{{-} }\NormalTok{En el curso hay estudiantes con:}
+\SpecialStringTok{  {-} }\NormalTok{Dificultades específicas de aprendizaje.}
+\SpecialStringTok{  {-} }\NormalTok{TDAH.}
+\SpecialStringTok{  {-} }\NormalTok{Discapacidad intelectual leve.}
+\SpecialStringTok{{-} }\NormalTok{El equipo docente ya definió los objetivos de aprendizaje para todo el curso.}
+
+\NormalTok{Instrucciones:}
+\SpecialStringTok{1. }\NormalTok{Propón 5 ideas de apoyos generales que puedan beneficiar a todo el curso (no solo a estudiantes del PIE), tales como:}
+\SpecialStringTok{   {-} }\NormalTok{Ajustes en la presentación de la información.}
+\SpecialStringTok{   {-} }\NormalTok{Estrategias de trabajo colaborativo.}
+\SpecialStringTok{   {-} }\NormalTok{Formas alternativas de demostrar lo aprendido.}
+\SpecialStringTok{2. }\NormalTok{Luego, sugiere 3 ejemplos de adecuaciones no significativas para el mismo contenido, aclarando:}
+\SpecialStringTok{   {-} }\NormalTok{Qué se mantiene igual para todos.}
+\SpecialStringTok{   {-} }\NormalTok{Qué se adapta (tiempo, formato, cantidad de ejercicios, etc.).}
+\SpecialStringTok{3. }\NormalTok{Finalmente, incluye una breve sección “Límites y cuidados” con 4–5 puntos que recuerden:}
+\SpecialStringTok{   {-} }\NormalTok{Que las decisiones deben ser revisadas por el equipo PIE.}
+\SpecialStringTok{   {-} }\NormalTok{Que no se debe incluir información sensible de estudiantes en la IA.}
+
+\NormalTok{Formato de salida:}
+\SpecialStringTok{{-} }\NormalTok{Secciones con subtítulos: “Apoyos generales para todo el curso”, “Ejemplos de adecuaciones no significativas” y “Límites y cuidados”.}
+
+\NormalTok{Criterios y restricciones:}
+\SpecialStringTok{{-} }\NormalTok{No sugieras diagnósticos ni decisiones individuales sobre estudiantes.}
+\SpecialStringTok{{-} }\NormalTok{Usa lenguaje respetuoso y centrado en apoyos, no en déficits.}
+\SpecialStringTok{{-} }\NormalTok{Enfatiza que la IA es un apoyo para pensar estrategias, no un reemplazo de la evaluación profesional.}
+\end{Highlighting}
+\end{Shaded}
+
 \bookmarksetup{startatroot}
 
 \chapter{Riesgos, límites y criterios

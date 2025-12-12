@@ -289,6 +289,20 @@ pre {
   background: #f8fafc;
   padding: 0.9rem 1rem;
   overflow-x: auto;
+  box-sizing: border-box;
+  white-space: pre-wrap;      /* Permite que el contenido se envuelva */
+  word-break: break-word;
+  overflow-wrap: anywhere;    /* Evita scroll horizontal en prompts largos */
+}
+
+pre code,
+pre > code,
+code.sourceCode,
+pre.sourceCode {
+  white-space: pre-wrap !important;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+  display: block;
 }
 
 code {
