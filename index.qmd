@@ -1,0 +1,103 @@
+﻿---
+title: ""
+number-sections: false
+numbered: false
+format:
+  html:
+    title-block-style: none
+    toc: false
+  pdf:
+    title-block-style: none
+---
+
+::: {.content-visible when-format="pdf"}
+\small\textbf{Palabras clave: } Inteligencia artificial; Trabajo docente; Planificación escolar; Evaluación formativa; Inclusión educativa.
+\normalsize
+:::
+
+::: {.content-visible when-format="html"}
+<style>
+nav#TOC { display: none !important; }
+div[data-when-format="pdf"] { display: none !important; }
+
+body.index-hero {
+  background: url("assets/fond_index.png") center/cover no-repeat fixed;
+}
+
+/* Área de contenido principal con fondo claro para evitar solapes */
+body.index-hero .page-columns {
+  max-width: 100%;
+  margin: 0;
+  padding: 1rem 1.6rem 2.4rem;
+  background: rgba(255, 255, 255, 0.82);
+  border-radius: 0;
+  box-shadow: none;
+}
+
+/* Subtítulo más grande */
+.quarto-title .subtitle {
+  font-size: clamp(1.3rem, 2vw, 1.65rem);
+  font-weight: 600;
+  color: #2c3137;
+}
+
+/* Tarjetas de metadatos */
+.meta-cards {
+  max-width: 1200px;
+  margin: 1rem auto 1.4rem;
+  display: grid;
+  gap: 0.9rem;
+}
+.meta-card {
+  background: rgba(255, 255, 255, 0.92);
+  border-radius: 12px;
+  box-shadow: 0 12px 28px -18px rgba(0, 0, 0, 0.25);
+  padding: 1.15rem 1.3rem;
+  border: 1px solid rgba(17, 24, 39, 0.06);
+}
+.meta-two-cols {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+}
+.meta-label {
+  font-size: 0.82rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #6b7280;
+  margin-bottom: 0.4rem;
+  font-weight: 650;
+}
+.meta-value {
+  font-size: 1.05rem;
+  color: #1f2937;
+}
+.meta-date {
+  font-size: 1rem;
+  color: #1f2937;
+}
+.keywords-line {
+  max-width: 1200px;
+  margin: 0 auto 1.2rem;
+  display: block;
+}
+
+/* Oculta el eco del bloque HTML si llegara a aparecer como código */
+body.index-hero pre.sourceCode {
+  display: none;
+}
+</style>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    document.body.classList.add("index-hero");
+  });
+</script>
+
+<span class="keywords-line"><strong>Palabras clave:</strong> Inteligencia artificial; Trabajo docente; Planificación escolar; Evaluación formativa; Inclusión educativa.</span>
+:::
+
+# Presentación {.unnumbered}
+
+El presente documento presenta el taller *"IA al servicio pedagógico: herramientas prácticas para el trabajo docente"*, dirigido a profesoras y profesores que participan en la Escuela de Verano 2026 del Museo de la Educación Gabriela Mistral. El taller se inscribe en una perspectiva crítica y situada sobre el uso de la inteligencia artificial en contextos escolares, entendida como un apoyo al trabajo profesional docente y no como su reemplazo.
+
+El propósito central de esta instancia es ofrecer un espacio práctico y reflexivo para explorar cómo herramientas de IA pueden contribuir a aliviar la sobrecarga laboral, mejorar la planificación, la evaluación y la retroalimentación, así como adaptar materiales a distintos niveles y necesidades de estudiantes. A partir de ejemplos concretos, actividades guiadas y momentos de conversación pedagógica, se busca que las y los participantes desarrollen criterios informados para decidir cuándo, cómo y para qué utilizar estas tecnologías, resguardando siempre la autonomía profesional y el sentido pedagógico de las decisiones en el aula. Este diseño organiza los objetivos, contenidos, secuencias de trabajo y orientaciones metodológicas del taller, de modo que pueda ser implementado y adaptado en distintos contextos escolares.

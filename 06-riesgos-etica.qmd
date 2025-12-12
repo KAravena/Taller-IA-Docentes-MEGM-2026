@@ -1,0 +1,55 @@
+﻿---
+title: "Riesgos, límites y criterios éticos"
+---
+## Privacidad, sesgos y brechas de acceso
+
+El uso de herramientas de inteligencia artificial en la escuela implica trabajar con datos, decisiones y recursos tecnológicos que no son neutros. Por eso, antes de pensar en “todo lo que la IA puede hacer”, es clave preguntarse **qué riesgos abre** y cómo minimizarlos desde la responsabilidad profesional docente.
+
+En términos de privacidad, cualquier información que permita identificar a una persona (nombre, RUT, curso específico, diagnóstico, dirección, teléfono, correo, etc.) **no debiera ser ingresada** en herramientas de IA abiertas. Tampoco es recomendable copiar actas sensibles, listados completos de notas, informes psicológicos u otros documentos similares. Cuando se requiera trabajar con ejemplos, es preferible **anonimizar los datos** o usar situaciones ficticias.
+
+Los modelos de IA también aprenden a partir de grandes volúmenes de texto producidos en contextos desiguales, por lo que pueden reproducir **sesgos de género, clase, raza, territorio, discapacidad**, entre otros. Del mismo modo, su uso exige conectividad y dispositivos, lo que puede profundizar las **brechas de acceso** entre establecimientos y estudiantes.
+
+Algunas orientaciones básicas:
+
+- Evitar ingresar datos personales identificables de estudiantes, familias o colegas.
+- Trabajar con ejemplos anonimizados (“estudiante A”, “apoderado”, “curso de 6º básico”) o con situaciones ficticias.
+- Revisar críticamente los ejemplos y respuestas de la IA para detectar estereotipos o sesgos.
+- No tomar decisiones disciplinarias, diagnósticas o de atención individual basadas únicamente en lo que sugiere una IA.
+- Considerar las desigualdades de acceso a dispositivos y conectividad al diseñar actividades que involucren tecnología.
+
+
+## Criterios pedagógicos para decidir cuándo usar IA
+
+No toda tarea pedagógica necesita o se beneficia del uso de IA. Una decisión profesional responsable considera **cuándo tiene sentido** apoyarse en estas herramientas y cuándo es mejor prescindir de ellas. La IA puede ser especialmente útil para tareas repetitivas, de borrador o de exploración de ideas, mientras que las decisiones de sentido pedagógico, de evaluación fina y de acompañamiento socioemocional requieren la presencia y el juicio de la/el docente.
+
+Algunos criterios posibles para decidir:
+
+- **Pertinencia pedagógica**  
+  Preguntarse si la IA aporta algo que no podría hacerse de manera razonable con otros recursos, o si solo se está usando “porque está de moda”.
+
+- **Ahorro de tiempo sin pérdida de calidad**  
+  Priorizar la IA en tareas de redacción inicial (borradores, propuestas de actividades, ejemplos) que luego se revisan y ajustan, no en la toma de decisiones evaluativas finales.
+
+- **Control docente del proceso**  
+  Asegurarse de que la/el profesor/a mantenga el control sobre objetivos, criterios de evaluación y decisiones de cierre, incluso cuando use IA para generar insumos.
+
+- **Equidad y acceso**  
+  Evaluar si el uso de IA generará nuevas desigualdades dentro del curso o entre cursos (por ejemplo, si solo algunos estudiantes pueden usar dispositivos).
+
+- **Transparencia y explicabilidad**  
+  Evitar decisiones importantes que no se puedan justificar frente a estudiantes y familias más allá de “lo dijo la IA”.
+
+
+## Cómo conversar con estudiantes y familias sobre el uso responsable
+
+La presencia de la IA en la vida cotidiana de niñas, niños y jóvenes hace necesario abordar el tema **abiertamente** en la escuela. Más que prohibir o celebrar sin matices, se trata de generar conversaciones que permitan desarrollar criterios, pensar riesgos y oportunidades, y acordar **normas de uso responsable**.
+
+Con estudiantes, estas conversaciones pueden articularse con objetivos de formación ciudadana, ética, orientación o asignaturas específicas. Con familias, es importante transmitir información clara y sencilla, evitando tecnicismos, para que puedan acompañar a sus hijos e hijas en el uso de estas herramientas.
+
+Algunas ideas clave para trabajar en aula y con la comunidad:
+
+- Explicar en lenguaje simple qué es y qué no es la IA (no es “inteligencia humana”, no “sabe todo”, puede equivocarse).
+- Conversar sobre la importancia de **no compartir datos personales** y de preguntar siempre qué se hace con la información.
+- Trabajar ejemplos de **sesgos y errores** de la IA, mostrando por qué es necesario revisar y contrastar lo que propone.
+- Discutir los límites del uso de IA en tareas escolares: qué se considera apoyo legítimo y qué se considera copia o falta a la honestidad académica.
+- Construir junto al curso **acuerdos de uso responsable**, que luego puedan compartirse con las familias.

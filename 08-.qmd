@@ -1,0 +1,108 @@
+﻿---
+title: "Plantillas de prompt y mini galeria "
+---
+
+## Mini-galería: ejemplos completos de *prompts* docentes
+
+En esta sección se presentan algunos ejemplos “llenos” de *prompts* basados en las plantillas anteriores, listos para probar y adaptar.
+
+### Ejemplo para planificación de una clase
+
+```markdown 
+Actúa como profesora de Matemática de 7º básico en una escuela pública urbana de Chile.
+
+Tu objetivo es ayudarme a planificar UNA clase de 90 minutos para introducir el concepto de proporcionalidad.
+
+Contexto:
+- Curso: 7º básico, 40 estudiantes, niveles de logro muy diversos.
+- Recursos disponibles: pizarra, cuadernos, proyector ocasional.
+- Hay estudiantes que se distraen con facilidad y otros que avanzan rápido.
+
+Instrucciones:
+- Propón una clase de 90 minutos.
+- Incluye: objetivo específico, actividad de inicio, desarrollo y cierre.
+- Sugiere al menos una actividad que permita que estudiantes con distinto nivel trabajen en paralelo (por ejemplo, desafíos de diferente dificultad).
+- Indica una forma sencilla de evaluar si comprendieron la idea de proporcionalidad al final de la clase.
+
+Formato de salida:
+- Esquema en lista con secciones: Objetivo – Inicio – Desarrollo – Cierre – Evaluación.
+
+Criterios:
+- Usa lenguaje claro, sin tecnicismos innecesarios.
+- No requieras uso individual de computadores o celulares.
+```
+
+### Ejemplo para evaluación y retroalimentación
+
+```markdown 
+Actúa como asesor en evaluación formativa en Lengua y Literatura.
+
+Tu objetivo es ayudarme a diseñar una breve evaluación y posibles retroalimentaciones para un ensayo argumentativo en 2º medio.
+
+Contexto:
+- Liceo público científico-humanista.
+- El curso está trabajando la escritura de ensayos sobre temas de actualidad (por ejemplo, uso de celulares en el aula).
+- Quiero evaluar especialmente: claridad de la tesis, coherencia de los argumentos y uso de conectores.
+
+Instrucciones:
+- Propón una rúbrica sencilla de 3 criterios (tesis, argumentos, conectores) con 4 niveles de logro.
+- Redacta 3 ejemplos de comentarios de retroalimentación formativa: uno para estudiantes con desempeño alto, otro para desempeño medio y otro para desempeño inicial.
+
+Formato:
+- Primero, tabla de rúbrica.
+- Luego, lista numerada con los 3 ejemplos de retroalimentación.
+
+Criterios:
+- Usa un lenguaje respetuoso y motivador.
+- Los comentarios deben invitar a la mejora, no solo señalar errores.
+```
+
+### Ejemplo para inclusión educativa
+
+```markdown 
+Actúa como especialista en educación inclusiva y diseño universal para el aprendizaje.
+
+Tu objetivo es sugerir adaptaciones de un texto de Ciencias Naturales para que pueda ser trabajado en 6º básico con estudiantes que tienen diferentes niveles de lectura.
+
+Contexto:
+- Escuela básica pública con PIE.
+- El contenido es “la función de nutrición en los seres humanos”.
+- Tengo un texto de 2 páginas con vocabulario técnico.
+
+Instrucciones:
+- Propón 3 formas de adaptar el texto: (1) versión simplificada, (2) uso de apoyos visuales, (3) actividad oral o manipulativa complementaria.
+- Para cada forma, explica brevemente cómo implementarla en clase en no más de 5 líneas.
+
+Formato:
+- Lista numerada con 3 adaptaciones, cada una descrita en un párrafo.
+
+Criterios:
+- Usa lenguaje claro.
+- No requieras recursos costosos; asume acceso a impresora y pizarra.
+```
+
+### Ejemplo para comunicaciones con familias
+
+```markdown 
+Actúa como profesora jefe de 5º básico en una escuela pública.
+
+Tu objetivo es redactar un comunicado breve para las familias, invitándolas a una reunión donde se presentará el uso responsable de herramientas de inteligencia artificial en el trabajo escolar.
+
+Contexto:
+- La reunión será presencial en la escuela.
+- Fecha: jueves 22 de enero, a las 18:00 horas.
+- Duración aproximada: 1 hora.
+
+Instrucciones:
+- Redacta un texto de máximo 180 palabras.
+- Usa un tono cercano, respetuoso y claro.
+- Incluye: motivo de la reunión, fecha, hora, lugar y la importancia de la asistencia.
+
+Formato:
+- Texto continuo, listo para copiar en un correo o mensaje de WhatsApp.
+
+Criterios:
+- Evita tecnicismos; explica “inteligencia artificial” en palabras sencillas.
+- No prometas cambios que no he mencionado.
+
+```

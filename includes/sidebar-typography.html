@@ -1,0 +1,214 @@
+<!-- Estilos embebidos para refinar la tipografia y el acabado del panel lateral -->
+<style>
+  #quarto-sidebar {
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(240, 245, 252, 0.88)),
+      url("assets/nav.bar.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-right: none;
+    box-shadow: 4px 0 20px -15px rgba(15, 31, 53, 0.45);
+    padding-inline: 1.35rem;
+    font-family: "Inter", "Source Sans Pro", "Segoe UI", system-ui, -apple-system, sans-serif;
+    scrollbar-color: rgba(0, 47, 108, 0.2) transparent; /* Barra mas suave en Firefox */
+    scrollbar-width: thin;
+  }
+
+  /* Oculta la barra vertical solo cuando queremos que no se muestre */
+  #quarto-sidebar.no-scrollbar {
+    scrollbar-width: none;      /* Firefox */
+    -ms-overflow-style: none;   /* IE/Edge heredado */
+  }
+
+  #quarto-sidebar.no-scrollbar::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+  }
+
+  /* Estilo claro del scrollbar cuando se muestra */
+  #quarto-sidebar::-webkit-scrollbar {
+    width: 8px;
+    background: transparent;
+  }
+
+  #quarto-sidebar::-webkit-scrollbar-thumb {
+    background: rgba(0, 47, 108, 0.2);
+    border-radius: 999px;
+    border: 2px solid transparent;
+  }
+
+  #quarto-sidebar::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 47, 108, 0.28);
+  }
+
+  #quarto-sidebar .sidebar-header {
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(17, 24, 39, 0.06);
+    margin-bottom: 0.8rem;
+  }
+
+  #quarto-sidebar .sidebar-title a {
+    display: block;
+    font-size: clamp(1.05rem, 1.45vw, 1.3rem) !important;
+    font-weight: 680 !important;
+    line-height: 1.24 !important;
+    letter-spacing: 0.018em !important;
+    color: var(--ink);
+    margin-bottom: 0.2rem;
+    font-family: "Times New Roman", "TeX Gyre Termes", "Libre Baskerville", Georgia, serif;
+  }
+
+  #quarto-sidebar .sidebar-title a:hover {
+    color: var(--facso);
+    text-decoration: none;
+  }
+
+  #quarto-sidebar .sidebar-tools-main {
+    display: flex;
+    gap: 0.15rem;
+    margin-top: 0.45rem;
+  }
+
+  #quarto-sidebar .sidebar-tools-main .quarto-navigation-tool {
+    padding: 0.35rem;
+    border-radius: 50%;
+    background: #f8f6f2;
+    color: #1c2c3a;
+    border: 1px solid rgba(28, 44, 58, 0.2);
+    transition: all 0.2s ease-in-out;
+    font-size: 0.85rem;
+    width: 34px;
+    height: 34px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7);
+  }
+
+  /* Alargar el boton de PDF para dar formato de pastilla */
+  #quarto-sidebar .sidebar-tools-main .quarto-navigation-tool[title*="PDF"],
+  #quarto-sidebar .sidebar-tools-main .quarto-navigation-tool[aria-label*="PDF"] {
+    min-width: 60px;
+    padding: 0.35rem 0.7rem;
+    border-radius: 999px;
+  }
+
+  #quarto-sidebar .sidebar-tools-main .quarto-navigation-tool:hover {
+    background: rgba(28, 44, 58, 0.08);
+    color: var(--facso);
+  }
+
+  #quarto-sidebar .sidebar-search input,
+  #quarto-sidebar .sidebar-search .aa-Input,
+  #quarto-sidebar .sidebar-search .form-control {
+    border-radius: 0.8rem;
+    border: 1px solid rgba(17, 24, 39, 0.12);
+    padding: 0.45rem 0.8rem;
+    font-size: 0.95rem;
+  }
+
+  #quarto-sidebar .sidebar-tools-main .quarto-navigation-tool[data-template-download],
+  #quarto-sidebar .sidebar-tools-main .global-code-toggle {
+    display: none !important;
+  }
+
+  #quarto-sidebar .sidebar-menu-container {
+    margin-top: 0.4rem;
+  }
+
+  #quarto-sidebar .sidebar-menu-container .sidebar-item-text,
+  #quarto-sidebar .sidebar-menu-container .sidebar-link {
+    font-size: 1.08rem !important;
+    font-weight: 450 !important;
+    line-height: 1.35 !important;
+    color: var(--ink) !important;
+    padding: 0.28rem 0;
+    border-left: 2px solid transparent;
+    transition: color 0.18s ease-in-out, border-color 0.18s ease-in-out, background-color 0.18s ease-in-out;
+    font-family: "Times New Roman", "TeX Gyre Termes", "Libre Baskerville", Georgia, serif;
+    letter-spacing: 0.012em;
+    word-spacing: 0.18rem;
+  }
+
+  #quarto-sidebar .sidebar-menu-container .sidebar-item:first-child .sidebar-item-text {
+    font-size: clamp(1.05rem, 1.55vw, 1.25rem) !important;
+    font-family: "Times New Roman", "TeX Gyre Termes", "Libre Baskerville", Georgia, serif;
+    letter-spacing: 0.015em;
+    text-transform: none;
+    color: var(--ink);
+    border-left: none;
+    padding-left: 0;
+    margin-bottom: 0.35rem;
+  }
+
+  #quarto-sidebar .sidebar-menu-container .sidebar-item:first-child .sidebar-item-text::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, rgba(17, 24, 39, 0.2), transparent);
+    margin-top: 0.35rem;
+  }
+
+  #quarto-sidebar .sidebar-menu-container .sidebar-item + .sidebar-item {
+    border-top: none;
+    padding-top: 0.25rem;
+    margin-top: 0.25rem;
+  }
+
+  #quarto-sidebar .sidebar-menu-container .sidebar-item-text:hover,
+  #quarto-sidebar .sidebar-menu-container .sidebar-link:hover,
+  #quarto-sidebar .sidebar-menu-container .sidebar-link:focus {
+    color: var(--facso) !important;
+    border-left-color: var(--facso);
+    background: rgba(0, 47, 108, 0.08);
+    border-radius: 0.3rem;
+  }
+
+  #quarto-sidebar .sidebar-menu-container .sidebar-link.active {
+    color: var(--facso) !important;
+    border-left-color: var(--facso);
+    font-weight: 650 !important;
+  }
+
+  #quarto-sidebar .sidebar-menu-container .menu-text .chapter-number,
+  #quarto-sidebar .sidebar-menu-container .menu-text .chapter-title {
+    font-size: 0.96rem !important;
+  }
+</style>
+
+<script>
+  // Mantener Apendices colapsado desde el inicio (sin parpadeo)
+  document.addEventListener("DOMContentLoaded", () => {
+    const ensureSetup = () => {
+      const sidebar = document.getElementById("quarto-sidebar");
+      const appendixSection = document.getElementById("quarto-sidebar-section-1");
+      if (!sidebar || !appendixSection) {
+        requestAnimationFrame(ensureSetup);
+        return;
+      }
+
+      appendixSection.classList.remove("show");
+      appendixSection.classList.add("collapse");
+      appendixSection.style.removeProperty("display");
+
+      const relatedToggles = document.querySelectorAll(
+        `[data-bs-target="#${appendixSection.id}"]`
+      );
+      relatedToggles.forEach((btn) => btn.setAttribute("aria-expanded", "false"));
+
+      const updateScrollbar = () => {
+        const isOpen = appendixSection.classList.contains("show");
+        sidebar.classList.toggle("no-scrollbar", !isOpen);
+      };
+
+      updateScrollbar();
+
+      appendixSection.addEventListener("shown.bs.collapse", updateScrollbar);
+      appendixSection.addEventListener("hidden.bs.collapse", updateScrollbar);
+    };
+
+    requestAnimationFrame(ensureSetup);
+  });
+</script>

@@ -1,0 +1,124 @@
+﻿---
+title: "¿Qué es la IA y cómo funciona?"
+numbered: true
+---
+
+## ¿Qué entendemos por inteligencia artificial hoy?
+
+En este taller entenderemos por *inteligencia artificial (IA)* un conjunto de técnicas informáticas que permiten a los computadores realizar tareas que, si las hiciera una persona, consideraríamos “inteligentes”: reconocer patrones, generar texto o imágenes, resumir información, traducir, clasificar, entre otras. No se trata de una “mente” ni de un sujeto, sino de programas que aprenden a partir de grandes volúmenes de datos.
+
+En la práctica cotidiana, cuando hablamos de IA hoy casi siempre nos referimos a sistemas basados en **aprendizaje automático** (*machine learning*) y, en particular, a **modelos de lenguaje** y otros modelos generativos que se entrenan con enormes cantidades de textos, imágenes, audio o video. Estos modelos aprenden a detectar regularidades estadísticas y a “predecir” qué palabra, imagen o respuesta es más probable según el contexto.
+
+Es importante distinguir entre:
+
+- **IA general** (la idea de una inteligencia similar o superior a la humana, aún inexistente).
+- **IA específica o aplicada**, que resuelve tareas concretas (por ejemplo, sugerir actividades para una clase, redactar un correo, resumir un texto escolar).
+- **IA generativa**, que crea nuevos contenidos (textos, imágenes, código, etc.) combinando patrones aprendidos.
+
+En el contexto escolar trabajaremos con esta tercera familia, entendiendo que **son herramientas al servicio del juicio pedagógico** de las y los docentes, y no sustitutos de su trabajo profesional.
+
+---
+
+## Modelos de lenguaje: cómo funcionan “a grandes rasgos”
+
+### Redes neuronales artificiales (idea general)
+
+Los modelos de lenguaje actuales se basan en **redes neuronales artificiales**. Una red neuronal es un modelo matemático formado por capas de “neuronas” conectadas entre sí. Cada neurona recibe números como entrada, los combina y produce una salida. Al entrenar la red con muchos ejemplos, va ajustando sus conexiones internas para cometer cada vez menos errores.
+
+En términos muy simples:
+
+1. Se representa el texto como números (tokens).
+2. La red neuronal recibe esos números y genera una predicción (por ejemplo, la siguiente palabra).
+3. Se compara la predicción con la respuesta correcta.
+4. El modelo ajusta internamente sus parámetros para equivocarse menos la próxima vez.
+5. Se repite el proceso millones de veces con enormes corpus de datos.
+
+Podemos visualizar una red neuronal básica así:
+
+![Ejemplo de red neuronal artificial con una capa de entrada, una oculta y una de salida.  
+Fuente: Cburnett, *Artificial neural network*, Wikimedia Commons (CC BY-SA 3.0).](assets/ann.png)
+
+En los modelos actuales, en vez de unas pocas capas hay **decenas o cientos de capas**, con millones o miles de millones de parámetros. Por eso se habla de *modelos grandes*.
+
+### Del perceptrón al Transformer
+
+Los modelos de lenguaje modernos utilizan una arquitectura llamada **Transformer**, que fue propuesta en 2017 y cambió radicalmente la forma de trabajar con texto. La idea central es el mecanismo de **auto-atención** (*self-attention*), que permite que el modelo mire todas las palabras de una frase a la vez y decida a cuáles prestar más atención para entender el contexto.
+
+A grandes rasgos, un Transformer:
+
+1. **Recibe una secuencia de palabras** (convertidas en vectores numéricos).
+2. **Calcula la atención**: para cada palabra, pondera cuánto se relaciona con las demás palabras de la secuencia.
+3. **Transforma la representación interna del texto** pasando por varias capas que combinan atención y redes neuronales.
+4. **Predice la siguiente palabra** (o el siguiente fragmento de texto) eligiendo la opción más probable según lo aprendido.
+
+La arquitectura típica de un Transformer puede representarse así:
+
+![Arquitectura general de un modelo tipo Transformer con bloques de codificador y decodificador.  
+Fuente: Yuening Jia, *The Transformer - model architecture*, Wikimedia Commons (CC BY-SA 3.0).](assets/transformer.png)
+
+En esta imagen no necesitamos comprender cada bloque en detalle para trabajar pedagógicamente con IA. Lo importante para el taller es retener tres ideas:
+
+- El modelo **no “piensa” como una persona**, sino que calcula probabilidades sobre la base de patrones aprendidos.
+- El modelo **no sabe qué es verdadero o falso** por sí mismo: solo ha visto textos, no la realidad.
+- El modelo funciona como un **completador de texto muy sofisticado**, que podemos guiar mediante instrucciones claras (*prompts*).
+
+---
+
+## Qué puede hacer y qué no puede hacer en educación
+
+### ¿Qué sí puede hacer?
+
+En el contexto escolar, modelos de lenguaje e IA generativa pueden apoyar, entre otras tareas:
+
+- **Planificación y preparación de clases**: sugerir objetivos, actividades, secuencias, preguntas guía.
+- **Elaboración de materiales**: generar borradores de guías, ejercicios, ejemplos contextualizados, casos para debatir.
+- **Evaluación y retroalimentación**: proponer ítems y criterios, sugerir comentarios para que la/el docente revise y adapte.
+- **Adaptación de materiales**: simplificar un texto, cambiar el nivel de complejidad, generar versiones alternativas para diferentes cursos.
+- **Organización del trabajo cotidiano**: redactar comunicaciones, sistematizar acuerdos de reuniones, sintetizar documentos extensos.
+
+En todos los casos, la IA actúa como **asistente**: entrega propuestas iniciales que la/el docente revisa, corrige y contextualiza según su criterio profesional.
+
+### ¿Qué no puede hacer (ni debería hacer)?
+
+Hay tareas que, por razones técnicas, éticas o pedagógicas, la IA **no debiera reemplazar**:
+
+- **Conocer a las y los estudiantes** en su historia, contexto familiar, trayectoria escolar, emociones y vínculos.
+- **Tomar decisiones evaluativas de alto impacto** (aprobación/reprobación, repitencia, derivaciones) sin mediación humana.
+- **Definir objetivos de formación** y sentidos educativos de largo plazo.
+- **Sostener vínculos afectivos y pedagógicos** que requieren presencia humana, cuidado y responsabilidad.
+- **Garantizar veracidad y ausencia de sesgos**: los modelos pueden inventar datos, reproducir estereotipos o desinformación.
+
+Para este taller asumiremos, por tanto, que la IA es una **herramienta de apoyo** al trabajo pedagógico, que requiere siempre:
+
+- Revisión crítica.
+- Adaptación al contexto.
+- Alineamiento con el proyecto educativo y el marco curricular.
+
+---
+
+## Mitos, temores y preguntas frecuentes en la escuela
+
+En el trabajo con docentes suelen aparecer inquietudes que es importante acoger y discutir colectivamente. Esta sección ofrece una primera sistematización que luego se puede complementar con las experiencias del grupo.
+
+### Mitos frecuentes
+
+- **“La IA viene a reemplazar a profesoras y profesores.”**  
+  En realidad, los modelos actuales no pueden asumir las múltiples dimensiones del trabajo docente: vínculo, ética, juicio profesional, gestión del aula, trabajo con familias, etc. Sí pueden automatizar tareas repetitivas y de baja creatividad, liberando tiempo para lo pedagógicamente más relevante.
+
+- **“Si uso IA, las estudiantes solo copiarán y pegarán.”**  
+  El riesgo existe, pero depende de cómo se diseñen las tareas. Podemos usar IA para **profundizar el aprendizaje** (por ejemplo, pidiendo que comparen, evalúen, refuten o mejoren respuestas generadas por la herramienta).
+
+- **“La IA siempre tiene la razón.”**  
+  Los modelos se equivocan, inventan referencias y pueden reproducir sesgos. Es clave enseñar a verificar la información y a leer críticamente los resultados.
+
+- **“Esto es solo una moda pasajera.”**  
+  Aunque muchas herramientas cambiarán, la presencia de modelos de lenguaje en educación y trabajo probablemente se volverá estructural. Por eso es importante desarrollar criterios propios, en vez de prohibir o adoptar acríticamente.
+
+### Temores y preocupaciones legítimas
+
+- **Plagio y copia en tareas**: ¿cómo evaluar cuando el acceso a IA es masivo? ¿Qué tareas tienen sentido hoy?
+- **Brechas de acceso**: ¿qué pasa con estudiantes y escuelas que no tienen buena conectividad o dispositivos?
+- **Privacidad de datos**: ¿qué información es seguro ingresar en estas herramientas? ¿Qué no deberíamos nunca subir?
+- **Sobrecarga de exigencias**: temor a que la IA se convierta en “una tarea más” para el profesorado, en vez de aliviar el trabajo.
+
+En el taller trabajaremos estos temas de manera abierta, buscando acordar **criterios realistas y situados**. La idea no es resolver todos los debates, sino abrir una conversación informada que permita a cada docente tomar decisiones responsables en su propio contexto escolar.

@@ -1,0 +1,81 @@
+<style>
+  body.index-meta #title-block-header .quarto-title-meta,
+  body.index-meta #title-block-header .quarto-title-meta-author {
+    margin-top: 1rem;
+    padding: 0.85rem 1rem;
+    background: rgba(252, 252, 252, 0.95);
+    border: 1px solid rgba(17, 24, 39, 0.05);
+    border-radius: 0.6rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 0.65rem;
+    box-shadow: 0 6px 16px -16px rgba(15, 31, 53, 0.45);
+    font-family: "Playfair Display", "Libre Baskerville", "TeX Gyre Termes", "Noto Serif", Georgia, serif;
+  }
+
+  body.index-meta #title-block-header .quarto-title-meta .quarto-title-meta-item,
+  body.index-meta #title-block-header .quarto-title-meta-author > div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    padding-right: 0.35rem;
+    padding-left: 0.35rem;
+    border-left: none;
+    border-top: 1px solid rgba(0, 47, 108, 0.08);
+  }
+
+  body.index-meta #title-block-header .quarto-title-meta .quarto-title-meta-item:first-child,
+  body.index-meta #title-block-header .quarto-title-meta-author > div:first-child {
+    border-top: none;
+    padding-top: 0;
+  }
+
+  @media (min-width: 720px) {
+    body.index-meta #title-block-header .quarto-title-meta .quarto-title-meta-item,
+    body.index-meta #title-block-header .quarto-title-meta-author > div {
+      border-top: none;
+      border-left: 1px solid rgba(0, 47, 108, 0.07);
+    }
+
+    body.index-meta #title-block-header .quarto-title-meta .quarto-title-meta-item:first-child,
+    body.index-meta #title-block-header .quarto-title-meta-author > div:first-child {
+      border-left: none;
+      padding-left: 0;
+    }
+  }
+
+  body.index-meta #title-block-header .quarto-title-meta-heading,
+  body.index-meta #title-block-header .quarto-title-meta-author .quarto-title-meta-heading {
+    font-size: 0.68rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: rgba(17, 24, 39, 0.55);
+    font-weight: 600;
+  }
+
+  body.index-meta #title-block-header .quarto-title-meta-contents,
+  body.index-meta #title-block-header .quarto-title-meta-contents p,
+  body.index-meta #title-block-header .quarto-title-meta-contents span {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--ink);
+  }
+
+  body.index-meta #title-block-header .quarto-title-meta-contents strong {
+    font-weight: 600;
+    color: var(--ink);
+  }
+</style>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const path = window.location.pathname || "";
+    if (
+      path.endsWith("/") ||
+      path.endsWith("index.html") ||
+      path.endsWith("docs") ||
+      path.endsWith("docs/")
+    ) {
+      document.body.classList.add("index-meta");
+    }
+  });
+</script>

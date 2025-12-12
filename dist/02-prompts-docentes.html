@@ -1,0 +1,2328 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.24">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>3&nbsp; Cómo conversar con la IA: claves de prompt engineering docente – IA al servicio pedagógico</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./03-herramientas-trabajo-docente.html" rel="next">
+<link href="./01-que-es-ia.html" rel="prev">
+<link href="./assets/favicon-2025-20251031.svg" rel="icon" type="image/svg+xml">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-b33f1839d1ae7e37d8eaf9c424345f9b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No se han encontrado resultados",
+    "search-matching-documents-text": "documentos encontrados",
+    "search-copy-link-title": "Copiar el enlace en la búsqueda",
+    "search-hide-matches-text": "Ocultar resultados adicionales",
+    "search-more-match-text": "resultado adicional en este documento",
+    "search-more-matches-text": "resultados adicionales en este documento",
+    "search-clear-button-title": "Borrar",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Enviar",
+    "search-label": "Buscar"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+<style>
+#quarto-document-content p,
+.page-columns .content p,
+.page-columns p,
+.quarto-article p,
+main.content p,
+p {
+  text-align: justify !important;
+  text-justify: inter-word;
+}
+</style>
+<!-- Estilos embebidos para refinar la tipografia y el acabado del panel lateral -->
+<style>
+  #quarto-sidebar {
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(240, 245, 252, 0.88)),
+      url("assets/nav.bar.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-right: none;
+    box-shadow: 4px 0 20px -15px rgba(15, 31, 53, 0.45);
+    padding-inline: 1.35rem;
+    font-family: "Inter", "Source Sans Pro", "Segoe UI", system-ui, -apple-system, sans-serif;
+    scrollbar-color: rgba(0, 47, 108, 0.2) transparent; /* Barra mas suave en Firefox */
+    scrollbar-width: thin;
+  }
+
+  /* Oculta la barra vertical solo cuando queremos que no se muestre */
+  #quarto-sidebar.no-scrollbar {
+    scrollbar-width: none;      /* Firefox */
+    -ms-overflow-style: none;   /* IE/Edge heredado */
+  }
+
+  #quarto-sidebar.no-scrollbar::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+  }
+
+  /* Estilo claro del scrollbar cuando se muestra */
+  #quarto-sidebar::-webkit-scrollbar {
+    width: 8px;
+    background: transparent;
+  }
+
+  #quarto-sidebar::-webkit-scrollbar-thumb {
+    background: rgba(0, 47, 108, 0.2);
+    border-radius: 999px;
+    border: 2px solid transparent;
+  }
+
+  #quarto-sidebar::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 47, 108, 0.28);
+  }
+
+  #quarto-sidebar .sidebar-header {
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(17, 24, 39, 0.06);
+    margin-bottom: 0.8rem;
+  }
+
+  #quarto-sidebar .sidebar-title a {
+    display: block;
+    font-size: clamp(1.05rem, 1.45vw, 1.3rem) !important;
+    font-weight: 680 !important;
+    line-height: 1.24 !important;
+    letter-spacing: 0.018em !important;
+    color: var(--ink);
+    margin-bottom: 0.2rem;
+    font-family: "Times New Roman", "TeX Gyre Termes", "Libre Baskerville", Georgia, serif;
+  }
+
+  #quarto-sidebar .sidebar-title a:hover {
+    color: var(--facso);
+    text-decoration: none;
+  }
+
+  #quarto-sidebar .sidebar-tools-main {
+    display: flex;
+    gap: 0.15rem;
+    margin-top: 0.45rem;
+  }
+
+  #quarto-sidebar .sidebar-tools-main .quarto-navigation-tool {
+    padding: 0.35rem;
+    border-radius: 50%;
+    background: #f8f6f2;
+    color: #1c2c3a;
+    border: 1px solid rgba(28, 44, 58, 0.2);
+    transition: all 0.2s ease-in-out;
+    font-size: 0.85rem;
+    width: 34px;
+    height: 34px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7);
+  }
+
+  /* Alargar el boton de PDF para dar formato de pastilla */
+  #quarto-sidebar .sidebar-tools-main .quarto-navigation-tool[title*="PDF"],
+  #quarto-sidebar .sidebar-tools-main .quarto-navigation-tool[aria-label*="PDF"] {
+    min-width: 60px;
+    padding: 0.35rem 0.7rem;
+    border-radius: 999px;
+  }
+
+  #quarto-sidebar .sidebar-tools-main .quarto-navigation-tool:hover {
+    background: rgba(28, 44, 58, 0.08);
+    color: var(--facso);
+  }
+
+  #quarto-sidebar .sidebar-search input,
+  #quarto-sidebar .sidebar-search .aa-Input,
+  #quarto-sidebar .sidebar-search .form-control {
+    border-radius: 0.8rem;
+    border: 1px solid rgba(17, 24, 39, 0.12);
+    padding: 0.45rem 0.8rem;
+    font-size: 0.95rem;
+  }
+
+  #quarto-sidebar .sidebar-tools-main .quarto-navigation-tool[data-template-download],
+  #quarto-sidebar .sidebar-tools-main .global-code-toggle {
+    display: none !important;
+  }
+
+  #quarto-sidebar .sidebar-menu-container {
+    margin-top: 0.4rem;
+  }
+
+  #quarto-sidebar .sidebar-menu-container .sidebar-item-text,
+  #quarto-sidebar .sidebar-menu-container .sidebar-link {
+    font-size: 1.08rem !important;
+    font-weight: 450 !important;
+    line-height: 1.35 !important;
+    color: var(--ink) !important;
+    padding: 0.28rem 0;
+    border-left: 2px solid transparent;
+    transition: color 0.18s ease-in-out, border-color 0.18s ease-in-out, background-color 0.18s ease-in-out;
+    font-family: "Times New Roman", "TeX Gyre Termes", "Libre Baskerville", Georgia, serif;
+    letter-spacing: 0.012em;
+    word-spacing: 0.18rem;
+  }
+
+  #quarto-sidebar .sidebar-menu-container .sidebar-item:first-child .sidebar-item-text {
+    font-size: clamp(1.05rem, 1.55vw, 1.25rem) !important;
+    font-family: "Times New Roman", "TeX Gyre Termes", "Libre Baskerville", Georgia, serif;
+    letter-spacing: 0.015em;
+    text-transform: none;
+    color: var(--ink);
+    border-left: none;
+    padding-left: 0;
+    margin-bottom: 0.35rem;
+  }
+
+  #quarto-sidebar .sidebar-menu-container .sidebar-item:first-child .sidebar-item-text::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, rgba(17, 24, 39, 0.2), transparent);
+    margin-top: 0.35rem;
+  }
+
+  #quarto-sidebar .sidebar-menu-container .sidebar-item + .sidebar-item {
+    border-top: none;
+    padding-top: 0.25rem;
+    margin-top: 0.25rem;
+  }
+
+  #quarto-sidebar .sidebar-menu-container .sidebar-item-text:hover,
+  #quarto-sidebar .sidebar-menu-container .sidebar-link:hover,
+  #quarto-sidebar .sidebar-menu-container .sidebar-link:focus {
+    color: var(--facso) !important;
+    border-left-color: var(--facso);
+    background: rgba(0, 47, 108, 0.08);
+    border-radius: 0.3rem;
+  }
+
+  #quarto-sidebar .sidebar-menu-container .sidebar-link.active {
+    color: var(--facso) !important;
+    border-left-color: var(--facso);
+    font-weight: 650 !important;
+  }
+
+  #quarto-sidebar .sidebar-menu-container .menu-text .chapter-number,
+  #quarto-sidebar .sidebar-menu-container .menu-text .chapter-title {
+    font-size: 0.96rem !important;
+  }
+</style>
+
+<script>
+  // Mantener Apendices colapsado desde el inicio (sin parpadeo)
+  document.addEventListener("DOMContentLoaded", () => {
+    const ensureSetup = () => {
+      const sidebar = document.getElementById("quarto-sidebar");
+      const appendixSection = document.getElementById("quarto-sidebar-section-1");
+      if (!sidebar || !appendixSection) {
+        requestAnimationFrame(ensureSetup);
+        return;
+      }
+
+      appendixSection.classList.remove("show");
+      appendixSection.classList.add("collapse");
+      appendixSection.style.removeProperty("display");
+
+      const relatedToggles = document.querySelectorAll(
+        `[data-bs-target="#${appendixSection.id}"]`
+      );
+      relatedToggles.forEach((btn) => btn.setAttribute("aria-expanded", "false"));
+
+      const updateScrollbar = () => {
+        const isOpen = appendixSection.classList.contains("show");
+        sidebar.classList.toggle("no-scrollbar", !isOpen);
+      };
+
+      updateScrollbar();
+
+      appendixSection.addEventListener("shown.bs.collapse", updateScrollbar);
+      appendixSection.addEventListener("hidden.bs.collapse", updateScrollbar);
+    };
+
+    requestAnimationFrame(ensureSetup);
+  });
+</script>
+<style>
+  body.index-meta #title-block-header .quarto-title-meta,
+  body.index-meta #title-block-header .quarto-title-meta-author {
+    margin-top: 1rem;
+    padding: 0.85rem 1rem;
+    background: rgba(252, 252, 252, 0.95);
+    border: 1px solid rgba(17, 24, 39, 0.05);
+    border-radius: 0.6rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 0.65rem;
+    box-shadow: 0 6px 16px -16px rgba(15, 31, 53, 0.45);
+    font-family: "Playfair Display", "Libre Baskerville", "TeX Gyre Termes", "Noto Serif", Georgia, serif;
+  }
+
+  body.index-meta #title-block-header .quarto-title-meta .quarto-title-meta-item,
+  body.index-meta #title-block-header .quarto-title-meta-author > div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    padding-right: 0.35rem;
+    padding-left: 0.35rem;
+    border-left: none;
+    border-top: 1px solid rgba(0, 47, 108, 0.08);
+  }
+
+  body.index-meta #title-block-header .quarto-title-meta .quarto-title-meta-item:first-child,
+  body.index-meta #title-block-header .quarto-title-meta-author > div:first-child {
+    border-top: none;
+    padding-top: 0;
+  }
+
+  @media (min-width: 720px) {
+    body.index-meta #title-block-header .quarto-title-meta .quarto-title-meta-item,
+    body.index-meta #title-block-header .quarto-title-meta-author > div {
+      border-top: none;
+      border-left: 1px solid rgba(0, 47, 108, 0.07);
+    }
+
+    body.index-meta #title-block-header .quarto-title-meta .quarto-title-meta-item:first-child,
+    body.index-meta #title-block-header .quarto-title-meta-author > div:first-child {
+      border-left: none;
+      padding-left: 0;
+    }
+  }
+
+  body.index-meta #title-block-header .quarto-title-meta-heading,
+  body.index-meta #title-block-header .quarto-title-meta-author .quarto-title-meta-heading {
+    font-size: 0.68rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: rgba(17, 24, 39, 0.55);
+    font-weight: 600;
+  }
+
+  body.index-meta #title-block-header .quarto-title-meta-contents,
+  body.index-meta #title-block-header .quarto-title-meta-contents p,
+  body.index-meta #title-block-header .quarto-title-meta-contents span {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--ink);
+  }
+
+  body.index-meta #title-block-header .quarto-title-meta-contents strong {
+    font-weight: 600;
+    color: var(--ink);
+  }
+</style>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const path = window.location.pathname || "";
+    if (
+      path.endsWith("/") ||
+      path.endsWith("index.html") ||
+      path.endsWith("docs") ||
+      path.endsWith("docs/")
+    ) {
+      document.body.classList.add("index-meta");
+    }
+  });
+</script>
+<style>
+body,
+body p,
+body span,
+body li,
+body a,
+body table,
+body td,
+body th,
+body blockquote,
+body .table,
+body .cell,
+body label {
+    font-family: "Times New Roman", "TeX Gyre Termes", "Libre Baskerville", "Noto Serif", Georgia, serif !important;
+  }
+
+  .global-code-toggle {
+    display: none !important;
+  }
+</style>
+
+
+<link rel="stylesheet" href="assets/styles-playfair.scss">
+</head>
+
+<body class="nav-sidebar docked quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./02-prompts-docentes.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Cómo conversar con la IA: claves de prompt engineering docente</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Buscar" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="./index.html" class="sidebar-logo-link">
+      <img src="./assets/cover.png" alt="" class="sidebar-logo light-content py-0 d-lg-inline d-none">
+      <img src="./assets/cover.png" alt="" class="sidebar-logo dark-content py-0 d-lg-inline d-none">
+      </a>
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">IA al servicio pedagógico</a> 
+        <div class="sidebar-tools-main">
+    <a href="https://github.com/KAravena/Taller-IA-Docentes-MEGM-2026" title="Ejecutar el código" class="quarto-navigation-tool px-1" aria-label="Ejecutar el código"><i class="bi bi-github"></i></a>
+    <a href="./reportes-facso-plantilla.pdf" title="Descargar PDF" class="quarto-navigation-tool px-1" aria-label="Descargar PDF"><i class="bi bi-file-pdf"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Buscar"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Presentación</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-que-es-ia.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">¿Qué es la IA y cómo funciona?</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-prompts-docentes.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Cómo conversar con la IA: claves de prompt engineering docente</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-herramientas-trabajo-docente.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Herramientas prácticas para el trabajo docente</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-evaluacion-retroalimentacion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Usos concretos para evaluación y retroalimentación</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-inclusion-educativa.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">IA e inclusión educativa</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06-riesgos-etica.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Riesgos, límites y criterios éticos</span></span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Tabla de contenidos</h2>
+   
+  <ul>
+  <li><a href="#qué-es-un-prompt-y-por-qué-importa-en-el-trabajo-docente" id="toc-qué-es-un-prompt-y-por-qué-importa-en-el-trabajo-docente" class="nav-link active" data-scroll-target="#qué-es-un-prompt-y-por-qué-importa-en-el-trabajo-docente"><span class="header-section-number">3.1</span> Qué es un “prompt” y por qué importa en el trabajo docente</a></li>
+  <li><a href="#estructura-de-un-buen-prompt-pedagógico" id="toc-estructura-de-un-buen-prompt-pedagógico" class="nav-link" data-scroll-target="#estructura-de-un-buen-prompt-pedagógico"><span class="header-section-number">3.2</span> Estructura de un buen <em>prompt</em> pedagógico</a>
+  <ul class="collapse">
+  <li><a href="#los-5-componentes-básicos" id="toc-los-5-componentes-básicos" class="nav-link" data-scroll-target="#los-5-componentes-básicos"><span class="header-section-number">3.2.1</span> Los 5 componentes básicos</a></li>
+  <li><a href="#técnicas-de-prompting-para-docentes" id="toc-técnicas-de-prompting-para-docentes" class="nav-link" data-scroll-target="#técnicas-de-prompting-para-docentes"><span class="header-section-number">3.2.2</span> Técnicas de <em>prompting</em> para docentes</a></li>
+  </ul></li>
+  <li><a href="#plantillas-de-prompts-reutilizables-para-docencia" id="toc-plantillas-de-prompts-reutilizables-para-docencia" class="nav-link" data-scroll-target="#plantillas-de-prompts-reutilizables-para-docencia"><span class="header-section-number">3.3</span> Plantillas de <em>prompts</em> reutilizables para docencia</a>
+  <ul class="collapse">
+  <li><a href="#plantillas-base-de-prompt-docente" id="toc-plantillas-base-de-prompt-docente" class="nav-link" data-scroll-target="#plantillas-base-de-prompt-docente"><span class="header-section-number">3.3.1</span> Plantillas base de <em>prompt</em> docente</a></li>
+  <li><a href="#diseñador-de-prompts-pedagógicos-para-docentes" id="toc-diseñador-de-prompts-pedagógicos-para-docentes" class="nav-link" data-scroll-target="#diseñador-de-prompts-pedagógicos-para-docentes"><span class="header-section-number">3.3.2</span> Diseñador de prompts pedagógicos para docentes</a></li>
+  </ul></li>
+  <li><a href="#errores-frecuentes-al-usar-ia-y-cómo-corregirlos" id="toc-errores-frecuentes-al-usar-ia-y-cómo-corregirlos" class="nav-link" data-scroll-target="#errores-frecuentes-al-usar-ia-y-cómo-corregirlos"><span class="header-section-number">3.4</span> Errores frecuentes al usar IA y cómo corregirlos</a>
+  <ul class="collapse">
+  <li><a href="#pedir-de-todo-un-poco-en-una-sola-instrucción" id="toc-pedir-de-todo-un-poco-en-una-sola-instrucción" class="nav-link" data-scroll-target="#pedir-de-todo-un-poco-en-una-sola-instrucción"><span class="header-section-number">3.4.1</span> Pedir “de todo un poco” en una sola instrucción</a></li>
+  <li><a href="#falta-de-contexto-sobre-el-curso-y-el-establecimiento" id="toc-falta-de-contexto-sobre-el-curso-y-el-establecimiento" class="nav-link" data-scroll-target="#falta-de-contexto-sobre-el-curso-y-el-establecimiento"><span class="header-section-number">3.4.2</span> Falta de contexto sobre el curso y el establecimiento</a></li>
+  <li><a href="#delegar-decisiones-pedagógicas-clave-a-la-ia" id="toc-delegar-decisiones-pedagógicas-clave-a-la-ia" class="nav-link" data-scroll-target="#delegar-decisiones-pedagógicas-clave-a-la-ia"><span class="header-section-number">3.4.3</span> Delegar decisiones pedagógicas clave a la IA</a></li>
+  <li><a href="#incluir-información-sensible-de-estudiantes-o-colegas" id="toc-incluir-información-sensible-de-estudiantes-o-colegas" class="nav-link" data-scroll-target="#incluir-información-sensible-de-estudiantes-o-colegas"><span class="header-section-number">3.4.4</span> Incluir información sensible de estudiantes o colegas</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<div class="quarto-title-block"><div><h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Cómo conversar con la IA: claves de prompt engineering docente</span></h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Código</button></div></div>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="qué-es-un-prompt-y-por-qué-importa-en-el-trabajo-docente" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="qué-es-un-prompt-y-por-qué-importa-en-el-trabajo-docente"><span class="header-section-number">3.1</span> Qué es un “prompt” y por qué importa en el trabajo docente</h2>
+<p>En términos simples, un <em>prompt</em> es el mensaje o instrucción que le damos a la inteligencia artificial para que haga algo por nosotras/os: proponer ideas de clase, redactar una rúbrica, adaptar un texto, etc. Es la “consigna” que guía la respuesta del modelo.</p>
+<p>En el trabajo docente, la calidad del <em>prompt</em> es clave porque:</p>
+<ul>
+<li>define <strong>qué tarea</strong> realizará la IA (por ejemplo, “sugerir actividades para…”, “proponer preguntas de evaluación sobre…”);<br>
+</li>
+<li>entrega el <strong>contexto pedagógico</strong> (curso, asignatura, objetivos de aprendizaje, características del establecimiento);<br>
+</li>
+<li>indica <strong>cómo</strong> queremos recibir la respuesta (tabla, lista, texto breve, tono formal o cercano, extensión aproximada);<br>
+</li>
+<li>establece <strong>límites y resguardos</strong> (no inventar datos, no usar lenguaje técnico, no tomar decisiones pedagógicas por la/el docente).</li>
+</ul>
+<p>Cuando el <em>prompt</em> es vago (“ayúdame con una clase de fracciones”) la respuesta suele ser genérica y poco útil. En cambio, cuando el <em>prompt</em> está bien diseñado, con objetivo claro, contexto, rol, formato y criterios, la IA puede convertirse en un apoyo real para el trabajo docente, siempre bajo el criterio profesional de la/el profesora/or.</p>
+<p>Una forma sencilla de pensarlo es: <strong>un buen <em>prompt</em> se parece a una buena consigna de trabajo para estudiantes</strong>: clara, ubicada en contexto y con criterios de logro explícitos.</p>
+</section>
+<section id="estructura-de-un-buen-prompt-pedagógico" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="estructura-de-un-buen-prompt-pedagógico"><span class="header-section-number">3.2</span> Estructura de un buen <em>prompt</em> pedagógico</h2>
+<p>En esta sección se propone una “columna vertebral” para redactar <em>prompts</em> útiles en educación. No se trata de reglas rígidas, sino de una guía que cada docente puede adaptar a su estilo.</p>
+<section id="los-5-componentes-básicos" class="level3" data-number="3.2.1">
+<h3 data-number="3.2.1" class="anchored" data-anchor-id="los-5-componentes-básicos"><span class="header-section-number">3.2.1</span> Los 5 componentes básicos</h3>
+<ol type="1">
+<li><strong>Rol de la IA</strong><br>
+Indica desde qué lugar queremos que responda la herramienta. Ejemplos:
+<ul>
+<li>“Actúa como profesora de Historia de enseñanza media…”<br>
+</li>
+<li>“Actúa como asesor pedagógico con experiencia en evaluación formativa…”<br>
+</li>
+<li>“Actúa como especialista en educación inclusiva y diseño universal para el aprendizaje…”</li>
+</ul></li>
+<li><strong>Objetivo / tarea principal</strong><br>
+Qué queremos lograr con la respuesta, en una frase concreta.
+<ul>
+<li>“Tu objetivo es proponer tres actividades breves para…”<br>
+</li>
+<li>“Tu tarea es elaborar una rúbrica de evaluación para…”<br>
+</li>
+<li>“Tu misión es sintetizar el siguiente texto para que lo pueda comprender un curso de 6º básico…”</li>
+</ul></li>
+<li><strong>Contexto pedagógico</strong><br>
+Información relevante sobre curso, asignatura, tipo de establecimiento, realidad del grupo, etc.
+<ul>
+<li>nivel y curso (5º básico, 2º medio técnico-profesional, etc.);<br>
+</li>
+<li>asignatura y contenido específico;<br>
+</li>
+<li>características del establecimiento (público, subvencionado, rural, urbano, etc.);<br>
+</li>
+<li>características del grupo (heterogeneidad, presencia de PIE, etc.).</li>
+</ul></li>
+<li><strong>Formato de salida esperado</strong><br>
+Cómo queremos recibir la información:
+<ul>
+<li>“entrega la respuesta en una tabla con columnas…”;<br>
+</li>
+<li>“escribe una lista numerada de máximo 5 puntos…”;<br>
+</li>
+<li>“redacta un texto breve (máx. 200 palabras) para estudiantes…”;<br>
+</li>
+<li>“proporciona ejemplos de preguntas de alternativa y de desarrollo corto”.</li>
+</ul></li>
+<li><strong>Criterios y restricciones (guardarraíles)</strong><br>
+Aquí fijamos límites para resguardar el sentido pedagógico y la viabilidad:
+<ul>
+<li>“usa lenguaje sencillo, sin tecnicismos”;<br>
+</li>
+<li>“no inventes datos ni fuentes, si no sabes dilo explícitamente”;<br>
+</li>
+<li>“no entregues actividades que requieran recursos costosos”;<br>
+</li>
+<li>“respeta lenguaje inclusivo y enfoque no sexista”.</li>
+</ul></li>
+</ol>
+</section>
+<section id="técnicas-de-prompting-para-docentes" class="level3" data-number="3.2.2">
+<h3 data-number="3.2.2" class="anchored" data-anchor-id="técnicas-de-prompting-para-docentes"><span class="header-section-number">3.2.2</span> Técnicas de <em>prompting</em> para docentes</h3>
+<p>A continuación se presentan algunas técnicas sencillas para mejorar la calidad de las respuestas de la IA en el trabajo pedagógico cotidiano:</p>
+<ul>
+<li><p><strong>Sé específica/o y precisa/o</strong><br>
+Evita pedir “ideas para una clase” de forma genérica. En cambio, indica curso, asignatura, contenido y objetivo. Mientras más claro sea el encargo, más útil será la respuesta.<br>
+<em>Ejemplo:</em> “Propón tres actividades breves para introducir el concepto de fracción equivalente en 4º básico en una escuela pública”.</p></li>
+<li><p><strong>Usa restricciones claras (guardarraíles)</strong><br>
+Señala lo que la IA <strong>no</strong> debe hacer o aquello que quieres acotar: extensión, tono, tipo de recursos, nivel de lenguaje, etc.<br>
+<em>Ejemplo:</em> “No uses jerga técnica, máximo 200 palabras, actividades que se puedan realizar sin computadores ni celulares”.</p></li>
+<li><p><strong>Itera y refina: piensa el diálogo como un proceso</strong><br>
+No esperes que la primera respuesta sea perfecta. Puedes pedir ajustes, correcciones o versiones mejoradas:<br>
+<em>Ejemplos:</em> “Hazlo más breve”, “adapta esto para 6º básico”, “agrega una opción para estudiantes con NEE”. Tratarlo como una conversación mejora mucho el resultado.</p></li>
+<li><p><strong>Encadena prompts (<em>chain prompting</em>)</strong><br>
+Para tareas complejas, es mejor dividir el trabajo en pasos: primero objetivos, luego actividades, después evaluación. También puedes pedir que la propia IA sugiera el siguiente paso.<br>
+<em>Ejemplo:</em></p>
+<ol type="1">
+<li>“Ayúdame a definir los objetivos de una unidad sobre migración en 2º medio”.<br>
+</li>
+<li>“Con esos objetivos, propón una secuencia de 5 clases”.<br>
+</li>
+<li>“Ahora sugiere posibles instrumentos de evaluación para esta secuencia”.</li>
+</ol></li>
+<li><p><strong>Pide pasos, criterios o fuentes para revisar la calidad</strong><br>
+Solicita que la IA muestre “cómo llegó” a lo que propone, qué supuestos usa o qué referencias generales considera. Esto ayuda a detectar errores y a tomar decisiones informadas.<br>
+<em>Ejemplos:</em> “Explica en 4 pasos cómo construiste esta rúbrica”, “indica qué supuestos estás usando”, “si mencionas información factual, señala qué tipo de fuente deberíamos consultar para verificarla”.</p></li>
+<li><p><strong>Modela el tipo de reflexión que quieres que haga</strong><br>
+Puedes pedirle explícitamente que revise críticamente su propia respuesta antes de entregarla:<br>
+<em>Ejemplo:</em> “Antes de responder, indica dos posibles problemas o limitaciones de tu propuesta y luego ofrece una versión mejorada que los aborde”.</p></li>
+</ul>
+<p>Estas técnicas no reemplazan el criterio profesional docente, pero sí ayudan a que la IA se convierta en una herramienta más ajustada a las necesidades reales del aula.</p>
+</section>
+</section>
+<section id="plantillas-de-prompts-reutilizables-para-docencia" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="plantillas-de-prompts-reutilizables-para-docencia"><span class="header-section-number">3.3</span> Plantillas de <em>prompts</em> reutilizables para docencia</h2>
+<p>A continuación se proponen algunas plantillas listas para copiar, pegar y adaptar según las necesidades de cada docente.</p>
+<section id="plantillas-base-de-prompt-docente" class="level3" data-number="3.3.1">
+<h3 data-number="3.3.1" class="anchored" data-anchor-id="plantillas-base-de-prompt-docente"><span class="header-section-number">3.3.1</span> Plantillas base de <em>prompt</em> docente</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>Actúa como <span class="co">[</span><span class="ot">ROL O PERFIL QUE NECESITO</span><span class="co">]</span>.</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>Tu objetivo es <span class="co">[</span><span class="ot">TAREA PRINCIPAL QUE QUIERO LOGRAR</span><span class="co">]</span>.</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>Contexto:</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Curso y nivel: <span class="co">[</span><span class="ot">CURSO, NIVEL</span><span class="co">]</span>.</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Asignatura y contenido: <span class="co">[</span><span class="ot">ASIGNATURA, CONTENIDO</span><span class="co">]</span>.</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Tipo de establecimiento y características del grupo: <span class="co">[</span><span class="ot">BREVE DESCRIPCIÓN</span><span class="co">]</span>.</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>Instrucciones:</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">PRIMERA INSTRUCCIÓN ESPECÍFICA</span><span class="co">]</span>.</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">SEGUNDA INSTRUCCIÓN ESPECÍFICA</span><span class="co">]</span>.</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">TERCERA INSTRUCCIÓN ESPECÍFICA</span><span class="co">]</span>.</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>Formato de salida:</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">TIPO DE FORMATO: TABLA, LISTA, TEXTO BREVE, ETC.</span><span class="co">]</span>.</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>Criterios y restricciones:</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">TONO, LENGUAJE, EXTENSIÓN, RECURSOS DISPONIBLES</span><span class="co">]</span>.</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">RESGUARDOS ÉTICOS Y PEDAGÓGICOS</span><span class="co">]</span>.</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>Antes de responder, si falta información importante, hazme hasta 3 preguntas breves para aclarar el contexto.</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="diseñador-de-prompts-pedagógicos-para-docentes" class="level3" data-number="3.3.2">
+<h3 data-number="3.3.2" class="anchored" data-anchor-id="diseñador-de-prompts-pedagógicos-para-docentes"><span class="header-section-number">3.3.2</span> Diseñador de prompts pedagógicos para docentes</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>Actúa como especialista en educación y en prompt engineering para docentes.</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>Tu tarea es ayudarme a DISEÑAR un prompt claro y efectivo que luego pueda usar con otra IA.</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>Contexto:</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Objetivo general del prompt que necesito: <span class="co">[</span><span class="ot">por ejemplo, “planificar una unidad de Historia para 8º básico sobre dictadura y memoria”</span><span class="co">]</span>.</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Tipo de producto que quiero obtener con ese futuro prompt: <span class="co">[</span><span class="ot">por ejemplo, “una tabla con clases, objetivos, actividades y evaluaciones”</span><span class="co">]</span>.</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Público destinatario de los resultados: <span class="co">[</span><span class="ot">por ejemplo, “docentes de escuela pública con alta carga laboral”</span><span class="co">]</span>.</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>Instrucciones:</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Formula un único prompt completo y bien redactado que yo pueda copiar y usar tal cual.</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Asegúrate de que el prompt incluya: rol de la IA, objetivo, contexto pedagógico, formato de salida, criterios y restricciones.</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Al final, sugiere brevemente cómo podría ajustar ese prompt (por ejemplo, para otros niveles o asignaturas).</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>Formato de salida:</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Primero, escribe el prompt final entre comillas.</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Luego, en 3–4 viñetas, entrega sugerencias de ajustes posibles.</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>No expliques qué es un prompt ni teorices: concéntrate en darme un buen prompt listo para usar.</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+</section>
+<section id="errores-frecuentes-al-usar-ia-y-cómo-corregirlos" class="level2" data-number="3.4">
+<h2 data-number="3.4" class="anchored" data-anchor-id="errores-frecuentes-al-usar-ia-y-cómo-corregirlos"><span class="header-section-number">3.4</span> Errores frecuentes al usar IA y cómo corregirlos</h2>
+<p>En esta sección se presentan errores típicos al redactar <em>prompts</em> y maneras simples de mejorarlos desde la práctica docente.</p>
+<section id="pedir-de-todo-un-poco-en-una-sola-instrucción" class="level3" data-number="3.4.1">
+<h3 data-number="3.4.1" class="anchored" data-anchor-id="pedir-de-todo-un-poco-en-una-sola-instrucción"><span class="header-section-number">3.4.1</span> Pedir “de todo un poco” en una sola instrucción</h3>
+<p><strong>Ejemplo de error</strong></p>
+<blockquote class="blockquote">
+<p>Hazme una planificación completa de matemáticas para todo el año de 7º básico.</p>
+</blockquote>
+<p><strong>Problema:</strong> la tarea es demasiado amplia; la respuesta será superficial y poco aplicable.</p>
+<p><strong>Mejor alternativa</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>Actúa como profesora de Matemática de 7º básico en una escuela pública urbana.</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>Tu objetivo es proponer una planificación sintética para UNA unidad didáctica sobre proporcionalidad.</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>Contexto:</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Curso: 7º básico, 38 estudiantes, niveles de logro muy diversos.</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Asignatura: Matemática.</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Marco de referencia: Bases curriculares chilenas.</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>Instrucciones:</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Propón una secuencia de 4 a 6 clases.</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Para cada clase, indica objetivo, actividad principal y posible instrumento de evaluación.</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Ten en cuenta que hay acceso limitado a computadores en el aula.</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>Formato de salida:</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Tabla con columnas: Clase – Objetivo – Actividad principal – Evaluación sugerida.</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>Criterios:</span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Usa lenguaje claro y breve.</span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>No des actividades que requieran conexión permanente a internet.</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="falta-de-contexto-sobre-el-curso-y-el-establecimiento" class="level3" data-number="3.4.2">
+<h3 data-number="3.4.2" class="anchored" data-anchor-id="falta-de-contexto-sobre-el-curso-y-el-establecimiento"><span class="header-section-number">3.4.2</span> Falta de contexto sobre el curso y el establecimiento</h3>
+<p><strong>Ejemplo de error</strong></p>
+<blockquote class="blockquote">
+<p>Dame ideas de actividades para lenguaje.</p>
+</blockquote>
+<p><strong>Problema:</strong> la IA no sabe si es 2º básico o 4º medio, ni el tipo de establecimiento.</p>
+<p><strong>Mejor alternativa</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>Actúa como profesora de Lengua y Literatura de 2º medio.</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>Tu objetivo es proponer tres actividades de comprensión lectora para trabajar un cuento latinoamericano breve.</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>Contexto:</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Liceo público científico-humanista, cursos numerosos (45 estudiantes).</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Hay estudiantes con diferentes niveles de lectura y al menos dos con NEE permanentes.</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Tiempo disponible: una hora pedagógica por actividad.</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>Formato de salida:</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Lista numerada con 3 actividades.</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Para cada actividad incluye: propósito, descripción breve, tiempo estimado y posibles ajustes para estudiantes con NEE.</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>Criterios:</span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Usa materiales que se puedan fotocopiar o proyectar.</span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>No requieras acceso individual a computadores.</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="delegar-decisiones-pedagógicas-clave-a-la-ia" class="level3" data-number="3.4.3">
+<h3 data-number="3.4.3" class="anchored" data-anchor-id="delegar-decisiones-pedagógicas-clave-a-la-ia"><span class="header-section-number">3.4.3</span> Delegar decisiones pedagógicas clave a la IA</h3>
+<p><strong>Ejemplo de error</strong></p>
+<blockquote class="blockquote">
+<p>Decide tú qué contenidos son más importantes para enseñar en Historia de Chile en 8º básico.</p>
+</blockquote>
+<p><strong>Problema:</strong> la selección de contenidos es una decisión curricular y pedagógica que corresponde al equipo docente y a las bases curriculares, no a la IA.</p>
+<p><strong>Mejor alternativa</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>Actúa como asesor pedagógico.</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>Tu objetivo es ayudarme a organizar una secuencia de actividades para trabajar los contenidos de Historia de Chile de 8º básico ya definidos en las bases curriculares.</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>Contexto:</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Escuela básica pública.</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Contenidos a abordar: <span class="co">[</span><span class="ot">PEGAR LISTA DE CONTENIDOS SELECCIONADOS POR EL DOCENTE</span><span class="co">]</span>.</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>Instrucciones:</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Sugiere una posible secuencia de actividades para abordar estos contenidos en 6 a 8 clases.</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>No agregues contenidos nuevos; solo organiza y relaciona los que entrego.</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>Formato de salida:</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Lista numerada de clases con una breve descripción de la actividad principal.</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>Criterios:</span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Considera que el curso cuenta con recursos limitados (pizarra, cuaderno, proyector ocasional).</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="incluir-información-sensible-de-estudiantes-o-colegas" class="level3" data-number="3.4.4">
+<h3 data-number="3.4.4" class="anchored" data-anchor-id="incluir-información-sensible-de-estudiantes-o-colegas"><span class="header-section-number">3.4.4</span> Incluir información sensible de estudiantes o colegas</h3>
+<p><strong>Ejemplo de error</strong></p>
+<blockquote class="blockquote">
+<p>Te copio los nombres y diagnósticos de mis estudiantes para que me digas cómo trabajar con cada uno.</p>
+</blockquote>
+<p><strong>Problema:</strong> vulnera la confidencialidad y privacidad de estudiantes.</p>
+<p><strong>Mejor alternativa (enfoque anónimo y general)</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>Actúa como especialista en educación inclusiva.</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>Tu objetivo es sugerir adaptaciones generales para un curso diverso de 6º básico.</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>Contexto:</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Escuela pública con programa de integración escolar (PIE).</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>En el curso hay estudiantes con dificultades específicas de aprendizaje, TDAH y discapacidad intelectual leve.</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>Instrucciones:</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Propón 5 estrategias generales de adaptación de materiales y actividades para favorecer la participación de todo el curso.</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>No necesitas nombres ni datos personales de estudiantes.</span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>Formato:</span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Lista con 5 estrategias, cada una explicada en 3 o 4 líneas.</span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>Criterios:</span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Considera un enfoque de diseño universal para el aprendizaje (DUA).</span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Evita lenguaje técnico innecesario.</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+
+
+<!-- -->
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script>
+window.addEventListener('load', function () {
+  const selectors = [
+    '.quarto-sidebar .logo img',
+    '.quarto-sidebar .quarto-logo img',
+    '.sidebar-logo img',
+    '.site-logo img',
+    'a.quarto-site-logo img'
+  ];
+
+  let logoImg = null;
+  for (const selector of selectors) {
+    logoImg = document.querySelector(selector);
+    if (logoImg) break;
+  }
+
+  if (logoImg) {
+    const link = document.createElement('a');
+    link.href = 'index.html';
+    logoImg.parentNode.insertBefore(link, logoImg);
+    link.appendChild(logoImg);
+  }
+
+  const decodeMeta = (value) => {
+    if (!value) return '';
+    const trimmed = value.trim();
+    if (!trimmed || trimmed.startsWith('{{')) return '';
+    const textarea = document.createElement('textarea');
+    textarea.innerHTML = trimmed;
+    return textarea.value.trim();
+  };
+
+  const metaRepoUrl = decodeMeta('https://github.com/KAravena/Taller-IA-Docentes-MEGM-2026');
+  const metaRepoUrlNormalized = metaRepoUrl ? metaRepoUrl.replace(/\/+$/g, '') : '';
+
+  const computeArchiveUrl = (hrefHint) => {
+    const baseHref = (hrefHint || metaRepoUrlNormalized || metaRepoUrl || '').trim();
+    if (!baseHref) return '';
+
+    try {
+      const url = new URL(baseHref, window.location.href);
+      const pathnameRaw = url.pathname.replace(/\/+$/g, '');
+      const normalizeBranch = (value) => {
+        const branch = (value || '').trim();
+        return branch ? branch : 'main';
+      };
+
+      if (url.hostname.includes('github.')) {
+        const match = pathnameRaw.match(/^\/([^/]+)\/([^/]+)(?:\/(tree|blob)\/([^/]+).*)?$/);
+        if (!match) return '';
+
+        const owner = match[1];
+        const repo = match[2].replace(/\.git$/i, '');
+        const branchFromPath = match[4];
+        const branch = normalizeBranch(branchFromPath || url.searchParams.get('branch'));
+
+        return `${url.origin}/${owner}/${repo}/archive/refs/heads/${branch}.zip`;
+      }
+
+      if (url.hostname.includes('gitlab.')) {
+        const match = pathnameRaw.match(/^\/(.+?)(?:\/-\/tree\/([^/]+).*)?$/);
+        if (!match) return '';
+
+        const projectPath = match[1].replace(/\/+$/g, '');
+        const repoName = projectPath.split('/').pop();
+        const branchFromPath = match[2];
+        const branch = normalizeBranch(branchFromPath || url.searchParams.get('ref')); // GitLab often uses ref param
+
+        return `${url.origin}/${projectPath}/-/archive/${branch}/${repoName}-${branch}.zip`;
+      }
+
+      if (url.hostname.includes('bitbucket.')) {
+        const match = pathnameRaw.match(/^\/([^/]+)\/([^/]+)(?:\/src\/([^/]+).*)?$/);
+        if (!match) return '';
+
+        const owner = match[1];
+        const repo = match[2].replace(/\.git$/i, '');
+        const branchFromPath = match[3];
+        const branch = normalizeBranch(branchFromPath || url.searchParams.get('at'));
+
+        return `${url.origin}/${owner}/${repo}/get/${branch}.zip`;
+      }
+
+      const branch = normalizeBranch(url.searchParams.get('branch'));
+      return `${baseHref.replace(/\/+$/g, '')}/archive/refs/heads/${branch}.zip`;
+    } catch (error) {
+      return '';
+    }
+  };
+
+  const ensureDownloadButton = (fromObserver = false) => {
+    const tools = document.querySelector('.sidebar-title .sidebar-tools-main');
+    if (!tools) {
+      if (!fromObserver) {
+        window.setTimeout(() => ensureDownloadButton(false), 100);
+      }
+      return;
+    }
+
+    let download = tools.querySelector('[data-template-download]');
+    if (!download) {
+      download = document.createElement('a');
+      download.className = 'quarto-navigation-tool px-1';
+      download.title = 'Descargar ZIP';
+      download.setAttribute('aria-label', 'Descargar plantilla (ZIP)');
+      download.setAttribute('data-template-download', 'true');
+      download.target = '_blank';
+      download.rel = 'noopener';
+      download.innerHTML = '<i class="bi bi-download"></i>';
+    }
+
+    const links = Array.from(tools.querySelectorAll('a.quarto-navigation-tool'));
+    let repoLink = null;
+
+    if (metaRepoUrlNormalized) {
+      repoLink = links.find((anchor) => {
+        if (anchor === download) return false;
+        const href = anchor.href ? anchor.href.replace(/\/+$/g, '') : '';
+        return href === metaRepoUrlNormalized;
+      });
+    }
+
+    if (!repoLink) {
+      repoLink = links.find((anchor) => anchor !== download && anchor.querySelector('.bi-github'));
+    }
+
+    if (!repoLink) {
+      repoLink = links.find((anchor) => {
+        if (anchor === download) return false;
+        const href = anchor.href || '';
+        return /github\.|gitlab\.|bitbucket\./i.test(href);
+      });
+    }
+
+    const archiveUrl = computeArchiveUrl(repoLink ? repoLink.href : undefined);
+
+    if (!archiveUrl) {
+      if (download.parentNode) {
+        download.parentNode.removeChild(download);
+      }
+      return;
+    }
+
+    if (repoLink) {
+      repoLink.insertAdjacentElement('afterend', download);
+    } else if (codeToggle) {
+      codeToggle.insertAdjacentElement('beforebegin', download);
+    } else {
+      tools.insertBefore(download, tools.firstChild);
+    }
+  };
+
+  ensureDownloadButton();
+
+  const observer = new MutationObserver((mutations) => {
+    const shouldUpdate = mutations.some((mutation) => {
+      if (mutation.type !== 'childList') {
+        return false;
+      }
+      return Array.from(mutation.addedNodes).some((node) => {
+        if (!(node instanceof HTMLElement)) {
+          return false;
+        }
+        return (
+          node.classList.contains('global-code-toggle') ||
+          (node.querySelector && node.querySelector('.global-code-toggle'))
+        );
+      });
+    });
+
+    if (shouldUpdate) {
+      ensureDownloadButton(true);
+    }
+  });
+
+  observer.observe(document.body, { childList: true, subtree: true });
+});
+</script>
+<script>
+(function () {
+  var isReferences = /(?:^|\/)references\.html(?:#|$)/i.test(window.location.pathname);
+
+  // Base relativa que Quarto publica (para apéndices/…)
+  var offsetMeta = document.querySelector('meta[name="quarto:offset"]');
+  var base = (offsetMeta && offsetMeta.content) ? offsetMeta.content : "";
+
+  // 1) En capítulos: reescribe enlaces de cita -> references.html#ref-*
+  if (!isReferences) {
+    var cites = document.querySelectorAll('a[role="doc-biblioref"][href^="#ref-"]');
+    cites.forEach(function (a) {
+      var hash = a.getAttribute('href'); // "#ref-xxx"
+      // Conserva tooltips. Añade marca para mostrar "volver" luego.
+      a.setAttribute('href', base + 'references.html' + hash);
+      a.setAttribute('data-citefix', 'from-chapter');
+    });
+
+    // Oculta bibliografía local si citeproc la insertó
+    var localRefsBlocks = document.querySelectorAll('section.footnotes, div#refs, div.references, section#references');
+    localRefsBlocks.forEach(function (el) { el.style.display = 'none'; });
+  }
+
+  // 2) En references.html: añade botón "Volver" si se llega desde otra página
+  if (isReferences) {
+    var cameFromOutside = document.referrer && !/\/references\.html(?:#|$)/i.test(new URL(document.referrer).pathname);
+    if (cameFromOutside && window.history && window.history.length > 1) {
+      var btn = document.createElement('button');
+      btn.type = 'button';
+      btn.textContent = '← Volver';
+      btn.setAttribute('aria-label', 'Volver a la página anterior');
+      btn.style.position = 'fixed';
+      btn.style.right = '1rem';
+      btn.style.bottom = '1rem';
+      btn.style.zIndex = '9999';
+      btn.style.padding = '.6rem .9rem';
+      btn.style.borderRadius = '10px';
+      btn.style.border = '1px solid rgba(0,0,0,.15)';
+      btn.style.background = 'var(--bs-body-bg, #fff)';
+      btn.style.color = 'var(--bs-body-color, #111)';
+      btn.style.boxShadow = '0 6px 16px rgba(0,0,0,.12)';
+      btn.onclick = function () { history.back(); };
+      document.body.appendChild(btn);
+    }
+
+    // Si llegamos con hash (#ref-xxx), desplaza con un pequeño retardo
+    // para asegurar que el layout esté listo.
+    if (location.hash && /^#ref-/.test(location.hash)) {
+      setTimeout(function () {
+        try {
+          var target = document.getElementById(location.hash.substring(1));
+          if (target) target.scrollIntoView({behavior: 'smooth', block: 'start'});
+        } catch (e) {}
+      }, 50);
+    }
+  }
+})();
+</script>
+
+<style>
+/* Evita que el ancla de referencias quede “tapada” por el encabezado */
+.csl-entry[id^="ref-"],
+[id^="ref-"] { scroll-margin-top: 90px; }
+
+/* Ajuste suave para tooltips / focos de enlaces */
+a[role="doc-biblioref"]:focus-visible {
+  outline: 2px dashed var(--facso-2, #84A7D8);
+  outline-offset: 2px;
+}
+
+/* Opcional: separadores más legibles en la lista de referencias */
+#refs .csl-entry { padding: .25rem 0; border-bottom: 1px dashed rgba(0,0,0,.06); }
+#refs .csl-entry:last-child { border-bottom: none; }
+</style>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const parseNumberParts = (value) =>
+    (value || "")
+      .split(".")
+      .map((part) => parseInt(part, 10))
+      .filter((num) => !Number.isNaN(num));
+
+  const formatNumberParts = (parts) => parts.join(".");
+
+  const adjustNumber = (value) => {
+    const trimmed = (value || "").trim();
+    if (!/^\d/.test(trimmed)) {
+      return trimmed;
+    }
+    const parts = parseNumberParts(trimmed);
+    if (!parts.length) {
+      return "";
+    }
+  parts[0] = parts[0] - 1;
+    if (parts[0] <= 0) {
+      return "";
+    }
+    return formatNumberParts(parts);
+  };
+
+  const removeSpacer = (node) => {
+    let sibling = node.nextSibling;
+    while (sibling && sibling.nodeType === Node.TEXT_NODE) {
+      const cleaned = sibling.textContent.replace(/\u00a0/g, "").trim();
+      const next = sibling.nextSibling;
+      if (cleaned.length === 0) {
+        sibling.remove();
+        sibling = next;
+      } else {
+        break;
+      }
+    }
+  };
+
+  const clearNumber = (node) => {
+    if (!node) return;
+    node.textContent = "";
+    node.classList.add("chapter-number--hidden");
+    node.style.display = "none";
+    removeSpacer(node);
+  };
+
+  const ensureChapterSpacing = (node) => {
+    if (!node || !node.classList.contains("chapter-number")) return;
+
+    let numeric = (node.textContent || "").replace(/\.+\s*$/u, "");
+    if (!numeric) return;
+
+    node.textContent = numeric;
+
+    const contextsNeedingSpace = node.closest(".quarto-title-block") ||
+      node.closest("nav.quarto-page-breadcrumbs");
+
+    node.textContent = `${numeric}.`;
+
+    if (contextsNeedingSpace) {
+      const next = node.nextSibling;
+      const hasWhitespaceText =
+        next &&
+        next.nodeType === Node.TEXT_NODE &&
+        /\s/.test(next.textContent || "");
+      if (!hasWhitespaceText) {
+        node.insertAdjacentText("afterend", "\u00a0");
+      }
+    }
+  };
+
+  const applyNumber = (node) => {
+    if (!node) return;
+    const adjusted = adjustNumber(node.textContent);
+    if (!adjusted) {
+      clearNumber(node);
+    } else {
+      node.textContent = adjusted;
+      node.classList.remove("chapter-number--hidden");
+      node.style.display = "inline-block";
+      removeSpacer(node);
+      ensureChapterSpacing(node);
+    }
+  };
+
+  const updateDataNumber = (node) => {
+    const current = node.getAttribute("data-number");
+    if (current === null) return;
+    const adjusted = adjustNumber(current);
+    if (adjusted) {
+      node.setAttribute("data-number", adjusted);
+    } else {
+      node.removeAttribute("data-number");
+    }
+  };
+
+  const isFrontMatterHref = (href) =>
+    /\/?index\.html(?:#|$)/i.test(href || "") ||
+    /\/?00-prefacio\.html(?:#|$)/i.test(href || "");
+
+  document
+    .querySelectorAll(".sidebar .chapter-number")
+    .forEach((node) => {
+      const link = node.closest("a");
+      const href = link ? link.getAttribute("href") : "";
+      if (isFrontMatterHref(href)) {
+        clearNumber(node);
+      } else {
+        applyNumber(node);
+      }
+    });
+
+  const pathname = window.location.pathname || "";
+
+  document
+    .querySelectorAll('.quarto-title-block .chapter-number')
+    .forEach((node) => {
+      if (isFrontMatterHref(pathname)) {
+        clearNumber(node);
+      } else {
+        applyNumber(node);
+      }
+    });
+
+  document
+    .querySelectorAll('nav.quarto-page-breadcrumbs .chapter-number')
+    .forEach((node) => {
+      const link = node.closest('a');
+      const href = link ? link.getAttribute('href') : pathname;
+      if (isFrontMatterHref(href)) {
+        clearNumber(node);
+      } else {
+        applyNumber(node);
+      }
+    });
+
+  document
+    .querySelectorAll("main .header-section-number")
+    .forEach((node) => {
+      if (isFrontMatterHref(pathname)) {
+        const section = node.closest("section");
+        if (section && section.matches(".level1:first-of-type, .level2:first-of-type")) {
+          clearNumber(node);
+          return;
+        }
+      }
+      applyNumber(node);
+    });
+
+  document
+    .querySelectorAll("main [data-number]")
+    .forEach(updateDataNumber);
+
+  document
+    .querySelectorAll("#TOC .header-section-number")
+    .forEach((node) => {
+      const link = node.closest("a");
+      const href = link ? link.getAttribute("href") : "";
+      if (isFrontMatterHref(href)) {
+        clearNumber(node);
+      } else {
+        applyNumber(node);
+      }
+    });
+
+  document
+    .querySelectorAll("#TOC [data-number]")
+    .forEach(updateDataNumber);
+
+  document
+    .querySelectorAll('#TOC a[data-scroll-target][data-number]')
+    .forEach(updateDataNumber);
+
+  const expandMarginToc = () => {
+    const toc = document.getElementById("TOC");
+    if (!toc) return;
+    toc.querySelectorAll("ul.collapse").forEach((node) => {
+      node.classList.remove("collapse");
+      node.classList.add("toc-expanded");
+    });
+    toc.querySelectorAll("[data-bs-toggle='collapse']").forEach((trigger) => {
+      trigger.removeAttribute("data-bs-toggle");
+      trigger.setAttribute("aria-expanded", "true");
+    });
+  };
+
+  expandMarginToc();
+});
+</script>
+<style>
+.sidebar .chapter-number {
+  display: inline-block;
+  min-width: 1ch;
+  margin-right: 0.1ch;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+.chapter-number--hidden {
+  visibility: hidden !important;
+  display: none !important;
+}
+.toc-expanded {
+  display: block !important;
+  visibility: visible !important;
+  height: auto !important;
+  overflow: visible !important;
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const codeSelectors = [
+    '.cell > .code-copy-outer-scaffold',
+    '.cell > .sourceCode',
+    'pre.sourceCode',
+    'div.sourceCode'
+  ];
+
+  const LABEL_SHOW = 'Mostrar el codigo';
+  const LABEL_HIDE = 'Ocultar el codigo';
+  const LABEL_EMPTY = 'Sin fragmentos de codigo';
+  const ICON_SHOW = 'bi bi-code';
+  const ICON_HIDE = 'bi bi-code-slash';
+
+  const toolsContainer = document.querySelector('.sidebar-tools-main');
+  let buttonHost = toolsContainer;
+  let floatingContainer = null;
+
+  if (!buttonHost) {
+    floatingContainer = document.createElement('div');
+    floatingContainer.className = 'global-code-toggle-container';
+    document.body.appendChild(floatingContainer);
+    buttonHost = floatingContainer;
+  }
+
+  const repoLink = toolsContainer ? toolsContainer.querySelector('a[href*="github.com"]') : null;
+  if (repoLink) {
+    repoLink.title = 'Repositorio';
+    repoLink.setAttribute('aria-label', 'Repositorio');
+  }
+
+  const button = document.createElement('a');
+  button.href = '#';
+  button.className = 'quarto-navigation-tool px-1 global-code-toggle';
+  button.setAttribute('role', 'button');
+
+  if (!toolsContainer) {
+    button.classList.add('global-code-toggle-floating');
+  }
+
+  const icon = document.createElement('i');
+  icon.className = ICON_HIDE;
+  button.appendChild(icon);
+
+  const pdfLink = toolsContainer ? toolsContainer.querySelector('a[href$=".pdf"]') : null;
+  if (pdfLink && buttonHost === toolsContainer) {
+    buttonHost.insertBefore(button, pdfLink);
+  } else {
+    buttonHost.appendChild(button);
+  }
+
+  const pageHasCode = codeSelectors.some(function (selector) {
+    return document.querySelector(selector);
+  });
+
+  let showingCode = true;
+
+  const setIcon = function (iconClass) {
+    icon.className = iconClass;
+  };
+
+  const disableButton = function () {
+    button.classList.add('global-code-toggle-disabled');
+    button.classList.add('disabled');
+    button.setAttribute('aria-disabled', 'true');
+    button.setAttribute('aria-pressed', 'false');
+    button.setAttribute('aria-label', LABEL_EMPTY);
+    button.title = LABEL_EMPTY;
+    button.tabIndex = -1;
+    setIcon(ICON_SHOW);
+  };
+
+  const enableButton = function () {
+    button.classList.remove('global-code-toggle-disabled');
+    button.classList.remove('disabled');
+    button.removeAttribute('aria-disabled');
+    button.tabIndex = 0;
+  };
+
+  const update = function () {
+    if (!pageHasCode) {
+      disableButton();
+      document.body.classList.remove('global-code-hidden');
+      return;
+    }
+
+    enableButton();
+
+    if (showingCode) {
+      document.body.classList.remove('global-code-hidden');
+      button.setAttribute('aria-pressed', 'false');
+      button.setAttribute('aria-label', LABEL_HIDE);
+      button.title = LABEL_HIDE;
+      setIcon(ICON_HIDE);
+    } else {
+      document.body.classList.add('global-code-hidden');
+      button.setAttribute('aria-pressed', 'true');
+      button.setAttribute('aria-label', LABEL_SHOW);
+      button.title = LABEL_SHOW;
+      setIcon(ICON_SHOW);
+    }
+  };
+
+  button.addEventListener('click', function (event) {
+    event.preventDefault();
+
+    if (!pageHasCode) {
+      return;
+    }
+
+    showingCode = !showingCode;
+    update();
+  });
+
+  button.addEventListener('keydown', function (event) {
+    if (event.key === ' ' || event.key === 'Spacebar') {
+      event.preventDefault();
+      button.click();
+    }
+  });
+
+  update();
+});
+</script>
+<style>
+body.global-code-hidden .cell > .code-copy-outer-scaffold,
+body.global-code-hidden .cell > .sourceCode,
+body.global-code-hidden pre.sourceCode,
+body.global-code-hidden div.sourceCode {
+  display: none;
+}
+
+.global-code-toggle {
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.global-code-toggle i {
+  font-size: 1.05rem;
+}
+
+.global-code-toggle-disabled {
+  opacity: 0.6;
+  cursor: default;
+  pointer-events: none;
+}
+
+.global-code-toggle-container {
+  position: fixed;
+  right: 1.5rem;
+  bottom: 1.5rem;
+  z-index: 1030;
+}
+
+.global-code-toggle-floating {
+  background-color: var(--bs-body-bg, #ffffff);
+  border-radius: 0.375rem;
+  padding: 0.4rem 0.55rem;
+  box-shadow: 0 0.1rem 0.4rem rgba(0, 0, 0, 0.2);
+}
+
+.global-code-toggle-floating i {
+  font-size: 1.15rem;
+}
+
+@media (max-width: 768px) {
+  .global-code-toggle-container {
+    right: 1rem;
+    bottom: 1rem;
+  }
+}
+</style>
+﻿<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const toc = document.querySelector("nav#TOC, nav.toc-active");
+  if (!toc) return;
+
+  const tocLinks = toc.querySelectorAll("a.nav-link[data-scroll-target]");
+  if (!tocLinks.length) return;
+
+  const sections = Array.from(tocLinks)
+    .map((link) => {
+      const target = document.querySelector(link.getAttribute("data-scroll-target"));
+      return target ? { link, target, top: 0 } : null;
+    })
+    .filter(Boolean);
+
+  const updateOffsets = () => {
+    sections.forEach((section) => {
+      section.top = section.target.getBoundingClientRect().top + window.scrollY;
+    });
+  };
+
+  const activateLink = (targetLink) => {
+    tocLinks.forEach((link) => link.classList.remove("active"));
+    if (targetLink) targetLink.classList.add("active");
+  };
+
+  const OFFSET = 140;
+  let ticking = false;
+
+  const updateActiveSection = () => {
+    const scrollPosition = window.scrollY + OFFSET;
+    let current = sections[0];
+    for (const section of sections) {
+      if (section.top <= scrollPosition) {
+        current = section;
+      } else {
+        break;
+      }
+    }
+    activateLink(current ? current.link : null);
+    ticking = false;
+  };
+
+  const onScroll = () => {
+    if (!ticking) {
+      window.requestAnimationFrame(updateActiveSection);
+      ticking = true;
+    }
+  };
+
+  updateOffsets();
+  updateActiveSection();
+
+  window.addEventListener("scroll", onScroll, { passive: true });
+  window.addEventListener("resize", () => {
+    updateOffsets();
+    updateActiveSection();
+  });
+  window.addEventListener("hashchange", () => {
+    const hash = window.location.hash;
+    const match = sections.find((section) => section.link.getAttribute("data-scroll-target") === hash);
+    if (match) activateLink(match.link);
+  });
+
+  // Estilo responsivo: sin scroll horizontal y ocupando ancho disponible
+  const style = document.createElement("style");
+  style.innerHTML = `
+    nav#TOC, nav.toc-active {
+      width: 100%;
+      max-width: min(600px, 90vw);
+      min-width: 0;
+      padding-right: 0.8rem;
+      box-sizing: border-box;
+      overflow-x: hidden;
+    }
+    nav#TOC *, nav.toc-active * {
+      max-width: 100%;
+      white-space: normal;
+      word-break: break-word;
+    }
+    nav#TOC .toc-entry a, nav.toc-active .toc-entry a {
+      line-height: 1.4;
+    }
+  `;
+  document.head.appendChild(style);
+});
+</script>
+
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copiado");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copiado");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+    const viewSource = window.document.getElementById('quarto-view-source') ||
+                       window.document.getElementById('quarto-code-tools-source');
+    if (viewSource) {
+      const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+      viewSource.addEventListener("click", function(e) {
+        if (sourceUrl) {
+          // rstudio viewer pane
+          if (/\bcapabilities=\b/.test(window.location)) {
+            window.open(sourceUrl);
+          } else {
+            window.location.href = sourceUrl;
+          }
+        } else {
+          const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+          modal.show();
+        }
+        return false;
+      });
+    }
+    function toggleCodeHandler(show) {
+      return function(e) {
+        const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+        for (let i=0; i<detailsSrc.length; i++) {
+          const details = detailsSrc[i].parentElement;
+          if (show) {
+            details.open = true;
+          } else {
+            details.removeAttribute("open");
+          }
+        }
+        const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+        const fromCls = show ? "hidden" : "unhidden";
+        const toCls = show ? "unhidden" : "hidden";
+        for (let i=0; i<cellCodeDivs.length; i++) {
+          const codeDiv = cellCodeDivs[i];
+          if (codeDiv.classList.contains(fromCls)) {
+            codeDiv.classList.remove(fromCls);
+            codeDiv.classList.add(toCls);
+          } 
+        }
+        return false;
+      }
+    }
+    const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+    if (hideAllCode) {
+      hideAllCode.addEventListener("click", toggleCodeHandler(false));
+    }
+    const showAllCode = window.document.getElementById("quarto-show-all-code");
+    if (showAllCode) {
+      showAllCode.addEventListener("click", toggleCodeHandler(true));
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./01-que-es-ia.html" class="pagination-link" aria-label="¿Qué es la IA y cómo funciona?">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">¿Qué es la IA y cómo funciona?</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./03-herramientas-trabajo-docente.html" class="pagination-link" aria-label="Herramientas prácticas para el trabajo docente">
+        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Herramientas prácticas para el trabajo docente</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Ejecutar el código</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Cómo conversar con la IA: claves de prompt engineering docente"</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="fu">## Qué es un “prompt” y por qué importa en el trabajo docente</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>En términos simples, un *prompt* es el mensaje o instrucción que le damos a la inteligencia artificial para que haga algo por nosotras/os: proponer ideas de clase, redactar una rúbrica, adaptar un texto, etc. Es la “consigna” que guía la respuesta del modelo.  </span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>En el trabajo docente, la calidad del *prompt* es clave porque:</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>define **qué tarea** realizará la IA (por ejemplo, “sugerir actividades para…”, “proponer preguntas de evaluación sobre…”);  </span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>entrega el **contexto pedagógico** (curso, asignatura, objetivos de aprendizaje, características del establecimiento);  </span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>indica **cómo** queremos recibir la respuesta (tabla, lista, texto breve, tono formal o cercano, extensión aproximada);  </span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>establece **límites y resguardos** (no inventar datos, no usar lenguaje técnico, no tomar decisiones pedagógicas por la/el docente).</span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>Cuando el *prompt* es vago (“ayúdame con una clase de fracciones”) la respuesta suele ser genérica y poco útil. En cambio, cuando el *prompt* está bien diseñado, con objetivo claro, contexto, rol, formato y criterios, la IA puede convertirse en un apoyo real para el trabajo docente, siempre bajo el criterio profesional de la/el profesora/or.</span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>Una forma sencilla de pensarlo es: **un buen *prompt* se parece a una buena consigna de trabajo para estudiantes**: clara, ubicada en contexto y con criterios de logro explícitos.</span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a><span class="fu">## Estructura de un buen *prompt* pedagógico</span></span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a>En esta sección se propone una “columna vertebral” para redactar *prompts* útiles en educación. No se trata de reglas rígidas, sino de una guía que cada docente puede adaptar a su estilo.</span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a><span class="fu">### Los 5 componentes básicos</span></span>
+<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>**Rol de la IA**  </span>
+<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a>   Indica desde qué lugar queremos que responda la herramienta. Ejemplos:  </span>
+<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a><span class="ss">   - </span>“Actúa como profesora de Historia de enseñanza media…”  </span>
+<span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a><span class="ss">   - </span>“Actúa como asesor pedagógico con experiencia en evaluación formativa…”  </span>
+<span id="cb7-30"><a href="#cb7-30" aria-hidden="true" tabindex="-1"></a><span class="ss">   - </span>“Actúa como especialista en educación inclusiva y diseño universal para el aprendizaje…”</span>
+<span id="cb7-31"><a href="#cb7-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-32"><a href="#cb7-32" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>**Objetivo / tarea principal**  </span>
+<span id="cb7-33"><a href="#cb7-33" aria-hidden="true" tabindex="-1"></a>   Qué queremos lograr con la respuesta, en una frase concreta.  </span>
+<span id="cb7-34"><a href="#cb7-34" aria-hidden="true" tabindex="-1"></a><span class="ss">   - </span>“Tu objetivo es proponer tres actividades breves para…”  </span>
+<span id="cb7-35"><a href="#cb7-35" aria-hidden="true" tabindex="-1"></a><span class="ss">   - </span>“Tu tarea es elaborar una rúbrica de evaluación para…”  </span>
+<span id="cb7-36"><a href="#cb7-36" aria-hidden="true" tabindex="-1"></a><span class="ss">   - </span>“Tu misión es sintetizar el siguiente texto para que lo pueda comprender un curso de 6º básico…”</span>
+<span id="cb7-37"><a href="#cb7-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-38"><a href="#cb7-38" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>**Contexto pedagógico**  </span>
+<span id="cb7-39"><a href="#cb7-39" aria-hidden="true" tabindex="-1"></a>   Información relevante sobre curso, asignatura, tipo de establecimiento, realidad del grupo, etc.  </span>
+<span id="cb7-40"><a href="#cb7-40" aria-hidden="true" tabindex="-1"></a><span class="ss">   - </span>nivel y curso (5º básico, 2º medio técnico-profesional, etc.);  </span>
+<span id="cb7-41"><a href="#cb7-41" aria-hidden="true" tabindex="-1"></a><span class="ss">   - </span>asignatura y contenido específico;  </span>
+<span id="cb7-42"><a href="#cb7-42" aria-hidden="true" tabindex="-1"></a><span class="ss">   - </span>características del establecimiento (público, subvencionado, rural, urbano, etc.);  </span>
+<span id="cb7-43"><a href="#cb7-43" aria-hidden="true" tabindex="-1"></a><span class="ss">   - </span>características del grupo (heterogeneidad, presencia de PIE, etc.).</span>
+<span id="cb7-44"><a href="#cb7-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-45"><a href="#cb7-45" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>**Formato de salida esperado**  </span>
+<span id="cb7-46"><a href="#cb7-46" aria-hidden="true" tabindex="-1"></a>   Cómo queremos recibir la información:  </span>
+<span id="cb7-47"><a href="#cb7-47" aria-hidden="true" tabindex="-1"></a><span class="ss">   - </span>“entrega la respuesta en una tabla con columnas…”;  </span>
+<span id="cb7-48"><a href="#cb7-48" aria-hidden="true" tabindex="-1"></a><span class="ss">   - </span>“escribe una lista numerada de máximo 5 puntos…”;  </span>
+<span id="cb7-49"><a href="#cb7-49" aria-hidden="true" tabindex="-1"></a><span class="ss">   - </span>“redacta un texto breve (máx. 200 palabras) para estudiantes…”;  </span>
+<span id="cb7-50"><a href="#cb7-50" aria-hidden="true" tabindex="-1"></a><span class="ss">   - </span>“proporciona ejemplos de preguntas de alternativa y de desarrollo corto”.</span>
+<span id="cb7-51"><a href="#cb7-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-52"><a href="#cb7-52" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>**Criterios y restricciones (guardarraíles)**  </span>
+<span id="cb7-53"><a href="#cb7-53" aria-hidden="true" tabindex="-1"></a>   Aquí fijamos límites para resguardar el sentido pedagógico y la viabilidad:  </span>
+<span id="cb7-54"><a href="#cb7-54" aria-hidden="true" tabindex="-1"></a><span class="ss">   - </span>“usa lenguaje sencillo, sin tecnicismos”;  </span>
+<span id="cb7-55"><a href="#cb7-55" aria-hidden="true" tabindex="-1"></a><span class="ss">   - </span>“no inventes datos ni fuentes, si no sabes dilo explícitamente”;  </span>
+<span id="cb7-56"><a href="#cb7-56" aria-hidden="true" tabindex="-1"></a><span class="ss">   - </span>“no entregues actividades que requieran recursos costosos”;  </span>
+<span id="cb7-57"><a href="#cb7-57" aria-hidden="true" tabindex="-1"></a><span class="ss">   - </span>“respeta lenguaje inclusivo y enfoque no sexista”.</span>
+<span id="cb7-58"><a href="#cb7-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-59"><a href="#cb7-59" aria-hidden="true" tabindex="-1"></a><span class="fu">### Técnicas de *prompting* para docentes</span></span>
+<span id="cb7-60"><a href="#cb7-60" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-61"><a href="#cb7-61" aria-hidden="true" tabindex="-1"></a>A continuación se presentan algunas técnicas sencillas para mejorar la calidad de las respuestas de la IA en el trabajo pedagógico cotidiano:</span>
+<span id="cb7-62"><a href="#cb7-62" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-63"><a href="#cb7-63" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Sé específica/o y precisa/o**  </span>
+<span id="cb7-64"><a href="#cb7-64" aria-hidden="true" tabindex="-1"></a>  Evita pedir “ideas para una clase” de forma genérica. En cambio, indica curso, asignatura, contenido y objetivo. Mientras más claro sea el encargo, más útil será la respuesta.  </span>
+<span id="cb7-65"><a href="#cb7-65" aria-hidden="true" tabindex="-1"></a>  *Ejemplo:* “Propón tres actividades breves para introducir el concepto de fracción equivalente en 4º básico en una escuela pública”.</span>
+<span id="cb7-66"><a href="#cb7-66" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-67"><a href="#cb7-67" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Usa restricciones claras (guardarraíles)**  </span>
+<span id="cb7-68"><a href="#cb7-68" aria-hidden="true" tabindex="-1"></a>  Señala lo que la IA **no** debe hacer o aquello que quieres acotar: extensión, tono, tipo de recursos, nivel de lenguaje, etc.  </span>
+<span id="cb7-69"><a href="#cb7-69" aria-hidden="true" tabindex="-1"></a>  *Ejemplo:* “No uses jerga técnica, máximo 200 palabras, actividades que se puedan realizar sin computadores ni celulares”.</span>
+<span id="cb7-70"><a href="#cb7-70" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-71"><a href="#cb7-71" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Itera y refina: piensa el diálogo como un proceso**  </span>
+<span id="cb7-72"><a href="#cb7-72" aria-hidden="true" tabindex="-1"></a>  No esperes que la primera respuesta sea perfecta. Puedes pedir ajustes, correcciones o versiones mejoradas:  </span>
+<span id="cb7-73"><a href="#cb7-73" aria-hidden="true" tabindex="-1"></a>  *Ejemplos:* “Hazlo más breve”, “adapta esto para 6º básico”, “agrega una opción para estudiantes con NEE”. Tratarlo como una conversación mejora mucho el resultado.</span>
+<span id="cb7-74"><a href="#cb7-74" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-75"><a href="#cb7-75" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Encadena prompts (*chain prompting*)**  </span>
+<span id="cb7-76"><a href="#cb7-76" aria-hidden="true" tabindex="-1"></a>  Para tareas complejas, es mejor dividir el trabajo en pasos: primero objetivos, luego actividades, después evaluación. También puedes pedir que la propia IA sugiera el siguiente paso.  </span>
+<span id="cb7-77"><a href="#cb7-77" aria-hidden="true" tabindex="-1"></a>  *Ejemplo:*  </span>
+<span id="cb7-78"><a href="#cb7-78" aria-hidden="true" tabindex="-1"></a>  1) “Ayúdame a definir los objetivos de una unidad sobre migración en 2º medio”.  </span>
+<span id="cb7-79"><a href="#cb7-79" aria-hidden="true" tabindex="-1"></a>  2) “Con esos objetivos, propón una secuencia de 5 clases”.  </span>
+<span id="cb7-80"><a href="#cb7-80" aria-hidden="true" tabindex="-1"></a>  3) “Ahora sugiere posibles instrumentos de evaluación para esta secuencia”.</span>
+<span id="cb7-81"><a href="#cb7-81" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-82"><a href="#cb7-82" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Pide pasos, criterios o fuentes para revisar la calidad**  </span>
+<span id="cb7-83"><a href="#cb7-83" aria-hidden="true" tabindex="-1"></a>  Solicita que la IA muestre “cómo llegó” a lo que propone, qué supuestos usa o qué referencias generales considera. Esto ayuda a detectar errores y a tomar decisiones informadas.  </span>
+<span id="cb7-84"><a href="#cb7-84" aria-hidden="true" tabindex="-1"></a>  *Ejemplos:* “Explica en 4 pasos cómo construiste esta rúbrica”, “indica qué supuestos estás usando”, “si mencionas información factual, señala qué tipo de fuente deberíamos consultar para verificarla”.</span>
+<span id="cb7-85"><a href="#cb7-85" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-86"><a href="#cb7-86" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Modela el tipo de reflexión que quieres que haga**  </span>
+<span id="cb7-87"><a href="#cb7-87" aria-hidden="true" tabindex="-1"></a>  Puedes pedirle explícitamente que revise críticamente su propia respuesta antes de entregarla:  </span>
+<span id="cb7-88"><a href="#cb7-88" aria-hidden="true" tabindex="-1"></a>  *Ejemplo:* “Antes de responder, indica dos posibles problemas o limitaciones de tu propuesta y luego ofrece una versión mejorada que los aborde”.</span>
+<span id="cb7-89"><a href="#cb7-89" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-90"><a href="#cb7-90" aria-hidden="true" tabindex="-1"></a>Estas técnicas no reemplazan el criterio profesional docente, pero sí ayudan a que la IA se convierta en una herramienta más ajustada a las necesidades reales del aula.</span>
+<span id="cb7-91"><a href="#cb7-91" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-92"><a href="#cb7-92" aria-hidden="true" tabindex="-1"></a><span class="fu">## Plantillas de *prompts* reutilizables para docencia</span></span>
+<span id="cb7-93"><a href="#cb7-93" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-94"><a href="#cb7-94" aria-hidden="true" tabindex="-1"></a>A continuación se proponen algunas plantillas listas para copiar, pegar y adaptar según las necesidades de cada docente.</span>
+<span id="cb7-95"><a href="#cb7-95" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-96"><a href="#cb7-96" aria-hidden="true" tabindex="-1"></a><span class="fu">###  Plantillas base de *prompt* docente</span></span>
+<span id="cb7-97"><a href="#cb7-97" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-98"><a href="#cb7-98" aria-hidden="true" tabindex="-1"></a><span class="in">```markdown </span></span>
+<span id="cb7-99"><a href="#cb7-99" aria-hidden="true" tabindex="-1"></a>Actúa como <span class="co">[</span><span class="ot">ROL O PERFIL QUE NECESITO</span><span class="co">]</span>.</span>
+<span id="cb7-100"><a href="#cb7-100" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-101"><a href="#cb7-101" aria-hidden="true" tabindex="-1"></a>Tu objetivo es <span class="co">[</span><span class="ot">TAREA PRINCIPAL QUE QUIERO LOGRAR</span><span class="co">]</span>.</span>
+<span id="cb7-102"><a href="#cb7-102" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-103"><a href="#cb7-103" aria-hidden="true" tabindex="-1"></a>Contexto:</span>
+<span id="cb7-104"><a href="#cb7-104" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Curso y nivel: <span class="co">[</span><span class="ot">CURSO, NIVEL</span><span class="co">]</span>.</span>
+<span id="cb7-105"><a href="#cb7-105" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Asignatura y contenido: <span class="co">[</span><span class="ot">ASIGNATURA, CONTENIDO</span><span class="co">]</span>.</span>
+<span id="cb7-106"><a href="#cb7-106" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Tipo de establecimiento y características del grupo: <span class="co">[</span><span class="ot">BREVE DESCRIPCIÓN</span><span class="co">]</span>.</span>
+<span id="cb7-107"><a href="#cb7-107" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-108"><a href="#cb7-108" aria-hidden="true" tabindex="-1"></a>Instrucciones:</span>
+<span id="cb7-109"><a href="#cb7-109" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">PRIMERA INSTRUCCIÓN ESPECÍFICA</span><span class="co">]</span>.</span>
+<span id="cb7-110"><a href="#cb7-110" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">SEGUNDA INSTRUCCIÓN ESPECÍFICA</span><span class="co">]</span>.</span>
+<span id="cb7-111"><a href="#cb7-111" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">TERCERA INSTRUCCIÓN ESPECÍFICA</span><span class="co">]</span>.</span>
+<span id="cb7-112"><a href="#cb7-112" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-113"><a href="#cb7-113" aria-hidden="true" tabindex="-1"></a>Formato de salida:</span>
+<span id="cb7-114"><a href="#cb7-114" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">TIPO DE FORMATO: TABLA, LISTA, TEXTO BREVE, ETC.</span><span class="co">]</span>.</span>
+<span id="cb7-115"><a href="#cb7-115" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-116"><a href="#cb7-116" aria-hidden="true" tabindex="-1"></a>Criterios y restricciones:</span>
+<span id="cb7-117"><a href="#cb7-117" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">TONO, LENGUAJE, EXTENSIÓN, RECURSOS DISPONIBLES</span><span class="co">]</span>.</span>
+<span id="cb7-118"><a href="#cb7-118" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">RESGUARDOS ÉTICOS Y PEDAGÓGICOS</span><span class="co">]</span>.</span>
+<span id="cb7-119"><a href="#cb7-119" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-120"><a href="#cb7-120" aria-hidden="true" tabindex="-1"></a>Antes de responder, si falta información importante, hazme hasta 3 preguntas breves para aclarar el contexto.</span>
+<span id="cb7-121"><a href="#cb7-121" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb7-122"><a href="#cb7-122" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-123"><a href="#cb7-123" aria-hidden="true" tabindex="-1"></a><span class="fu">### Diseñador de prompts pedagógicos para docentes</span></span>
+<span id="cb7-124"><a href="#cb7-124" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-125"><a href="#cb7-125" aria-hidden="true" tabindex="-1"></a><span class="in">```markdown </span></span>
+<span id="cb7-126"><a href="#cb7-126" aria-hidden="true" tabindex="-1"></a>Actúa como especialista en educación y en prompt engineering para docentes.</span>
+<span id="cb7-127"><a href="#cb7-127" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-128"><a href="#cb7-128" aria-hidden="true" tabindex="-1"></a>Tu tarea es ayudarme a DISEÑAR un prompt claro y efectivo que luego pueda usar con otra IA.</span>
+<span id="cb7-129"><a href="#cb7-129" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-130"><a href="#cb7-130" aria-hidden="true" tabindex="-1"></a>Contexto:</span>
+<span id="cb7-131"><a href="#cb7-131" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Objetivo general del prompt que necesito: <span class="co">[</span><span class="ot">por ejemplo, “planificar una unidad de Historia para 8º básico sobre dictadura y memoria”</span><span class="co">]</span>.</span>
+<span id="cb7-132"><a href="#cb7-132" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Tipo de producto que quiero obtener con ese futuro prompt: <span class="co">[</span><span class="ot">por ejemplo, “una tabla con clases, objetivos, actividades y evaluaciones”</span><span class="co">]</span>.</span>
+<span id="cb7-133"><a href="#cb7-133" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Público destinatario de los resultados: <span class="co">[</span><span class="ot">por ejemplo, “docentes de escuela pública con alta carga laboral”</span><span class="co">]</span>.</span>
+<span id="cb7-134"><a href="#cb7-134" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-135"><a href="#cb7-135" aria-hidden="true" tabindex="-1"></a>Instrucciones:</span>
+<span id="cb7-136"><a href="#cb7-136" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Formula un único prompt completo y bien redactado que yo pueda copiar y usar tal cual.</span>
+<span id="cb7-137"><a href="#cb7-137" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Asegúrate de que el prompt incluya: rol de la IA, objetivo, contexto pedagógico, formato de salida, criterios y restricciones.</span>
+<span id="cb7-138"><a href="#cb7-138" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Al final, sugiere brevemente cómo podría ajustar ese prompt (por ejemplo, para otros niveles o asignaturas).</span>
+<span id="cb7-139"><a href="#cb7-139" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-140"><a href="#cb7-140" aria-hidden="true" tabindex="-1"></a>Formato de salida:</span>
+<span id="cb7-141"><a href="#cb7-141" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Primero, escribe el prompt final entre comillas.</span>
+<span id="cb7-142"><a href="#cb7-142" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Luego, en 3–4 viñetas, entrega sugerencias de ajustes posibles.</span>
+<span id="cb7-143"><a href="#cb7-143" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-144"><a href="#cb7-144" aria-hidden="true" tabindex="-1"></a>No expliques qué es un prompt ni teorices: concéntrate en darme un buen prompt listo para usar.</span>
+<span id="cb7-145"><a href="#cb7-145" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb7-146"><a href="#cb7-146" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-147"><a href="#cb7-147" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-148"><a href="#cb7-148" aria-hidden="true" tabindex="-1"></a><span class="fu">## Errores frecuentes al usar IA y cómo corregirlos</span></span>
+<span id="cb7-149"><a href="#cb7-149" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-150"><a href="#cb7-150" aria-hidden="true" tabindex="-1"></a>En esta sección se presentan errores típicos al redactar *prompts* y maneras simples de mejorarlos desde la práctica docente.</span>
+<span id="cb7-151"><a href="#cb7-151" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-152"><a href="#cb7-152" aria-hidden="true" tabindex="-1"></a><span class="fu">###  Pedir “de todo un poco” en una sola instrucción</span></span>
+<span id="cb7-153"><a href="#cb7-153" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-154"><a href="#cb7-154" aria-hidden="true" tabindex="-1"></a>**Ejemplo de error**</span>
+<span id="cb7-155"><a href="#cb7-155" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-156"><a href="#cb7-156" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; Hazme una planificación completa de matemáticas para todo el año de 7º básico.</span></span>
+<span id="cb7-157"><a href="#cb7-157" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-158"><a href="#cb7-158" aria-hidden="true" tabindex="-1"></a>**Problema:** la tarea es demasiado amplia; la respuesta será superficial y poco aplicable.</span>
+<span id="cb7-159"><a href="#cb7-159" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-160"><a href="#cb7-160" aria-hidden="true" tabindex="-1"></a>**Mejor alternativa**</span>
+<span id="cb7-161"><a href="#cb7-161" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-162"><a href="#cb7-162" aria-hidden="true" tabindex="-1"></a><span class="in">```markdown </span></span>
+<span id="cb7-163"><a href="#cb7-163" aria-hidden="true" tabindex="-1"></a>Actúa como profesora de Matemática de 7º básico en una escuela pública urbana.</span>
+<span id="cb7-164"><a href="#cb7-164" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-165"><a href="#cb7-165" aria-hidden="true" tabindex="-1"></a>Tu objetivo es proponer una planificación sintética para UNA unidad didáctica sobre proporcionalidad.</span>
+<span id="cb7-166"><a href="#cb7-166" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-167"><a href="#cb7-167" aria-hidden="true" tabindex="-1"></a>Contexto:</span>
+<span id="cb7-168"><a href="#cb7-168" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Curso: 7º básico, 38 estudiantes, niveles de logro muy diversos.</span>
+<span id="cb7-169"><a href="#cb7-169" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Asignatura: Matemática.</span>
+<span id="cb7-170"><a href="#cb7-170" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Marco de referencia: Bases curriculares chilenas.</span>
+<span id="cb7-171"><a href="#cb7-171" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-172"><a href="#cb7-172" aria-hidden="true" tabindex="-1"></a>Instrucciones:</span>
+<span id="cb7-173"><a href="#cb7-173" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Propón una secuencia de 4 a 6 clases.</span>
+<span id="cb7-174"><a href="#cb7-174" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Para cada clase, indica objetivo, actividad principal y posible instrumento de evaluación.</span>
+<span id="cb7-175"><a href="#cb7-175" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Ten en cuenta que hay acceso limitado a computadores en el aula.</span>
+<span id="cb7-176"><a href="#cb7-176" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-177"><a href="#cb7-177" aria-hidden="true" tabindex="-1"></a>Formato de salida:</span>
+<span id="cb7-178"><a href="#cb7-178" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Tabla con columnas: Clase – Objetivo – Actividad principal – Evaluación sugerida.</span>
+<span id="cb7-179"><a href="#cb7-179" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-180"><a href="#cb7-180" aria-hidden="true" tabindex="-1"></a>Criterios:</span>
+<span id="cb7-181"><a href="#cb7-181" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Usa lenguaje claro y breve.</span>
+<span id="cb7-182"><a href="#cb7-182" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>No des actividades que requieran conexión permanente a internet.</span>
+<span id="cb7-183"><a href="#cb7-183" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb7-184"><a href="#cb7-184" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-185"><a href="#cb7-185" aria-hidden="true" tabindex="-1"></a><span class="in">### Falta de contexto sobre el curso y el establecimiento</span></span>
+<span id="cb7-186"><a href="#cb7-186" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-187"><a href="#cb7-187" aria-hidden="true" tabindex="-1"></a><span class="in">**Ejemplo de error**</span></span>
+<span id="cb7-188"><a href="#cb7-188" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-189"><a href="#cb7-189" aria-hidden="true" tabindex="-1"></a><span class="in">&gt; Dame ideas de actividades para lenguaje.</span></span>
+<span id="cb7-190"><a href="#cb7-190" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-191"><a href="#cb7-191" aria-hidden="true" tabindex="-1"></a><span class="in">**Problema:** la IA no sabe si es 2º básico o 4º medio, ni el tipo de establecimiento.</span></span>
+<span id="cb7-192"><a href="#cb7-192" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-193"><a href="#cb7-193" aria-hidden="true" tabindex="-1"></a><span class="in">**Mejor alternativa**</span></span>
+<span id="cb7-194"><a href="#cb7-194" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-195"><a href="#cb7-195" aria-hidden="true" tabindex="-1"></a><span class="in">```markdown </span></span>
+<span id="cb7-196"><a href="#cb7-196" aria-hidden="true" tabindex="-1"></a><span class="in">Actúa como profesora de Lengua y Literatura de 2º medio.</span></span>
+<span id="cb7-197"><a href="#cb7-197" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-198"><a href="#cb7-198" aria-hidden="true" tabindex="-1"></a><span class="in">Tu objetivo es proponer tres actividades de comprensión lectora para trabajar un cuento latinoamericano breve.</span></span>
+<span id="cb7-199"><a href="#cb7-199" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-200"><a href="#cb7-200" aria-hidden="true" tabindex="-1"></a><span class="in">Contexto:</span></span>
+<span id="cb7-201"><a href="#cb7-201" aria-hidden="true" tabindex="-1"></a><span class="in">- Liceo público científico-humanista, cursos numerosos (45 estudiantes).</span></span>
+<span id="cb7-202"><a href="#cb7-202" aria-hidden="true" tabindex="-1"></a><span class="in">- Hay estudiantes con diferentes niveles de lectura y al menos dos con NEE permanentes.</span></span>
+<span id="cb7-203"><a href="#cb7-203" aria-hidden="true" tabindex="-1"></a><span class="in">- Tiempo disponible: una hora pedagógica por actividad.</span></span>
+<span id="cb7-204"><a href="#cb7-204" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-205"><a href="#cb7-205" aria-hidden="true" tabindex="-1"></a><span class="in">Formato de salida:</span></span>
+<span id="cb7-206"><a href="#cb7-206" aria-hidden="true" tabindex="-1"></a><span class="in">- Lista numerada con 3 actividades.</span></span>
+<span id="cb7-207"><a href="#cb7-207" aria-hidden="true" tabindex="-1"></a><span class="in">- Para cada actividad incluye: propósito, descripción breve, tiempo estimado y posibles ajustes para estudiantes con NEE.</span></span>
+<span id="cb7-208"><a href="#cb7-208" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-209"><a href="#cb7-209" aria-hidden="true" tabindex="-1"></a><span class="in">Criterios:</span></span>
+<span id="cb7-210"><a href="#cb7-210" aria-hidden="true" tabindex="-1"></a><span class="in">- Usa materiales que se puedan fotocopiar o proyectar.</span></span>
+<span id="cb7-211"><a href="#cb7-211" aria-hidden="true" tabindex="-1"></a><span class="in">- No requieras acceso individual a computadores.</span></span>
+<span id="cb7-212"><a href="#cb7-212" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb7-213"><a href="#cb7-213" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-214"><a href="#cb7-214" aria-hidden="true" tabindex="-1"></a><span class="fu">### Delegar decisiones pedagógicas clave a la IA</span></span>
+<span id="cb7-215"><a href="#cb7-215" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-216"><a href="#cb7-216" aria-hidden="true" tabindex="-1"></a>**Ejemplo de error**</span>
+<span id="cb7-217"><a href="#cb7-217" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-218"><a href="#cb7-218" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; Decide tú qué contenidos son más importantes para enseñar en Historia de Chile en 8º básico.</span></span>
+<span id="cb7-219"><a href="#cb7-219" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-220"><a href="#cb7-220" aria-hidden="true" tabindex="-1"></a>**Problema:** la selección de contenidos es una decisión curricular y pedagógica que corresponde al equipo docente y a las bases curriculares, no a la IA.</span>
+<span id="cb7-221"><a href="#cb7-221" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-222"><a href="#cb7-222" aria-hidden="true" tabindex="-1"></a>**Mejor alternativa**</span>
+<span id="cb7-223"><a href="#cb7-223" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-224"><a href="#cb7-224" aria-hidden="true" tabindex="-1"></a><span class="in">```markdown </span></span>
+<span id="cb7-225"><a href="#cb7-225" aria-hidden="true" tabindex="-1"></a>Actúa como asesor pedagógico.</span>
+<span id="cb7-226"><a href="#cb7-226" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-227"><a href="#cb7-227" aria-hidden="true" tabindex="-1"></a>Tu objetivo es ayudarme a organizar una secuencia de actividades para trabajar los contenidos de Historia de Chile de 8º básico ya definidos en las bases curriculares.</span>
+<span id="cb7-228"><a href="#cb7-228" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-229"><a href="#cb7-229" aria-hidden="true" tabindex="-1"></a>Contexto:</span>
+<span id="cb7-230"><a href="#cb7-230" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Escuela básica pública.</span>
+<span id="cb7-231"><a href="#cb7-231" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Contenidos a abordar: <span class="co">[</span><span class="ot">PEGAR LISTA DE CONTENIDOS SELECCIONADOS POR EL DOCENTE</span><span class="co">]</span>.</span>
+<span id="cb7-232"><a href="#cb7-232" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-233"><a href="#cb7-233" aria-hidden="true" tabindex="-1"></a>Instrucciones:</span>
+<span id="cb7-234"><a href="#cb7-234" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Sugiere una posible secuencia de actividades para abordar estos contenidos en 6 a 8 clases.</span>
+<span id="cb7-235"><a href="#cb7-235" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>No agregues contenidos nuevos; solo organiza y relaciona los que entrego.</span>
+<span id="cb7-236"><a href="#cb7-236" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-237"><a href="#cb7-237" aria-hidden="true" tabindex="-1"></a>Formato de salida:</span>
+<span id="cb7-238"><a href="#cb7-238" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Lista numerada de clases con una breve descripción de la actividad principal.</span>
+<span id="cb7-239"><a href="#cb7-239" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-240"><a href="#cb7-240" aria-hidden="true" tabindex="-1"></a>Criterios:</span>
+<span id="cb7-241"><a href="#cb7-241" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Considera que el curso cuenta con recursos limitados (pizarra, cuaderno, proyector ocasional).</span>
+<span id="cb7-242"><a href="#cb7-242" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb7-243"><a href="#cb7-243" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-244"><a href="#cb7-244" aria-hidden="true" tabindex="-1"></a><span class="in">### Incluir información sensible de estudiantes o colegas</span></span>
+<span id="cb7-245"><a href="#cb7-245" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-246"><a href="#cb7-246" aria-hidden="true" tabindex="-1"></a><span class="in">**Ejemplo de error**</span></span>
+<span id="cb7-247"><a href="#cb7-247" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-248"><a href="#cb7-248" aria-hidden="true" tabindex="-1"></a><span class="in">&gt; Te copio los nombres y diagnósticos de mis estudiantes para que me digas cómo trabajar con cada uno.</span></span>
+<span id="cb7-249"><a href="#cb7-249" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-250"><a href="#cb7-250" aria-hidden="true" tabindex="-1"></a><span class="in">**Problema:** vulnera la confidencialidad y privacidad de estudiantes.</span></span>
+<span id="cb7-251"><a href="#cb7-251" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-252"><a href="#cb7-252" aria-hidden="true" tabindex="-1"></a><span class="in">**Mejor alternativa (enfoque anónimo y general)**</span></span>
+<span id="cb7-253"><a href="#cb7-253" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-254"><a href="#cb7-254" aria-hidden="true" tabindex="-1"></a><span class="in">```markdown </span></span>
+<span id="cb7-255"><a href="#cb7-255" aria-hidden="true" tabindex="-1"></a><span class="in">Actúa como especialista en educación inclusiva.</span></span>
+<span id="cb7-256"><a href="#cb7-256" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-257"><a href="#cb7-257" aria-hidden="true" tabindex="-1"></a><span class="in">Tu objetivo es sugerir adaptaciones generales para un curso diverso de 6º básico.</span></span>
+<span id="cb7-258"><a href="#cb7-258" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-259"><a href="#cb7-259" aria-hidden="true" tabindex="-1"></a><span class="in">Contexto:</span></span>
+<span id="cb7-260"><a href="#cb7-260" aria-hidden="true" tabindex="-1"></a><span class="in">- Escuela pública con programa de integración escolar (PIE).</span></span>
+<span id="cb7-261"><a href="#cb7-261" aria-hidden="true" tabindex="-1"></a><span class="in">- En el curso hay estudiantes con dificultades específicas de aprendizaje, TDAH y discapacidad intelectual leve.</span></span>
+<span id="cb7-262"><a href="#cb7-262" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-263"><a href="#cb7-263" aria-hidden="true" tabindex="-1"></a><span class="in">Instrucciones:</span></span>
+<span id="cb7-264"><a href="#cb7-264" aria-hidden="true" tabindex="-1"></a><span class="in">- Propón 5 estrategias generales de adaptación de materiales y actividades para favorecer la participación de todo el curso.</span></span>
+<span id="cb7-265"><a href="#cb7-265" aria-hidden="true" tabindex="-1"></a><span class="in">- No necesitas nombres ni datos personales de estudiantes.</span></span>
+<span id="cb7-266"><a href="#cb7-266" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-267"><a href="#cb7-267" aria-hidden="true" tabindex="-1"></a><span class="in">Formato:</span></span>
+<span id="cb7-268"><a href="#cb7-268" aria-hidden="true" tabindex="-1"></a><span class="in">- Lista con 5 estrategias, cada una explicada en 3 o 4 líneas.</span></span>
+<span id="cb7-269"><a href="#cb7-269" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-270"><a href="#cb7-270" aria-hidden="true" tabindex="-1"></a><span class="in">Criterios:</span></span>
+<span id="cb7-271"><a href="#cb7-271" aria-hidden="true" tabindex="-1"></a><span class="in">- Considera un enfoque de diseño universal para el aprendizaje (DUA).</span></span>
+<span id="cb7-272"><a href="#cb7-272" aria-hidden="true" tabindex="-1"></a><span class="in">- Evita lenguaje técnico innecesario.</span></span>
+<span id="cb7-273"><a href="#cb7-273" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+</div></div></div></div></div>
+</div> <!-- /content -->
+
+
+
+
+<script src="site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>

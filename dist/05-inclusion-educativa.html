@@ -1,0 +1,2066 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.24">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>6&nbsp; IA e inclusión educativa – IA al servicio pedagógico</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./06-riesgos-etica.html" rel="next">
+<link href="./04-evaluacion-retroalimentacion.html" rel="prev">
+<link href="./assets/favicon-2025-20251031.svg" rel="icon" type="image/svg+xml">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-b33f1839d1ae7e37d8eaf9c424345f9b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No se han encontrado resultados",
+    "search-matching-documents-text": "documentos encontrados",
+    "search-copy-link-title": "Copiar el enlace en la búsqueda",
+    "search-hide-matches-text": "Ocultar resultados adicionales",
+    "search-more-match-text": "resultado adicional en este documento",
+    "search-more-matches-text": "resultados adicionales en este documento",
+    "search-clear-button-title": "Borrar",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Enviar",
+    "search-label": "Buscar"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+<style>
+#quarto-document-content p,
+.page-columns .content p,
+.page-columns p,
+.quarto-article p,
+main.content p,
+p {
+  text-align: justify !important;
+  text-justify: inter-word;
+}
+</style>
+<!-- Estilos embebidos para refinar la tipografia y el acabado del panel lateral -->
+<style>
+  #quarto-sidebar {
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(240, 245, 252, 0.88)),
+      url("assets/nav.bar.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-right: none;
+    box-shadow: 4px 0 20px -15px rgba(15, 31, 53, 0.45);
+    padding-inline: 1.35rem;
+    font-family: "Inter", "Source Sans Pro", "Segoe UI", system-ui, -apple-system, sans-serif;
+    scrollbar-color: rgba(0, 47, 108, 0.2) transparent; /* Barra mas suave en Firefox */
+    scrollbar-width: thin;
+  }
+
+  /* Oculta la barra vertical solo cuando queremos que no se muestre */
+  #quarto-sidebar.no-scrollbar {
+    scrollbar-width: none;      /* Firefox */
+    -ms-overflow-style: none;   /* IE/Edge heredado */
+  }
+
+  #quarto-sidebar.no-scrollbar::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+  }
+
+  /* Estilo claro del scrollbar cuando se muestra */
+  #quarto-sidebar::-webkit-scrollbar {
+    width: 8px;
+    background: transparent;
+  }
+
+  #quarto-sidebar::-webkit-scrollbar-thumb {
+    background: rgba(0, 47, 108, 0.2);
+    border-radius: 999px;
+    border: 2px solid transparent;
+  }
+
+  #quarto-sidebar::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 47, 108, 0.28);
+  }
+
+  #quarto-sidebar .sidebar-header {
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(17, 24, 39, 0.06);
+    margin-bottom: 0.8rem;
+  }
+
+  #quarto-sidebar .sidebar-title a {
+    display: block;
+    font-size: clamp(1.05rem, 1.45vw, 1.3rem) !important;
+    font-weight: 680 !important;
+    line-height: 1.24 !important;
+    letter-spacing: 0.018em !important;
+    color: var(--ink);
+    margin-bottom: 0.2rem;
+    font-family: "Times New Roman", "TeX Gyre Termes", "Libre Baskerville", Georgia, serif;
+  }
+
+  #quarto-sidebar .sidebar-title a:hover {
+    color: var(--facso);
+    text-decoration: none;
+  }
+
+  #quarto-sidebar .sidebar-tools-main {
+    display: flex;
+    gap: 0.15rem;
+    margin-top: 0.45rem;
+  }
+
+  #quarto-sidebar .sidebar-tools-main .quarto-navigation-tool {
+    padding: 0.35rem;
+    border-radius: 50%;
+    background: #f8f6f2;
+    color: #1c2c3a;
+    border: 1px solid rgba(28, 44, 58, 0.2);
+    transition: all 0.2s ease-in-out;
+    font-size: 0.85rem;
+    width: 34px;
+    height: 34px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7);
+  }
+
+  /* Alargar el boton de PDF para dar formato de pastilla */
+  #quarto-sidebar .sidebar-tools-main .quarto-navigation-tool[title*="PDF"],
+  #quarto-sidebar .sidebar-tools-main .quarto-navigation-tool[aria-label*="PDF"] {
+    min-width: 60px;
+    padding: 0.35rem 0.7rem;
+    border-radius: 999px;
+  }
+
+  #quarto-sidebar .sidebar-tools-main .quarto-navigation-tool:hover {
+    background: rgba(28, 44, 58, 0.08);
+    color: var(--facso);
+  }
+
+  #quarto-sidebar .sidebar-search input,
+  #quarto-sidebar .sidebar-search .aa-Input,
+  #quarto-sidebar .sidebar-search .form-control {
+    border-radius: 0.8rem;
+    border: 1px solid rgba(17, 24, 39, 0.12);
+    padding: 0.45rem 0.8rem;
+    font-size: 0.95rem;
+  }
+
+  #quarto-sidebar .sidebar-tools-main .quarto-navigation-tool[data-template-download],
+  #quarto-sidebar .sidebar-tools-main .global-code-toggle {
+    display: none !important;
+  }
+
+  #quarto-sidebar .sidebar-menu-container {
+    margin-top: 0.4rem;
+  }
+
+  #quarto-sidebar .sidebar-menu-container .sidebar-item-text,
+  #quarto-sidebar .sidebar-menu-container .sidebar-link {
+    font-size: 1.08rem !important;
+    font-weight: 450 !important;
+    line-height: 1.35 !important;
+    color: var(--ink) !important;
+    padding: 0.28rem 0;
+    border-left: 2px solid transparent;
+    transition: color 0.18s ease-in-out, border-color 0.18s ease-in-out, background-color 0.18s ease-in-out;
+    font-family: "Times New Roman", "TeX Gyre Termes", "Libre Baskerville", Georgia, serif;
+    letter-spacing: 0.012em;
+    word-spacing: 0.18rem;
+  }
+
+  #quarto-sidebar .sidebar-menu-container .sidebar-item:first-child .sidebar-item-text {
+    font-size: clamp(1.05rem, 1.55vw, 1.25rem) !important;
+    font-family: "Times New Roman", "TeX Gyre Termes", "Libre Baskerville", Georgia, serif;
+    letter-spacing: 0.015em;
+    text-transform: none;
+    color: var(--ink);
+    border-left: none;
+    padding-left: 0;
+    margin-bottom: 0.35rem;
+  }
+
+  #quarto-sidebar .sidebar-menu-container .sidebar-item:first-child .sidebar-item-text::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, rgba(17, 24, 39, 0.2), transparent);
+    margin-top: 0.35rem;
+  }
+
+  #quarto-sidebar .sidebar-menu-container .sidebar-item + .sidebar-item {
+    border-top: none;
+    padding-top: 0.25rem;
+    margin-top: 0.25rem;
+  }
+
+  #quarto-sidebar .sidebar-menu-container .sidebar-item-text:hover,
+  #quarto-sidebar .sidebar-menu-container .sidebar-link:hover,
+  #quarto-sidebar .sidebar-menu-container .sidebar-link:focus {
+    color: var(--facso) !important;
+    border-left-color: var(--facso);
+    background: rgba(0, 47, 108, 0.08);
+    border-radius: 0.3rem;
+  }
+
+  #quarto-sidebar .sidebar-menu-container .sidebar-link.active {
+    color: var(--facso) !important;
+    border-left-color: var(--facso);
+    font-weight: 650 !important;
+  }
+
+  #quarto-sidebar .sidebar-menu-container .menu-text .chapter-number,
+  #quarto-sidebar .sidebar-menu-container .menu-text .chapter-title {
+    font-size: 0.96rem !important;
+  }
+</style>
+
+<script>
+  // Mantener Apendices colapsado desde el inicio (sin parpadeo)
+  document.addEventListener("DOMContentLoaded", () => {
+    const ensureSetup = () => {
+      const sidebar = document.getElementById("quarto-sidebar");
+      const appendixSection = document.getElementById("quarto-sidebar-section-1");
+      if (!sidebar || !appendixSection) {
+        requestAnimationFrame(ensureSetup);
+        return;
+      }
+
+      appendixSection.classList.remove("show");
+      appendixSection.classList.add("collapse");
+      appendixSection.style.removeProperty("display");
+
+      const relatedToggles = document.querySelectorAll(
+        `[data-bs-target="#${appendixSection.id}"]`
+      );
+      relatedToggles.forEach((btn) => btn.setAttribute("aria-expanded", "false"));
+
+      const updateScrollbar = () => {
+        const isOpen = appendixSection.classList.contains("show");
+        sidebar.classList.toggle("no-scrollbar", !isOpen);
+      };
+
+      updateScrollbar();
+
+      appendixSection.addEventListener("shown.bs.collapse", updateScrollbar);
+      appendixSection.addEventListener("hidden.bs.collapse", updateScrollbar);
+    };
+
+    requestAnimationFrame(ensureSetup);
+  });
+</script>
+<style>
+  body.index-meta #title-block-header .quarto-title-meta,
+  body.index-meta #title-block-header .quarto-title-meta-author {
+    margin-top: 1rem;
+    padding: 0.85rem 1rem;
+    background: rgba(252, 252, 252, 0.95);
+    border: 1px solid rgba(17, 24, 39, 0.05);
+    border-radius: 0.6rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 0.65rem;
+    box-shadow: 0 6px 16px -16px rgba(15, 31, 53, 0.45);
+    font-family: "Playfair Display", "Libre Baskerville", "TeX Gyre Termes", "Noto Serif", Georgia, serif;
+  }
+
+  body.index-meta #title-block-header .quarto-title-meta .quarto-title-meta-item,
+  body.index-meta #title-block-header .quarto-title-meta-author > div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    padding-right: 0.35rem;
+    padding-left: 0.35rem;
+    border-left: none;
+    border-top: 1px solid rgba(0, 47, 108, 0.08);
+  }
+
+  body.index-meta #title-block-header .quarto-title-meta .quarto-title-meta-item:first-child,
+  body.index-meta #title-block-header .quarto-title-meta-author > div:first-child {
+    border-top: none;
+    padding-top: 0;
+  }
+
+  @media (min-width: 720px) {
+    body.index-meta #title-block-header .quarto-title-meta .quarto-title-meta-item,
+    body.index-meta #title-block-header .quarto-title-meta-author > div {
+      border-top: none;
+      border-left: 1px solid rgba(0, 47, 108, 0.07);
+    }
+
+    body.index-meta #title-block-header .quarto-title-meta .quarto-title-meta-item:first-child,
+    body.index-meta #title-block-header .quarto-title-meta-author > div:first-child {
+      border-left: none;
+      padding-left: 0;
+    }
+  }
+
+  body.index-meta #title-block-header .quarto-title-meta-heading,
+  body.index-meta #title-block-header .quarto-title-meta-author .quarto-title-meta-heading {
+    font-size: 0.68rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: rgba(17, 24, 39, 0.55);
+    font-weight: 600;
+  }
+
+  body.index-meta #title-block-header .quarto-title-meta-contents,
+  body.index-meta #title-block-header .quarto-title-meta-contents p,
+  body.index-meta #title-block-header .quarto-title-meta-contents span {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--ink);
+  }
+
+  body.index-meta #title-block-header .quarto-title-meta-contents strong {
+    font-weight: 600;
+    color: var(--ink);
+  }
+</style>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const path = window.location.pathname || "";
+    if (
+      path.endsWith("/") ||
+      path.endsWith("index.html") ||
+      path.endsWith("docs") ||
+      path.endsWith("docs/")
+    ) {
+      document.body.classList.add("index-meta");
+    }
+  });
+</script>
+<style>
+body,
+body p,
+body span,
+body li,
+body a,
+body table,
+body td,
+body th,
+body blockquote,
+body .table,
+body .cell,
+body label {
+    font-family: "Times New Roman", "TeX Gyre Termes", "Libre Baskerville", "Noto Serif", Georgia, serif !important;
+  }
+
+  .global-code-toggle {
+    display: none !important;
+  }
+</style>
+
+
+<link rel="stylesheet" href="assets/styles-playfair.scss">
+</head>
+
+<body class="nav-sidebar docked quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./05-inclusion-educativa.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">IA e inclusión educativa</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Buscar" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="./index.html" class="sidebar-logo-link">
+      <img src="./assets/cover.png" alt="" class="sidebar-logo light-content py-0 d-lg-inline d-none">
+      <img src="./assets/cover.png" alt="" class="sidebar-logo dark-content py-0 d-lg-inline d-none">
+      </a>
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">IA al servicio pedagógico</a> 
+        <div class="sidebar-tools-main">
+    <a href="https://github.com/KAravena/Taller-IA-Docentes-MEGM-2026" title="Ejecutar el código" class="quarto-navigation-tool px-1" aria-label="Ejecutar el código"><i class="bi bi-github"></i></a>
+    <a href="./reportes-facso-plantilla.pdf" title="Descargar PDF" class="quarto-navigation-tool px-1" aria-label="Descargar PDF"><i class="bi bi-file-pdf"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Buscar"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Presentación</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-que-es-ia.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">¿Qué es la IA y cómo funciona?</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-prompts-docentes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Cómo conversar con la IA: claves de prompt engineering docente</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-herramientas-trabajo-docente.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Herramientas prácticas para el trabajo docente</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-evaluacion-retroalimentacion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Usos concretos para evaluación y retroalimentación</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-inclusion-educativa.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">IA e inclusión educativa</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06-riesgos-etica.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Riesgos, límites y criterios éticos</span></span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Tabla de contenidos</h2>
+   
+  <ul>
+  <li><a href="#ajuste-de-lenguaje-formato-y-extensión-de-materiales" id="toc-ajuste-de-lenguaje-formato-y-extensión-de-materiales" class="nav-link active" data-scroll-target="#ajuste-de-lenguaje-formato-y-extensión-de-materiales"><span class="header-section-number">6.1</span> Ajuste de lenguaje, formato y extensión de materiales</a></li>
+  <li><a href="#ejemplos-de-adaptaciones-para-distintas-trayectorias-y-necesidades" id="toc-ejemplos-de-adaptaciones-para-distintas-trayectorias-y-necesidades" class="nav-link" data-scroll-target="#ejemplos-de-adaptaciones-para-distintas-trayectorias-y-necesidades"><span class="header-section-number">6.2</span> Ejemplos de adaptaciones para distintas trayectorias y necesidades</a></li>
+  <li><a href="#posibilidades-y-límites-en-contextos-de-integración-y-educación-especial" id="toc-posibilidades-y-límites-en-contextos-de-integración-y-educación-especial" class="nav-link" data-scroll-target="#posibilidades-y-límites-en-contextos-de-integración-y-educación-especial"><span class="header-section-number">6.3</span> Posibilidades y límites en contextos de integración y educación especial</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<div class="quarto-title-block"><div><h1 class="title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">IA e inclusión educativa</span></h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Código</button></div></div>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="ajuste-de-lenguaje-formato-y-extensión-de-materiales" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="ajuste-de-lenguaje-formato-y-extensión-de-materiales"><span class="header-section-number">6.1</span> Ajuste de lenguaje, formato y extensión de materiales</h2>
+<p>En muchos cursos, el primer obstáculo para la participación de las y los estudiantes es el <strong>lenguaje y el formato</strong> de los materiales: textos muy largos, vocabulario técnico, consignas confusas o poco accesibles. La IA puede apoyar como asistente de edición, ayudando a simplificar, acortar, ampliar o reestructurar materiales sin cambiar el contenido central definido por el equipo pedagógico.</p>
+<p>Usada de forma crítica, la IA permite generar <strong>versiones paralelas</strong> de un mismo recurso (más breve, más explicada, más visual, etc.), de modo que el profesorado pueda elegir cuál se ajusta mejor a las características de su curso, o bien ofrecer varias alternativas dentro de la misma clase.</p>
+<p><strong>Usos posibles:</strong></p>
+<ul>
+<li>Simplificar el vocabulario de un texto, manteniendo las ideas principales.</li>
+<li>Reducir la extensión de un documento largo a una versión “para estudiantes” o “para las familias”.</li>
+<li>Reescribir consignas de actividades para que sean más claras y explícitas.</li>
+<li>Cambiar el formato de presentación (párrafos → viñetas, cuadro comparativo, glosario, etc.).</li>
+<li>Generar versiones con apoyos adicionales: ejemplos, definiciones breves, recordatorios de conceptos clave.</li>
+</ul>
+<p><strong>Ejemplo de prompt para ajustar lenguaje, formato y extensión de un material:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>Actúa como profesor/a de <span class="co">[</span><span class="ot">ASIGNATURA</span><span class="co">]</span> con experiencia en educación inclusiva en escuelas públicas chilenas.</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>Tu objetivo es ayudarme a adaptar el siguiente texto para que sea más accesible a estudiantes de <span class="co">[</span><span class="ot">NIVEL</span><span class="co">]</span> en el marco de las Bases Curriculares.</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>Contexto:</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Curso diverso en niveles de lectura, con presencia de estudiantes del PIE.</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>El texto original es una explicación sobre <span class="co">[</span><span class="ot">TEMA</span><span class="co">]</span> pensada para adultos.</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Lo necesito para trabajarlo en una clase de <span class="co">[</span><span class="ot">N°</span><span class="co">]</span> minutos.</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>Instrucciones:</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Genera una primera versión del texto:</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="ss">   - </span>Con lenguaje más sencillo, sin perder las ideas principales.</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="ss">   - </span>De extensión máxima de <span class="co">[</span><span class="ot">N°</span><span class="co">]</span> palabras.</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="ss">   - </span>Organizada en párrafos breves y con viñetas cuando sea útil.</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Genera una segunda versión:</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="ss">   - </span>En formato de “ficha de estudio” con:</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="ss">     - </span>Definiciones clave.</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="ss">     - </span>Ejemplos cotidianos.</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="ss">     - </span>3 preguntas de autoevaluación para estudiantes.</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Si consideras que falta algún concepto básico para que se entienda el texto, indícalo al final en 3–4 líneas, sin agregarlo dentro del texto principal.</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>Formato de salida:</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Título: “Versión simplificada para <span class="co">[</span><span class="ot">NIVEL</span><span class="co">]</span>”.</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Luego, la ficha de estudio bajo el título “Ficha de apoyo”.</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>Criterios y restricciones:</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>No cambies el contenido disciplinar central; solo ajusta lenguaje, formato y extensión.</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>No incluyas imágenes ni recursos que requieran conexión a internet.</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Usa ejemplos cercanos a la realidad de estudiantes en escuelas chilenas.</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<hr>
+</section>
+<section id="ejemplos-de-adaptaciones-para-distintas-trayectorias-y-necesidades" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="ejemplos-de-adaptaciones-para-distintas-trayectorias-y-necesidades"><span class="header-section-number">6.2</span> Ejemplos de adaptaciones para distintas trayectorias y necesidades</h2>
+<p>En un mismo curso conviven estudiantes con trayectorias muy diversas: quienes han cambiado de escuela con frecuencia, quienes participan en programas de integración escolar, quienes tienen responsabilidades de cuidado en sus hogares, quienes se están incorporando recientemente al sistema escolar chileno, entre muchas otras realidades. La IA puede ayudar a pensar <strong>variantes de actividades y materiales</strong> que dialoguen con esta diversidad, siempre bajo el criterio profesional docente y resguardando la confidencialidad de información sensible.</p>
+<p>El propósito no es etiquetar estudiantes (“los buenos”, “los malos”, “los que saben, los que no”), sino contar con un abanico de opciones que permita ajustar apoyos y desafíos sin perder de vista el currículum común ni la pertenencia al grupo curso.</p>
+<p><strong>Usos posibles:</strong></p>
+<ul>
+<li>Proponer actividades alternativas para estudiantes con ausencias prolongadas o reincorporaciones tardías.</li>
+<li>Sugerir apoyos adicionales para quienes se están adaptando al idioma o al sistema escolar chileno.</li>
+<li>Ajustar tareas para estudiantes que viven situaciones de cuidado, trabajo u otras responsabilidades.</li>
+<li>Diseñar actividades que se puedan realizar tanto en el aula como en el hogar, según la realidad de cada estudiante.</li>
+<li>Generar ejemplos y contextos cercanos a distintas realidades territoriales y culturales.</li>
+</ul>
+<p><strong>Ejemplo de prompt para generar adaptaciones según trayectorias diversas:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>Actúa como especialista en educación inclusiva y en diseño universal para el aprendizaje en contexto escolar chileno.</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>Tu objetivo es proponer adaptaciones de una actividad de <span class="co">[</span><span class="ot">ASIGNATURA</span><span class="co">]</span> sobre <span class="co">[</span><span class="ot">TEMA</span><span class="co">]</span> para estudiantes con trayectorias y necesidades diversas, manteniendo el mismo objetivo de aprendizaje.</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>Contexto:</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Curso: <span class="co">[</span><span class="ot">NIVEL, por ejemplo “8º básico”</span><span class="co">]</span> en escuela <span class="co">[</span><span class="ot">pública/subvencionada/particular</span><span class="co">]</span>.</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>En el grupo hay:</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>Estudiantes que han tenido ausencias prolongadas.</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>Estudiantes recién incorporados al sistema escolar chileno.</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>Estudiantes que participan en el PIE.</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Recursos disponibles: <span class="co">[</span><span class="ot">pizarra, cuadernos, proyector, impresora, etc.</span><span class="co">]</span>.</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>Actividad original:</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">PEGAR AQUÍ LA DESCRIPCIÓN DE LA ACTIVIDAD DE CLASE QUE YA DISEÑÓ EL/LA DOCENTE</span><span class="co">]</span>.</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>Instrucciones:</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Propón al menos 3 adaptaciones posibles de la actividad original:</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="ss">   - </span>Adaptación A: pensada para estudiantes con ausencias prolongadas.</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="ss">   - </span>Adaptación B: pensada para estudiantes recién incorporados al sistema escolar chileno.</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a><span class="ss">   - </span>Adaptación C: pensada para estudiantes que requieren mayor apoyo estructurado (por ejemplo, del PIE).</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Para cada adaptación, indica:</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a><span class="ss">   - </span>Propósito.</span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a><span class="ss">   - </span>Pasos principales de la actividad.</span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a><span class="ss">   - </span>Tipo de apoyo que se ofrece (andamiajes, ejemplos, materiales de apoyo, etc.).</span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a><span class="ss">   - </span>Cómo se vincula explícitamente con el mismo objetivo de aprendizaje de la actividad original.</span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>Formato de salida:</span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Subtítulos: “Adaptación A”, “Adaptación B” y “Adaptación C”.</span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Bajo cada subtítulo, un párrafo de 8–10 líneas describiendo la propuesta.</span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>Criterios y restricciones:</span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>No cambies el objetivo de aprendizaje; solo ajusta la forma de abordarlo.</span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>No incluyas datos personales ni ejemplos que permitan identificar estudiantes específicos.</span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Usa lenguaje claro y respetuoso, evitando etiquetas como “buenos/malos alumnos”.</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<hr>
+</section>
+<section id="posibilidades-y-límites-en-contextos-de-integración-y-educación-especial" class="level2" data-number="6.3">
+<h2 data-number="6.3" class="anchored" data-anchor-id="posibilidades-y-límites-en-contextos-de-integración-y-educación-especial"><span class="header-section-number">6.3</span> Posibilidades y límites en contextos de integración y educación especial</h2>
+<p>En contextos de integración y educación especial, la IA abre oportunidades relevantes: permite generar materiales con distintos niveles de apoyo, crear ejemplos personalizados, proponer formatos alternativos (audio, viñetas, esquemas), entre otros. Sin embargo, también existen límites importantes: la IA no conoce a las y los estudiantes, no reemplaza la evaluación diagnóstica ni las decisiones del equipo PIE, y puede reproducir sesgos o proponer estrategias poco adecuadas si no se la orienta bien.</p>
+<p>Por eso es clave usar estas herramientas como <strong>soporte para el trabajo del equipo educativo</strong>, nunca como sustituto de la observación profesional, de los acuerdos con las familias o de los planes individualizados (PII, adecuaciones curriculares, etc.).</p>
+<p><strong>Usos posibles:</strong></p>
+<ul>
+<li>Sugerir ideas de adaptaciones curriculares no significativas, que luego el equipo revisa y valida.</li>
+<li>Generar materiales de apoyo complementarios (glosarios, tarjetas visuales, pasos de una rutina, etc.).</li>
+<li>Proponer formas alternativas de demostrar aprendizaje (productos orales, visuales, manipulativos).</li>
+<li>Sistematizar acuerdos del equipo PIE en un lenguaje claro para compartir con el resto del profesorado.</li>
+<li>Redactar borradores de orientaciones generales para familias sobre cómo apoyar tareas en casa.</li>
+</ul>
+<p><strong>Ejemplo de prompt para explorar posibilidades y límites en un curso con PIE:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>Actúa como profesional de apoyo en un Programa de Integración Escolar (PIE) con experiencia en adecuaciones curriculares no significativas.</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>Tu objetivo es sugerir ideas de apoyo pedagógico para un curso de <span class="co">[</span><span class="ot">NIVEL</span><span class="co">]</span> que trabaja el contenido <span class="co">[</span><span class="ot">TEMA</span><span class="co">]</span> en la asignatura de <span class="co">[</span><span class="ot">ASIGNATURA</span><span class="co">]</span>, respetando el currículum común y el trabajo del equipo PIE.</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>Contexto:</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Escuela pública con PIE.</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>En el curso hay estudiantes con:</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>Dificultades específicas de aprendizaje.</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>TDAH.</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>Discapacidad intelectual leve.</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>El equipo docente ya definió los objetivos de aprendizaje para todo el curso.</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>Instrucciones:</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Propón 5 ideas de apoyos generales que puedan beneficiar a todo el curso (no solo a estudiantes del PIE), tales como:</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="ss">   - </span>Ajustes en la presentación de la información.</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="ss">   - </span>Estrategias de trabajo colaborativo.</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a><span class="ss">   - </span>Formas alternativas de demostrar lo aprendido.</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Luego, sugiere 3 ejemplos de adecuaciones no significativas para el mismo contenido, aclarando:</span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a><span class="ss">   - </span>Qué se mantiene igual para todos.</span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a><span class="ss">   - </span>Qué se adapta (tiempo, formato, cantidad de ejercicios, etc.).</span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Finalmente, incluye una breve sección “Límites y cuidados” con 4–5 puntos que recuerden:</span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a><span class="ss">   - </span>Que las decisiones deben ser revisadas por el equipo PIE.</span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a><span class="ss">   - </span>Que no se debe incluir información sensible de estudiantes en la IA.</span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>Formato de salida:</span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Secciones con subtítulos: “Apoyos generales para todo el curso”, “Ejemplos de adecuaciones no significativas” y “Límites y cuidados”.</span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>Criterios y restricciones:</span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>No sugieras diagnósticos ni decisiones individuales sobre estudiantes.</span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Usa lenguaje respetuoso y centrado en apoyos, no en déficits.</span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Enfatiza que la IA es un apoyo para pensar estrategias, no un reemplazo de la evaluación profesional.</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+
+
+<!-- -->
+
+</section>
+
+</main> <!-- /main -->
+<script>
+window.addEventListener('load', function () {
+  const selectors = [
+    '.quarto-sidebar .logo img',
+    '.quarto-sidebar .quarto-logo img',
+    '.sidebar-logo img',
+    '.site-logo img',
+    'a.quarto-site-logo img'
+  ];
+
+  let logoImg = null;
+  for (const selector of selectors) {
+    logoImg = document.querySelector(selector);
+    if (logoImg) break;
+  }
+
+  if (logoImg) {
+    const link = document.createElement('a');
+    link.href = 'index.html';
+    logoImg.parentNode.insertBefore(link, logoImg);
+    link.appendChild(logoImg);
+  }
+
+  const decodeMeta = (value) => {
+    if (!value) return '';
+    const trimmed = value.trim();
+    if (!trimmed || trimmed.startsWith('{{')) return '';
+    const textarea = document.createElement('textarea');
+    textarea.innerHTML = trimmed;
+    return textarea.value.trim();
+  };
+
+  const metaRepoUrl = decodeMeta('https://github.com/KAravena/Taller-IA-Docentes-MEGM-2026');
+  const metaRepoUrlNormalized = metaRepoUrl ? metaRepoUrl.replace(/\/+$/g, '') : '';
+
+  const computeArchiveUrl = (hrefHint) => {
+    const baseHref = (hrefHint || metaRepoUrlNormalized || metaRepoUrl || '').trim();
+    if (!baseHref) return '';
+
+    try {
+      const url = new URL(baseHref, window.location.href);
+      const pathnameRaw = url.pathname.replace(/\/+$/g, '');
+      const normalizeBranch = (value) => {
+        const branch = (value || '').trim();
+        return branch ? branch : 'main';
+      };
+
+      if (url.hostname.includes('github.')) {
+        const match = pathnameRaw.match(/^\/([^/]+)\/([^/]+)(?:\/(tree|blob)\/([^/]+).*)?$/);
+        if (!match) return '';
+
+        const owner = match[1];
+        const repo = match[2].replace(/\.git$/i, '');
+        const branchFromPath = match[4];
+        const branch = normalizeBranch(branchFromPath || url.searchParams.get('branch'));
+
+        return `${url.origin}/${owner}/${repo}/archive/refs/heads/${branch}.zip`;
+      }
+
+      if (url.hostname.includes('gitlab.')) {
+        const match = pathnameRaw.match(/^\/(.+?)(?:\/-\/tree\/([^/]+).*)?$/);
+        if (!match) return '';
+
+        const projectPath = match[1].replace(/\/+$/g, '');
+        const repoName = projectPath.split('/').pop();
+        const branchFromPath = match[2];
+        const branch = normalizeBranch(branchFromPath || url.searchParams.get('ref')); // GitLab often uses ref param
+
+        return `${url.origin}/${projectPath}/-/archive/${branch}/${repoName}-${branch}.zip`;
+      }
+
+      if (url.hostname.includes('bitbucket.')) {
+        const match = pathnameRaw.match(/^\/([^/]+)\/([^/]+)(?:\/src\/([^/]+).*)?$/);
+        if (!match) return '';
+
+        const owner = match[1];
+        const repo = match[2].replace(/\.git$/i, '');
+        const branchFromPath = match[3];
+        const branch = normalizeBranch(branchFromPath || url.searchParams.get('at'));
+
+        return `${url.origin}/${owner}/${repo}/get/${branch}.zip`;
+      }
+
+      const branch = normalizeBranch(url.searchParams.get('branch'));
+      return `${baseHref.replace(/\/+$/g, '')}/archive/refs/heads/${branch}.zip`;
+    } catch (error) {
+      return '';
+    }
+  };
+
+  const ensureDownloadButton = (fromObserver = false) => {
+    const tools = document.querySelector('.sidebar-title .sidebar-tools-main');
+    if (!tools) {
+      if (!fromObserver) {
+        window.setTimeout(() => ensureDownloadButton(false), 100);
+      }
+      return;
+    }
+
+    let download = tools.querySelector('[data-template-download]');
+    if (!download) {
+      download = document.createElement('a');
+      download.className = 'quarto-navigation-tool px-1';
+      download.title = 'Descargar ZIP';
+      download.setAttribute('aria-label', 'Descargar plantilla (ZIP)');
+      download.setAttribute('data-template-download', 'true');
+      download.target = '_blank';
+      download.rel = 'noopener';
+      download.innerHTML = '<i class="bi bi-download"></i>';
+    }
+
+    const links = Array.from(tools.querySelectorAll('a.quarto-navigation-tool'));
+    let repoLink = null;
+
+    if (metaRepoUrlNormalized) {
+      repoLink = links.find((anchor) => {
+        if (anchor === download) return false;
+        const href = anchor.href ? anchor.href.replace(/\/+$/g, '') : '';
+        return href === metaRepoUrlNormalized;
+      });
+    }
+
+    if (!repoLink) {
+      repoLink = links.find((anchor) => anchor !== download && anchor.querySelector('.bi-github'));
+    }
+
+    if (!repoLink) {
+      repoLink = links.find((anchor) => {
+        if (anchor === download) return false;
+        const href = anchor.href || '';
+        return /github\.|gitlab\.|bitbucket\./i.test(href);
+      });
+    }
+
+    const archiveUrl = computeArchiveUrl(repoLink ? repoLink.href : undefined);
+
+    if (!archiveUrl) {
+      if (download.parentNode) {
+        download.parentNode.removeChild(download);
+      }
+      return;
+    }
+
+    if (repoLink) {
+      repoLink.insertAdjacentElement('afterend', download);
+    } else if (codeToggle) {
+      codeToggle.insertAdjacentElement('beforebegin', download);
+    } else {
+      tools.insertBefore(download, tools.firstChild);
+    }
+  };
+
+  ensureDownloadButton();
+
+  const observer = new MutationObserver((mutations) => {
+    const shouldUpdate = mutations.some((mutation) => {
+      if (mutation.type !== 'childList') {
+        return false;
+      }
+      return Array.from(mutation.addedNodes).some((node) => {
+        if (!(node instanceof HTMLElement)) {
+          return false;
+        }
+        return (
+          node.classList.contains('global-code-toggle') ||
+          (node.querySelector && node.querySelector('.global-code-toggle'))
+        );
+      });
+    });
+
+    if (shouldUpdate) {
+      ensureDownloadButton(true);
+    }
+  });
+
+  observer.observe(document.body, { childList: true, subtree: true });
+});
+</script>
+<script>
+(function () {
+  var isReferences = /(?:^|\/)references\.html(?:#|$)/i.test(window.location.pathname);
+
+  // Base relativa que Quarto publica (para apéndices/…)
+  var offsetMeta = document.querySelector('meta[name="quarto:offset"]');
+  var base = (offsetMeta && offsetMeta.content) ? offsetMeta.content : "";
+
+  // 1) En capítulos: reescribe enlaces de cita -> references.html#ref-*
+  if (!isReferences) {
+    var cites = document.querySelectorAll('a[role="doc-biblioref"][href^="#ref-"]');
+    cites.forEach(function (a) {
+      var hash = a.getAttribute('href'); // "#ref-xxx"
+      // Conserva tooltips. Añade marca para mostrar "volver" luego.
+      a.setAttribute('href', base + 'references.html' + hash);
+      a.setAttribute('data-citefix', 'from-chapter');
+    });
+
+    // Oculta bibliografía local si citeproc la insertó
+    var localRefsBlocks = document.querySelectorAll('section.footnotes, div#refs, div.references, section#references');
+    localRefsBlocks.forEach(function (el) { el.style.display = 'none'; });
+  }
+
+  // 2) En references.html: añade botón "Volver" si se llega desde otra página
+  if (isReferences) {
+    var cameFromOutside = document.referrer && !/\/references\.html(?:#|$)/i.test(new URL(document.referrer).pathname);
+    if (cameFromOutside && window.history && window.history.length > 1) {
+      var btn = document.createElement('button');
+      btn.type = 'button';
+      btn.textContent = '← Volver';
+      btn.setAttribute('aria-label', 'Volver a la página anterior');
+      btn.style.position = 'fixed';
+      btn.style.right = '1rem';
+      btn.style.bottom = '1rem';
+      btn.style.zIndex = '9999';
+      btn.style.padding = '.6rem .9rem';
+      btn.style.borderRadius = '10px';
+      btn.style.border = '1px solid rgba(0,0,0,.15)';
+      btn.style.background = 'var(--bs-body-bg, #fff)';
+      btn.style.color = 'var(--bs-body-color, #111)';
+      btn.style.boxShadow = '0 6px 16px rgba(0,0,0,.12)';
+      btn.onclick = function () { history.back(); };
+      document.body.appendChild(btn);
+    }
+
+    // Si llegamos con hash (#ref-xxx), desplaza con un pequeño retardo
+    // para asegurar que el layout esté listo.
+    if (location.hash && /^#ref-/.test(location.hash)) {
+      setTimeout(function () {
+        try {
+          var target = document.getElementById(location.hash.substring(1));
+          if (target) target.scrollIntoView({behavior: 'smooth', block: 'start'});
+        } catch (e) {}
+      }, 50);
+    }
+  }
+})();
+</script>
+
+<style>
+/* Evita que el ancla de referencias quede “tapada” por el encabezado */
+.csl-entry[id^="ref-"],
+[id^="ref-"] { scroll-margin-top: 90px; }
+
+/* Ajuste suave para tooltips / focos de enlaces */
+a[role="doc-biblioref"]:focus-visible {
+  outline: 2px dashed var(--facso-2, #84A7D8);
+  outline-offset: 2px;
+}
+
+/* Opcional: separadores más legibles en la lista de referencias */
+#refs .csl-entry { padding: .25rem 0; border-bottom: 1px dashed rgba(0,0,0,.06); }
+#refs .csl-entry:last-child { border-bottom: none; }
+</style>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const parseNumberParts = (value) =>
+    (value || "")
+      .split(".")
+      .map((part) => parseInt(part, 10))
+      .filter((num) => !Number.isNaN(num));
+
+  const formatNumberParts = (parts) => parts.join(".");
+
+  const adjustNumber = (value) => {
+    const trimmed = (value || "").trim();
+    if (!/^\d/.test(trimmed)) {
+      return trimmed;
+    }
+    const parts = parseNumberParts(trimmed);
+    if (!parts.length) {
+      return "";
+    }
+  parts[0] = parts[0] - 1;
+    if (parts[0] <= 0) {
+      return "";
+    }
+    return formatNumberParts(parts);
+  };
+
+  const removeSpacer = (node) => {
+    let sibling = node.nextSibling;
+    while (sibling && sibling.nodeType === Node.TEXT_NODE) {
+      const cleaned = sibling.textContent.replace(/\u00a0/g, "").trim();
+      const next = sibling.nextSibling;
+      if (cleaned.length === 0) {
+        sibling.remove();
+        sibling = next;
+      } else {
+        break;
+      }
+    }
+  };
+
+  const clearNumber = (node) => {
+    if (!node) return;
+    node.textContent = "";
+    node.classList.add("chapter-number--hidden");
+    node.style.display = "none";
+    removeSpacer(node);
+  };
+
+  const ensureChapterSpacing = (node) => {
+    if (!node || !node.classList.contains("chapter-number")) return;
+
+    let numeric = (node.textContent || "").replace(/\.+\s*$/u, "");
+    if (!numeric) return;
+
+    node.textContent = numeric;
+
+    const contextsNeedingSpace = node.closest(".quarto-title-block") ||
+      node.closest("nav.quarto-page-breadcrumbs");
+
+    node.textContent = `${numeric}.`;
+
+    if (contextsNeedingSpace) {
+      const next = node.nextSibling;
+      const hasWhitespaceText =
+        next &&
+        next.nodeType === Node.TEXT_NODE &&
+        /\s/.test(next.textContent || "");
+      if (!hasWhitespaceText) {
+        node.insertAdjacentText("afterend", "\u00a0");
+      }
+    }
+  };
+
+  const applyNumber = (node) => {
+    if (!node) return;
+    const adjusted = adjustNumber(node.textContent);
+    if (!adjusted) {
+      clearNumber(node);
+    } else {
+      node.textContent = adjusted;
+      node.classList.remove("chapter-number--hidden");
+      node.style.display = "inline-block";
+      removeSpacer(node);
+      ensureChapterSpacing(node);
+    }
+  };
+
+  const updateDataNumber = (node) => {
+    const current = node.getAttribute("data-number");
+    if (current === null) return;
+    const adjusted = adjustNumber(current);
+    if (adjusted) {
+      node.setAttribute("data-number", adjusted);
+    } else {
+      node.removeAttribute("data-number");
+    }
+  };
+
+  const isFrontMatterHref = (href) =>
+    /\/?index\.html(?:#|$)/i.test(href || "") ||
+    /\/?00-prefacio\.html(?:#|$)/i.test(href || "");
+
+  document
+    .querySelectorAll(".sidebar .chapter-number")
+    .forEach((node) => {
+      const link = node.closest("a");
+      const href = link ? link.getAttribute("href") : "";
+      if (isFrontMatterHref(href)) {
+        clearNumber(node);
+      } else {
+        applyNumber(node);
+      }
+    });
+
+  const pathname = window.location.pathname || "";
+
+  document
+    .querySelectorAll('.quarto-title-block .chapter-number')
+    .forEach((node) => {
+      if (isFrontMatterHref(pathname)) {
+        clearNumber(node);
+      } else {
+        applyNumber(node);
+      }
+    });
+
+  document
+    .querySelectorAll('nav.quarto-page-breadcrumbs .chapter-number')
+    .forEach((node) => {
+      const link = node.closest('a');
+      const href = link ? link.getAttribute('href') : pathname;
+      if (isFrontMatterHref(href)) {
+        clearNumber(node);
+      } else {
+        applyNumber(node);
+      }
+    });
+
+  document
+    .querySelectorAll("main .header-section-number")
+    .forEach((node) => {
+      if (isFrontMatterHref(pathname)) {
+        const section = node.closest("section");
+        if (section && section.matches(".level1:first-of-type, .level2:first-of-type")) {
+          clearNumber(node);
+          return;
+        }
+      }
+      applyNumber(node);
+    });
+
+  document
+    .querySelectorAll("main [data-number]")
+    .forEach(updateDataNumber);
+
+  document
+    .querySelectorAll("#TOC .header-section-number")
+    .forEach((node) => {
+      const link = node.closest("a");
+      const href = link ? link.getAttribute("href") : "";
+      if (isFrontMatterHref(href)) {
+        clearNumber(node);
+      } else {
+        applyNumber(node);
+      }
+    });
+
+  document
+    .querySelectorAll("#TOC [data-number]")
+    .forEach(updateDataNumber);
+
+  document
+    .querySelectorAll('#TOC a[data-scroll-target][data-number]')
+    .forEach(updateDataNumber);
+
+  const expandMarginToc = () => {
+    const toc = document.getElementById("TOC");
+    if (!toc) return;
+    toc.querySelectorAll("ul.collapse").forEach((node) => {
+      node.classList.remove("collapse");
+      node.classList.add("toc-expanded");
+    });
+    toc.querySelectorAll("[data-bs-toggle='collapse']").forEach((trigger) => {
+      trigger.removeAttribute("data-bs-toggle");
+      trigger.setAttribute("aria-expanded", "true");
+    });
+  };
+
+  expandMarginToc();
+});
+</script>
+<style>
+.sidebar .chapter-number {
+  display: inline-block;
+  min-width: 1ch;
+  margin-right: 0.1ch;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+.chapter-number--hidden {
+  visibility: hidden !important;
+  display: none !important;
+}
+.toc-expanded {
+  display: block !important;
+  visibility: visible !important;
+  height: auto !important;
+  overflow: visible !important;
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const codeSelectors = [
+    '.cell > .code-copy-outer-scaffold',
+    '.cell > .sourceCode',
+    'pre.sourceCode',
+    'div.sourceCode'
+  ];
+
+  const LABEL_SHOW = 'Mostrar el codigo';
+  const LABEL_HIDE = 'Ocultar el codigo';
+  const LABEL_EMPTY = 'Sin fragmentos de codigo';
+  const ICON_SHOW = 'bi bi-code';
+  const ICON_HIDE = 'bi bi-code-slash';
+
+  const toolsContainer = document.querySelector('.sidebar-tools-main');
+  let buttonHost = toolsContainer;
+  let floatingContainer = null;
+
+  if (!buttonHost) {
+    floatingContainer = document.createElement('div');
+    floatingContainer.className = 'global-code-toggle-container';
+    document.body.appendChild(floatingContainer);
+    buttonHost = floatingContainer;
+  }
+
+  const repoLink = toolsContainer ? toolsContainer.querySelector('a[href*="github.com"]') : null;
+  if (repoLink) {
+    repoLink.title = 'Repositorio';
+    repoLink.setAttribute('aria-label', 'Repositorio');
+  }
+
+  const button = document.createElement('a');
+  button.href = '#';
+  button.className = 'quarto-navigation-tool px-1 global-code-toggle';
+  button.setAttribute('role', 'button');
+
+  if (!toolsContainer) {
+    button.classList.add('global-code-toggle-floating');
+  }
+
+  const icon = document.createElement('i');
+  icon.className = ICON_HIDE;
+  button.appendChild(icon);
+
+  const pdfLink = toolsContainer ? toolsContainer.querySelector('a[href$=".pdf"]') : null;
+  if (pdfLink && buttonHost === toolsContainer) {
+    buttonHost.insertBefore(button, pdfLink);
+  } else {
+    buttonHost.appendChild(button);
+  }
+
+  const pageHasCode = codeSelectors.some(function (selector) {
+    return document.querySelector(selector);
+  });
+
+  let showingCode = true;
+
+  const setIcon = function (iconClass) {
+    icon.className = iconClass;
+  };
+
+  const disableButton = function () {
+    button.classList.add('global-code-toggle-disabled');
+    button.classList.add('disabled');
+    button.setAttribute('aria-disabled', 'true');
+    button.setAttribute('aria-pressed', 'false');
+    button.setAttribute('aria-label', LABEL_EMPTY);
+    button.title = LABEL_EMPTY;
+    button.tabIndex = -1;
+    setIcon(ICON_SHOW);
+  };
+
+  const enableButton = function () {
+    button.classList.remove('global-code-toggle-disabled');
+    button.classList.remove('disabled');
+    button.removeAttribute('aria-disabled');
+    button.tabIndex = 0;
+  };
+
+  const update = function () {
+    if (!pageHasCode) {
+      disableButton();
+      document.body.classList.remove('global-code-hidden');
+      return;
+    }
+
+    enableButton();
+
+    if (showingCode) {
+      document.body.classList.remove('global-code-hidden');
+      button.setAttribute('aria-pressed', 'false');
+      button.setAttribute('aria-label', LABEL_HIDE);
+      button.title = LABEL_HIDE;
+      setIcon(ICON_HIDE);
+    } else {
+      document.body.classList.add('global-code-hidden');
+      button.setAttribute('aria-pressed', 'true');
+      button.setAttribute('aria-label', LABEL_SHOW);
+      button.title = LABEL_SHOW;
+      setIcon(ICON_SHOW);
+    }
+  };
+
+  button.addEventListener('click', function (event) {
+    event.preventDefault();
+
+    if (!pageHasCode) {
+      return;
+    }
+
+    showingCode = !showingCode;
+    update();
+  });
+
+  button.addEventListener('keydown', function (event) {
+    if (event.key === ' ' || event.key === 'Spacebar') {
+      event.preventDefault();
+      button.click();
+    }
+  });
+
+  update();
+});
+</script>
+<style>
+body.global-code-hidden .cell > .code-copy-outer-scaffold,
+body.global-code-hidden .cell > .sourceCode,
+body.global-code-hidden pre.sourceCode,
+body.global-code-hidden div.sourceCode {
+  display: none;
+}
+
+.global-code-toggle {
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.global-code-toggle i {
+  font-size: 1.05rem;
+}
+
+.global-code-toggle-disabled {
+  opacity: 0.6;
+  cursor: default;
+  pointer-events: none;
+}
+
+.global-code-toggle-container {
+  position: fixed;
+  right: 1.5rem;
+  bottom: 1.5rem;
+  z-index: 1030;
+}
+
+.global-code-toggle-floating {
+  background-color: var(--bs-body-bg, #ffffff);
+  border-radius: 0.375rem;
+  padding: 0.4rem 0.55rem;
+  box-shadow: 0 0.1rem 0.4rem rgba(0, 0, 0, 0.2);
+}
+
+.global-code-toggle-floating i {
+  font-size: 1.15rem;
+}
+
+@media (max-width: 768px) {
+  .global-code-toggle-container {
+    right: 1rem;
+    bottom: 1rem;
+  }
+}
+</style>
+﻿<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const toc = document.querySelector("nav#TOC, nav.toc-active");
+  if (!toc) return;
+
+  const tocLinks = toc.querySelectorAll("a.nav-link[data-scroll-target]");
+  if (!tocLinks.length) return;
+
+  const sections = Array.from(tocLinks)
+    .map((link) => {
+      const target = document.querySelector(link.getAttribute("data-scroll-target"));
+      return target ? { link, target, top: 0 } : null;
+    })
+    .filter(Boolean);
+
+  const updateOffsets = () => {
+    sections.forEach((section) => {
+      section.top = section.target.getBoundingClientRect().top + window.scrollY;
+    });
+  };
+
+  const activateLink = (targetLink) => {
+    tocLinks.forEach((link) => link.classList.remove("active"));
+    if (targetLink) targetLink.classList.add("active");
+  };
+
+  const OFFSET = 140;
+  let ticking = false;
+
+  const updateActiveSection = () => {
+    const scrollPosition = window.scrollY + OFFSET;
+    let current = sections[0];
+    for (const section of sections) {
+      if (section.top <= scrollPosition) {
+        current = section;
+      } else {
+        break;
+      }
+    }
+    activateLink(current ? current.link : null);
+    ticking = false;
+  };
+
+  const onScroll = () => {
+    if (!ticking) {
+      window.requestAnimationFrame(updateActiveSection);
+      ticking = true;
+    }
+  };
+
+  updateOffsets();
+  updateActiveSection();
+
+  window.addEventListener("scroll", onScroll, { passive: true });
+  window.addEventListener("resize", () => {
+    updateOffsets();
+    updateActiveSection();
+  });
+  window.addEventListener("hashchange", () => {
+    const hash = window.location.hash;
+    const match = sections.find((section) => section.link.getAttribute("data-scroll-target") === hash);
+    if (match) activateLink(match.link);
+  });
+
+  // Estilo responsivo: sin scroll horizontal y ocupando ancho disponible
+  const style = document.createElement("style");
+  style.innerHTML = `
+    nav#TOC, nav.toc-active {
+      width: 100%;
+      max-width: min(600px, 90vw);
+      min-width: 0;
+      padding-right: 0.8rem;
+      box-sizing: border-box;
+      overflow-x: hidden;
+    }
+    nav#TOC *, nav.toc-active * {
+      max-width: 100%;
+      white-space: normal;
+      word-break: break-word;
+    }
+    nav#TOC .toc-entry a, nav.toc-active .toc-entry a {
+      line-height: 1.4;
+    }
+  `;
+  document.head.appendChild(style);
+});
+</script>
+
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copiado");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copiado");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+    const viewSource = window.document.getElementById('quarto-view-source') ||
+                       window.document.getElementById('quarto-code-tools-source');
+    if (viewSource) {
+      const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+      viewSource.addEventListener("click", function(e) {
+        if (sourceUrl) {
+          // rstudio viewer pane
+          if (/\bcapabilities=\b/.test(window.location)) {
+            window.open(sourceUrl);
+          } else {
+            window.location.href = sourceUrl;
+          }
+        } else {
+          const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+          modal.show();
+        }
+        return false;
+      });
+    }
+    function toggleCodeHandler(show) {
+      return function(e) {
+        const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+        for (let i=0; i<detailsSrc.length; i++) {
+          const details = detailsSrc[i].parentElement;
+          if (show) {
+            details.open = true;
+          } else {
+            details.removeAttribute("open");
+          }
+        }
+        const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+        const fromCls = show ? "hidden" : "unhidden";
+        const toCls = show ? "unhidden" : "hidden";
+        for (let i=0; i<cellCodeDivs.length; i++) {
+          const codeDiv = cellCodeDivs[i];
+          if (codeDiv.classList.contains(fromCls)) {
+            codeDiv.classList.remove(fromCls);
+            codeDiv.classList.add(toCls);
+          } 
+        }
+        return false;
+      }
+    }
+    const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+    if (hideAllCode) {
+      hideAllCode.addEventListener("click", toggleCodeHandler(false));
+    }
+    const showAllCode = window.document.getElementById("quarto-show-all-code");
+    if (showAllCode) {
+      showAllCode.addEventListener("click", toggleCodeHandler(true));
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./04-evaluacion-retroalimentacion.html" class="pagination-link" aria-label="Usos concretos para evaluación y retroalimentación">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Usos concretos para evaluación y retroalimentación</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./06-riesgos-etica.html" class="pagination-link" aria-label="Riesgos, límites y criterios éticos">
+        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Riesgos, límites y criterios éticos</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Ejecutar el código</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "IA e inclusión educativa"</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="fu">## Ajuste de lenguaje, formato y extensión de materiales</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>En muchos cursos, el primer obstáculo para la participación de las y los estudiantes es el **lenguaje y el formato** de los materiales: textos muy largos, vocabulario técnico, consignas confusas o poco accesibles. La IA puede apoyar como asistente de edición, ayudando a simplificar, acortar, ampliar o reestructurar materiales sin cambiar el contenido central definido por el equipo pedagógico.</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>Usada de forma crítica, la IA permite generar **versiones paralelas** de un mismo recurso (más breve, más explicada, más visual, etc.), de modo que el profesorado pueda elegir cuál se ajusta mejor a las características de su curso, o bien ofrecer varias alternativas dentro de la misma clase.</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>**Usos posibles:**</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Simplificar el vocabulario de un texto, manteniendo las ideas principales.</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Reducir la extensión de un documento largo a una versión “para estudiantes” o “para las familias”.</span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Reescribir consignas de actividades para que sean más claras y explícitas.</span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Cambiar el formato de presentación (párrafos → viñetas, cuadro comparativo, glosario, etc.).</span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Generar versiones con apoyos adicionales: ejemplos, definiciones breves, recordatorios de conceptos clave.</span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>**Ejemplo de prompt para ajustar lenguaje, formato y extensión de un material:**</span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a><span class="in">```markdown</span></span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>Actúa como profesor/a de <span class="co">[</span><span class="ot">ASIGNATURA</span><span class="co">]</span> con experiencia en educación inclusiva en escuelas públicas chilenas.</span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>Tu objetivo es ayudarme a adaptar el siguiente texto para que sea más accesible a estudiantes de <span class="co">[</span><span class="ot">NIVEL</span><span class="co">]</span> en el marco de las Bases Curriculares.</span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a>Contexto:</span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Curso diverso en niveles de lectura, con presencia de estudiantes del PIE.</span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>El texto original es una explicación sobre <span class="co">[</span><span class="ot">TEMA</span><span class="co">]</span> pensada para adultos.</span>
+<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Lo necesito para trabajarlo en una clase de <span class="co">[</span><span class="ot">N°</span><span class="co">]</span> minutos.</span>
+<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a>Instrucciones:</span>
+<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Genera una primera versión del texto:</span>
+<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a><span class="ss">   - </span>Con lenguaje más sencillo, sin perder las ideas principales.</span>
+<span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a><span class="ss">   - </span>De extensión máxima de <span class="co">[</span><span class="ot">N°</span><span class="co">]</span> palabras.</span>
+<span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a><span class="ss">   - </span>Organizada en párrafos breves y con viñetas cuando sea útil.</span>
+<span id="cb4-36"><a href="#cb4-36" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Genera una segunda versión:</span>
+<span id="cb4-37"><a href="#cb4-37" aria-hidden="true" tabindex="-1"></a><span class="ss">   - </span>En formato de “ficha de estudio” con:</span>
+<span id="cb4-38"><a href="#cb4-38" aria-hidden="true" tabindex="-1"></a><span class="ss">     - </span>Definiciones clave.</span>
+<span id="cb4-39"><a href="#cb4-39" aria-hidden="true" tabindex="-1"></a><span class="ss">     - </span>Ejemplos cotidianos.</span>
+<span id="cb4-40"><a href="#cb4-40" aria-hidden="true" tabindex="-1"></a><span class="ss">     - </span>3 preguntas de autoevaluación para estudiantes.</span>
+<span id="cb4-41"><a href="#cb4-41" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Si consideras que falta algún concepto básico para que se entienda el texto, indícalo al final en 3–4 líneas, sin agregarlo dentro del texto principal.</span>
+<span id="cb4-42"><a href="#cb4-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-43"><a href="#cb4-43" aria-hidden="true" tabindex="-1"></a>Formato de salida:</span>
+<span id="cb4-44"><a href="#cb4-44" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Título: “Versión simplificada para <span class="co">[</span><span class="ot">NIVEL</span><span class="co">]</span>”.</span>
+<span id="cb4-45"><a href="#cb4-45" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Luego, la ficha de estudio bajo el título “Ficha de apoyo”.</span>
+<span id="cb4-46"><a href="#cb4-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-47"><a href="#cb4-47" aria-hidden="true" tabindex="-1"></a>Criterios y restricciones:</span>
+<span id="cb4-48"><a href="#cb4-48" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>No cambies el contenido disciplinar central; solo ajusta lenguaje, formato y extensión.</span>
+<span id="cb4-49"><a href="#cb4-49" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>No incluyas imágenes ni recursos que requieran conexión a internet.</span>
+<span id="cb4-50"><a href="#cb4-50" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Usa ejemplos cercanos a la realidad de estudiantes en escuelas chilenas.</span>
+<span id="cb4-51"><a href="#cb4-51" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb4-52"><a href="#cb4-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-53"><a href="#cb4-53" aria-hidden="true" tabindex="-1"></a><span class="in">---</span></span>
+<span id="cb4-54"><a href="#cb4-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-55"><a href="#cb4-55" aria-hidden="true" tabindex="-1"></a><span class="in">## Ejemplos de adaptaciones para distintas trayectorias y necesidades</span></span>
+<span id="cb4-56"><a href="#cb4-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-57"><a href="#cb4-57" aria-hidden="true" tabindex="-1"></a><span class="in">En un mismo curso conviven estudiantes con trayectorias muy diversas: quienes han cambiado de escuela con frecuencia, quienes participan en programas de integración escolar, quienes tienen responsabilidades de cuidado en sus hogares, quienes se están incorporando recientemente al sistema escolar chileno, entre muchas otras realidades. La IA puede ayudar a pensar **variantes de actividades y materiales** que dialoguen con esta diversidad, siempre bajo el criterio profesional docente y resguardando la confidencialidad de información sensible.</span></span>
+<span id="cb4-58"><a href="#cb4-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-59"><a href="#cb4-59" aria-hidden="true" tabindex="-1"></a><span class="in">El propósito no es etiquetar estudiantes (“los buenos”, “los malos”, “los que saben, los que no”), sino contar con un abanico de opciones que permita ajustar apoyos y desafíos sin perder de vista el currículum común ni la pertenencia al grupo curso.</span></span>
+<span id="cb4-60"><a href="#cb4-60" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-61"><a href="#cb4-61" aria-hidden="true" tabindex="-1"></a><span class="in">**Usos posibles:**</span></span>
+<span id="cb4-62"><a href="#cb4-62" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-63"><a href="#cb4-63" aria-hidden="true" tabindex="-1"></a><span class="in">- Proponer actividades alternativas para estudiantes con ausencias prolongadas o reincorporaciones tardías.</span></span>
+<span id="cb4-64"><a href="#cb4-64" aria-hidden="true" tabindex="-1"></a><span class="in">- Sugerir apoyos adicionales para quienes se están adaptando al idioma o al sistema escolar chileno.</span></span>
+<span id="cb4-65"><a href="#cb4-65" aria-hidden="true" tabindex="-1"></a><span class="in">- Ajustar tareas para estudiantes que viven situaciones de cuidado, trabajo u otras responsabilidades.</span></span>
+<span id="cb4-66"><a href="#cb4-66" aria-hidden="true" tabindex="-1"></a><span class="in">- Diseñar actividades que se puedan realizar tanto en el aula como en el hogar, según la realidad de cada estudiante.</span></span>
+<span id="cb4-67"><a href="#cb4-67" aria-hidden="true" tabindex="-1"></a><span class="in">- Generar ejemplos y contextos cercanos a distintas realidades territoriales y culturales.</span></span>
+<span id="cb4-68"><a href="#cb4-68" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-69"><a href="#cb4-69" aria-hidden="true" tabindex="-1"></a><span class="in">**Ejemplo de prompt para generar adaptaciones según trayectorias diversas:**</span></span>
+<span id="cb4-70"><a href="#cb4-70" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-71"><a href="#cb4-71" aria-hidden="true" tabindex="-1"></a><span class="in">```markdown</span></span>
+<span id="cb4-72"><a href="#cb4-72" aria-hidden="true" tabindex="-1"></a><span class="in">Actúa como especialista en educación inclusiva y en diseño universal para el aprendizaje en contexto escolar chileno.</span></span>
+<span id="cb4-73"><a href="#cb4-73" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-74"><a href="#cb4-74" aria-hidden="true" tabindex="-1"></a><span class="in">Tu objetivo es proponer adaptaciones de una actividad de [ASIGNATURA] sobre [TEMA] para estudiantes con trayectorias y necesidades diversas, manteniendo el mismo objetivo de aprendizaje.</span></span>
+<span id="cb4-75"><a href="#cb4-75" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-76"><a href="#cb4-76" aria-hidden="true" tabindex="-1"></a><span class="in">Contexto:</span></span>
+<span id="cb4-77"><a href="#cb4-77" aria-hidden="true" tabindex="-1"></a><span class="in">- Curso: [NIVEL, por ejemplo “8º básico”] en escuela [pública/subvencionada/particular].</span></span>
+<span id="cb4-78"><a href="#cb4-78" aria-hidden="true" tabindex="-1"></a><span class="in">- En el grupo hay:</span></span>
+<span id="cb4-79"><a href="#cb4-79" aria-hidden="true" tabindex="-1"></a><span class="in">  - Estudiantes que han tenido ausencias prolongadas.</span></span>
+<span id="cb4-80"><a href="#cb4-80" aria-hidden="true" tabindex="-1"></a><span class="in">  - Estudiantes recién incorporados al sistema escolar chileno.</span></span>
+<span id="cb4-81"><a href="#cb4-81" aria-hidden="true" tabindex="-1"></a><span class="in">  - Estudiantes que participan en el PIE.</span></span>
+<span id="cb4-82"><a href="#cb4-82" aria-hidden="true" tabindex="-1"></a><span class="in">- Recursos disponibles: [pizarra, cuadernos, proyector, impresora, etc.].</span></span>
+<span id="cb4-83"><a href="#cb4-83" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-84"><a href="#cb4-84" aria-hidden="true" tabindex="-1"></a><span class="in">Actividad original:</span></span>
+<span id="cb4-85"><a href="#cb4-85" aria-hidden="true" tabindex="-1"></a><span class="in">[PEGAR AQUÍ LA DESCRIPCIÓN DE LA ACTIVIDAD DE CLASE QUE YA DISEÑÓ EL/LA DOCENTE].</span></span>
+<span id="cb4-86"><a href="#cb4-86" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-87"><a href="#cb4-87" aria-hidden="true" tabindex="-1"></a><span class="in">Instrucciones:</span></span>
+<span id="cb4-88"><a href="#cb4-88" aria-hidden="true" tabindex="-1"></a><span class="in">1. Propón al menos 3 adaptaciones posibles de la actividad original:</span></span>
+<span id="cb4-89"><a href="#cb4-89" aria-hidden="true" tabindex="-1"></a><span class="in">   - Adaptación A: pensada para estudiantes con ausencias prolongadas.</span></span>
+<span id="cb4-90"><a href="#cb4-90" aria-hidden="true" tabindex="-1"></a><span class="in">   - Adaptación B: pensada para estudiantes recién incorporados al sistema escolar chileno.</span></span>
+<span id="cb4-91"><a href="#cb4-91" aria-hidden="true" tabindex="-1"></a><span class="in">   - Adaptación C: pensada para estudiantes que requieren mayor apoyo estructurado (por ejemplo, del PIE).</span></span>
+<span id="cb4-92"><a href="#cb4-92" aria-hidden="true" tabindex="-1"></a><span class="in">2. Para cada adaptación, indica:</span></span>
+<span id="cb4-93"><a href="#cb4-93" aria-hidden="true" tabindex="-1"></a><span class="in">   - Propósito.</span></span>
+<span id="cb4-94"><a href="#cb4-94" aria-hidden="true" tabindex="-1"></a><span class="in">   - Pasos principales de la actividad.</span></span>
+<span id="cb4-95"><a href="#cb4-95" aria-hidden="true" tabindex="-1"></a><span class="in">   - Tipo de apoyo que se ofrece (andamiajes, ejemplos, materiales de apoyo, etc.).</span></span>
+<span id="cb4-96"><a href="#cb4-96" aria-hidden="true" tabindex="-1"></a><span class="in">   - Cómo se vincula explícitamente con el mismo objetivo de aprendizaje de la actividad original.</span></span>
+<span id="cb4-97"><a href="#cb4-97" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-98"><a href="#cb4-98" aria-hidden="true" tabindex="-1"></a><span class="in">Formato de salida:</span></span>
+<span id="cb4-99"><a href="#cb4-99" aria-hidden="true" tabindex="-1"></a><span class="in">- Subtítulos: “Adaptación A”, “Adaptación B” y “Adaptación C”.</span></span>
+<span id="cb4-100"><a href="#cb4-100" aria-hidden="true" tabindex="-1"></a><span class="in">- Bajo cada subtítulo, un párrafo de 8–10 líneas describiendo la propuesta.</span></span>
+<span id="cb4-101"><a href="#cb4-101" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-102"><a href="#cb4-102" aria-hidden="true" tabindex="-1"></a><span class="in">Criterios y restricciones:</span></span>
+<span id="cb4-103"><a href="#cb4-103" aria-hidden="true" tabindex="-1"></a><span class="in">- No cambies el objetivo de aprendizaje; solo ajusta la forma de abordarlo.</span></span>
+<span id="cb4-104"><a href="#cb4-104" aria-hidden="true" tabindex="-1"></a><span class="in">- No incluyas datos personales ni ejemplos que permitan identificar estudiantes específicos.</span></span>
+<span id="cb4-105"><a href="#cb4-105" aria-hidden="true" tabindex="-1"></a><span class="in">- Usa lenguaje claro y respetuoso, evitando etiquetas como “buenos/malos alumnos”.</span></span>
+<span id="cb4-106"><a href="#cb4-106" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb4-107"><a href="#cb4-107" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-108"><a href="#cb4-108" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb4-109"><a href="#cb4-109" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-110"><a href="#cb4-110" aria-hidden="true" tabindex="-1"></a><span class="fu">## Posibilidades y límites en contextos de integración y educación especial</span></span>
+<span id="cb4-111"><a href="#cb4-111" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-112"><a href="#cb4-112" aria-hidden="true" tabindex="-1"></a>En contextos de integración y educación especial, la IA abre oportunidades relevantes: permite generar materiales con distintos niveles de apoyo, crear ejemplos personalizados, proponer formatos alternativos (audio, viñetas, esquemas), entre otros. Sin embargo, también existen límites importantes: la IA no conoce a las y los estudiantes, no reemplaza la evaluación diagnóstica ni las decisiones del equipo PIE, y puede reproducir sesgos o proponer estrategias poco adecuadas si no se la orienta bien.</span>
+<span id="cb4-113"><a href="#cb4-113" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-114"><a href="#cb4-114" aria-hidden="true" tabindex="-1"></a>Por eso es clave usar estas herramientas como **soporte para el trabajo del equipo educativo**, nunca como sustituto de la observación profesional, de los acuerdos con las familias o de los planes individualizados (PII, adecuaciones curriculares, etc.).</span>
+<span id="cb4-115"><a href="#cb4-115" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-116"><a href="#cb4-116" aria-hidden="true" tabindex="-1"></a>**Usos posibles:**</span>
+<span id="cb4-117"><a href="#cb4-117" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-118"><a href="#cb4-118" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Sugerir ideas de adaptaciones curriculares no significativas, que luego el equipo revisa y valida.</span>
+<span id="cb4-119"><a href="#cb4-119" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Generar materiales de apoyo complementarios (glosarios, tarjetas visuales, pasos de una rutina, etc.).</span>
+<span id="cb4-120"><a href="#cb4-120" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Proponer formas alternativas de demostrar aprendizaje (productos orales, visuales, manipulativos).</span>
+<span id="cb4-121"><a href="#cb4-121" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Sistematizar acuerdos del equipo PIE en un lenguaje claro para compartir con el resto del profesorado.</span>
+<span id="cb4-122"><a href="#cb4-122" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Redactar borradores de orientaciones generales para familias sobre cómo apoyar tareas en casa.</span>
+<span id="cb4-123"><a href="#cb4-123" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-124"><a href="#cb4-124" aria-hidden="true" tabindex="-1"></a>**Ejemplo de prompt para explorar posibilidades y límites en un curso con PIE:**</span>
+<span id="cb4-125"><a href="#cb4-125" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-126"><a href="#cb4-126" aria-hidden="true" tabindex="-1"></a><span class="in">```markdown</span></span>
+<span id="cb4-127"><a href="#cb4-127" aria-hidden="true" tabindex="-1"></a>Actúa como profesional de apoyo en un Programa de Integración Escolar (PIE) con experiencia en adecuaciones curriculares no significativas.</span>
+<span id="cb4-128"><a href="#cb4-128" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-129"><a href="#cb4-129" aria-hidden="true" tabindex="-1"></a>Tu objetivo es sugerir ideas de apoyo pedagógico para un curso de <span class="co">[</span><span class="ot">NIVEL</span><span class="co">]</span> que trabaja el contenido <span class="co">[</span><span class="ot">TEMA</span><span class="co">]</span> en la asignatura de <span class="co">[</span><span class="ot">ASIGNATURA</span><span class="co">]</span>, respetando el currículum común y el trabajo del equipo PIE.</span>
+<span id="cb4-130"><a href="#cb4-130" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-131"><a href="#cb4-131" aria-hidden="true" tabindex="-1"></a>Contexto:</span>
+<span id="cb4-132"><a href="#cb4-132" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Escuela pública con PIE.</span>
+<span id="cb4-133"><a href="#cb4-133" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>En el curso hay estudiantes con:</span>
+<span id="cb4-134"><a href="#cb4-134" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>Dificultades específicas de aprendizaje.</span>
+<span id="cb4-135"><a href="#cb4-135" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>TDAH.</span>
+<span id="cb4-136"><a href="#cb4-136" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>Discapacidad intelectual leve.</span>
+<span id="cb4-137"><a href="#cb4-137" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>El equipo docente ya definió los objetivos de aprendizaje para todo el curso.</span>
+<span id="cb4-138"><a href="#cb4-138" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-139"><a href="#cb4-139" aria-hidden="true" tabindex="-1"></a>Instrucciones:</span>
+<span id="cb4-140"><a href="#cb4-140" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Propón 5 ideas de apoyos generales que puedan beneficiar a todo el curso (no solo a estudiantes del PIE), tales como:</span>
+<span id="cb4-141"><a href="#cb4-141" aria-hidden="true" tabindex="-1"></a><span class="ss">   - </span>Ajustes en la presentación de la información.</span>
+<span id="cb4-142"><a href="#cb4-142" aria-hidden="true" tabindex="-1"></a><span class="ss">   - </span>Estrategias de trabajo colaborativo.</span>
+<span id="cb4-143"><a href="#cb4-143" aria-hidden="true" tabindex="-1"></a><span class="ss">   - </span>Formas alternativas de demostrar lo aprendido.</span>
+<span id="cb4-144"><a href="#cb4-144" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Luego, sugiere 3 ejemplos de adecuaciones no significativas para el mismo contenido, aclarando:</span>
+<span id="cb4-145"><a href="#cb4-145" aria-hidden="true" tabindex="-1"></a><span class="ss">   - </span>Qué se mantiene igual para todos.</span>
+<span id="cb4-146"><a href="#cb4-146" aria-hidden="true" tabindex="-1"></a><span class="ss">   - </span>Qué se adapta (tiempo, formato, cantidad de ejercicios, etc.).</span>
+<span id="cb4-147"><a href="#cb4-147" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Finalmente, incluye una breve sección “Límites y cuidados” con 4–5 puntos que recuerden:</span>
+<span id="cb4-148"><a href="#cb4-148" aria-hidden="true" tabindex="-1"></a><span class="ss">   - </span>Que las decisiones deben ser revisadas por el equipo PIE.</span>
+<span id="cb4-149"><a href="#cb4-149" aria-hidden="true" tabindex="-1"></a><span class="ss">   - </span>Que no se debe incluir información sensible de estudiantes en la IA.</span>
+<span id="cb4-150"><a href="#cb4-150" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-151"><a href="#cb4-151" aria-hidden="true" tabindex="-1"></a>Formato de salida:</span>
+<span id="cb4-152"><a href="#cb4-152" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Secciones con subtítulos: “Apoyos generales para todo el curso”, “Ejemplos de adecuaciones no significativas” y “Límites y cuidados”.</span>
+<span id="cb4-153"><a href="#cb4-153" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-154"><a href="#cb4-154" aria-hidden="true" tabindex="-1"></a>Criterios y restricciones:</span>
+<span id="cb4-155"><a href="#cb4-155" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>No sugieras diagnósticos ni decisiones individuales sobre estudiantes.</span>
+<span id="cb4-156"><a href="#cb4-156" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Usa lenguaje respetuoso y centrado en apoyos, no en déficits.</span>
+<span id="cb4-157"><a href="#cb4-157" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Enfatiza que la IA es un apoyo para pensar estrategias, no un reemplazo de la evaluación profesional.</span>
+<span id="cb4-158"><a href="#cb4-158" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+</div></div></div></div></div>
+</div> <!-- /content -->
+
+
+
+
+<script src="site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>

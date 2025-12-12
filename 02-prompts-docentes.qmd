@@ -1,0 +1,273 @@
+---
+title: "Cómo conversar con la IA: claves de prompt engineering docente"
+---
+
+## Qué es un “prompt” y por qué importa en el trabajo docente
+
+En términos simples, un *prompt* es el mensaje o instrucción que le damos a la inteligencia artificial para que haga algo por nosotras/os: proponer ideas de clase, redactar una rúbrica, adaptar un texto, etc. Es la “consigna” que guía la respuesta del modelo.  
+
+En el trabajo docente, la calidad del *prompt* es clave porque:
+
+- define **qué tarea** realizará la IA (por ejemplo, “sugerir actividades para…”, “proponer preguntas de evaluación sobre…”);  
+- entrega el **contexto pedagógico** (curso, asignatura, objetivos de aprendizaje, características del establecimiento);  
+- indica **cómo** queremos recibir la respuesta (tabla, lista, texto breve, tono formal o cercano, extensión aproximada);  
+- establece **límites y resguardos** (no inventar datos, no usar lenguaje técnico, no tomar decisiones pedagógicas por la/el docente).
+
+Cuando el *prompt* es vago (“ayúdame con una clase de fracciones”) la respuesta suele ser genérica y poco útil. En cambio, cuando el *prompt* está bien diseñado, con objetivo claro, contexto, rol, formato y criterios, la IA puede convertirse en un apoyo real para el trabajo docente, siempre bajo el criterio profesional de la/el profesora/or.
+
+Una forma sencilla de pensarlo es: **un buen *prompt* se parece a una buena consigna de trabajo para estudiantes**: clara, ubicada en contexto y con criterios de logro explícitos.
+
+## Estructura de un buen *prompt* pedagógico
+
+En esta sección se propone una “columna vertebral” para redactar *prompts* útiles en educación. No se trata de reglas rígidas, sino de una guía que cada docente puede adaptar a su estilo.
+
+### Los 5 componentes básicos
+
+1. **Rol de la IA**  
+   Indica desde qué lugar queremos que responda la herramienta. Ejemplos:  
+   - “Actúa como profesora de Historia de enseñanza media…”  
+   - “Actúa como asesor pedagógico con experiencia en evaluación formativa…”  
+   - “Actúa como especialista en educación inclusiva y diseño universal para el aprendizaje…”
+
+2. **Objetivo / tarea principal**  
+   Qué queremos lograr con la respuesta, en una frase concreta.  
+   - “Tu objetivo es proponer tres actividades breves para…”  
+   - “Tu tarea es elaborar una rúbrica de evaluación para…”  
+   - “Tu misión es sintetizar el siguiente texto para que lo pueda comprender un curso de 6º básico…”
+
+3. **Contexto pedagógico**  
+   Información relevante sobre curso, asignatura, tipo de establecimiento, realidad del grupo, etc.  
+   - nivel y curso (5º básico, 2º medio técnico-profesional, etc.);  
+   - asignatura y contenido específico;  
+   - características del establecimiento (público, subvencionado, rural, urbano, etc.);  
+   - características del grupo (heterogeneidad, presencia de PIE, etc.).
+
+4. **Formato de salida esperado**  
+   Cómo queremos recibir la información:  
+   - “entrega la respuesta en una tabla con columnas…”;  
+   - “escribe una lista numerada de máximo 5 puntos…”;  
+   - “redacta un texto breve (máx. 200 palabras) para estudiantes…”;  
+   - “proporciona ejemplos de preguntas de alternativa y de desarrollo corto”.
+
+5. **Criterios y restricciones (guardarraíles)**  
+   Aquí fijamos límites para resguardar el sentido pedagógico y la viabilidad:  
+   - “usa lenguaje sencillo, sin tecnicismos”;  
+   - “no inventes datos ni fuentes, si no sabes dilo explícitamente”;  
+   - “no entregues actividades que requieran recursos costosos”;  
+   - “respeta lenguaje inclusivo y enfoque no sexista”.
+
+### Técnicas de *prompting* para docentes
+
+A continuación se presentan algunas técnicas sencillas para mejorar la calidad de las respuestas de la IA en el trabajo pedagógico cotidiano:
+
+- **Sé específica/o y precisa/o**  
+  Evita pedir “ideas para una clase” de forma genérica. En cambio, indica curso, asignatura, contenido y objetivo. Mientras más claro sea el encargo, más útil será la respuesta.  
+  *Ejemplo:* “Propón tres actividades breves para introducir el concepto de fracción equivalente en 4º básico en una escuela pública”.
+
+- **Usa restricciones claras (guardarraíles)**  
+  Señala lo que la IA **no** debe hacer o aquello que quieres acotar: extensión, tono, tipo de recursos, nivel de lenguaje, etc.  
+  *Ejemplo:* “No uses jerga técnica, máximo 200 palabras, actividades que se puedan realizar sin computadores ni celulares”.
+
+- **Itera y refina: piensa el diálogo como un proceso**  
+  No esperes que la primera respuesta sea perfecta. Puedes pedir ajustes, correcciones o versiones mejoradas:  
+  *Ejemplos:* “Hazlo más breve”, “adapta esto para 6º básico”, “agrega una opción para estudiantes con NEE”. Tratarlo como una conversación mejora mucho el resultado.
+
+- **Encadena prompts (*chain prompting*)**  
+  Para tareas complejas, es mejor dividir el trabajo en pasos: primero objetivos, luego actividades, después evaluación. También puedes pedir que la propia IA sugiera el siguiente paso.  
+  *Ejemplo:*  
+  1) “Ayúdame a definir los objetivos de una unidad sobre migración en 2º medio”.  
+  2) “Con esos objetivos, propón una secuencia de 5 clases”.  
+  3) “Ahora sugiere posibles instrumentos de evaluación para esta secuencia”.
+
+- **Pide pasos, criterios o fuentes para revisar la calidad**  
+  Solicita que la IA muestre “cómo llegó” a lo que propone, qué supuestos usa o qué referencias generales considera. Esto ayuda a detectar errores y a tomar decisiones informadas.  
+  *Ejemplos:* “Explica en 4 pasos cómo construiste esta rúbrica”, “indica qué supuestos estás usando”, “si mencionas información factual, señala qué tipo de fuente deberíamos consultar para verificarla”.
+
+- **Modela el tipo de reflexión que quieres que haga**  
+  Puedes pedirle explícitamente que revise críticamente su propia respuesta antes de entregarla:  
+  *Ejemplo:* “Antes de responder, indica dos posibles problemas o limitaciones de tu propuesta y luego ofrece una versión mejorada que los aborde”.
+
+Estas técnicas no reemplazan el criterio profesional docente, pero sí ayudan a que la IA se convierta en una herramienta más ajustada a las necesidades reales del aula.
+
+## Plantillas de *prompts* reutilizables para docencia
+
+A continuación se proponen algunas plantillas listas para copiar, pegar y adaptar según las necesidades de cada docente.
+
+###  Plantillas base de *prompt* docente
+
+```markdown 
+Actúa como [ROL O PERFIL QUE NECESITO].
+
+Tu objetivo es [TAREA PRINCIPAL QUE QUIERO LOGRAR].
+
+Contexto:
+- Curso y nivel: [CURSO, NIVEL].
+- Asignatura y contenido: [ASIGNATURA, CONTENIDO].
+- Tipo de establecimiento y características del grupo: [BREVE DESCRIPCIÓN].
+
+Instrucciones:
+- [PRIMERA INSTRUCCIÓN ESPECÍFICA].
+- [SEGUNDA INSTRUCCIÓN ESPECÍFICA].
+- [TERCERA INSTRUCCIÓN ESPECÍFICA].
+
+Formato de salida:
+- [TIPO DE FORMATO: TABLA, LISTA, TEXTO BREVE, ETC.].
+
+Criterios y restricciones:
+- [TONO, LENGUAJE, EXTENSIÓN, RECURSOS DISPONIBLES].
+- [RESGUARDOS ÉTICOS Y PEDAGÓGICOS].
+
+Antes de responder, si falta información importante, hazme hasta 3 preguntas breves para aclarar el contexto.
+```
+
+### Diseñador de prompts pedagógicos para docentes
+
+```markdown 
+Actúa como especialista en educación y en prompt engineering para docentes.
+
+Tu tarea es ayudarme a DISEÑAR un prompt claro y efectivo que luego pueda usar con otra IA.
+
+Contexto:
+- Objetivo general del prompt que necesito: [por ejemplo, “planificar una unidad de Historia para 8º básico sobre dictadura y memoria”].
+- Tipo de producto que quiero obtener con ese futuro prompt: [por ejemplo, “una tabla con clases, objetivos, actividades y evaluaciones”].
+- Público destinatario de los resultados: [por ejemplo, “docentes de escuela pública con alta carga laboral”].
+
+Instrucciones:
+1. Formula un único prompt completo y bien redactado que yo pueda copiar y usar tal cual.
+2. Asegúrate de que el prompt incluya: rol de la IA, objetivo, contexto pedagógico, formato de salida, criterios y restricciones.
+3. Al final, sugiere brevemente cómo podría ajustar ese prompt (por ejemplo, para otros niveles o asignaturas).
+
+Formato de salida:
+- Primero, escribe el prompt final entre comillas.
+- Luego, en 3–4 viñetas, entrega sugerencias de ajustes posibles.
+
+No expliques qué es un prompt ni teorices: concéntrate en darme un buen prompt listo para usar.
+```
+
+
+## Errores frecuentes al usar IA y cómo corregirlos
+
+En esta sección se presentan errores típicos al redactar *prompts* y maneras simples de mejorarlos desde la práctica docente.
+
+###  Pedir “de todo un poco” en una sola instrucción
+
+**Ejemplo de error**
+
+> Hazme una planificación completa de matemáticas para todo el año de 7º básico.
+
+**Problema:** la tarea es demasiado amplia; la respuesta será superficial y poco aplicable.
+
+**Mejor alternativa**
+
+```markdown 
+Actúa como profesora de Matemática de 7º básico en una escuela pública urbana.
+
+Tu objetivo es proponer una planificación sintética para UNA unidad didáctica sobre proporcionalidad.
+
+Contexto:
+- Curso: 7º básico, 38 estudiantes, niveles de logro muy diversos.
+- Asignatura: Matemática.
+- Marco de referencia: Bases curriculares chilenas.
+
+Instrucciones:
+- Propón una secuencia de 4 a 6 clases.
+- Para cada clase, indica objetivo, actividad principal y posible instrumento de evaluación.
+- Ten en cuenta que hay acceso limitado a computadores en el aula.
+
+Formato de salida:
+- Tabla con columnas: Clase – Objetivo – Actividad principal – Evaluación sugerida.
+
+Criterios:
+- Usa lenguaje claro y breve.
+- No des actividades que requieran conexión permanente a internet.
+```
+
+### Falta de contexto sobre el curso y el establecimiento
+
+**Ejemplo de error**
+
+> Dame ideas de actividades para lenguaje.
+
+**Problema:** la IA no sabe si es 2º básico o 4º medio, ni el tipo de establecimiento.
+
+**Mejor alternativa**
+
+```markdown 
+Actúa como profesora de Lengua y Literatura de 2º medio.
+
+Tu objetivo es proponer tres actividades de comprensión lectora para trabajar un cuento latinoamericano breve.
+
+Contexto:
+- Liceo público científico-humanista, cursos numerosos (45 estudiantes).
+- Hay estudiantes con diferentes niveles de lectura y al menos dos con NEE permanentes.
+- Tiempo disponible: una hora pedagógica por actividad.
+
+Formato de salida:
+- Lista numerada con 3 actividades.
+- Para cada actividad incluye: propósito, descripción breve, tiempo estimado y posibles ajustes para estudiantes con NEE.
+
+Criterios:
+- Usa materiales que se puedan fotocopiar o proyectar.
+- No requieras acceso individual a computadores.
+```
+
+### Delegar decisiones pedagógicas clave a la IA
+
+**Ejemplo de error**
+
+> Decide tú qué contenidos son más importantes para enseñar en Historia de Chile en 8º básico.
+
+**Problema:** la selección de contenidos es una decisión curricular y pedagógica que corresponde al equipo docente y a las bases curriculares, no a la IA.
+
+**Mejor alternativa**
+
+```markdown 
+Actúa como asesor pedagógico.
+
+Tu objetivo es ayudarme a organizar una secuencia de actividades para trabajar los contenidos de Historia de Chile de 8º básico ya definidos en las bases curriculares.
+
+Contexto:
+- Escuela básica pública.
+- Contenidos a abordar: [PEGAR LISTA DE CONTENIDOS SELECCIONADOS POR EL DOCENTE].
+
+Instrucciones:
+- Sugiere una posible secuencia de actividades para abordar estos contenidos en 6 a 8 clases.
+- No agregues contenidos nuevos; solo organiza y relaciona los que entrego.
+
+Formato de salida:
+- Lista numerada de clases con una breve descripción de la actividad principal.
+
+Criterios:
+- Considera que el curso cuenta con recursos limitados (pizarra, cuaderno, proyector ocasional).
+```
+
+### Incluir información sensible de estudiantes o colegas
+
+**Ejemplo de error**
+
+> Te copio los nombres y diagnósticos de mis estudiantes para que me digas cómo trabajar con cada uno.
+
+**Problema:** vulnera la confidencialidad y privacidad de estudiantes.
+
+**Mejor alternativa (enfoque anónimo y general)**
+
+```markdown 
+Actúa como especialista en educación inclusiva.
+
+Tu objetivo es sugerir adaptaciones generales para un curso diverso de 6º básico.
+
+Contexto:
+- Escuela pública con programa de integración escolar (PIE).
+- En el curso hay estudiantes con dificultades específicas de aprendizaje, TDAH y discapacidad intelectual leve.
+
+Instrucciones:
+- Propón 5 estrategias generales de adaptación de materiales y actividades para favorecer la participación de todo el curso.
+- No necesitas nombres ni datos personales de estudiantes.
+
+Formato:
+- Lista con 5 estrategias, cada una explicada en 3 o 4 líneas.
+
+Criterios:
+- Considera un enfoque de diseño universal para el aprendizaje (DUA).
+- Evita lenguaje técnico innecesario.
+```

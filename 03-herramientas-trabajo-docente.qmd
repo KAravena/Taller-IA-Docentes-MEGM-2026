@@ -1,0 +1,208 @@
+﻿---
+title: "Herramientas prácticas para el trabajo docente"
+---
+
+## IA para planificación de clases y unidades
+
+La planificación es una de las tareas que más tiempo demanda en el trabajo docente. La inteligencia artificial puede funcionar aquí como un asistente de borradores: ayuda a proponer ideas, ordenar secuencias y sugerir actividades, pero la decisión final sobre qué, cómo y cuándo enseñar sigue siendo siempre pedagógica y profesional, basada en las Bases Curriculares y en el conocimiento que cada docente tiene de su curso.
+
+Usada de manera crítica y situada, la IA puede ahorrar tiempo en la fase inicial de la planificación, para que las y los profesores puedan dedicar más energía a la reflexión pedagógica y a la adaptación fina de las propuestas a su realidad escolar concreta.
+
+**Usos posibles:**
+
+- Proponer borradores de secuencias de clases para una unidad específica.  
+- Sugerir objetivos de aprendizaje y actividades de inicio, desarrollo y cierre, alineadas con OA u objetivos priorizados.  
+- Ayudar a alinear actividades con objetivos de aprendizaje definidos por el/la docente.  
+- Ofrecer variantes de una misma clase según el tiempo disponible o el perfil del grupo.  
+- Generar ideas iniciales para luego ser revisadas, corregidas y ajustadas por el equipo docente.  
+
+**Ejemplo de prompt para planificación de una unidad:**
+
+```markdown
+Actúa como profesor/a de [ASIGNATURA] en [NIVEL] en una escuela [tipo de establecimiento: pública, subvencionada, particular] de Chile.
+
+Tu objetivo es ayudarme a elaborar un borrador de planificación para UNA unidad didáctica sobre [TEMA O CONTENIDO].
+
+Contexto:  
+- Curso: [por ejemplo, 8º básico, 40 estudiantes].  
+- Marco curricular: Bases Curriculares chilenas para [ASIGNATURA]; OA a trabajar: [pegar aquí si es posible].  
+- Tiempo disponible: [número aproximado de clases u horas pedagógicas].  
+- Características del grupo: [curso diverso, presencia de PIE, diferencias importantes en niveles de logro, etc.].  
+
+Instrucciones:  
+- Propón una secuencia de [X] clases para esta unidad.  
+- Para cada clase, indica: objetivo específico, actividad principal de aprendizaje, recurso clave a utilizar y forma sencilla de evaluación (por ejemplo, pregunta de salida, ejercicio breve).  
+- Incluye al menos una sugerencia de ajuste o variación para estudiantes que requieran más apoyo y otra para quienes puedan profundizar.  
+
+Formato de salida:  
+- Tabla con columnas: Clase – Objetivo específico – Actividad principal – Recurso – Evaluación sugerida – Ajustes/variantes.  
+
+Criterios y restricciones:  
+- Usa lenguaje claro y concreto, adecuado al contexto escolar chileno.  
+- No inventes contenidos fuera de las Bases Curriculares; organiza y ejemplifica a partir de los OA indicados.  
+- No propongas actividades que requieran recursos tecnológicos que no haya mencionado.  
+```
+
+
+## IA para generación y adaptación de materiales
+
+Otra tarea muy demandante en el trabajo docente es la elaboración, revisión y adaptación de materiales: guías, ejercicios, textos, ejemplos, preguntas, lecturas, imagenes, entre otros. La IA puede convertirse en un apoyo relevante para producir primeros borradores de estos recursos, que luego la/el docente revisa, ajusta y contextualiza según su curso y establecimiento.
+
+Esto puede ahorrar tiempo en la redacción inicial y abrir posibilidades para ofrecer más variedad de ejemplos y actividades, manteniendo siempre el criterio profesional sobre la pertinencia pedagógica y el nivel de dificultad.
+
+**Usos posibles:**
+
+- Generar ejercicios adicionales a partir de un contenido ya definido.  
+- Adaptar un mismo texto a distintos niveles de complejidad (más sencillo o más desafiante).  
+- Crear versiones alternativas de una actividad para diferentes niveles de logro.  
+- Transformar un contenido en distintos formatos: preguntas de opción múltiple, desarrollo, verdadero/falso, organizadores gráficos, etc.  
+- Reformular instrucciones para que sean más claras para estudiantes de distintos cursos.  
+
+**Ejemplo de prompt para generar y adaptar materiales:**
+
+```markdown
+Actúa como profesor/a de [ASIGNATURA] con experiencia en diseño de materiales didácticos para escuelas públicas chilenas.
+
+Tu objetivo es ayudarme a generar y adaptar materiales para trabajar el tema [TEMA ESPECÍFICO] con un curso de [NIVEL] en el marco de las Bases Curriculares.
+
+Contexto:  
+- Tipo de establecimiento: [público, subvencionado, técnico-profesional, rural, urbano, etc.].  
+- Características del grupo: [tamaño del curso, diversidad de niveles, presencia de PIE, etc.].  
+- Recursos disponibles: [pizarra, cuadernos, proyector, fotocopias, laboratorio, etc.].  
+
+Instrucciones:  
+1. Propón [NÚMERO] ejercicios o actividades breves para trabajar este contenido.  
+   - Para cada actividad, indica: propósito, descripción breve y tiempo estimado.  
+2. Luego, elige UNA de las actividades y genera:  
+   - Una versión más sencilla para estudiantes que necesitan mayor apoyo.  
+   - Una versión más desafiante para estudiantes que avanzan más rápido.  
+
+Formato de salida:  
+- Primero, lista numerada de actividades con su propósito, descripción y tiempo.  
+- Después, subtítulos “Versión más sencilla” y “Versión más desafiante” para la actividad elegida, explicadas en no más de 6 líneas cada una.  
+
+Criterios y restricciones:  
+- Usa lenguaje claro, adecuado al nivel del curso.  
+- No incluyas recursos costosos ni que requieran conexión a internet permanente.  
+- No cambies el contenido central; solo ajusta la complejidad y el tipo de apoyo.  
+```
+
+## IA para diversificar actividades según curso
+
+En un mismo curso suelen convivir estudiantes con ritmos de aprendizaje distintos, intereses variados, trayectorias escolares diversas y, en muchos casos, con participación de programas de integración escolar (PIE). La IA puede ayudar a generar variantes de una misma actividad para atender esta diversidad, siempre que la/el docente mantenga el control sobre los objetivos y la evaluación.
+
+El papel de la IA no es decidir quién hace qué, sino ofrecer un abanico de opciones que la/el profesor/a puede asignar, combinar o adaptar a su grupo, evitando etiquetar estudiantes y resguardando una mirada inclusiva.
+
+**Usos posibles:**
+
+- Diseñar tres niveles de dificultad para una misma actividad (más guiada, intermedia, profundización).  
+- Proponer actividades que privilegien diferentes canales: oral, escrito, visual, manipulativo.  
+- Generar desafíos extra para estudiantes que avanzan más rápido.  
+- Sugerir apoyos adicionales (preguntas guía, ejemplos resueltos, organizadores gráficos) para quienes requieren más acompañamiento.  
+
+**Ejemplo de prompt para diversificar una actividad base:**
+```markdown
+Actúa como especialista en diferenciación pedagógica e inclusión educativa en contexto escolar chileno.
+
+Tu objetivo es ayudarme a diversificar una actividad sobre [TEMA] para un curso de [NIVEL], manteniendo el mismo contenido central.
+
+Contexto:  
+- Tipo de establecimiento: [público/subvencionado/particular].  
+- Curso diverso en niveles de logro; hay estudiantes que requieren más apoyo y otros que avanzan más rápido.  
+- Recursos disponibles: [pizarra, cuadernos, proyector, impresora, etc.].  
+
+Actividad base:  
+[PEGAR AQUÍ LA ACTIVIDAD ORIGINAL QUE YA DISEÑÓ EL/LA DOCENTE].
+
+Instrucciones:  
+1. A partir de la actividad base, propone tres versiones:  
+   - Una “Versión más guiada” para estudiantes que necesitan mayor apoyo.  
+   - Una “Versión intermedia” para la mayoría del curso.  
+   - Una “Versión de profundización” para quienes pueden avanzar más rápido.  
+2. Para cada versión, indica:  
+   - Propósito.  
+   - Pasos principales de la actividad.  
+   - Tipo de apoyo o desafío que se incluye (ejemplos, preguntas guía, uso de material concreto, etc.).  
+
+Formato de salida:  
+- Subtítulos: “Versión más guiada”, “Versión intermedia” y “Versión de profundización”.  
+- Bajo cada subtítulo, un breve párrafo de 6 a 8 líneas describiendo la propuesta.  
+
+Criterios:  
+- Mantén el mismo contenido central en las tres versiones.  
+- Usa lenguaje claro y respetuoso, sin etiquetar a estudiantes como “buenos” o “malos”.  
+- No propongas actividades que dependan de tecnologías que no se han mencionado.  
+```
+
+
+## IA para organizar el trabajo cotidiano (síntesis, comunicaciones, actas, etc.)
+
+Además de las tareas directamente pedagógicas, el trabajo docente incluye una importante carga administrativa y de organización: lectura de documentos extensos, elaboración de actas, sistematización de acuerdos, redacción de comunicaciones a familias, entre otras. La IA puede ser un apoyo para sintetizar, ordenar y redactar borradores, siempre que se tenga especial cuidado de no exponer datos sensibles de estudiantes o colegas.
+
+Utilizada con resguardos, la IA puede ayudar a disminuir el tiempo dedicado a la redacción inicial de estos documentos, de modo que las y los profesores puedan concentrarse en la toma de decisiones, la coordinación con sus equipos y la atención directa a estudiantes.
+
+**Usos posibles:**
+
+- Resumir documentos largos, orientaciones o actas en síntesis breves y claras.  
+- Transformar un conjunto de notas dispersas en listas de acuerdos o tareas.  
+- Proponer borradores de comunicaciones a familias, que luego la/el docente revisa y ajusta.  
+- Sugerir estructuras de actas o pautas para registrar acuerdos de reuniones.  
+- Ordenar ideas para proyectos, unidades o talleres en esquemas más claros.  
+
+**Ejemplo de prompt para síntesis y organización de información:**
+```markdown
+Actúa como asistente de organización de trabajo docente en una escuela pública de Chile.
+
+Tu objetivo es ayudarme a sintetizar y ordenar información para facilitar mi trabajo.
+
+Contexto:  
+- Soy profesor/a de [NIVEL/ASIGNATURA].  
+- Necesito convertir un conjunto de notas e información en un resumen claro y una lista de acuerdos o tareas.  
+
+Instrucciones:  
+1. A partir del texto que pegaré a continuación, genera:  
+   - Un resumen breve de máximo 150 palabras.  
+   - Una lista de 5 a 7 acuerdos o tareas concretas.  
+2. Si detectas información poco clara o contradictoria, señálalo al final en un apartado de observaciones.  
+
+Texto a sintetizar:  
+[PEGAR AQUÍ NOTAS, ACTA O DOCUMENTO SIN DATOS SENSIBLES].  
+
+Formato de salida:  
+- Subtítulo “Resumen breve” y el resumen en un párrafo.  
+- Subtítulo “Lista de acuerdos o tareas” y la lista numerada.  
+- Si corresponde, subtítulo “Observaciones” con 2 a 3 líneas.  
+
+Criterios y restricciones:  
+- No inventes acuerdos ni información que no esté en el texto.  
+- Usa lenguaje claro y profesional.  
+- No incluyas nombres propios ni datos personales, aunque aparezcan en el texto original; reemplázalos por descripciones generales (por ejemplo, “un/a estudiante”, “un/a apoderado/a”).  
+```
+
+**Ejemplo de prompt para redactar un comunicado breve a familias:**
+```markdown
+Actúa como profesor/a jefe con experiencia en comunicación clara y respetuosa con familias en el sistema escolar chileno.
+
+Tu objetivo es ayudarme a redactar un comunicado breve para apoderadas y apoderados sobre [TEMA: por ejemplo, reunión, actividad especial, cambio de horario].
+
+Contexto:  
+- Curso: [por ejemplo, 5º básico].  
+- Tipo de establecimiento: [público/subvencionado/particular].  
+- Medio de envío: [agenda, correo electrónico, WhatsApp].  
+
+Instrucciones:  
+- Redacta un texto de máximo 180 palabras.  
+- Usa un tono cercano, respetuoso y profesional.  
+- Explica de forma sencilla qué ocurrirá, cuándo, dónde y por qué es importante la actividad o la información.  
+- Incluye, si corresponde, qué se espera de las familias (asistencia, autorización, envío de materiales, etc.).  
+
+Formato de salida:  
+- Texto continuo, listo para copiar y pegar en el medio de comunicación indicado.  
+
+Criterios y restricciones:  
+- Evita tecnicismos; si mencionas “inteligencia artificial” u otros conceptos, explícalos en palabras simples.  
+- No incluyas datos personales ni información que no te haya proporcionado.  
+- Mantén un enfoque colaborativo, reconociendo el rol de las familias en el proceso educativo.  
+```
+
+En todos estos casos, la IA se utiliza como apoyo para organizar, sintetizar y redactar, pero la revisión final, la adecuación al contexto y la decisión sobre qué se envía o se registra siguen siendo responsabilidad profesional de la/el docente y de los equipos escolares.
