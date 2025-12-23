@@ -4,120 +4,193 @@ title: "Claves de prompt engineering docente"
 
 ## Qué es un “prompt” y por qué importa en el trabajo docente
 
-En términos simples, un *prompt* es el mensaje o instrucción que le damos a la inteligencia artificial para que haga algo por nosotras/os: proponer ideas de clase, redactar una rúbrica, adaptar un texto, etc. Es la “consigna” que guía la respuesta del modelo.  
+En términos simples, un *prompt* es el mensaje o instrucción que le damos a la inteligencia artificial para que haga algo por nosotras/os: proponer ideas de clase, redactar una rúbrica, adaptar un texto, escribir un comunicado a apoderadas/os, crear imagenes, videos, ZZZetc. Es la consigna que guía la respuesta del modelo, muy parecido a cuando redactamos una buena instrucción de trabajo para nuestro curso.
 
 En el trabajo docente, la calidad del *prompt* es clave porque:
 
-- define **qué tarea** realizará la IA (por ejemplo, “sugerir actividades para…”, “proponer preguntas de evaluación sobre…”);  
-- entrega el **contexto pedagógico** (curso, asignatura, objetivos de aprendizaje, características del establecimiento);  
-- indica **cómo** queremos recibir la respuesta (tabla, lista, texto breve, tono formal o cercano, extensión aproximada);  
-- establece **límites y resguardos** (no inventar datos, no usar lenguaje técnico, no tomar decisiones pedagógicas por la/el docente).
+- define qué tarea realizará la IA (por ejemplo, “sugerir actividades para…”, “proponer preguntas de evaluación sobre…”);
+- entrega el contexto pedagógico (curso, asignatura, objetivos de aprendizaje, características del establecimiento y del grupo);
+- indica cómo queremos recibir la respuesta (tabla, lista, texto breve, tono formal o cercano, extensión aproximada);
+- establece límites y resguardos (no inventar datos, no usar lenguaje técnico, no tomar decisiones pedagógicas por la/el docente).
 
-Cuando el *prompt* es vago (“ayúdame con una clase de fracciones”) la respuesta suele ser genérica y poco útil. En cambio, cuando el *prompt* está bien diseñado, con objetivo claro, contexto, rol, formato y criterios, la IA puede convertirse en un apoyo real para el trabajo docente, siempre bajo el criterio profesional de la/el profesora/or.
+Por ejemplo, no es lo mismo escribir:
 
-Una forma sencilla de pensarlo es: **un buen *prompt* se parece a una buena consigna de trabajo para estudiantes**: clara, ubicada en contexto y con criterios de logro explícitos.
+> “Ayúdame con una clase de fracciones”,
 
-## Estructura de un buen *prompt* pedagógico
+que decir:
 
-En esta sección se propone una “columna vertebral” para redactar *prompts* útiles en educación. No se trata de reglas rígidas, sino de una guía que cada docente puede adaptar a su estilo.
+> “Actúa como profesora de Matemática de 5º básico en una escuela pública con cursos numerosos. Propón tres actividades de 20 minutos para introducir fracciones equivalentes, usando solo pizarra y cuadernos, y explícame en una tabla objetivo, actividad y cierre de cada una”.
+
+En el primer caso, la respuesta será genérica y poco útil. En el segundo, la IA tiene una tarea clara, contexto, formato y límites, por lo que puede apoyar de manera más ajustada el trabajo docente.
+
+**Idea fuerza:** si el *prompt* es vago, la respuesta también lo será; un buen *prompt* se parece a una buena consigna de trabajo: clara, contextualizada y con criterios explícitos.
+
+
+## Estructura de un buen prompt pedagógico
+
+En esta sección se propone una “columna vertebral” para redactar prompts útiles en educación. No se trata de reglas rígidas, sino de una guía que cada docente puede adaptar a su estilo y a la realidad de su escuela.
 
 ### Los 5 componentes básicos
 
-1. **Rol de la IA**  
-   Indica desde qué lugar queremos que responda la herramienta. Ejemplos:  
-   - “Actúa como profesora de Historia de enseñanza media…”  
-   - “Actúa como asesor pedagógico con experiencia en evaluación formativa…”  
-   - “Actúa como especialista en educación inclusiva y diseño universal para el aprendizaje…”
+**1) Rol de la IA: ¿desde qué lugar quiero que responda?**
 
-2. **Objetivo / tarea principal**  
-   Qué queremos lograr con la respuesta, en una frase concreta.  
-   - “Tu objetivo es proponer tres actividades breves para…”  
-   - “Tu tarea es elaborar una rúbrica de evaluación para…”  
-   - “Tu misión es sintetizar el siguiente texto para que lo pueda comprender un curso de 6º básico…”
+Aquí le decimos al modelo “qué tipo de profesional” queremos que simule.  
+Ejemplos:
 
-3. **Contexto pedagógico**  
-   Información relevante sobre curso, asignatura, tipo de establecimiento, realidad del grupo, etc.  
-   - nivel y curso (5º básico, 2º medio técnico-profesional, etc.);  
-   - asignatura y contenido específico;  
-   - características del establecimiento (público, subvencionado, rural, urbano, etc.);  
-   - características del grupo (heterogeneidad, presencia de PIE, etc.).
+- “Actúa como profesora de Historia de enseñanza media en un liceo público…”
+- “Actúa como asesor pedagógico con experiencia en evaluación formativa…”
+- “Actúa como especialista en educación inclusiva y diseño universal para el aprendizaje (DUA)…”.
 
-4. **Formato de salida esperado**  
-   Cómo queremos recibir la información:  
-   - “entrega la respuesta en una tabla con columnas…”;  
-   - “escribe una lista numerada de máximo 5 puntos…”;  
-   - “redacta un texto breve (máx. 200 palabras) para estudiantes…”;  
-   - “proporciona ejemplos de preguntas de alternativa y de desarrollo corto”.
+**Uso típico:** pedir sugerencias de actividades, rúbricas o adaptaciones considerando miradas pedagógicas específicas (inclusión, evaluación, orientación, etc.).
 
-5. **Criterios y restricciones (guardarraíles)**  
-   Aquí fijamos límites para resguardar el sentido pedagógico y la viabilidad:  
-   - “usa lenguaje sencillo, sin tecnicismos”;  
-   - “no inventes datos ni fuentes, si no sabes dilo explícitamente”;  
-   - “no entregues actividades que requieran recursos costosos”;  
-   - “respeta lenguaje inclusivo y enfoque no sexista”.
+**2) Objetivo / tarea principal: ¿qué necesito que haga?**
 
-### Técnicas de *prompting* para docentes
+Es la acción central que esperamos de la IA, en una frase concreta.  
+Ejemplos:
 
-A continuación se presentan algunas técnicas sencillas para mejorar la calidad de las respuestas de la IA en el trabajo pedagógico cotidiano:
+- “Tu objetivo es proponer tres actividades breves para…”
+- “Tu tarea es elaborar una rúbrica de evaluación para…”
+- “Tu misión es sintetizar el siguiente texto para que lo pueda comprender un curso de 6º básico…”.
 
-- **Sé específica/o y precisa/o**  
-  Evita pedir “ideas para una clase” de forma genérica. En cambio, indica curso, asignatura, contenido y objetivo. Mientras más claro sea el encargo, más útil será la respuesta.  
-  *Ejemplo:* “Propón tres actividades breves para introducir el concepto de fracción equivalente en 4º básico en una escuela pública”.
+**Uso típico:** planificación de clases o unidades, diseño de instrumentos, redacción de comunicaciones, etc.
 
-- **Usa restricciones claras (guardarraíles)**  
-  Señala lo que la IA **no** debe hacer o aquello que quieres acotar: extensión, tono, tipo de recursos, nivel de lenguaje, etc.  
-  *Ejemplo:* “No uses jerga técnica, máximo 200 palabras, actividades que se puedan realizar sin computadores ni celulares”.
+**3) Contexto pedagógico: ¿qué información de mi realidad escolar debe considerar?**
 
-- **Itera y refina: piensa el diálogo como un proceso**  
-  No esperes que la primera respuesta sea perfecta. Puedes pedir ajustes, correcciones o versiones mejoradas:  
-  *Ejemplos:* “Hazlo más breve”, “adapta esto para 6º básico”, “agrega una opción para estudiantes con NEE”. Tratarlo como una conversación mejora mucho el resultado.
+Aquí entregamos los datos clave de la situación:
 
-- **Encadena prompts (*chain prompting*)**  
-  Para tareas complejas, es mejor dividir el trabajo en pasos: primero objetivos, luego actividades, después evaluación. También puedes pedir que la propia IA sugiera el siguiente paso.  
-  *Ejemplo:*  
-  1) “Ayúdame a definir los objetivos de una unidad sobre migración en 2º medio”.  
-  2) “Con esos objetivos, propón una secuencia de 5 clases”.  
-  3) “Ahora sugiere posibles instrumentos de evaluación para esta secuencia”.
+- nivel y curso (5º básico, 2º medio técnico-profesional, etc.);
+- asignatura y contenido específico (por ejemplo, “geometría: círculo y circunferencia”);
+- características del establecimiento (público, subvencionado, rural, urbano, con PIE, etc.);
+- características del grupo (curso numeroso, heterogéneo, presencia de NEE, alta sobrecarga de tareas, etc.).
 
-- **Pide pasos, criterios o fuentes para revisar la calidad**  
-  Solicita que la IA muestre “cómo llegó” a lo que propone, qué supuestos usa o qué referencias generales considera. Esto ayuda a detectar errores y a tomar decisiones informadas.  
-  *Ejemplos:* “Explica en 4 pasos cómo construiste esta rúbrica”, “indica qué supuestos estás usando”, “si mencionas información factual, señala qué tipo de fuente deberíamos consultar para verificarla”.
+Ejemplo: “Curso: 1º medio humanista-científico, 42 estudiantes, varios con apoyo PIE en lenguaje escrito”.
 
-- **Modela el tipo de reflexión que quieres que haga**  
-  Puedes pedirle explícitamente que revise críticamente su propia respuesta antes de entregarla:  
-  *Ejemplo:* “Antes de responder, indica dos posibles problemas o limitaciones de tu propuesta y luego ofrece una versión mejorada que los aborde”.
+**4) Formato de salida esperado: ¿cómo quiero recibir la respuesta?**
 
-Estas técnicas no reemplazan el criterio profesional docente, pero sí ayudan a que la IA se convierta en una herramienta más ajustada a las necesidades reales del aula.
+Definimos la forma del producto final para que sea más fácil de usar:
 
-## Plantillas de *prompts* reutilizables para docencia
+- “Entrega la respuesta en una tabla con columnas: clase, objetivo, actividad principal y evaluación”.
+- “Escribe una lista numerada de máximo 5 puntos”.
+- “Redacta un texto breve (máx. 200 palabras) pensado para estudiantes de 7º básico”.
+- “Proporciona ejemplos de preguntas de alternativa y de desarrollo corto”.
 
-A continuación se proponen algunas plantillas listas para copiar, pegar y adaptar según las necesidades de cada docente.
+**Uso típico:** generar planificaciones, guías, rúbricas, comunicados o resúmenes listos para pegar y ajustar.
 
-###  Plantillas base de *prompt* docente
+**5) Criterios y restricciones (guardarraíles): ¿qué límites quiero poner?**
+
+Sirven para cuidar el sentido pedagógico, la ética y la viabilidad real en la escuela:
+
+- “Usa lenguaje sencillo, sin tecnicismos”.
+- “No inventes datos ni fuentes; si no sabes, dilo explícitamente”.
+- “No entregues actividades que requieran recursos costosos ni conexión a internet”.
+- “Respeta lenguaje inclusivo y enfoque no sexista”.
+
+Ejemplo: al pedir una propuesta de evaluación, aclarar que la IA no debe decidir notas ni aprobar/reprobar estudiantes.
+
+**Idea fuerza:** un buen prompt pedagógico siempre responde a cinco preguntas: ¿qué rol?, ¿qué tarea?, ¿en qué contexto?, ¿con qué formato? y ¿con qué límites y resguardos?
+
+
+## Técnicas de prompting para docentes
+
+A continuación se presentan algunas técnicas sencillas, ordenadas como pasos posibles, para mejorar la calidad de las respuestas de la IA en el trabajo pedagógico cotidiano.
+
+<span style="text-decoration: underline;">1.Sé específica/o y precisa/o</span>.
+
+Evita pedir “ideas para una clase” de forma genérica. Indica curso, asignatura, contenido, objetivo y tiempo disponible. Mientras más claro sea el encargo, más útil será la respuesta.
+
+**Ejemplo de prompt:**
+
+> “Actúa como profesora de Lenguaje en 7º básico de una escuela pública urbana. Tu objetivo es proponer dos actividades de 30 minutos para trabajar comprensión lectora de crónicas periodísticas. Contexto: curso numeroso (40 estudiantes), varios con apoyo PIE. Formato de salida: tabla con columnas objetivo, actividad, recursos y sugerencias de cierre. Criterios: lenguaje sencillo, actividades sin uso de computadores.”
+
+<span style="text-decoration: underline;">**2.** Usa restricciones claras (guardarraíles)</span>.
+
+Señala lo que la IA no debe hacer o aquello que quieres acotar: extensión, tono, tipo de recursos, nivel de lenguaje, etc.
+
+**Ejemplo de prompt:**
+
+> “Proponte tres ideas de actividad para trabajar porcentajes en 8º básico. No uses jerga técnica, máximo 200 palabras en total, y plantea actividades que se puedan realizar solo con cuadernos, lápiz y calculadora simple.”
+
+<span style="text-decoration: underline;">**3.** Itera y refina: piensa el diálogo como un proceso</span>.
+
+No esperes que la primera respuesta sea perfecta. Puedes pedir ajustes, correcciones o versiones mejoradas.
+
+**Ejemplos de seguimientos:**
+
+- “Haz la propuesta más breve y con lenguaje más simple para 5º básico”.
+- “Adapta esta misma actividad para un curso con varios estudiantes con NEE en lectura”.
+- “Agrega una columna con posibles errores frecuentes de los estudiantes”.
+
+<span style="text-decoration: underline;">**4.** Encadena prompts (*chain prompting*)
+
+Para tareas complejas, es mejor dividir el trabajo en pasos: primero objetivos, luego actividades, después evaluación. También puedes pedir que la propia IA sugiera el siguiente paso.
+
+**Ejemplo encadenado:**
+
+> “Ayúdame a definir tres objetivos de aprendizaje para una unidad sobre migración contemporánea en 2º medio, alineados con las Bases Curriculares de Historia.”  
+> “Con esos objetivos, propón una secuencia de 5 clases con actividades principales y tiempos estimados.”  
+> “Ahora sugiere posibles instrumentos de evaluación formativa para esta secuencia, indicando qué recoge cada uno.”
+
+<span style="text-decoration: underline;">**5.** Pide pasos, criterios o fuentes para revisar la calidad</span>.
+
+Solicita que la IA muestre “cómo llegó” a lo que propone, qué supuestos usa o qué referencias generales considera. Esto ayuda a detectar errores y a tomar decisiones informadas.
+
+**Ejemplo de prompt:**
+
+> “Construye una rúbrica simple para evaluar un informe escrito en 8º básico sobre contaminación ambiental. Luego explica en 4 pasos cómo definiste los criterios y niveles de logro, de manera que yo pueda revisarlos críticamente.”
+
+<span style="text-decoration: underline;">**6.** Modela el tipo de reflexión que quieres que haga</span>.
+
+Puedes pedirle explícitamente que revise críticamente su propia respuesta antes de entregarla.
+
+**Ejemplo de prompt:**
+
+> “Propon tres actividades para trabajar el acoso escolar en Consejo de Curso de 6º básico. Antes de entregarlas, indica dos posibles problemas o riesgos de tu propuesta (por ejemplo, revictimización, exposición de estudiantes) y luego ofrece una versión mejorada que intente abordarlos.”
+
+**Idea fuerza:** las técnicas de prompting no reemplazan el criterio profesional docente, pero sí ayudan a que la IA se parezca más a una colega que apoya: tú sigues tomando las decisiones; la herramienta solo propone y tú filtras, adaptas y mejoras.
+
+## Plantillas de prompts reutilizables para docencia
+
+A continuación se proponen algunas plantillas listas para copiar, pegar y adaptar según las necesidades de cada docente. La idea es que funcionen como “moldes” rápidos para planificación, evaluación, adaptación de materiales o comunicaciones.
+
+### Plantillas base de prompt docente
 
 ```markdown 
-Actúa como [ROL O PERFIL QUE NECESITO].
+actúa como [rol o perfil que necesito] en una escuela [tipo de establecimiento: pública, subvencionada, tp, rural, etc.] de chile.
 
-Tu objetivo es [TAREA PRINCIPAL QUE QUIERO LOGRAR].
+tu objetivo es [tarea principal que quiero lograr] relacionada con [breve descripción del tema o contenido].
 
-Contexto:
-- Curso y nivel: [CURSO, NIVEL].
-- Asignatura y contenido: [ASIGNATURA, CONTENIDO].
-- Tipo de establecimiento y características del grupo: [BREVE DESCRIPCIÓN].
+contexto:
 
-Instrucciones:
-- [PRIMERA INSTRUCCIÓN ESPECÍFICA].
-- [SEGUNDA INSTRUCCIÓN ESPECÍFICA].
-- [TERCERA INSTRUCCIÓN ESPECÍFICA].
+curso y nivel: [curso, nivel].
 
-Formato de salida:
-- [TIPO DE FORMATO: TABLA, LISTA, TEXTO BREVE, ETC.].
+asignatura y contenido: [asignatura, contenido específico].
 
-Criterios y restricciones:
-- [TONO, LENGUAJE, EXTENSIÓN, RECURSOS DISPONIBLES].
-- [RESGUARDOS ÉTICOS Y PEDAGÓGICOS].
+características del grupo: [número de estudiantes, presencia de pie, diversidad de niveles, etc.].
+
+recursos disponibles: [pizarra, cuadernos, proyector, laboratorio, etc.].
+
+instrucciones:
+
+[primera instrucción específica, por ejemplo “propón x actividades de y minutos”].
+
+[segunda instrucción específica, por ejemplo “incluye una idea de evaluación formativa”].
+
+[tercera instrucción específica, por ejemplo “sugiere ajustes para estudiantes que necesiten más apoyo”].
+
+formato de salida:
+
+[tipo de formato: tabla, lista numerada, texto breve para estudiantes, etc.].
+
+criterios y restricciones:
+
+[tono y nivel de lenguaje, por ejemplo “usa lenguaje sencillo y ejemplos cercanos a la vida cotidiana de las y los estudiantes”].
+
+[límites de recursos, por ejemplo “no propongas actividades que requieran celulares o internet”].
+
+[resguardos éticos y pedagógicos, por ejemplo “no tomes decisiones de notas ni apruebes/repruebes estudiantes”].
 
 Antes de responder, si falta información importante, hazme hasta 3 preguntas breves para aclarar el contexto.
+
 ```
 
 ### Diseñador de prompts pedagógicos para docentes
@@ -144,3 +217,4 @@ Formato de salida:
 No expliques qué es un prompt ni teorices: concéntrate en darme un buen prompt listo para usar.
 ```
 
+**Idea fuerza:** contar con plantillas reutilizables ahorra tiempo y energía; cada docente puede ir guardando sus prompts favoritos, mejorarlos con la experiencia y compartirlos con sus colegas como parte de una cultura de colaboración en torno al uso pedagógico de la IA.

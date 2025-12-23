@@ -4,205 +4,436 @@ title: "Herramientas prácticas para el trabajo docente"
 
 ## IA para planificación de clases y unidades
 
-La planificación es una de las tareas que más tiempo demanda en el trabajo docente. La inteligencia artificial puede funcionar aquí como un asistente de borradores: ayuda a proponer ideas, ordenar secuencias y sugerir actividades, pero la decisión final sobre qué, cómo y cuándo enseñar sigue siendo siempre pedagógica y profesional, basada en las Bases Curriculares y en el conocimiento que cada docente tiene de su curso.
+La planificación es una de las tareas que más tiempo demanda en el trabajo docente. La inteligencia artificial puede funcionar aquí como un **asistente de borradores**: ayuda a proponer ideas, ordenar secuencias y sugerir actividades, pero la decisión final sobre qué, cómo y cuándo enseñar sigue siendo siempre pedagógica y profesional, basada en las Bases Curriculares y en el conocimiento que cada docente tiene de su curso y de sus estudiantes.
 
-Usada de manera crítica y situada, la IA puede ahorrar tiempo en la fase inicial de la planificación, para que las y los profesores puedan dedicar más energía a la reflexión pedagógica y a la adaptación fina de las propuestas a su realidad escolar concreta.
+Usada de manera crítica y situada, la IA puede ahorrar tiempo en la fase inicial de la planificación, de modo que las y los profesores puedan dedicar más energía a la reflexión pedagógica, al trabajo colaborativo con colegas y a la adaptación fina de las propuestas a su realidad escolar concreta (cursos numerosos, presencia de PIE, uso de textos oficiales, etc.).
 
-**Usos posibles:**
+**Usos posibles en planificación:**
 
-- Proponer borradores de secuencias de clases para una unidad específica.  
-- Sugerir objetivos de aprendizaje y actividades de inicio, desarrollo y cierre, alineadas con OA u objetivos priorizados.  
-- Ayudar a alinear actividades con objetivos de aprendizaje definidos por el/la docente.  
-- Ofrecer variantes de una misma clase según el tiempo disponible o el perfil del grupo.  
-- Generar ideas iniciales para luego ser revisadas, corregidas y ajustadas por el equipo docente.  
+- **Diseño de unidades y secuencias:**
+  - Proponer borradores de secuencias de clases para una unidad específica.
+  - Ordenar actividades ya existentes en una secuencia más coherente (inicio–desarrollo–cierre).
+  - Sugerir tiempos aproximados para cada momento de la clase.
+
+- **Objetivos y actividades:**
+  - Sugerir objetivos de aprendizaje y actividades de inicio, desarrollo y cierre, alineadas con OA u objetivos priorizados.
+  - Ayudar a alinear actividades con objetivos de aprendizaje definidos previamente por la/el docente.
+  - Proponer preguntas guía, problemas o situaciones iniciales para activar conocimientos previos.
+
+- **Ajustes según realidad del curso:**
+  - Ofrecer variantes de una misma clase según el tiempo disponible (bloques dobles, horarios reducidos, etc.).
+  - Sugerir adaptaciones iniciales para cursos con alta diversidad de niveles de logro o presencia de PIE.
 
 **Ejemplo de prompt para planificación de una unidad:**
 
-```markdown
-Actúa como profesor/a de [ASIGNATURA] en [NIVEL] en una escuela [tipo de establecimiento: pública, subvencionada, particular] de Chile.
+```markdown 
+Actúa como profesor/a de [ASIGNATURA] en [NIVEL] en una escuela [TIPO DE ESTABLECIMIENTO: pública, subvencionada, particular] de Chile.
 
 Tu objetivo es ayudarme a elaborar un borrador de planificación para UNA unidad didáctica sobre [TEMA O CONTENIDO].
 
-Contexto:  
-- Curso: [por ejemplo, 8º básico, 40 estudiantes].  
-- Marco curricular: Bases Curriculares chilenas para [ASIGNATURA]; OA a trabajar: [pegar aquí si es posible].  
-- Tiempo disponible: [número aproximado de clases u horas pedagógicas].  
-- Características del grupo: [curso diverso, presencia de PIE, diferencias importantes en niveles de logro, etc.].  
+Contexto:
+- Curso y tamaño aproximado: [por ejemplo, 8º básico, 40 estudiantes].
+- Marco curricular: Bases Curriculares chilenas para [ASIGNATURA]; OA a trabajar: [pegar aquí si es posible].
+- Tiempo disponible: [número aproximado de clases u horas pedagógicas].
+- Características del grupo: [curso diverso, presencia de PIE, diferencias importantes en niveles de logro, etc.].
+- Recursos habituales: [por ejemplo, pizarra, cuadernos, proyector, textos escolares].
 
-Instrucciones:  
-- Propón una secuencia de [X] clases para esta unidad.  
-- Para cada clase, indica: objetivo específico, actividad principal de aprendizaje, recurso clave a utilizar y forma sencilla de evaluación (por ejemplo, pregunta de salida, ejercicio breve).  
-- Incluye al menos una sugerencia de ajuste o variación para estudiantes que requieran más apoyo y otra para quienes puedan profundizar.  
+Instrucciones:
+- Propón una secuencia de [X] clases para esta unidad.
+- Para cada clase, indica: objetivo específico, actividad principal de aprendizaje, recurso clave a utilizar y forma sencilla de evaluación (por ejemplo, pregunta de salida, ejercicio breve).
+- Incluye al menos una sugerencia de ajuste o variación para estudiantes que requieran más apoyo y otra para quienes puedan profundizar.
+- Procura que las actividades sean viables en un contexto escolar chileno con recursos limitados.
 
-Formato de salida:  
-- Tabla con columnas: Clase – Objetivo específico – Actividad principal – Recurso – Evaluación sugerida – Ajustes/variantes.  
+Formato de salida:
+- Tabla con columnas: Clase – Objetivo específico – Actividad principal – Recurso – Evaluación sugerida – Ajustes/variantes.
 
-Criterios y restricciones:  
-- Usa lenguaje claro y concreto, adecuado al contexto escolar chileno.  
-- No inventes contenidos fuera de las Bases Curriculares; organiza y ejemplifica a partir de los OA indicados.  
-- No propongas actividades que requieran recursos tecnológicos que no haya mencionado.  
+Criterios y restricciones:
+- Usa lenguaje claro y concreto, adecuado al contexto escolar chileno.
+- No inventes contenidos fuera de las Bases Curriculares; organiza y ejemplifica a partir de los OA indicados.
+- No propongas actividades que requieran recursos tecnológicos que no haya mencionado.
+- Si te falta información importante para planificar mejor, hazme hasta 3 preguntas breves antes de responder.
 ```
 
+::: {.callout-note}
+**Idea fuerza:** mientras más concreto y contextualizado sea el prompt, más útil será el borrador de planificación. La IA puede ahorrar tiempo en la fase de diseño, pero las decisiones sobre qué se enseña y cómo se enseña siguen siendo siempre de la/el docente.
+:::
 
 ## IA para generación y adaptación de materiales
 
-Otra tarea muy demandante en el trabajo docente es la elaboración, revisión y adaptación de materiales: guías, ejercicios, textos, ejemplos, preguntas, lecturas, imagenes, entre otros. La IA puede convertirse en un apoyo relevante para producir primeros borradores de estos recursos, que luego la/el docente revisa, ajusta y contextualiza según su curso y establecimiento.
+Otra tarea muy demandante en el trabajo docente es la elaboración, revisión y adaptación de materiales: guías, ejercicios, textos, ejemplos, preguntas, lecturas, imágenes, entre otros. La IA puede convertirse en un apoyo relevante para producir primeros borradores de estos recursos, que luego la/el docente revisa, ajusta y contextualiza según su curso, su proyecto educativo y las Bases Curriculares.
 
-Esto puede ahorrar tiempo en la redacción inicial y abrir posibilidades para ofrecer más variedad de ejemplos y actividades, manteniendo siempre el criterio profesional sobre la pertinencia pedagógica y el nivel de dificultad.
+Esto puede ahorrar tiempo en la redacción inicial y abrir posibilidades para ofrecer más variedad de ejemplos y actividades, manteniendo siempre el criterio profesional sobre la pertinencia pedagógica, la carga de trabajo de las y los estudiantes y el nivel de dificultad.
 
-**Usos posibles:**
+**Usos posibles en materiales:**
 
-- Generar ejercicios adicionales a partir de un contenido ya definido.  
-- Adaptar un mismo texto a distintos niveles de complejidad (más sencillo o más desafiante).  
-- Crear versiones alternativas de una actividad para diferentes niveles de logro.  
-- Transformar un contenido en distintos formatos: preguntas de opción múltiple, desarrollo, verdadero/falso, organizadores gráficos, etc.  
-- Reformular instrucciones para que sean más claras para estudiantes de distintos cursos.  
+- **Generación de insumos:**
+  - Generar ejercicios adicionales a partir de un contenido ya definido (por ejemplo, más problemas de proporcionalidad, más oraciones para analizar, más ítems de comprensión lectora).
+  - Proponer ejemplos contextualizados a la realidad chilena (barrio, transporte, ferias, medios de comunicación locales, etc.).
+  - Crear casos o situaciones para debates, estudios de caso o trabajo en grupo.
+
+- **Adaptación y diferenciación:**
+  - Adaptar un mismo texto a distintos niveles de complejidad (más sencillo o más desafiante).
+  - Crear versiones alternativas de una actividad para diferentes niveles de logro dentro del mismo curso.
+  - Reformular instrucciones para que sean más claras para estudiantes de distintos cursos o para quienes presentan NEE.
+
+- **Transformación de formatos:**
+  - Transformar un contenido en distintos formatos: preguntas de opción múltiple, desarrollo, verdadero/falso, organizadores gráficos, etc.
+  - Generar bancos iniciales de preguntas a partir de un texto escolar o una guía ya existente.
 
 **Ejemplo de prompt para generar y adaptar materiales:**
 
-```markdown
+```markdown 
 Actúa como profesor/a de [ASIGNATURA] con experiencia en diseño de materiales didácticos para escuelas públicas chilenas.
 
 Tu objetivo es ayudarme a generar y adaptar materiales para trabajar el tema [TEMA ESPECÍFICO] con un curso de [NIVEL] en el marco de las Bases Curriculares.
 
-Contexto:  
-- Tipo de establecimiento: [público, subvencionado, técnico-profesional, rural, urbano, etc.].  
-- Características del grupo: [tamaño del curso, diversidad de niveles, presencia de PIE, etc.].  
-- Recursos disponibles: [pizarra, cuadernos, proyector, fotocopias, laboratorio, etc.].  
+Contexto:
+- Tipo de establecimiento: [público, subvencionado, técnico-profesional, rural, urbano, etc.].
+- Características del grupo: [tamaño del curso, diversidad de niveles, presencia de PIE, estudiantes con diferentes trayectorias escolares, etc.].
+- Recursos disponibles: [pizarra, cuadernos, proyector, fotocopias, laboratorio, etc.].
 
-Instrucciones:  
-1. Propón [NÚMERO] ejercicios o actividades breves para trabajar este contenido.  
-   - Para cada actividad, indica: propósito, descripción breve y tiempo estimado.  
-2. Luego, elige UNA de las actividades y genera:  
-   - Una versión más sencilla para estudiantes que necesitan mayor apoyo.  
-   - Una versión más desafiante para estudiantes que avanzan más rápido.  
+Instrucciones:
+1. Propón [NÚMERO] ejercicios o actividades breves para trabajar este contenido.
+   - Para cada actividad, indica: propósito, descripción breve y tiempo estimado.
+2. Luego, elige UNA de las actividades y genera:
+   - Una versión más sencilla para estudiantes que necesitan mayor apoyo (por ejemplo, con ejemplos resueltos o pasos más guiados).
+   - Una versión más desafiante para estudiantes que avanzan más rápido (por ejemplo, con preguntas abiertas o aplicación a nuevas situaciones).
 
-Formato de salida:  
-- Primero, lista numerada de actividades con su propósito, descripción y tiempo.  
-- Después, subtítulos “Versión más sencilla” y “Versión más desafiante” para la actividad elegida, explicadas en no más de 6 líneas cada una.  
+Formato de salida:
+- Primero, una lista numerada de actividades con su propósito, descripción y tiempo.
+- Después, subtítulos “Versión más sencilla” y “Versión más desafiante” para la actividad elegida, explicadas en no más de 6 líneas cada una.
 
-Criterios y restricciones:  
-- Usa lenguaje claro, adecuado al nivel del curso.  
-- No incluyas recursos costosos ni que requieran conexión a internet permanente.  
-- No cambies el contenido central; solo ajusta la complejidad y el tipo de apoyo.  
+Criterios y restricciones:
+- Usa lenguaje claro, adecuado al nivel del curso.
+- No incluyas recursos costosos ni que requieran conexión a internet permanente, a menos que los haya mencionado explícitamente.
+- No cambies el contenido central; solo ajusta la complejidad y el tipo de apoyo.
+- Si te falta información importante, hazme hasta 3 preguntas breves antes de responder.
 ```
+
+::: {.callout-note}
+**Idea fuerza:** la IA puede apoyar la creación y adaptación de materiales, pero siempre como borrador inicial. El ajuste fino, la pertinencia cultural y la coherencia con el proyecto educativo dependen de la revisión y edición de la/el docente.
+:::
 
 ## IA para diversificar actividades según curso
 
-En un mismo curso suelen convivir estudiantes con ritmos de aprendizaje distintos, intereses variados, trayectorias escolares diversas y, en muchos casos, con participación de programas de integración escolar (PIE). La IA puede ayudar a generar variantes de una misma actividad para atender esta diversidad, siempre que la/el docente mantenga el control sobre los objetivos y la evaluación.
+En un mismo curso suelen convivir estudiantes con ritmos de aprendizaje distintos, intereses variados, trayectorias escolares diversas y, en muchos casos, con participación de programas de integración escolar (PIE). La IA puede ayudar a generar variantes de una misma actividad para atender esta diversidad, siempre que la/el docente mantenga el control sobre los objetivos, la evaluación y el sentido formativo de las adaptaciones.
 
-El papel de la IA no es decidir quién hace qué, sino ofrecer un abanico de opciones que la/el profesor/a puede asignar, combinar o adaptar a su grupo, evitando etiquetar estudiantes y resguardando una mirada inclusiva.
+El papel de la IA no es decidir quién hace qué, sino ofrecer un abanico de opciones que la/el profesor/a puede asignar, combinar o adaptar a su grupo, evitando etiquetar estudiantes y resguardando una mirada inclusiva y de derechos.
 
-**Usos posibles:**
+**Usos posibles en diversificación:**
 
-- Diseñar tres niveles de dificultad para una misma actividad (más guiada, intermedia, profundización).  
-- Proponer actividades que privilegien diferentes canales: oral, escrito, visual, manipulativo.  
-- Generar desafíos extra para estudiantes que avanzan más rápido.  
-- Sugerir apoyos adicionales (preguntas guía, ejemplos resueltos, organizadores gráficos) para quienes requieren más acompañamiento.  
+- **Niveles de apoyo y desafío:**
+  - Diseñar tres niveles de dificultad para una misma actividad (más guiada, intermedia, profundización).
+  - Proponer actividades de repaso para quienes necesitan consolidar y desafíos extra para quienes avanzan más rápido.
+
+- **Canales y formas de expresión:**
+  - Proponer actividades que privilegien diferentes canales: oral, escrito, visual, manipulativo.
+  - Sugerir formas alternativas de mostrar lo aprendido (afiches, pequeñas presentaciones, mapas conceptuales, cápsulas de audio, etc.).
+
+- **Apoyos adicionales:**
+  - Sugerir apoyos (preguntas guía, ejemplos resueltos, organizadores gráficos, listas de palabras clave) para estudiantes con NEE o trayectorias más interrumpidas.
+  - Adaptar consignas para que sean más claras y breves, manteniendo el mismo objetivo de aprendizaje.
 
 **Ejemplo de prompt para diversificar una actividad base:**
-```markdown
+
+```markdown 
 Actúa como especialista en diferenciación pedagógica e inclusión educativa en contexto escolar chileno.
 
-Tu objetivo es ayudarme a diversificar una actividad sobre [TEMA] para un curso de [NIVEL], manteniendo el mismo contenido central.
+Tu objetivo es ayudarme a diversificar una actividad sobre [TEMA] para un curso de [NIVEL], manteniendo el mismo contenido central y una mirada inclusiva.
 
-Contexto:  
-- Tipo de establecimiento: [público/subvencionado/particular].  
-- Curso diverso en niveles de logro; hay estudiantes que requieren más apoyo y otros que avanzan más rápido.  
-- Recursos disponibles: [pizarra, cuadernos, proyector, impresora, etc.].  
+Contexto:
+- Tipo de establecimiento: [público/subvencionado/particular, rural/urbano].
+- Curso diverso en niveles de logro; hay estudiantes que requieren más apoyo, otros que avanzan más rápido y presencia de PIE.
+- Recursos disponibles: [pizarra, cuadernos, proyector, impresora, etc.].
 
-Actividad base:  
+Actividad base:
 [PEGAR AQUÍ LA ACTIVIDAD ORIGINAL QUE YA DISEÑÓ EL/LA DOCENTE].
 
-Instrucciones:  
-1. A partir de la actividad base, propone tres versiones:  
-   - Una “Versión más guiada” para estudiantes que necesitan mayor apoyo.  
-   - Una “Versión intermedia” para la mayoría del curso.  
-   - Una “Versión de profundización” para quienes pueden avanzar más rápido.  
-2. Para cada versión, indica:  
-   - Propósito.  
-   - Pasos principales de la actividad.  
-   - Tipo de apoyo o desafío que se incluye (ejemplos, preguntas guía, uso de material concreto, etc.).  
+Instrucciones:
+1. A partir de la actividad base, propone tres versiones:
+   - Una “Versión más guiada” para estudiantes que necesitan mayor apoyo.
+   - Una “Versión intermedia” para la mayoría del curso.
+   - Una “Versión de profundización” para quienes pueden avanzar más rápido.
+2. Para cada versión, indica:
+   - Propósito.
+   - Pasos principales de la actividad.
+   - Tipo de apoyo o desafío que se incluye (ejemplos, preguntas guía, uso de material concreto, etc.).
+3. Evita etiquetar a los grupos como “buenos” o “malos”; describe las versiones sin juicios de valor.
 
-Formato de salida:  
-- Subtítulos: “Versión más guiada”, “Versión intermedia” y “Versión de profundización”.  
-- Bajo cada subtítulo, un breve párrafo de 6 a 8 líneas describiendo la propuesta.  
+Formato de salida:
+- Subtítulos: “Versión más guiada”, “Versión intermedia” y “Versión de profundización”.
+- Bajo cada subtítulo, un breve párrafo de 6 a 8 líneas describiendo la propuesta.
 
-Criterios:  
-- Mantén el mismo contenido central en las tres versiones.  
-- Usa lenguaje claro y respetuoso, sin etiquetar a estudiantes como “buenos” o “malos”.  
-- No propongas actividades que dependan de tecnologías que no se han mencionado.  
+Criterios:
+- Mantén el mismo contenido central en las tres versiones.
+- Usa lenguaje claro y respetuoso, sin etiquetas que estigmaticen a estudiantes.
+- No propongas actividades que dependan de tecnologías que no se han mencionado.
+- Si te falta información importante, hazme hasta 3 preguntas breves antes de responder.
 ```
 
+::: {.callout-note}
+**Idea fuerza:** la IA puede ayudar a pensar distintas puertas de entrada a un mismo contenido, pero nunca para clasificar ni segregar. Las decisiones sobre qué versión ofrece a quién, y cómo se comunica, siguen siendo parte del criterio pedagógico e inclusivo de la/el docente y del equipo de apoyo.
+:::
 
 ## IA para organizar el trabajo cotidiano (síntesis, comunicaciones, actas, etc.)
 
-Además de las tareas directamente pedagógicas, el trabajo docente incluye una importante carga administrativa y de organización: lectura de documentos extensos, elaboración de actas, sistematización de acuerdos, redacción de comunicaciones a familias, entre otras. La IA puede ser un apoyo para sintetizar, ordenar y redactar borradores, siempre que se tenga especial cuidado de no exponer datos sensibles de estudiantes o colegas.
+Además de las tareas directamente pedagógicas, el trabajo docente incluye una importante carga administrativa y de organización: lectura de documentos extensos, elaboración de actas, sistematización de acuerdos, redacción de comunicaciones a familias, entre otras. La IA puede ser un apoyo para sintetizar, ordenar y redactar borradores, siempre que se tengan resguardos claros para no exponer datos sensibles de estudiantes, familias o colegas (RUT, nombres completos, diagnósticos, antecedentes de salud, etc.).
 
-Utilizada con resguardos, la IA puede ayudar a disminuir el tiempo dedicado a la redacción inicial de estos documentos, de modo que las y los profesores puedan concentrarse en la toma de decisiones, la coordinación con sus equipos y la atención directa a estudiantes.
+Utilizada con cuidado, la IA puede ayudar a disminuir el tiempo dedicado a la redacción inicial de estos documentos, de modo que las y los profesores puedan concentrarse en la toma de decisiones, la coordinación con sus equipos y la atención directa a estudiantes.
 
-**Usos posibles:**
+**Usos posibles en organización del trabajo:**
 
-- Resumir documentos largos, orientaciones o actas en síntesis breves y claras.  
-- Transformar un conjunto de notas dispersas en listas de acuerdos o tareas.  
-- Proponer borradores de comunicaciones a familias, que luego la/el docente revisa y ajusta.  
-- Sugerir estructuras de actas o pautas para registrar acuerdos de reuniones.  
-- Ordenar ideas para proyectos, unidades o talleres en esquemas más claros.  
+- **Síntesis y sistematización:**
+  - Resumir documentos largos, orientaciones o actas en síntesis breves y claras.
+  - Transformar un conjunto de notas dispersas en listas de acuerdos o tareas ordenadas por prioridad o responsable.
 
-**Ejemplo de prompt para síntesis y organización de información:**
-```markdown
+- **Comunicaciones:**
+  - Proponer borradores de comunicaciones a familias (reuniones, actividades especiales, cambios de horario), que luego la/el docente revisa y ajusta.
+  - Sugerir versiones alternativas del mismo mensaje para distintos medios (agenda, correo, WhatsApp).
+
+- **Estructura de documentos:**
+  - Sugerir estructuras de actas o pautas para registrar acuerdos de reuniones de ciclo, subdirecciones, consejos escolares, etc.
+  - Ordenar ideas para proyectos, unidades o talleres en esquemas más claros.
+
+
+**Ejemplo de prompt para síntesis y organización de información**
+
+```markdown 
 Actúa como asistente de organización de trabajo docente en una escuela pública de Chile.
 
 Tu objetivo es ayudarme a sintetizar y ordenar información para facilitar mi trabajo.
 
-Contexto:  
-- Soy profesor/a de [NIVEL/ASIGNATURA].  
-- Necesito convertir un conjunto de notas e información en un resumen claro y una lista de acuerdos o tareas.  
+Contexto:
+- Soy profesor/a de [NIVEL/ASIGNATURA].
+- Necesito convertir un conjunto de notas e información en un resumen claro y una lista de acuerdos o tareas.
 
-Instrucciones:  
-1. A partir del texto que pegaré a continuación, genera:  
-   - Un resumen breve de máximo 150 palabras.  
-   - Una lista de 5 a 7 acuerdos o tareas concretas.  
-2. Si detectas información poco clara o contradictoria, señálalo al final en un apartado de observaciones.  
+Instrucciones:
+1. A partir del texto que pegaré a continuación (sin datos sensibles como RUT, diagnósticos o nombres completos), genera:
+   - Un resumen breve de máximo 150 palabras.
+   - Una lista de 5 a 7 acuerdos o tareas concretas.
+2. Si detectas información poco clara o contradictoria, señálalo al final en un apartado de observaciones.
 
-Texto a sintetizar:  
-[PEGAR AQUÍ NOTAS, ACTA O DOCUMENTO SIN DATOS SENSIBLES].  
+Texto a sintetizar:
+[PEGAR AQUÍ NOTAS, ACTA O DOCUMENTO SIN DATOS SENSIBLES].
 
-Formato de salida:  
-- Subtítulo “Resumen breve” y el resumen en un párrafo.  
-- Subtítulo “Lista de acuerdos o tareas” y la lista numerada.  
-- Si corresponde, subtítulo “Observaciones” con 2 a 3 líneas.  
+Formato de salida:
+- Subtítulo “Resumen breve” y el resumen en un párrafo.
+- Subtítulo “Lista de acuerdos o tareas” y la lista numerada.
+- Si corresponde, subtítulo “Observaciones” con 2 a 3 líneas.
 
-Criterios y restricciones:  
-- No inventes acuerdos ni información que no esté en el texto.  
-- Usa lenguaje claro y profesional.  
-- No incluyas nombres propios ni datos personales, aunque aparezcan en el texto original; reemplázalos por descripciones generales (por ejemplo, “un/a estudiante”, “un/a apoderado/a”).  
+Criterios y restricciones:
+- No inventes acuerdos ni información que no esté en el texto.
+- Usa lenguaje claro y profesional.
+- No incluyas nombres propios ni datos personales; reemplázalos por descripciones generales (por ejemplo, “un/a estudiante”, “un/a apoderado/a”).
+- Si te falta información importante, hazme hasta 3 preguntas breves antes de responder.
 ```
 
-**Ejemplo de prompt para redactar un comunicado breve a familias:**
-```markdown
+**Ejemplo de prompt para redactar un comunicado breve a familias**
+
+```markdown 
 Actúa como profesor/a jefe con experiencia en comunicación clara y respetuosa con familias en el sistema escolar chileno.
 
 Tu objetivo es ayudarme a redactar un comunicado breve para apoderadas y apoderados sobre [TEMA: por ejemplo, reunión, actividad especial, cambio de horario].
 
-Contexto:  
-- Curso: [por ejemplo, 5º básico].  
-- Tipo de establecimiento: [público/subvencionado/particular].  
-- Medio de envío: [agenda, correo electrónico, WhatsApp].  
+Contexto:
+- Curso: [por ejemplo, 5º básico].
+- Tipo de establecimiento: [público/subvencionado/particular].
+- Medio de envío: [agenda, correo electrónico, WhatsApp].
 
-Instrucciones:  
-- Redacta un texto de máximo 180 palabras.  
-- Usa un tono cercano, respetuoso y profesional.  
-- Explica de forma sencilla qué ocurrirá, cuándo, dónde y por qué es importante la actividad o la información.  
-- Incluye, si corresponde, qué se espera de las familias (asistencia, autorización, envío de materiales, etc.).  
+Instrucciones:
+- Redacta un texto de máximo 180 palabras.
+- Usa un tono cercano, respetuoso y profesional.
+- Explica de forma sencilla qué ocurrirá, cuándo, dónde y por qué es importante la actividad o la información.
+- Incluye, si corresponde, qué se espera de las familias (asistencia, autorización, envío de materiales, etc.).
 
-Formato de salida:  
-- Texto continuo, listo para copiar y pegar en el medio de comunicación indicado.  
+Formato de salida:
+- Texto continuo, listo para copiar y pegar en el medio de comunicación indicado.
 
-Criterios y restricciones:  
-- Evita tecnicismos; si mencionas “inteligencia artificial” u otros conceptos, explícalos en palabras simples.  
-- No incluyas datos personales ni información que no te haya proporcionado.  
-- Mantén un enfoque colaborativo, reconociendo el rol de las familias en el proceso educativo.  
+Criterios y restricciones:
+- Evita tecnicismos; si mencionas “inteligencia artificial” u otros conceptos, explícalos en palabras simples.
+- No incluyas datos personales ni información que no te haya proporcionado.
+- Mantén un enfoque colaborativo, reconociendo el rol de las familias en el proceso educativo.
+- Si te falta información importante, hazme hasta 3 preguntas breves antes de responder.
 ```
 
 En todos estos casos, la IA se utiliza como apoyo para organizar, sintetizar y redactar, pero la revisión final, la adecuación al contexto y la decisión sobre qué se envía o se registra siguen siendo responsabilidad profesional de la/el docente y de los equipos escolares.
+
+::: {.callout-note}
+**Idea fuerza:** la IA puede aliviar parte de la carga de escritura y organización, pero nunca debe recibir ni procesar datos sensibles, y su producción siempre debe pasar por una revisión crítica antes de compartirse con estudiantes, familias o equipos directivos.
+:::
+
+
+## IA para proponer ítems, rúbricas y criterios
+
+El diseño de evaluaciones es una de las tareas más exigentes del trabajo docente: hay que formular buenas preguntas, definir criterios claros, cuidar la coherencia con los objetivos de aprendizaje y, además, hacerlo con poco tiempo. La inteligencia artificial puede apoyar este proceso como asistente de borradores: propone ideas iniciales de ítems, rúbricas y criterios que luego la/el docente revisa, ajusta y valida según las Bases Curriculares chilenas y el proyecto educativo del establecimiento.
+
+Usada de manera crítica y situada, la IA permite ganar tiempo en la fase inicial de diseño, ampliar el repertorio de ejemplos y explicitar criterios, sin reemplazar nunca las decisiones profesionales sobre qué, cómo y para qué evaluar.
+
+**<span style="text-decoration: underline;">Usos posibles (ejemplos concretos)</span>.**
+
+- **Ítems e instrumentos de evaluación**
+  - Proponer ítems de evaluación (alternativa, desarrollo, verdadero/falso, preguntas abiertas) coherentes con OA u objetivos priorizados.
+  - Sugerir tareas de desempeño simples (pequeños proyectos, exposiciones, informes breves) alineadas con habilidades de las Bases Curriculares.
+  - Ofrecer variantes de una misma pregunta con distintos niveles de dificultad para usar en distintos cursos o en evaluaciones diferenciadas.
+
+- **Rúbricas y criterios**
+  - Sugerir rúbricas simples o pautas de corrección para trabajos escritos, proyectos, presentaciones orales, etc.
+  - Ayudar a redactar criterios de evaluación en lenguaje claro, comprensible para estudiantes y familias.
+  - Transformar criterios “técnicos” del equipo docente en descriptores más concretos (“se entiende la idea principal”, “usa al menos dos ejemplos del texto”, etc.).
+
+- **Organización del banco de ítems**
+  - Generar bancos iniciales de preguntas sobre un contenido que luego el equipo docente revisa, selecciona y ajusta.
+  - Proponer agrupaciones de ítems según habilidad (comprensión, análisis, aplicación) o nivel de complejidad.
+
+::: {.callout-note}
+**Idea fuerza:** la IA puede ayudar a “llenar la hoja en blanco” con ideas de preguntas, criterios y rúbricas, pero lo que se evalúa y cómo se califica siempre lo decide la/el docente.
+:::
+
+**Ejemplo de prompt para proponer ítems, rúbricas y criterios**
+
+```markdown 
+Actúa como asesor/a en evaluación formativa en el sistema escolar chileno.
+
+Tu objetivo es ayudarme a diseñar una evaluación breve y una rúbrica sencilla para [TIPO DE TAREA: por ejemplo, informe escrito, presentación oral, proyecto grupal] en la asignatura de [ASIGNATURA] para un curso de [NIVEL].
+
+Contexto:
+- Curso: [por ejemplo, 8º básico, 40 estudiantes].
+- Tipo de establecimiento: [público/subvencionado/particular].
+- Contenidos y habilidades a evaluar: [describir brevemente o pegar OA de las Bases Curriculares].
+- Tiempo estimado para la tarea: [por ejemplo, 2 clases].
+- Realidad del grupo: [curso diverso, presencia de PIE, diferencias importantes en niveles de logro, etc.].
+
+Instrucciones:
+1. Propón entre 5 y 8 ítems o tareas concretas que permitan evaluar estos contenidos y habilidades.
+   - Incluye, si es posible, al menos una pregunta de desarrollo y una de alternativa.
+2. Diseña una rúbrica sencilla con 3 o 4 criterios clave (por ejemplo, dominio de contenidos, claridad, organización, uso de ejemplos) y 4 niveles de logro.
+3. Redacta los criterios y descriptores en lenguaje claro, comprensible para estudiantes y familias.
+4. Incluye una breve nota final con recomendaciones para usar esta rúbrica en clave formativa (por ejemplo, para retroalimentar y no solo calificar).
+
+Formato de salida:
+- Primero, una lista numerada de ítems o tareas.
+- Luego, una tabla con la rúbrica (filas = criterios, columnas = niveles de logro).
+- Finalmente, una sección breve llamada “Recomendaciones para el uso formativo”.
+
+Criterios y restricciones:
+- Usa lenguaje sencillo y adecuado al nivel del curso.
+- No inventes contenidos fuera de las Bases Curriculares; mantente dentro de lo que se ha trabajado en clase.
+- No incluyas ejemplos que requieran recursos tecnológicos que no he mencionado.
+- Mantén un enfoque inclusivo y respetuoso, evitando estereotipos o juicios hacia estudiantes.
+```
+
+## Ejemplos de retroalimentación formativa apoyada por IA
+
+La retroalimentación formativa es una de las prácticas más potentes para el aprendizaje, pero también una de las más demandantes en tiempo, especialmente en cursos numerosos. La IA puede colaborar generando borradores de comentarios que la/el docente revisa, ajusta y personaliza para sus estudiantes, manteniendo el foco en criterios claros y en orientaciones concretas de mejora.
+
+Más que sustituir la voz del profesor o profesora, la IA puede ayudar a encontrar palabras claras, respetuosas y específicas, especialmente cuando hay muchos trabajos que retroalimentar en poco tiempo y cuando se busca comunicar de manera comprensible a estudiantes y familias.
+
+**<span style="text-decoration: underline;">Usos posibles (ejemplos concretos)</span>.**
+
+- **Modelos de comentarios**
+  - Redactar comentarios modelo para distintos niveles de logro, a partir de una rúbrica o pauta ya definida por el equipo docente.
+  - Generar versiones más breves o más extensas de un mismo comentario según el medio (agenda, plataforma, informe, conversación presencial).
+
+- **Foco en el proceso y la mejora**
+  - Proponer frases de retroalimentación centradas en el proceso, no solo en el resultado (“lo que hiciste bien fue…”, “un próximo paso posible sería…”).
+  - Sugerir preguntas que inviten a la reflexión del/la estudiante sobre su propio trabajo (“¿qué parte te resultó más difícil y por qué?”).
+
+- **Diversidad de estudiantes**
+  - Apoyar la elaboración de retroalimentación escrita para estudiantes con distintas necesidades, por ejemplo, formulando comentarios en lenguaje más sencillo o más visual.
+  - Ayudar a redactar mensajes diferenciados para estudiantes que requieren más acompañamiento y para quienes pueden asumir desafíos adicionales.
+
+::: {.callout-note}
+**Idea fuerza:** la IA puede ayudar a “afinar” el lenguaje de la retroalimentación y a ganar tiempo, pero la mirada pedagógica sobre qué decirle a cada estudiante sigue siendo insustituible.
+:::
+
+**Ejemplo de prompt para generar retroalimentación formativa**
+
+```markdown 
+Actúa como asesor/a en evaluación formativa y retroalimentación para el sistema escolar chileno.
+
+Tu objetivo es ayudarme a redactar comentarios de retroalimentación formativa para estudiantes de [NIVEL] que han realizado la siguiente tarea:
+[DESCRIBIR BREVE LA TAREA: por ejemplo, “ensayo argumentativo sobre el uso de celulares en el aula”].
+
+Contexto:
+- Asignatura: [ASIGNATURA].
+- Tipo de establecimiento: [público/subvencionado/particular].
+- Criterios de evaluación: [pegar criterios o rúbrica resumida].
+- Realidad del curso: [por ejemplo, curso numeroso, presencia de PIE, diferencias importantes en comprensión lectora].
+- Necesito ejemplos para tres niveles de desempeño: inicial, intermedio y avanzado.
+
+Instrucciones:
+1. Propón 3 comentarios de retroalimentación formativa:
+   - Uno para desempeño inicial.
+   - Uno para desempeño intermedio.
+   - Uno para desempeño avanzado.
+2. Cada comentario debe:
+   - Mencionar al menos un aspecto logrado.
+   - Señalar con claridad qué se puede mejorar.
+   - Sugerir un próximo paso concreto para el/la estudiante.
+3. Redacta los comentarios en segunda persona (“tú”) y en lenguaje cercano, respetuoso y motivador.
+
+Formato de salida:
+- Subtítulos: “Desempeño inicial”, “Desempeño intermedio”, “Desempeño avanzado”.
+- Bajo cada subtítulo, un comentario de máximo 6 líneas.
+
+Criterios y restricciones:
+- No uses un tono punitivo ni culposo.
+- Evita tecnicismos; prioriza explicaciones sencillas.
+- Mantén el foco en el aprendizaje y la mejora, no solo en la calificación.
+- No incluyas datos personales ni información sensible sobre estudiantes.
+```
+
+## IA como apoyo a la autorregulación del aprendizaje
+
+La autorregulación del aprendizaje implica que las y los estudiantes puedan planificar, monitorear y evaluar su propio trabajo. La IA puede contribuir ofreciendo andamiajes para que revisen sus producciones, comparen con criterios de calidad y tomen decisiones sobre cómo mejorar, siempre bajo acompañamiento y orientación docente.
+
+El énfasis no está en que la IA “corrija” por ellos, sino en que entregue preguntas guía, listas de chequeo y sugerencias que ayuden a los estudiantes a mirar críticamente lo que hicieron y a hacerse responsables de sus procesos de aprendizaje, en coherencia con los objetivos del curso y con las Bases Curriculares.
+
+**<span style="text-decoration: underline;">Usos posibles (ejemplos concretos)</span>.**
+
+- **Revisión antes de entregar**
+  - Generar listas de verificación (checklists) para que estudiantes revisen sus trabajos antes de entregarlos (“revisé que…”, “me aseguré de…”).
+  - Transformar criterios de evaluación en lenguaje amigable para estudiantes, que puedan usar como guía.
+
+- **Autoevaluación y metacognición**
+  - Proponer preguntas de autoevaluación alineadas con criterios o rúbricas (“¿qué parte de tu trabajo muestra mejor tu argumento?”).
+  - Sugerir preguntas para reflexionar sobre el proceso (“¿en qué momento te sentiste más perdido/a?”).
+
+- **Estrategias de mejora**
+  - Sugerir estrategias de estudio o de mejora a partir de dificultades detectadas (por ejemplo, “si te costó organizar tus ideas, prueba primero hacer un esquema”).
+  - Crear esquemas de planificación (pasos para desarrollar un proyecto, un informe, una investigación corta) que los estudiantes puedan completar.
+
+::: {.callout-note}
+**Idea fuerza:** la IA puede ayudar a que los y las estudiantes se hagan mejores preguntas sobre su propio trabajo, pero la construcción de hábitos de estudio y responsabilidad sigue dependiendo del acompañamiento humano.
+:::
+
+**Ejemplo de prompt para apoyar la autorregulación del aprendizaje**
+
+```markdown 
+Actúa como orientador/a pedagógico/a especializado/a en autorregulación del aprendizaje en educación básica/media.
+
+Tu objetivo es ayudarme a generar apoyos para que estudiantes de [NIVEL] se autoevalúen y mejoren su trabajo en [TIPO DE TAREA: por ejemplo, informe escrito, proyecto de ciencias, presentación oral].
+
+Contexto:
+- Asignatura: [ASIGNATURA].
+- Tipo de establecimiento: [público/subvencionado/particular].
+- Criterios de evaluación que usamos: [describir brevemente o pegar criterios/rúbrica].
+- Realidad del grupo: [por ejemplo, curso diverso, presencia de PIE, diferencias en hábitos de estudio].
+
+Instrucciones:
+1. Elabora una lista de verificación (“checklist”) que los estudiantes puedan usar antes de entregar su trabajo.
+   - Máximo 10 ítems, redactados en primera persona (“revisé que…”, “me aseguré de…”).
+2. Propón 5 preguntas de autoevaluación que les ayuden a reflexionar sobre su proceso (no solo sobre la nota).
+3. Sugiere 3 ideas de “próximos pasos” que puedan tomar si se dan cuenta de que necesitan mejorar.
+
+Formato de salida:
+- Sección “Checklist de revisión antes de entregar” con la lista numerada.
+- Sección “Preguntas para autoevaluar mi trabajo” con 5 preguntas.
+- Sección “Qué puedo hacer para mejorar” con 3 sugerencias breves.
+
+Criterios y restricciones:
+- Usa lenguaje claro, dirigido a estudiantes de [NIVEL].
+- Evita frases negativas; formula los ítems y preguntas en clave de apoyo y mejora.
+- Aclara que estas herramientas son para que el/la estudiante mejore su trabajo, no para reemplazar la retroalimentación del/la docente.
+```
+

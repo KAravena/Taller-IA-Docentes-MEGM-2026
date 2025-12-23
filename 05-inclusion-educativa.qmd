@@ -4,96 +4,125 @@ title: "IA e inclusión educativa"
 
 ## Ajuste de lenguaje, formato y extensión de materiales
 
-En muchos cursos, el primer obstáculo para la participación de las y los estudiantes es el **lenguaje y el formato** de los materiales: textos muy largos, vocabulario técnico, consignas confusas o poco accesibles. La IA puede apoyar como asistente de edición, ayudando a simplificar, acortar, ampliar o reestructurar materiales sin cambiar el contenido central definido por el equipo pedagógico.
+En muchos cursos, el primer obstáculo para la participación de las y los estudiantes es el **lenguaje y el formato** de los materiales: textos muy largos, vocabulario técnico, consignas confusas o poco explícitas. La IA puede apoyar como **asistente de edición y de borradores**, ayudando a simplificar, acortar, ampliar o reestructurar materiales **sin cambiar el contenido disciplinar central** definido por el equipo pedagógico.
 
-Usada de forma crítica, la IA permite generar **versiones paralelas** de un mismo recurso (más breve, más explicada, más visual, etc.), de modo que el profesorado pueda elegir cuál se ajusta mejor a las características de su curso, o bien ofrecer varias alternativas dentro de la misma clase.
+Usada de forma crítica y situada, la IA permite generar **versiones paralelas** de un mismo recurso (más breve, más explicada, más visual, con apoyos adicionales, etc.), de modo que el profesorado pueda elegir cuál se ajusta mejor a las características de su curso, o bien ofrecer varias alternativas dentro de la misma clase, en línea con principios de **Diseño Universal para el Aprendizaje (DUA)**.
 
-**Usos posibles:**
+**<span style="text-decoration: underline;">Usos posibles (ejemplos concretos)</span>.**
 
-- Simplificar el vocabulario de un texto, manteniendo las ideas principales.
-- Reducir la extensión de un documento largo a una versión “para estudiantes” o “para las familias”.
-- Reescribir consignas de actividades para que sean más claras y explícitas.
-- Cambiar el formato de presentación (párrafos → viñetas, cuadro comparativo, glosario, etc.).
-- Generar versiones con apoyos adicionales: ejemplos, definiciones breves, recordatorios de conceptos clave.
+**Ajustes de lenguaje**
 
-**Ejemplo de prompt para ajustar lenguaje, formato y extensión de un material:**
+- Reescribir una guía que fue pensada para adultos en un lenguaje comprensible para estudiantes de enseñanza básica o media.  
+- Simplificar el vocabulario de un texto, manteniendo las ideas principales y explicando palabras clave con ejemplos cotidianos.  
+- Reformular consignas de actividades para que sean más claras, paso a paso y con verbos de acción explícitos.
 
-```markdown
-Actúa como profesor/a de [ASIGNATURA] con experiencia en educación inclusiva en escuelas públicas chilenas.
+**Ajustes de formato**
 
-Tu objetivo es ayudarme a adaptar el siguiente texto para que sea más accesible a estudiantes de [NIVEL] en el marco de las Bases Curriculares.
+- Cambiar la presentación de un texto largo a un formato con subtítulos, viñetas o cuadros comparativos.  
+- Transformar párrafos extensos en una **ficha de estudio** breve que destaque ideas claves, conceptos y ejemplos.  
+- Crear un pequeño glosario de términos importantes para acompañar una lectura o una guía.
+
+**Apoyos adicionales**
+
+- Generar recordatorios de conceptos previos que el curso ya trabajó y que son necesarios para entender el nuevo contenido.  
+- Redactar una versión “para familias” de una circular o explicación de proyecto, con lenguaje claro y cercano.  
+- Proponer ejemplos y situaciones cercanas a la realidad de estudiantes en escuelas públicas, rurales o urbanas, según el contexto.
+
+**Ejemplo de prompt para ajustar lenguaje, formato y extensión de un material**
+
+```markdown 
+Actúa como profesor/a de [ASIGNATURA] con experiencia en educación inclusiva y en DUA en escuelas públicas chilenas.
+
+Tu objetivo es ayudarme a adaptar el siguiente texto para que sea más accesible a estudiantes de [NIVEL] en el marco de las Bases Curriculares de Chile.
 
 Contexto:
 - Curso diverso en niveles de lectura, con presencia de estudiantes del PIE.
-- El texto original es una explicación sobre [TEMA] pensada para adultos.
-- Lo necesito para trabajarlo en una clase de [N°] minutos.
+- El texto original es una explicación sobre [TEMA] pensada para personas adultas.
+- Lo necesito para trabajarlo en una clase de aproximadamente [N°] minutos.
+- Recursos disponibles: [por ejemplo, pizarra y cuadernos; no hay computadores para todo el curso].
 
 Instrucciones:
 1. Genera una primera versión del texto:
    - Con lenguaje más sencillo, sin perder las ideas principales.
    - De extensión máxima de [N°] palabras.
    - Organizada en párrafos breves y con viñetas cuando sea útil.
-2. Genera una segunda versión:
-   - En formato de “ficha de estudio” con:
-     - Definiciones clave.
-     - Ejemplos cotidianos.
-     - 3 preguntas de autoevaluación para estudiantes.
+2. Genera una segunda versión en formato de “ficha de estudio” que incluya:
+   - 3–5 definiciones clave en lenguaje simple.
+   - 2–3 ejemplos cotidianos cercanos a la realidad de estudiantes en escuelas chilenas.
+   - 3 preguntas de autoevaluación para que las y los estudiantes revisen si entendieron.
 3. Si consideras que falta algún concepto básico para que se entienda el texto, indícalo al final en 3–4 líneas, sin agregarlo dentro del texto principal.
 
 Formato de salida:
-- Título: “Versión simplificada para [NIVEL]”.
-- Luego, la ficha de estudio bajo el título “Ficha de apoyo”.
+- Título: “Versión simplificada para [NIVEL]” y luego el texto adaptado.
+- Título: “Ficha de apoyo” y luego la ficha de estudio con secciones claras.
 
 Criterios y restricciones:
 - No cambies el contenido disciplinar central; solo ajusta lenguaje, formato y extensión.
 - No incluyas imágenes ni recursos que requieran conexión a internet.
-- Usa ejemplos cercanos a la realidad de estudiantes en escuelas chilenas.
+- Usa ejemplos y situaciones cercanas a la realidad de estudiantes en escuelas públicas chilenas.
+- No incluyas nombres propios ni datos personales de estudiantes ni familias.
 ```
 
----
+::: {.callout-note}
+**Idea fuerza para el profesorado:**  
+La IA puede ayudar a ajustar lenguaje, formato y extensión de los materiales para abrir puertas a más estudiantes, pero el sentido pedagógico de esos materiales y su coherencia con el currículum siempre lo define el equipo docente.
+:::
 
 ## Ejemplos de adaptaciones para distintas trayectorias y necesidades
 
-En un mismo curso conviven estudiantes con trayectorias muy diversas: quienes han cambiado de escuela con frecuencia, quienes participan en programas de integración escolar, quienes tienen responsabilidades de cuidado en sus hogares, quienes se están incorporando recientemente al sistema escolar chileno, entre muchas otras realidades. La IA puede ayudar a pensar **variantes de actividades y materiales** que dialoguen con esta diversidad, siempre bajo el criterio profesional docente y resguardando la confidencialidad de información sensible.
+En un mismo curso conviven estudiantes con trayectorias muy diversas: quienes han cambiado de escuela con frecuencia, quienes participan en programas de integración escolar (PIE), quienes tienen responsabilidades de cuidado o trabajo, quienes se están incorporando recientemente al sistema escolar chileno, entre muchas otras realidades. La IA puede ayudar a pensar variantes de actividades y materiales que dialoguen con esta diversidad, siempre bajo el criterio profesional docente y resguardando la confidencialidad de información sensible.
 
-El propósito no es etiquetar estudiantes (“los buenos”, “los malos”, “los que saben, los que no”), sino contar con un abanico de opciones que permita ajustar apoyos y desafíos sin perder de vista el currículum común ni la pertenencia al grupo curso.
+El propósito no es etiquetar estudiantes (“los buenos”, “los malos”, “los que saben, los que no”), sino eliminar barreras y contar con un abanico de opciones que permita ajustar apoyos y desafíos sin perder de vista el currículum común, la pertenencia al grupo curso y los principios del Diseño Universal para el Aprendizaje (DUA).
 
-**Usos posibles:**
+**<span style="text-decoration: underline;">Usos posibles (ejemplos concretos)</span>.**
 
-- Proponer actividades alternativas para estudiantes con ausencias prolongadas o reincorporaciones tardías.
-- Sugerir apoyos adicionales para quienes se están adaptando al idioma o al sistema escolar chileno.
-- Ajustar tareas para estudiantes que viven situaciones de cuidado, trabajo u otras responsabilidades.
-- Diseñar actividades que se puedan realizar tanto en el aula como en el hogar, según la realidad de cada estudiante.
-- Generar ejemplos y contextos cercanos a distintas realidades territoriales y culturales.
+**Apoyos para trayectorias diversas**
 
-**Ejemplo de prompt para generar adaptaciones según trayectorias diversas:**
+- Proponer actividades alternativas para estudiantes con ausencias prolongadas o reincorporaciones tardías (por ejemplo, una versión de la tarea que permita retomar lo esencial sin repetir toda la unidad).  
+- Sugerir apoyos adicionales para quienes se están adaptando al idioma o al sistema escolar chileno (glosarios, ejemplos contextualizados, consignas más guiadas).  
+- Ajustar tareas para estudiantes que viven situaciones de cuidado o trabajo, priorizando lo esencial del objetivo de aprendizaje con tiempos y formatos más flexibles.
 
-```markdown
-Actúa como especialista en educación inclusiva y en diseño universal para el aprendizaje en contexto escolar chileno.
+**Variantes de una misma actividad**
+
+- Diseñar una versión de la actividad que se pueda realizar tanto en el aula como en el hogar, con o sin acceso a tecnologías.  
+- Proponer opciones de producto final (texto breve, esquema, audio, afiche) para que estudiantes puedan demostrar lo aprendido de distintas maneras.  
+- Generar ejemplos y contextos vinculados a distintas realidades territoriales y culturales (rural/urbano, norte/centro/sur, etc.).
+
+**Articulación con PIE y DUA**
+
+- Sugerir ideas que complementen los planes individualizados ya acordados por el PIE (por ejemplo, actividades de repaso o apoyo visual).  
+- Proponer ejemplos de andamiajes (preguntas guía, pasos numerados, modelos resueltos) que luego el equipo revise y adapte a cada caso.
+
+**Ejemplo de prompt para generar adaptaciones según trayectorias diversas**
+
+```markdown 
+Actúa como especialista en educación inclusiva y en Diseño Universal para el Aprendizaje (DUA) en contexto escolar chileno.
 
 Tu objetivo es proponer adaptaciones de una actividad de [ASIGNATURA] sobre [TEMA] para estudiantes con trayectorias y necesidades diversas, manteniendo el mismo objetivo de aprendizaje.
 
 Contexto:
-- Curso: [NIVEL, por ejemplo “8º básico”] en escuela [pública/subvencionada/particular].
+- Curso: [NIVEL, por ejemplo “8º básico”] en escuela [pública/subvencionada/particular] con cursos numerosos.
 - En el grupo hay:
   - Estudiantes que han tenido ausencias prolongadas.
   - Estudiantes recién incorporados al sistema escolar chileno.
   - Estudiantes que participan en el PIE.
 - Recursos disponibles: [pizarra, cuadernos, proyector, impresora, etc.].
+- Ya existe un trabajo previo del equipo PIE y acuerdos de curso que debemos respetar.
 
 Actividad original:
-[PEGAR AQUÍ LA DESCRIPCIÓN DE LA ACTIVIDAD DE CLASE QUE YA DISEÑÓ EL/LA DOCENTE].
+[PEGAR AQUÍ LA DESCRIPCIÓN DE LA ACTIVIDAD DE CLASE QUE YA DISEÑÓ EL/LA DOCENTE, SIN NOMBRES NI DATOS SENSIBLES].
 
 Instrucciones:
 1. Propón al menos 3 adaptaciones posibles de la actividad original:
-   - Adaptación A: pensada para estudiantes con ausencias prolongadas.
-   - Adaptación B: pensada para estudiantes recién incorporados al sistema escolar chileno.
-   - Adaptación C: pensada para estudiantes que requieren mayor apoyo estructurado (por ejemplo, del PIE).
+   - Adaptación A: pensada para estudiantes con ausencias prolongadas o reincorporaciones tardías.
+   - Adaptación B: pensada para estudiantes recién incorporados al sistema escolar chileno o con nivel de lectura diferente.
+   - Adaptación C: pensada para estudiantes que requieren mayor apoyo estructurado (por ejemplo, acompañados por PIE).
 2. Para cada adaptación, indica:
    - Propósito.
    - Pasos principales de la actividad.
-   - Tipo de apoyo que se ofrece (andamiajes, ejemplos, materiales de apoyo, etc.).
+   - Tipo de apoyo que se ofrece (andamiajes, ejemplos, materiales de apoyo, consignas más guiadas, etc.).
    - Cómo se vincula explícitamente con el mismo objetivo de aprendizaje de la actividad original.
+3. Incluye una breve sugerencia sobre cómo presentar estas opciones al curso sin etiquetar ni separar a las y los estudiantes.
 
 Formato de salida:
 - Subtítulos: “Adaptación A”, “Adaptación B” y “Adaptación C”.
@@ -103,56 +132,82 @@ Criterios y restricciones:
 - No cambies el objetivo de aprendizaje; solo ajusta la forma de abordarlo.
 - No incluyas datos personales ni ejemplos que permitan identificar estudiantes específicos.
 - Usa lenguaje claro y respetuoso, evitando etiquetas como “buenos/malos alumnos”.
+- Formula las propuestas de manera que puedan ser útiles para todo el grupo, no solo para un estudiante en particular.
 ```
 
----
+::: {.callout-note}
+**Idea fuerza para el profesorado:**  
+Las adaptaciones apoyadas por IA deben ampliar las posibilidades de participación y conexión con el currículum común, sin separar ni etiquetar. La herramienta sugiere opciones; el equipo docente y el PIE deciden qué tiene sentido en su curso.
+:::
 
 ## Posibilidades y límites en contextos de integración y educación especial
 
-En contextos de integración y educación especial, la IA abre oportunidades relevantes: permite generar materiales con distintos niveles de apoyo, crear ejemplos personalizados, proponer formatos alternativos (audio, viñetas, esquemas), entre otros. Sin embargo, también existen límites importantes: la IA no conoce a las y los estudiantes, no reemplaza la evaluación diagnóstica ni las decisiones del equipo PIE, y puede reproducir sesgos o proponer estrategias poco adecuadas si no se la orienta bien.
+En contextos de integración y educación especial, la IA abre oportunidades relevantes: permite generar materiales con distintos niveles de apoyo, crear ejemplos personalizados, proponer formatos alternativos (texto, viñetas, esquemas), entre otros. Sin embargo, también existen límites importantes: la IA no conoce a las y los estudiantes, no reemplaza la evaluación diagnóstica ni las decisiones del equipo PIE, y puede reproducir sesgos o proponer estrategias poco adecuadas si no se la orienta y revisa críticamente.
 
-Por eso es clave usar estas herramientas como **soporte para el trabajo del equipo educativo**, nunca como sustituto de la observación profesional, de los acuerdos con las familias o de los planes individualizados (PII, adecuaciones curriculares, etc.).
+Por eso es clave usar estas herramientas como soporte para pensar estrategias, nunca como sustituto de la observación profesional, de los acuerdos con las familias o de los planes individualizados (PII, adecuaciones curriculares, informes del PIE). Además, es fundamental no ingresar datos sensibles en las herramientas de IA (RUT, nombres, diagnósticos, antecedentes de salud, situaciones familiares específicas, etc.).
 
-**Usos posibles:**
+**<span style="text-decoration: underline;">Usos posibles (ejemplos concretos)</span>.**
 
-- Sugerir ideas de adaptaciones curriculares no significativas, que luego el equipo revisa y valida.
-- Generar materiales de apoyo complementarios (glosarios, tarjetas visuales, pasos de una rutina, etc.).
-- Proponer formas alternativas de demostrar aprendizaje (productos orales, visuales, manipulativos).
-- Sistematizar acuerdos del equipo PIE en un lenguaje claro para compartir con el resto del profesorado.
-- Redactar borradores de orientaciones generales para familias sobre cómo apoyar tareas en casa.
+**Apoyos generales para todo el curso**
 
-**Ejemplo de prompt para explorar posibilidades y límites en un curso con PIE:**
+- Sugerir ideas de adaptaciones curriculares no significativas que puedan beneficiar al grupo completo (por ejemplo, consignas más claras, uso de organizadores gráficos, actividades por estaciones).  
+- Generar materiales complementarios como glosarios, tarjetas visuales, pasos de una rutina o ejemplos resueltos que apoyen la comprensión de todo el curso.  
+- Proponer formas alternativas de demostrar aprendizaje (productos orales, visuales, manipulativos) para diversificar las evidencias sin modificar los objetivos de aprendizaje.
 
-```markdown
-Actúa como profesional de apoyo en un Programa de Integración Escolar (PIE) con experiencia en adecuaciones curriculares no significativas.
+**Trabajo con equipo PIE y familias**
+
+- Sistematizar acuerdos del equipo PIE en un lenguaje claro para compartir con el resto del profesorado (borrador de orientaciones internas que luego el equipo revisa).  
+- Redactar borradores de orientaciones generales para familias sobre cómo apoyar tareas en casa, que después el equipo ajuste a su realidad.  
+- Ordenar información dispersa (notas de reuniones, acuerdos, ideas) en esquemas que faciliten la coordinación entre docentes, asistentes de la educación y profesionales del PIE.
+
+**Límites y cuidados**
+
+- Recordar que la IA no puede definir adecuaciones curriculares significativas ni planes individuales por sí sola.  
+- Evitar pedir a la IA diagnósticos, etiquetas o decisiones individuales sobre estudiantes.  
+- Revisar críticamente las sugerencias, ya que la IA puede reproducir estereotipos o suposiciones sobre discapacidad, lengua, género, etc.
+
+**Ejemplo de prompt para explorar posibilidades y límites en un curso con PIE**
+
+```markdown 
+Actúa como profesional de apoyo en un Programa de Integración Escolar (PIE) con experiencia en adecuaciones curriculares no significativas y en DUA.
 
 Tu objetivo es sugerir ideas de apoyo pedagógico para un curso de [NIVEL] que trabaja el contenido [TEMA] en la asignatura de [ASIGNATURA], respetando el currículum común y el trabajo del equipo PIE.
 
 Contexto:
-- Escuela pública con PIE.
+- Escuela pública con PIE y cursos numerosos.
 - En el curso hay estudiantes con:
   - Dificultades específicas de aprendizaje.
   - TDAH.
   - Discapacidad intelectual leve.
 - El equipo docente ya definió los objetivos de aprendizaje para todo el curso.
+- Ya existen planes y acuerdos del PIE que se deben respetar (no los detallaré aquí por confidencialidad).
 
 Instrucciones:
 1. Propón 5 ideas de apoyos generales que puedan beneficiar a todo el curso (no solo a estudiantes del PIE), tales como:
    - Ajustes en la presentación de la información.
    - Estrategias de trabajo colaborativo.
-   - Formas alternativas de demostrar lo aprendido.
-2. Luego, sugiere 3 ejemplos de adecuaciones no significativas para el mismo contenido, aclarando:
-   - Qué se mantiene igual para todos.
-   - Qué se adapta (tiempo, formato, cantidad de ejercicios, etc.).
+   - Formas alternativas de demostrar lo aprendido (oral, escrito, gráfico, manipulativo).
+2. Luego, sugiere 3 ejemplos de adecuaciones curriculares no significativas para el mismo contenido, aclarando:
+   - Qué se mantiene igual para todos (objetivo de aprendizaje, criterio de logro).
+   - Qué se adapta (tiempo, formato, cantidad de ejercicios, grado de apoyo, etc.).
 3. Finalmente, incluye una breve sección “Límites y cuidados” con 4–5 puntos que recuerden:
-   - Que las decisiones deben ser revisadas por el equipo PIE.
-   - Que no se debe incluir información sensible de estudiantes en la IA.
+   - Que las decisiones deben ser revisadas y validadas por el equipo PIE y el profesorado del curso.
+   - Que no se debe incluir información sensible de estudiantes en herramientas de IA.
+   - Que la IA no reemplaza la evaluación diagnóstica ni la comunicación con las familias.
 
 Formato de salida:
-- Secciones con subtítulos: “Apoyos generales para todo el curso”, “Ejemplos de adecuaciones no significativas” y “Límites y cuidados”.
+- Sección con subtítulo “Apoyos generales para todo el curso”.
+- Sección con subtítulo “Ejemplos de adecuaciones no significativas”.
+- Sección con subtítulo “Límites y cuidados”.
 
 Criterios y restricciones:
 - No sugieras diagnósticos ni decisiones individuales sobre estudiantes.
 - Usa lenguaje respetuoso y centrado en apoyos, no en déficits.
-- Enfatiza que la IA es un apoyo para pensar estrategias, no un reemplazo de la evaluación profesional.
+- Enfatiza que la IA es un apoyo para pensar estrategias pedagógicas, no un reemplazo de la evaluación profesional ni de los acuerdos del equipo PIE.
+- No incluyas nombres propios, RUT ni ningún dato que permita identificar a estudiantes o familias.
 ```
+
+::: {.callout-note}
+**Idea fuerza para el profesorado:**  
+En contextos de integración y educación especial, la IA puede ser un buen apoyo para imaginar estrategias y apoyos generales, pero las decisiones sobre adecuaciones, planes individuales y comunicación con familias siguen estando en manos del equipo profesional y de la comunidad escolar. La herramienta aporta ideas; el criterio pedagógico y ético lo ponen las personas.
+:::

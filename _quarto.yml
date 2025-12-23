@@ -13,8 +13,9 @@ book:
   output-file: reportes-facso-plantilla
   repo-url: "https://github.com/KAravena/Taller-IA-Docentes-MEGM-2026"
   author:
-    - name: Katherine Aravena Herrera
+    - name: Katherine Aravena Herrera 
       affiliation: Departamento de Sociologia, Universidad de Chile
+      email: "katherine.aravena.h@gmail.com"
     - name: Manuel Sierra
       affiliation: Museo de la Educación Gabriela Mistral
   date: today             # Usa fecha fija (YYYY-MM-DD) si necesitas control editorial
@@ -37,7 +38,6 @@ book:
     - 01-que-es-ia.qmd
     - 02-prompts-docentes.qmd
     - 03-herramientas-trabajo-docente.qmd
-    - 04-evaluacion-retroalimentacion.qmd
     - 05-inclusion-educativa.qmd
     - 06-riesgos-etica.qmd
     - 07-buenas-practicas.qmd
