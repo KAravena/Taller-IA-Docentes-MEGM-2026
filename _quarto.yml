@@ -10,7 +10,7 @@ project:
 book:
   title: "IA al servicio pedagógico"
   subtitle: "Herramientas prácticas para el trabajo docente"
-  output-file: reportes-facso-plantilla
+  output-file: IA al servicio pedagógico - Museo de la Educación Gabriela Mistral
   repo-url: "https://github.com/KAravena/Taller-IA-Docentes-MEGM-2026"
   author:
     - name: Katherine Aravena Herrera 

@@ -1,0 +1,3130 @@
+% Options for packages loaded elsewhere
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+%
+\documentclass[
+  spanish,
+  a4paper,
+  oneside,
+  shorthands=off]{scrbook}
+\usepackage{xcolor}
+\usepackage[top=25mm,bottom=25mm,left=30mm,right=20mm]{geometry}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{5}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+  \setmainfont[]{Times New Roman}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+% Make \paragraph and \subparagraph free-standing
+\makeatletter
+\ifx\paragraph\undefined\else
+  \let\oldparagraph\paragraph
+  \renewcommand{\paragraph}{
+    \@ifstar
+      \xxxParagraphStar
+      \xxxParagraphNoStar
+  }
+  \newcommand{\xxxParagraphStar}[1]{\oldparagraph*{#1}\mbox{}}
+  \newcommand{\xxxParagraphNoStar}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+  \let\oldsubparagraph\subparagraph
+  \renewcommand{\subparagraph}{
+    \@ifstar
+      \xxxSubParagraphStar
+      \xxxSubParagraphNoStar
+  }
+  \newcommand{\xxxSubParagraphStar}[1]{\oldsubparagraph*{#1}\mbox{}}
+  \newcommand{\xxxSubParagraphNoStar}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+\makeatother
+
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{241,243,245}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.40,0.45,0.13}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\BuiltInTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\ExtensionTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.28,0.35,0.67}{#1}}
+\newcommand{\ImportTok}[1]{\textcolor[rgb]{0.00,0.46,0.62}{#1}}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\RegionMarkerTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.07,0.07,0.07}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
+
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{% scales image to fit in text height/width
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi% select the smaller of both
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi%
+}
+% Set default figure placement to htbp
+\def\fps@figure{htbp}
+\makeatother
+
+
+% definitions for citeproc citations
+\NewDocumentCommand\citeproctext{}{}
+\NewDocumentCommand\citeproc{mm}{%
+  \begingroup\def\citeproctext{#2}\cite{#1}\endgroup}
+\makeatletter
+ % allow citations to break across lines
+ \let\@cite@ofmt\@firstofone
+ % avoid brackets around text for \cite:
+ \def\@biblabel#1{}
+ \def\@cite#1#2{{#1\if@tempswa , #2\fi}}
+\makeatother
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newlength{\csllabelwidth}
+\setlength{\csllabelwidth}{3em}
+\newenvironment{CSLReferences}[2] % #1 hanging-indent, #2 entry-spacing
+ {\begin{list}{}{%
+  \setlength{\itemindent}{0pt}
+  \setlength{\leftmargin}{0pt}
+  \setlength{\parsep}{0pt}
+  % turn on hanging indent if param 1 is 1
+  \ifodd #1
+   \setlength{\leftmargin}{\cslhangindent}
+   \setlength{\itemindent}{-1\cslhangindent}
+  \fi
+  % set entry spacing
+  \setlength{\itemsep}{#2\baselineskip}}}
+ {\end{list}}
+\usepackage{calc}
+\newcommand{\CSLBlock}[1]{\hfill\break\parbox[t]{\linewidth}{\strut\ignorespaces#1\strut}}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{\strut#1\strut}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{\strut#1\strut}}
+\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
+
+\ifLuaTeX
+\usepackage[bidi=basic]{babel}
+\else
+\usepackage[bidi=default]{babel}
+\fi
+\ifPDFTeX
+\else
+\babelfont{rm}[]{Times New Roman}
+\fi
+% get rid of language-specific shorthands (see #6817):
+\let\LanguageShortHands\languageshorthands
+\def\languageshorthands#1{}
+
+
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+
+
+ 
+
+
+% ---------- Paquetes tipograficos y microajustes ----------
+\usepackage{microtype}        % mejor interletrado y justificado
+\usepackage{csquotes}         % comillas tipograficas
+\usepackage{iftex}
+\ifPDFTeX\else
+  % Seleccion de fuentes solo cuando XeTeX/LuaTeX esta disponible.
+  \IfFontExistsTF{Times New Roman}{
+    \setmainfont{Times New Roman}
+  }{
+    \IfFontExistsTF{TeX Gyre Termes}{
+      \setmainfont{TeX Gyre Termes}
+    }{
+      \IfFontExistsTF{Latin Modern Roman}{\setmainfont{Latin Modern Roman}}{}
+    }
+  }
+  \IfFontExistsTF{Times New Roman}{
+    \setsansfont{Times New Roman}
+  }{
+    \IfFontExistsTF{TeX Gyre Heros}{
+      \setsansfont{TeX Gyre Heros}
+    }{
+      \IfFontExistsTF{Latin Modern Sans}{\setsansfont{Latin Modern Sans}}{}
+    }
+  }
+  \IfFontExistsTF{Times New Roman}{
+    \setmonofont{Times New Roman}
+  }{
+    \IfFontExistsTF{TeX Gyre Cursor}{
+      \setmonofont{TeX Gyre Cursor}
+    }{
+      \IfFontExistsTF{Latin Modern Mono}{\setmonofont{Latin Modern Mono}}{}
+    }
+  }
+\fi
+\usepackage{enumitem}         % listas compactas
+\setlist{itemsep=.2em, topsep=.2em}
+
+% ---------- KOMA-Script: estilo de titulos y espaciado ----------
+\KOMAoptions{
+  headings=big,
+  parskip=half,
+  fontsize=12pt,
+  appendixprefix=true
+}
+\setlength{\parindent}{1.5em}
+\setlength{\parskip}{0.6em}
+\usepackage{indentfirst}
+\usepackage{setspace}
+\setstretch{1.5}
+
+
+% ---------- Encabezados y pies (scrlayer-scrpage) ----------
+\usepackage[automark,headsepline]{scrlayer-scrpage}
+\clearpairofpagestyles
+\automark[chapter]{chapter}
+\ihead{\pagemark}
+\ohead{\itshape\headmark}
+\setheadsepline{0.4pt}
+\renewcommand*{\chaptermarkformat}{}
+\renewcommand*{\chapterpagestyle}{scrheadings}
+\pagestyle{scrheadings}
+\makeatletter
+\let\ps@plain\ps@scrheadings
+\makeatother
+\cfoot{}
+
+% ---------- Hipervinculos mas sobrios ----------
+\usepackage{hyperref}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue,
+  citecolor=blue,
+  urlcolor=blue,
+  pdfauthor={\@author},
+  pdftitle={\@title}
+}
+
+% ---------- Leyendas de figuras/tablas ----------
+\usepackage[labelfont=bf,textfont=it]{caption}
+\captionsetup{
+  skip=8pt
+}
+
+% ---------- Tabla de contenidos ----------
+\KOMAoptions{toc=graduated}
+\RedeclareSectionCommand[tocnumwidth=3em]{chapter}
+\RedeclareSectionCommand[tocindent=3.25em,tocnumwidth=2.8em]{section}
+\RedeclareSectionCommand[tocindent=6.5em,tocnumwidth=2.5em]{subsection}
+\makeatletter
+\newcommand*{\tocdotfill}{\leavevmode\leaders\hbox to .6em{\hss.\hss}\hfill}
+\makeatother
+\RedeclareSectionCommand[toclinefill=\tocdotfill]{chapter}
+\RedeclareSectionCommand[toclinefill=\tocdotfill]{section}
+\RedeclareSectionCommand[toclinefill=\tocdotfill]{subsection}
+\renewcommand*{\contentsname}{Tabla de contenido}
+\setkomafont{chapterentry}{\normalfont}
+\setkomafont{chapterentrypagenumber}{\normalfont}
+
+% ---------- Viudas/Huerfanas y cortes de pagina ----------
+\clubpenalty=10000
+\widowpenalty=10000
+\displaywidowpenalty=10000
+
+% ---------- Entorno abstract para scrbook ----------
+\providecommand{\abstractname}{Resumen}
+\makeatletter
+\@ifundefined{abstract}{
+  \newenvironment{abstract}{
+    \cleardoublepage
+    \thispagestyle{plain}
+    \null\vfill
+    \begin{center}
+      {\bfseries\Large \abstractname\par}
+    \end{center}\vspace{1em}
+    \begingroup
+  }{
+    \par\endgroup
+    \vfill\null
+    \cleardoublepage
+  }
+}{}
+\makeatother
+
+% ---------- Soporte de subtitulo desde YAML ----------
+\makeatletter
+\providecommand{\subtitle}[1]{\gdef\@subtitle{#1}}
+\providecommand{\@subtitle}{}
+\makeatother
+
+% --- Desactivar portada y abstract automaticos de Pandoc (PDF) ---
+\AtBeginDocument{\let\maketitle\relax}
+\renewenvironment{abstract}{}{}
+\providecommand{\appendixname}{}
+\providecommand{\appendixtocname}{}
+\providecommand{\appendixpagename}{}
+\renewcommand*{\appendixname}{Anexo}
+\renewcommand*{\appendixtocname}{Anexos}
+\renewcommand*{\appendixpagename}{Anexos}
+
+
+% ---------- Indicadores para LOF/LOT condicionales ----------
+\newif\iffacsofigexists
+\newif\iffacsotableexists
+\InputIfFileExists{\jobname.facsoflags}{}{}
+\newwrite\FacsoFlagStream
+\AtEndDocument{%
+  \immediate\openout\FacsoFlagStream=\jobname.facsoflags
+  \ifnum\value{figure}>0
+    \immediate\write\FacsoFlagStream{\string\facsofigexiststrue}
+  \else
+    \immediate\write\FacsoFlagStream{\string\facsofigexistsfalse}
+  \fi
+  \ifnum\value{table}>0
+    \immediate\write\FacsoFlagStream{\string\facsotableexiststrue}
+  \else
+    \immediate\write\FacsoFlagStream{\string\facsotableexistsfalse}
+  \fi
+  \immediate\closeout\FacsoFlagStream
+}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue,
+  urlcolor=blue,
+  citecolor=blue
+}
+\makeatletter
+\@ifpackageloaded{tcolorbox}{}{\usepackage[skins,breakable]{tcolorbox}}
+\@ifpackageloaded{fontawesome5}{}{\usepackage{fontawesome5}}
+\definecolor{quarto-callout-color}{HTML}{909090}
+\definecolor{quarto-callout-note-color}{HTML}{0758E5}
+\definecolor{quarto-callout-important-color}{HTML}{CC1914}
+\definecolor{quarto-callout-warning-color}{HTML}{EB9113}
+\definecolor{quarto-callout-tip-color}{HTML}{00A047}
+\definecolor{quarto-callout-caution-color}{HTML}{FC5300}
+\definecolor{quarto-callout-color-frame}{HTML}{acacac}
+\definecolor{quarto-callout-note-color-frame}{HTML}{4582ec}
+\definecolor{quarto-callout-important-color-frame}{HTML}{d9534f}
+\definecolor{quarto-callout-warning-color-frame}{HTML}{f0ad4e}
+\definecolor{quarto-callout-tip-color-frame}{HTML}{02b875}
+\definecolor{quarto-callout-caution-color-frame}{HTML}{fd7e14}
+\makeatother
+\makeatletter
+\@ifpackageloaded{bookmark}{}{\usepackage{bookmark}}
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\AtBeginDocument{%
+\ifdefined\contentsname
+  \renewcommand*\contentsname{Tabla de contenidos}
+\else
+  \newcommand\contentsname{Tabla de contenidos}
+\fi
+\ifdefined\listfigurename
+  \renewcommand*\listfigurename{Listado de Figuras}
+\else
+  \newcommand\listfigurename{Listado de Figuras}
+\fi
+\ifdefined\listtablename
+  \renewcommand*\listtablename{Listado de Tablas}
+\else
+  \newcommand\listtablename{Listado de Tablas}
+\fi
+\ifdefined\figurename
+  \renewcommand*\figurename{Lista de figuras}
+\else
+  \newcommand\figurename{Lista de figuras}
+\fi
+\ifdefined\tablename
+  \renewcommand*\tablename{Lista de tablas}
+\else
+  \newcommand\tablename{Lista de tablas}
+\fi
+}
+\@ifpackageloaded{float}{}{\usepackage{float}}
+\floatstyle{ruled}
+\@ifundefined{c@chapter}{\newfloat{codelisting}{h}{lop}}{\newfloat{codelisting}{h}{lop}[chapter]}
+\floatname{codelisting}{Listado}
+\newcommand*\listoflistings{\listof{codelisting}{Listado de Listados}}
+\makeatother
+\makeatletter
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
+\makeatother
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={IA al servicio pedagógico},
+  pdfauthor={Katherine Aravena Herrera; Manuel Sierra},
+  pdflang={es},
+  colorlinks=true,
+  linkcolor={black},
+  filecolor={Maroon},
+  citecolor={blue},
+  urlcolor={blue},
+  pdfcreator={LaTeX via pandoc}}
+
+
+\title{IA al servicio pedagógico}
+\usepackage{etoolbox}
+\makeatletter
+\providecommand{\subtitle}[1]{% add subtitle to \maketitle
+  \apptocmd{\@title}{\par {\large #1 \par}}{}{}
+}
+\makeatother
+\subtitle{Herramientas prácticas para el trabajo docente}
+\author{Katherine Aravena Herrera \and Manuel Sierra}
+\date{12 de enero de 2026}
+\begin{document}
+\frontmatter
+\maketitle
+
+% --- title-pdf.tex personalizado para portada formal ---
+\newcommand{\CoverFont}{
+  \ifdefined\fontspec
+    \fontspec{Times New Roman}
+  \else
+    \fontfamily{ptm}\selectfont
+  \fi
+}
+\makeatletter
+\providecommand{\subtitle}[1]{\gdef\@subtitle{#1}}
+\providecommand{\@subtitle}{}
+\providecommand{\frontmattercontext}{}
+\providecommand{\advisorname}{}
+\providecommand{\advisorlabel}{Profesor guia:}
+\providecommand{\frontmatterlocation}{}
+\InputIfFileExists{includes/cover-config.tex}{}{}
+
+\newcommand{\PrintTitle}{%
+  {\CoverFont\fontsize{24pt}{28pt}\selectfont \@title\par}%
+}
+\newcommand{\PrintSubtitle}{%
+  \begingroup
+  \edef\temp{\detokenize{\@subtitle}}%
+  \ifx\temp\empty\relax
+    % sin subtitulo
+  \else
+    {\CoverFont\large \@subtitle\par}%
+  \fi
+  \endgroup
+}
+\newcommand{\PrintAuthor}{%
+  \begingroup
+  \renewcommand{\and}{\\[0.35em]}% separa autores en lineas, sin tabular
+  {\CoverFont\Large\bfseries \@author\par}%
+  \endgroup
+}
+\newcommand{\PrintDate}{%
+  {\CoverFont\small \@date\par}%
+}
+\makeatother
+
+\begin{titlepage}
+\thispagestyle{empty}
+\begin{center}
+\CoverFont
+\vspace*{10mm}
+
+% Logo o imagen institucional
+\includegraphics[width=0.35\textwidth]{assets/cover.png}\par
+\vspace{12mm}
+
+% Titulo y subtitulo
+\PrintTitle
+\vspace{6mm}
+\PrintSubtitle
+
+\vspace{22mm}
+\begingroup
+\edef\temp{\detokenize{\frontmattercontext}}%
+\ifx\temp\empty\relax
+  % sin contexto adicional
+\else
+  {\normalsize \CoverFont \frontmattercontext\par}%
+\fi
+\endgroup
+
+\vspace{18mm}
+\PrintAuthor
+
+\vfill
+\begingroup
+\edef\temp{\detokenize{\frontmatterlocation}}%
+\ifx\temp\empty\relax
+  % sin ubicacion
+\else
+  {\small \CoverFont \frontmatterlocation\par}%
+\fi
+\endgroup
+\PrintDate
+
+\end{center}
+\end{titlepage}
+
+% Preliminares (numeros romanos) y estilo simple
+\frontmatter
+\pagestyle{scrheadings}
+
+\setcounter{tocdepth}{2} % (o 1/3 segun prefieras)
+\tableofcontents
+\iffacsofigexists
+  \cleardoublepage
+  \listoffigures
+\fi
+\cleardoublepage
+
+
+\mainmatter
+\bookmarksetup{startatroot}
+
+\chapter*{Presentación}\label{presentaciuxf3n}
+\addcontentsline{toc}{chapter}{Presentación}
+
+\markboth{Presentación}{Presentación}
+
+\small\textbf{Palabras clave: } Inteligencia artificial; Trabajo
+docente; Planificación escolar; Evaluación formativa; Inclusión
+educativa. \normalsize
+
+El presente documento presenta el taller \emph{``IA al servicio
+pedagógico: herramientas prácticas para el trabajo docente''}, dirigido
+a profesoras y profesores que participan en la Escuela de Verano 2026
+del Museo de la Educación Gabriela Mistral. El taller se inscribe en una
+perspectiva crítica y situada sobre el uso de la inteligencia artificial
+en contextos escolares, entendida como un apoyo al trabajo profesional
+docente y no como su reemplazo.
+
+El propósito central de esta instancia es ofrecer un espacio práctico y
+reflexivo para explorar cómo herramientas de IA pueden contribuir a
+aliviar la sobrecarga laboral, mejorar la planificación, la evaluación y
+la retroalimentación, así como adaptar materiales a distintos niveles y
+necesidades de estudiantes. A partir de ejemplos concretos, actividades
+guiadas y momentos de conversación pedagógica, se busca que las y los
+participantes desarrollen criterios informados para decidir cuándo, cómo
+y para qué utilizar estas tecnologías, resguardando siempre la autonomía
+profesional y el sentido pedagógico de las decisiones en el aula. Este
+diseño organiza los objetivos, contenidos, secuencias de trabajo y
+orientaciones metodológicas del taller, de modo que pueda ser
+implementado y adaptado en distintos contextos escolares.
+
+\bookmarksetup{startatroot}
+
+\chapter{¿Qué es la IA y cómo
+funciona?}\label{quuxe9-es-la-ia-y-cuxf3mo-funciona}
+
+\section{¿Qué entendemos por inteligencia artificial
+hoy?}\label{quuxe9-entendemos-por-inteligencia-artificial-hoy}
+
+En este taller entenderemos por \emph{inteligencia artificial (IA)} un
+conjunto de técnicas informáticas que permiten a los computadores
+realizar tareas que, si las hiciera una persona, consideraríamos
+``inteligentes'': reconocer patrones, generar texto o imágenes, resumir
+información, traducir, clasificar, entre otras. No se trata de una
+``mente'' ni de un sujeto, sino de programas que aprenden a partir de
+grandes volúmenes de datos.
+
+En palabras sencillas: la IA es un conjunto de herramientas matemáticas
+que \textbf{aprenden de muchos ejemplos} y luego usan lo aprendido para
+hacer predicciones. Por ejemplo, a partir de miles de textos escolares
+puede aprender a redactar explicaciones similares; a partir de muchas
+preguntas de pruebas puede aprender a proponer nuevas preguntas
+parecidas.
+
+En la práctica cotidiana, cuando hablamos de IA hoy casi siempre nos
+referimos a sistemas basados en \textbf{aprendizaje automático}
+(\emph{machine learning}) y, en particular, a \textbf{modelos de
+lenguaje} y otros modelos generativos que se entrenan con enormes
+cantidades de textos, imágenes, audio o video. Estos modelos aprenden a
+detectar regularidades estadísticas y a ``predecir'' qué palabra, imagen
+o respuesta es más probable según el contexto.
+
+En el contexto escolar chileno esto se traduce, por ejemplo, en
+herramientas que pueden:
+
+\begin{itemize}
+\tightlist
+\item
+  sugerir actividades para una clase de 6º básico en Lenguaje sobre
+  comprensión lectora;
+\item
+  proponer ideas de preguntas para una prueba de Historia en 2º medio;
+\item
+  redactar un borrador de correo para apoderadas y apoderados;
+\item
+  simplificar un texto de Ciencias Naturales para un curso con niveles
+  de lectura muy distintos.
+\end{itemize}
+
+Es importante distinguir entre:
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{IA general}: la idea de una inteligencia similar o superior a
+  la humana, capaz de hacer cualquier tarea intelectual. Hoy \textbf{no
+  existe} este tipo de IA, aunque aparezca en películas o noticias.
+\item
+  \textbf{IA específica o aplicada}: programas que resuelven tareas
+  concretas (por ejemplo, sugerir actividades para una clase, redactar
+  un correo, resumir un texto escolar).
+\item
+  \textbf{IA generativa}: sistemas que crean nuevos contenidos (textos,
+  imágenes, código, etc.) combinando patrones aprendidos a partir de
+  muchos ejemplos.
+\end{itemize}
+
+En este taller trabajaremos principalmente con \textbf{IA generativa}
+para texto, entendiéndola siempre como una \textbf{herramienta al
+servicio del juicio pedagógico} de las y los docentes, y no como un
+sustituto de su trabajo profesional ni de las decisiones que se toman en
+la escuela.
+
+\textbf{Idea clave para el aula:} la IA no es una persona ni una mente,
+sino una herramienta estadística que aprende de muchos ejemplos y que
+puede apoyar tareas concretas del trabajo docente, siempre bajo el
+criterio profesional de las y los profesores.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{Modelos de lenguaje: cómo funcionan ``a grandes
+rasgos''}\label{modelos-de-lenguaje-cuxf3mo-funcionan-a-grandes-rasgos}
+
+En este taller usaremos principalmente \textbf{modelos de lenguaje}:
+programas que, a partir de mucho texto de entrenamiento, aprenden a
+continuar frases y responder preguntas de manera coherente. Una forma
+sencilla de entenderlo es pensar en un juego de completar frases: el
+modelo intenta adivinar cuál es la siguiente palabra más probable según
+lo que ya se escribió.
+
+Para trabajar pedagógicamente con estas herramientas \textbf{no es
+necesario saber programar} ni entender todas las fórmulas internas. Pero
+sí ayuda tener una idea general de cómo aprenden y qué limitaciones
+tienen, para poder usarlas de manera crítica.
+
+\subsection{Redes neuronales
+artificiales}\label{redes-neuronales-artificiales}
+
+Los modelos de lenguaje actuales se basan en \textbf{redes neuronales
+artificiales}. Una red neuronal es un modelo matemático formado por
+capas de ``neuronas'' conectadas entre sí. Cada neurona recibe números
+como entrada, los combina y produce una salida. Al entrenar la red con
+muchos ejemplos, va ajustando sus conexiones internas para cometer cada
+vez menos errores. Las redes neuronales artificiales se inspiran muy
+superficialmente en el cerebro, pero son ante todo modelos matemáticos
+que ajustan números. La IA no ``piensa'' ni ``siente'': calcula, predice
+y repite patrones que ha aprendido de los datos.
+
+\begin{figure}[H]
+
+\caption{Ejemplo de relación entre una Neurona biologica y un
+Perceptrón: la neurona artificial básica.}
+
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{assets/ann1.png}}
+
+}
+
+\end{figure}%
+
+Podemos pensarlo con una metáfora escolar:\\
+cuando una profesora corrige muchas pruebas de su curso, empieza a
+\textbf{reconocer patrones} (respuestas típicas, errores frecuentes,
+formas de escribir). Con esa experiencia, puede anticipar qué
+dificultades aparecerán en la siguiente evaluación. La red neuronal hace
+algo similar, pero con números y a una escala muchísimo mayor.
+
+En términos muy simples, el proceso de entrenamiento funciona así:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Se convierte el texto en números (llamados \emph{tokens}).
+\item
+  La red neuronal recibe esos números y genera una predicción (por
+  ejemplo, la siguiente palabra).
+\item
+  Se compara la predicción con la respuesta correcta.
+\item
+  El modelo ajusta internamente sus parámetros para equivocarse menos la
+  próxima vez.
+\item
+  Se repite el proceso millones de veces con enormes conjuntos de datos.
+\end{enumerate}
+
+Podemos visualizar una red neuronal básica así:
+
+\begin{figure}[H]
+
+\caption{Ejemplo de red neuronal artificial con una capa de entrada, una
+oculta y una de salida. Fuente: Cburnett, \emph{Artificial neural
+network}, Wikimedia Commons (CC BY-SA 3.0).}
+
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{assets/ann.png}}
+
+}
+
+\end{figure}%
+
+En los modelos actuales, en vez de unas pocas capas hay \textbf{decenas
+o cientos de capas}, con millones o miles de millones de parámetros. Por
+eso se habla de \emph{modelos grandes}.
+
+\subsection{Del perceptrón al
+Transformer}\label{del-perceptruxf3n-al-transformer}
+
+Los modelos de lenguaje modernos como ChatGPT (Generative Pre-trained
+Transformer) utilizan una arquitectura llamada \textbf{Transformer},
+propuesta en 2017 (\citeproc{ref-vaswani2017attention}{Vaswani et~al.,
+2017}), que cambió radicalmente la forma de trabajar con texto. La idea
+central es el mecanismo de \textbf{auto-atención}
+(\emph{self-attention}), que permite que el modelo mire todas las
+palabras de una frase a la vez y decida a cuáles prestar más atención
+para entender el contexto.
+
+Una forma cotidiana de imaginarlo es pensar en una profesora leyendo una
+respuesta larga de un estudiante: no se fija solo en la última frase,
+sino que revisa todo el párrafo, subraya mentalmente las ideas más
+importantes y, a partir de eso, evalúa o redacta una retroalimentación.
+El Transformer hace algo análogo, pero a nivel numérico y automatizado.
+
+A grandes rasgos, un Transformer:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{Recibe una secuencia de palabras} (convertidas en vectores
+  numéricos).
+\item
+  \textbf{Calcula la atención}: para cada palabra, pondera cuánto se
+  relaciona con las demás palabras de la secuencia.
+\item
+  \textbf{Transforma la representación interna del texto} pasando por
+  varias capas que combinan atención y redes neuronales.
+\item
+  \textbf{Predice la siguiente palabra} (o el siguiente fragmento de
+  texto) eligiendo la opción más probable según lo aprendido.
+\end{enumerate}
+
+La arquitectura típica de un Transformer puede representarse así:
+
+\begin{figure}[H]
+
+\caption{Arquitectura general de un modelo tipo Transformer con bloques
+de codificador y decodificador.\\
+Fuente: Yuening Jia, \emph{The Transformer - model architecture},
+Wikimedia Commons (CC BY-SA 3.0).}
+
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{assets/transformer.png}}
+
+}
+
+\end{figure}%
+
+Para el trabajo docente \textbf{no necesitamos dominar este diagrama}.
+Lo importante es retener tres ideas clave:
+
+\begin{itemize}
+\tightlist
+\item
+  El modelo \textbf{no ``piensa'' como una persona}, sino que calcula
+  probabilidades a partir de patrones aprendidos en los datos.
+\item
+  El modelo \textbf{no sabe qué es verdadero o falso} por sí mismo: ha
+  visto textos, pero no la realidad; por eso puede equivocarse o
+  ``inventar'' información.
+\item
+  El modelo funciona como un \textbf{completador de texto muy
+  sofisticado}, que podemos guiar mediante instrucciones claras
+  (\emph{prompts}) para que su producción sea más útil en el contexto
+  escolar.
+\end{itemize}
+
+\textbf{Idea clave para el aula:} un modelo de lenguaje es, en esencia,
+un completador de texto entrenado con muchísimos ejemplos. No entiende
+el mundo como una persona, pero puede ser muy útil si sabemos darle
+buenas instrucciones y revisar críticamente sus respuestas.
+
+\subsection{Algunas precisiones importantes sobre cómo
+aprende}\label{algunas-precisiones-importantes-sobre-cuxf3mo-aprende}
+
+Para usar estas herramientas de manera crítica en la escuela, no
+necesitamos saber programarlas, pero sí comprender tres ideas clave
+sobre su funcionamiento:
+
+\begin{itemize}
+\item
+  \textbf{Aprenden de grandes bases de datos}\\
+  Los modelos se entrenan con enormes cantidades de textos e imágenes
+  disponibles en internet, libros digitales, repositorios, etc. A partir
+  de esos datos aprenden patrones: qué palabras suelen ir juntas, cómo
+  se estructura un texto explicativo, cómo se formula una pregunta de
+  prueba, etc.
+\item
+  \textbf{No aprenden ``en vivo'' de cada conversación}\\
+  Cuando usamos un modelo de lenguaje en el aula, este no ``recuerda''
+  de manera estable lo que le dijimos en sesiones anteriores ni
+  ``actualiza'' su conocimiento curricular en tiempo real (a menos que
+  el sistema esté diseñado específicamente para eso). Esto significa que
+  puede quedarse con información desactualizada o incompleta.
+\item
+  \textbf{Pueden ``inventar'' información (alucinaciones)}\\
+  Como el modelo funciona prediciendo la palabra o respuesta más
+  probable, a veces completa con datos que suenan convincentes, pero que
+  no son verdaderos o que no están bien fundamentados. Por eso no es
+  recomendable usar la IA como única fuente de información factual o
+  curricular, sino más bien como apoyo para redactar, proponer ideas o
+  reformular materiales.
+\end{itemize}
+
+\textbf{Idea clave:} no necesitamos conocer las ecuaciones internas del
+modelo, pero sí saber que aprende de datos pasados, que puede
+equivocarse con seguridad y que, por lo mismo, requiere siempre revisión
+crítica por parte de las y los docentes.
+
+\section{Qué puede hacer y qué no puede hacer en
+educación}\label{quuxe9-puede-hacer-y-quuxe9-no-puede-hacer-en-educaciuxf3n}
+
+En el sistema escolar chileno, con cursos numerosos, diversidad de
+trayectorias, presencia de PIE y alta carga laboral docente, la IA puede
+convertirse en un apoyo concreto para ciertas tareas, siempre que se use
+con criterio y resguardos.
+
+\subsection{¿Qué sí puede hacer?}\label{quuxe9-suxed-puede-hacer}
+
+En el contexto escolar, modelos de lenguaje e IA generativa pueden
+apoyar, entre otras tareas:
+
+\begin{itemize}
+\item
+  \textbf{Planificación y preparación de clases}\\
+  Sugerir objetivos, actividades, secuencias y preguntas guía para una
+  unidad de Historia, Matemática, Lenguaje, Ciencias, etc., alineadas
+  con las Bases Curriculares que la/el docente ya definió.
+\item
+  \textbf{Elaboración de materiales}\\
+  Generar borradores de guías, ejercicios, ejemplos contextualizados al
+  territorio (por ejemplo, situaciones cercanas al barrio o comuna),
+  casos para debatir en Formación Ciudadana, etc.
+\item
+  \textbf{Evaluación y retroalimentación}\\
+  Proponer ítems y criterios de evaluación, sugerir comentarios de
+  retroalimentación que la/el docente revisa, adapta y decide si usar
+  (por ejemplo, para un ensayo argumentativo de 2º medio).
+\item
+  \textbf{Adaptación de materiales}\\
+  Simplificar un texto de Ciencias Naturales para 6º básico, cambiar el
+  nivel de complejidad de un problema de Matemática, generar versiones
+  alternativas de una misma actividad para distintos cursos.
+\item
+  \textbf{Organización del trabajo cotidiano}\\
+  Redactar borradores de comunicaciones a familias, sistematizar
+  acuerdos de reuniones de departamento, sintetizar documentos extensos
+  (orientaciones, decretos, circulares) en puntos clave.
+\end{itemize}
+
+En todos los casos, la IA actúa como \textbf{asistente de borradores}:
+entrega propuestas iniciales que la/el docente revisa, corrige y
+contextualiza según su criterio profesional y el proyecto educativo del
+establecimiento.
+
+\subsection{¿Qué no puede hacer (ni debería
+hacer)?}\label{quuxe9-no-puede-hacer-ni-deberuxeda-hacer}
+
+Hay tareas que, por razones técnicas, éticas o pedagógicas, la IA
+\textbf{no debiera reemplazar}:
+
+\begin{itemize}
+\item
+  \textbf{Conocer a las y los estudiantes}\\
+  Su historia, contexto familiar, trayectoria escolar, emociones y
+  vínculos se construyen en la relación cotidiana, no en un modelo
+  estadístico.
+\item
+  \textbf{Tomar decisiones evaluativas de alto impacto}\\
+  Aprobación o reprobación, repitencia, derivaciones a apoyos
+  especializados o sanciones disciplinarias deben ser decisiones
+  humanas, sustentadas en información múltiple y diálogo profesional.
+\item
+  \textbf{Definir objetivos de formación}\\
+  Los sentidos educativos de largo plazo, el proyecto educativo
+  institucional y las prioridades pedagógicas se construyen en la
+  comunidad educativa, no se delegan a un algoritmo.
+\item
+  \textbf{Sostener vínculos afectivos y pedagógicos}\\
+  El acompañamiento emocional, el clima de aula, la construcción de
+  confianza y respeto requieren presencia humana, cuidado y
+  responsabilidad, no pueden automatizarse.
+\item
+  \textbf{Garantizar veracidad y ausencia de sesgos}\\
+  Los modelos pueden inventar datos, equivocarse, reproducir
+  estereotipos de género, clase, origen o etnia presentes en los textos
+  con que fueron entrenados.
+\end{itemize}
+
+Por estas razones, en el taller asumiremos que la IA es una
+\textbf{herramienta de apoyo} al trabajo pedagógico que requiere
+siempre:
+
+\begin{itemize}
+\tightlist
+\item
+  Revisión crítica por parte de las y los docentes.
+\item
+  Adaptación al contexto de cada escuela, liceo o liceo técnico
+  profesional.
+\item
+  Alineamiento con el proyecto educativo, las Bases Curriculares y la
+  normativa vigente.
+\item
+  Discusión colectiva en los equipos docentes y directivos sobre sus
+  usos y límites.
+\end{itemize}
+
+\textbf{Idea clave para el aula:} la IA puede ayudar a ahorrar tiempo y
+a ampliar ideas, pero no puede conocer a tus estudiantes, ni decidir por
+ti qué, cómo y para qué enseñar. Las decisiones pedagógicas y éticas
+siguen siendo responsabilidad de las y los profesionales de la
+educación.
+
+\bookmarksetup{startatroot}
+
+\chapter{Claves de prompt engineering
+docente}\label{claves-de-prompt-engineering-docente}
+
+\section{Qué es un ``prompt'' y por qué importa en el trabajo
+docente}\label{quuxe9-es-un-prompt-y-por-quuxe9-importa-en-el-trabajo-docente}
+
+En términos simples, un \emph{prompt} es el mensaje o instrucción que le
+damos a la inteligencia artificial para que haga algo por nosotras/os:
+proponer ideas de clase, redactar una rúbrica, adaptar un texto,
+escribir un comunicado a apoderadas/os, crear imagenes, videos, ZZZetc.
+Es la consigna que guía la respuesta del modelo, muy parecido a cuando
+redactamos una buena instrucción de trabajo para nuestro curso.
+
+En el trabajo docente, la calidad del \emph{prompt} es clave porque:
+
+\begin{itemize}
+\tightlist
+\item
+  define qué tarea realizará la IA (por ejemplo, ``sugerir actividades
+  para\ldots{}'', ``proponer preguntas de evaluación sobre\ldots{}'');
+\item
+  entrega el contexto pedagógico (curso, asignatura, objetivos de
+  aprendizaje, características del establecimiento y del grupo);
+\item
+  indica cómo queremos recibir la respuesta (tabla, lista, texto breve,
+  tono formal o cercano, extensión aproximada);
+\item
+  establece límites y resguardos (no inventar datos, no usar lenguaje
+  técnico, no tomar decisiones pedagógicas por la/el docente).
+\end{itemize}
+
+Por ejemplo, no es lo mismo escribir:
+
+\begin{quote}
+``Ayúdame con una clase de fracciones'',
+\end{quote}
+
+que decir:
+
+\begin{quote}
+``Actúa como profesora de Matemática de 5º básico en una escuela pública
+con cursos numerosos. Propón tres actividades de 20 minutos para
+introducir fracciones equivalentes, usando solo pizarra y cuadernos, y
+explícame en una tabla objetivo, actividad y cierre de cada una''.
+\end{quote}
+
+En el primer caso, la respuesta será genérica y poco útil. En el
+segundo, la IA tiene una tarea clara, contexto, formato y límites, por
+lo que puede apoyar de manera más ajustada el trabajo docente.
+
+\textbf{Idea fuerza:} si el \emph{prompt} es vago, la respuesta también
+lo será; un buen \emph{prompt} se parece a una buena consigna de
+trabajo: clara, contextualizada y con criterios explícitos.
+
+\section{Estructura de un buen prompt
+pedagógico}\label{estructura-de-un-buen-prompt-pedaguxf3gico}
+
+En esta sección se propone una ``columna vertebral'' para redactar
+prompts útiles en educación. No se trata de reglas rígidas, sino de una
+guía que cada docente puede adaptar a su estilo y a la realidad de su
+escuela.
+
+\subsection{Los 5 componentes
+básicos}\label{los-5-componentes-buxe1sicos}
+
+\textbf{1) Rol de la IA: ¿desde qué lugar quiero que responda?}
+
+Aquí le decimos al modelo ``qué tipo de profesional'' queremos que
+simule.\\
+Ejemplos:
+
+\begin{itemize}
+\tightlist
+\item
+  ``Actúa como profesora de Historia de enseñanza media en un liceo
+  público\ldots{}''
+\item
+  ``Actúa como asesor pedagógico con experiencia en evaluación
+  formativa\ldots{}''
+\item
+  ``Actúa como especialista en educación inclusiva y diseño universal
+  para el aprendizaje (DUA)\ldots{}''.
+\end{itemize}
+
+\textbf{Uso típico:} pedir sugerencias de actividades, rúbricas o
+adaptaciones considerando miradas pedagógicas específicas (inclusión,
+evaluación, orientación, etc.).
+
+\textbf{2) Objetivo / tarea principal: ¿qué necesito que haga?}
+
+Es la acción central que esperamos de la IA, en una frase concreta.\\
+Ejemplos:
+
+\begin{itemize}
+\tightlist
+\item
+  ``Tu objetivo es proponer tres actividades breves para\ldots{}''
+\item
+  ``Tu tarea es elaborar una rúbrica de evaluación para\ldots{}''
+\item
+  ``Tu misión es sintetizar el siguiente texto para que lo pueda
+  comprender un curso de 6º básico\ldots{}''.
+\end{itemize}
+
+\textbf{Uso típico:} planificación de clases o unidades, diseño de
+instrumentos, redacción de comunicaciones, etc.
+
+\textbf{3) Contexto pedagógico: ¿qué información de mi realidad escolar
+debe considerar?}
+
+Aquí entregamos los datos clave de la situación:
+
+\begin{itemize}
+\tightlist
+\item
+  nivel y curso (5º básico, 2º medio técnico-profesional, etc.);
+\item
+  asignatura y contenido específico (por ejemplo, ``geometría: círculo y
+  circunferencia'');
+\item
+  características del establecimiento (público, subvencionado, rural,
+  urbano, con PIE, etc.);
+\item
+  características del grupo (curso numeroso, heterogéneo, presencia de
+  NEE, alta sobrecarga de tareas, etc.).
+\end{itemize}
+
+Ejemplo: ``Curso: 1º medio humanista-científico, 42 estudiantes, varios
+con apoyo PIE en lenguaje escrito''.
+
+\textbf{4) Formato de salida esperado: ¿cómo quiero recibir la
+respuesta?}
+
+Definimos la forma del producto final para que sea más fácil de usar:
+
+\begin{itemize}
+\tightlist
+\item
+  ``Entrega la respuesta en una tabla con columnas: clase, objetivo,
+  actividad principal y evaluación''.
+\item
+  ``Escribe una lista numerada de máximo 5 puntos''.
+\item
+  ``Redacta un texto breve (máx. 200 palabras) pensado para estudiantes
+  de 7º básico''.
+\item
+  ``Proporciona ejemplos de preguntas de alternativa y de desarrollo
+  corto''.
+\end{itemize}
+
+\textbf{Uso típico:} generar planificaciones, guías, rúbricas,
+comunicados o resúmenes listos para pegar y ajustar.
+
+\textbf{5) Criterios y restricciones (guardarraíles): ¿qué límites
+quiero poner?}
+
+Sirven para cuidar el sentido pedagógico, la ética y la viabilidad real
+en la escuela:
+
+\begin{itemize}
+\tightlist
+\item
+  ``Usa lenguaje sencillo, sin tecnicismos''.
+\item
+  ``No inventes datos ni fuentes; si no sabes, dilo explícitamente''.
+\item
+  ``No entregues actividades que requieran recursos costosos ni conexión
+  a internet''.
+\item
+  ``Respeta lenguaje inclusivo y enfoque no sexista''.
+\end{itemize}
+
+Ejemplo: al pedir una propuesta de evaluación, aclarar que la IA no debe
+decidir notas ni aprobar/reprobar estudiantes.
+
+\textbf{Idea fuerza:} un buen prompt pedagógico siempre responde a cinco
+preguntas: ¿qué rol?, ¿qué tarea?, ¿en qué contexto?, ¿con qué formato?
+y ¿con qué límites y resguardos?
+
+\section{Técnicas de prompting para
+docentes}\label{tuxe9cnicas-de-prompting-para-docentes}
+
+A continuación se presentan algunas técnicas sencillas, ordenadas como
+pasos posibles, para mejorar la calidad de las respuestas de la IA en el
+trabajo pedagógico cotidiano.
+
+{1.Sé específica/o y precisa/o}.
+
+Evita pedir ``ideas para una clase'' de forma genérica. Indica curso,
+asignatura, contenido, objetivo y tiempo disponible. Mientras más claro
+sea el encargo, más útil será la respuesta.
+
+\textbf{Ejemplo de prompt:}
+
+\begin{quote}
+``Actúa como profesora de Lenguaje en 7º básico de una escuela pública
+urbana. Tu objetivo es proponer dos actividades de 30 minutos para
+trabajar comprensión lectora de crónicas periodísticas. Contexto: curso
+numeroso (40 estudiantes), varios con apoyo PIE. Formato de salida:
+tabla con columnas objetivo, actividad, recursos y sugerencias de
+cierre. Criterios: lenguaje sencillo, actividades sin uso de
+computadores.''
+\end{quote}
+
+{\textbf{2.} Usa restricciones claras (guardarraíles)}.
+
+Señala lo que la IA no debe hacer o aquello que quieres acotar:
+extensión, tono, tipo de recursos, nivel de lenguaje, etc.
+
+\textbf{Ejemplo de prompt:}
+
+\begin{quote}
+``Proponte tres ideas de actividad para trabajar porcentajes en 8º
+básico. No uses jerga técnica, máximo 200 palabras en total, y plantea
+actividades que se puedan realizar solo con cuadernos, lápiz y
+calculadora simple.''
+\end{quote}
+
+{\textbf{3.} Itera y refina: piensa el diálogo como un proceso}.
+
+No esperes que la primera respuesta sea perfecta. Puedes pedir ajustes,
+correcciones o versiones mejoradas.
+
+\textbf{Ejemplos de seguimientos:}
+
+\begin{itemize}
+\tightlist
+\item
+  ``Haz la propuesta más breve y con lenguaje más simple para 5º
+  básico''.
+\item
+  ``Adapta esta misma actividad para un curso con varios estudiantes con
+  NEE en lectura''.
+\item
+  ``Agrega una columna con posibles errores frecuentes de los
+  estudiantes''.
+\end{itemize}
+
+\textbf{4.} Encadena prompts (\emph{chain prompting})
+
+Para tareas complejas, es mejor dividir el trabajo en pasos: primero
+objetivos, luego actividades, después evaluación. También puedes pedir
+que la propia IA sugiera el siguiente paso.
+
+\textbf{Ejemplo encadenado:}
+
+\begin{quote}
+``Ayúdame a definir tres objetivos de aprendizaje para una unidad sobre
+migración contemporánea en 2º medio, alineados con las Bases
+Curriculares de Historia.''\\
+``Con esos objetivos, propón una secuencia de 5 clases con actividades
+principales y tiempos estimados.''\\
+``Ahora sugiere posibles instrumentos de evaluación formativa para esta
+secuencia, indicando qué recoge cada uno.''
+\end{quote}
+
+{\textbf{5.} Pide pasos, criterios o fuentes para revisar la calidad}.
+
+Solicita que la IA muestre ``cómo llegó'' a lo que propone, qué
+supuestos usa o qué referencias generales considera. Esto ayuda a
+detectar errores y a tomar decisiones informadas.
+
+\textbf{Ejemplo de prompt:}
+
+\begin{quote}
+``Construye una rúbrica simple para evaluar un informe escrito en 8º
+básico sobre contaminación ambiental. Luego explica en 4 pasos cómo
+definiste los criterios y niveles de logro, de manera que yo pueda
+revisarlos críticamente.''
+\end{quote}
+
+{\textbf{6.} Modela el tipo de reflexión que quieres que haga}.
+
+Puedes pedirle explícitamente que revise críticamente su propia
+respuesta antes de entregarla.
+
+\textbf{Ejemplo de prompt:}
+
+\begin{quote}
+``Propon tres actividades para trabajar el acoso escolar en Consejo de
+Curso de 6º básico. Antes de entregarlas, indica dos posibles problemas
+o riesgos de tu propuesta (por ejemplo, revictimización, exposición de
+estudiantes) y luego ofrece una versión mejorada que intente
+abordarlos.''
+\end{quote}
+
+\textbf{Idea fuerza:} las técnicas de prompting no reemplazan el
+criterio profesional docente, pero sí ayudan a que la IA se parezca más
+a una colega que apoya: tú sigues tomando las decisiones; la herramienta
+solo propone y tú filtras, adaptas y mejoras.
+
+\section{Plantillas de prompts reutilizables para
+docencia}\label{plantillas-de-prompts-reutilizables-para-docencia}
+
+A continuación se proponen algunas plantillas listas para copiar, pegar
+y adaptar según las necesidades de cada docente. La idea es que
+funcionen como ``moldes'' rápidos para planificación, evaluación,
+adaptación de materiales o comunicaciones.
+
+\subsection{Plantillas base de prompt
+docente}\label{plantillas-base-de-prompt-docente}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{actúa como }\CommentTok{[}\OtherTok{rol o perfil que necesito}\CommentTok{]}\NormalTok{ en una escuela }\CommentTok{[}\OtherTok{tipo de establecimiento: pública, subvencionada, tp, rural, etc.}\CommentTok{]}\NormalTok{ de chile.}
+
+\NormalTok{tu objetivo es }\CommentTok{[}\OtherTok{tarea principal que quiero lograr}\CommentTok{]}\NormalTok{ relacionada con }\CommentTok{[}\OtherTok{breve descripción del tema o contenido}\CommentTok{]}\NormalTok{.}
+
+\NormalTok{contexto:}
+
+\NormalTok{curso y nivel: }\CommentTok{[}\OtherTok{curso, nivel}\CommentTok{]}\NormalTok{.}
+
+\NormalTok{asignatura y contenido: }\CommentTok{[}\OtherTok{asignatura, contenido específico}\CommentTok{]}\NormalTok{.}
+
+\NormalTok{características del grupo: }\CommentTok{[}\OtherTok{número de estudiantes, presencia de pie, diversidad de niveles, etc.}\CommentTok{]}\NormalTok{.}
+
+\NormalTok{recursos disponibles: }\CommentTok{[}\OtherTok{pizarra, cuadernos, proyector, laboratorio, etc.}\CommentTok{]}\NormalTok{.}
+
+\NormalTok{instrucciones:}
+
+\CommentTok{[}\OtherTok{primera instrucción específica, por ejemplo “propón x actividades de y minutos”}\CommentTok{]}\NormalTok{.}
+
+\CommentTok{[}\OtherTok{segunda instrucción específica, por ejemplo “incluye una idea de evaluación formativa”}\CommentTok{]}\NormalTok{.}
+
+\CommentTok{[}\OtherTok{tercera instrucción específica, por ejemplo “sugiere ajustes para estudiantes que necesiten más apoyo”}\CommentTok{]}\NormalTok{.}
+
+\NormalTok{formato de salida:}
+
+\CommentTok{[}\OtherTok{tipo de formato: tabla, lista numerada, texto breve para estudiantes, etc.}\CommentTok{]}\NormalTok{.}
+
+\NormalTok{criterios y restricciones:}
+
+\CommentTok{[}\OtherTok{tono y nivel de lenguaje, por ejemplo “usa lenguaje sencillo y ejemplos cercanos a la vida cotidiana de las y los estudiantes”}\CommentTok{]}\NormalTok{.}
+
+\CommentTok{[}\OtherTok{límites de recursos, por ejemplo “no propongas actividades que requieran celulares o internet”}\CommentTok{]}\NormalTok{.}
+
+\CommentTok{[}\OtherTok{resguardos éticos y pedagógicos, por ejemplo “no tomes decisiones de notas ni apruebes/repruebes estudiantes”}\CommentTok{]}\NormalTok{.}
+
+\NormalTok{Antes de responder, si falta información importante, hazme hasta 3 preguntas breves para aclarar el contexto.}
+\end{Highlighting}
+\end{Shaded}
+
+\subsection{Diseñador de prompts pedagógicos para
+docentes}\label{diseuxf1ador-de-prompts-pedaguxf3gicos-para-docentes}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{Actúa como especialista en educación y en prompt engineering para docentes.}
+
+\NormalTok{Tu tarea es ayudarme a DISEÑAR un prompt claro y efectivo que luego pueda usar con otra IA.}
+
+\NormalTok{Contexto:}
+\SpecialStringTok{{-} }\NormalTok{Objetivo general del prompt que necesito: }\CommentTok{[}\OtherTok{por ejemplo, “planificar una unidad de Historia para 8º básico sobre dictadura y memoria”}\CommentTok{]}\NormalTok{.}
+\SpecialStringTok{{-} }\NormalTok{Tipo de producto que quiero obtener con ese futuro prompt: }\CommentTok{[}\OtherTok{por ejemplo, “una tabla con clases, objetivos, actividades y evaluaciones”}\CommentTok{]}\NormalTok{.}
+\SpecialStringTok{{-} }\NormalTok{Público destinatario de los resultados: }\CommentTok{[}\OtherTok{por ejemplo, “docentes de escuela pública con alta carga laboral”}\CommentTok{]}\NormalTok{.}
+
+\NormalTok{Instrucciones:}
+\SpecialStringTok{1. }\NormalTok{Formula un único prompt completo y bien redactado que yo pueda copiar y usar tal cual.}
+\SpecialStringTok{2. }\NormalTok{Asegúrate de que el prompt incluya: rol de la IA, objetivo, contexto pedagógico, formato de salida, criterios y restricciones.}
+\SpecialStringTok{3. }\NormalTok{Al final, sugiere brevemente cómo podría ajustar ese prompt (por ejemplo, para otros niveles o asignaturas).}
+
+\NormalTok{Formato de salida:}
+\SpecialStringTok{{-} }\NormalTok{Primero, escribe el prompt final entre comillas.}
+\SpecialStringTok{{-} }\NormalTok{Luego, en 3–4 viñetas, entrega sugerencias de ajustes posibles.}
+
+\NormalTok{No expliques qué es un prompt ni teorices: concéntrate en darme un buen prompt listo para usar.}
+\end{Highlighting}
+\end{Shaded}
+
+\textbf{Idea fuerza:} contar con plantillas reutilizables ahorra tiempo
+y energía; cada docente puede ir guardando sus prompts favoritos,
+mejorarlos con la experiencia y compartirlos con sus colegas como parte
+de una cultura de colaboración en torno al uso pedagógico de la IA.
+
+\bookmarksetup{startatroot}
+
+\chapter{Herramientas prácticas para el trabajo
+docente}\label{herramientas-pruxe1cticas-para-el-trabajo-docente}
+
+\section{IA para planificación de clases y
+unidades}\label{ia-para-planificaciuxf3n-de-clases-y-unidades}
+
+La planificación es una de las tareas que más tiempo demanda en el
+trabajo docente. La inteligencia artificial puede funcionar aquí como un
+\textbf{asistente de borradores}: ayuda a proponer ideas, ordenar
+secuencias y sugerir actividades, pero la decisión final sobre qué, cómo
+y cuándo enseñar sigue siendo siempre pedagógica y profesional, basada
+en las Bases Curriculares y en el conocimiento que cada docente tiene de
+su curso y de sus estudiantes.
+
+Usada de manera crítica y situada, la IA puede ahorrar tiempo en la fase
+inicial de la planificación, de modo que las y los profesores puedan
+dedicar más energía a la reflexión pedagógica, al trabajo colaborativo
+con colegas y a la adaptación fina de las propuestas a su realidad
+escolar concreta (cursos numerosos, presencia de PIE, uso de textos
+oficiales, etc.).
+
+\textbf{Usos posibles en planificación:}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Diseño de unidades y secuencias:}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Proponer borradores de secuencias de clases para una unidad
+    específica.
+  \item
+    Ordenar actividades ya existentes en una secuencia más coherente
+    (inicio--desarrollo--cierre).
+  \item
+    Sugerir tiempos aproximados para cada momento de la clase.
+  \end{itemize}
+\item
+  \textbf{Objetivos y actividades:}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Sugerir objetivos de aprendizaje y actividades de inicio, desarrollo
+    y cierre, alineadas con OA u objetivos priorizados.
+  \item
+    Ayudar a alinear actividades con objetivos de aprendizaje definidos
+    previamente por la/el docente.
+  \item
+    Proponer preguntas guía, problemas o situaciones iniciales para
+    activar conocimientos previos.
+  \end{itemize}
+\item
+  \textbf{Ajustes según realidad del curso:}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Ofrecer variantes de una misma clase según el tiempo disponible
+    (bloques dobles, horarios reducidos, etc.).
+  \item
+    Sugerir adaptaciones iniciales para cursos con alta diversidad de
+    niveles de logro o presencia de PIE.
+  \end{itemize}
+\end{itemize}
+
+\textbf{Ejemplo de prompt para planificación de una unidad:}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{Actúa como profesor/a de }\CommentTok{[}\OtherTok{ASIGNATURA}\CommentTok{]}\NormalTok{ en }\CommentTok{[}\OtherTok{NIVEL}\CommentTok{]}\NormalTok{ en una escuela }\CommentTok{[}\OtherTok{TIPO DE ESTABLECIMIENTO: pública, subvencionada, particular}\CommentTok{]}\NormalTok{ de Chile.}
+
+\NormalTok{Tu objetivo es ayudarme a elaborar un borrador de planificación para UNA unidad didáctica sobre }\CommentTok{[}\OtherTok{TEMA O CONTENIDO}\CommentTok{]}\NormalTok{.}
+
+\NormalTok{Contexto:}
+\SpecialStringTok{{-} }\NormalTok{Curso y tamaño aproximado: }\CommentTok{[}\OtherTok{por ejemplo, 8º básico, 40 estudiantes}\CommentTok{]}\NormalTok{.}
+\SpecialStringTok{{-} }\NormalTok{Marco curricular: Bases Curriculares chilenas para }\CommentTok{[}\OtherTok{ASIGNATURA}\CommentTok{]}\NormalTok{; OA a trabajar: }\CommentTok{[}\OtherTok{pegar aquí si es posible}\CommentTok{]}\NormalTok{.}
+\SpecialStringTok{{-} }\NormalTok{Tiempo disponible: }\CommentTok{[}\OtherTok{número aproximado de clases u horas pedagógicas}\CommentTok{]}\NormalTok{.}
+\SpecialStringTok{{-} }\NormalTok{Características del grupo: }\CommentTok{[}\OtherTok{curso diverso, presencia de PIE, diferencias importantes en niveles de logro, etc.}\CommentTok{]}\NormalTok{.}
+\SpecialStringTok{{-} }\NormalTok{Recursos habituales: }\CommentTok{[}\OtherTok{por ejemplo, pizarra, cuadernos, proyector, textos escolares}\CommentTok{]}\NormalTok{.}
+
+\NormalTok{Instrucciones:}
+\SpecialStringTok{{-} }\NormalTok{Propón una secuencia de }\CommentTok{[}\OtherTok{X}\CommentTok{]}\NormalTok{ clases para esta unidad.}
+\SpecialStringTok{{-} }\NormalTok{Para cada clase, indica: objetivo específico, actividad principal de aprendizaje, recurso clave a utilizar y forma sencilla de evaluación (por ejemplo, pregunta de salida, ejercicio breve).}
+\SpecialStringTok{{-} }\NormalTok{Incluye al menos una sugerencia de ajuste o variación para estudiantes que requieran más apoyo y otra para quienes puedan profundizar.}
+\SpecialStringTok{{-} }\NormalTok{Procura que las actividades sean viables en un contexto escolar chileno con recursos limitados.}
+
+\NormalTok{Formato de salida:}
+\SpecialStringTok{{-} }\NormalTok{Tabla con columnas: Clase – Objetivo específico – Actividad principal – Recurso – Evaluación sugerida – Ajustes/variantes.}
+
+\NormalTok{Criterios y restricciones:}
+\SpecialStringTok{{-} }\NormalTok{Usa lenguaje claro y concreto, adecuado al contexto escolar chileno.}
+\SpecialStringTok{{-} }\NormalTok{No inventes contenidos fuera de las Bases Curriculares; organiza y ejemplifica a partir de los OA indicados.}
+\SpecialStringTok{{-} }\NormalTok{No propongas actividades que requieran recursos tecnológicos que no haya mencionado.}
+\SpecialStringTok{{-} }\NormalTok{Si te falta información importante para planificar mejor, hazme hasta 3 preguntas breves antes de responder.}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-note-color-frame, arc=.35mm, colbacktitle=quarto-callout-note-color!10!white, bottomrule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Nota}, leftrule=.75mm, bottomtitle=1mm, toprule=.15mm, rightrule=.15mm, toptitle=1mm, titlerule=0mm, opacityback=0, colback=white, coltitle=black, breakable, left=2mm, opacitybacktitle=0.6]
+
+\textbf{Idea fuerza:} mientras más concreto y contextualizado sea el
+prompt, más útil será el borrador de planificación. La IA puede ahorrar
+tiempo en la fase de diseño, pero las decisiones sobre qué se enseña y
+cómo se enseña siguen siendo siempre de la/el docente.
+
+\end{tcolorbox}
+
+\section{IA para generación y adaptación de
+materiales}\label{ia-para-generaciuxf3n-y-adaptaciuxf3n-de-materiales}
+
+Otra tarea muy demandante en el trabajo docente es la elaboración,
+revisión y adaptación de materiales: guías, ejercicios, textos,
+ejemplos, preguntas, lecturas, imágenes, entre otros. La IA puede
+convertirse en un apoyo relevante para producir primeros borradores de
+estos recursos, que luego la/el docente revisa, ajusta y contextualiza
+según su curso, su proyecto educativo y las Bases Curriculares.
+
+Esto puede ahorrar tiempo en la redacción inicial y abrir posibilidades
+para ofrecer más variedad de ejemplos y actividades, manteniendo siempre
+el criterio profesional sobre la pertinencia pedagógica, la carga de
+trabajo de las y los estudiantes y el nivel de dificultad.
+
+\textbf{Usos posibles en materiales:}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Generación de insumos:}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Generar ejercicios adicionales a partir de un contenido ya definido
+    (por ejemplo, más problemas de proporcionalidad, más oraciones para
+    analizar, más ítems de comprensión lectora).
+  \item
+    Proponer ejemplos contextualizados a la realidad chilena (barrio,
+    transporte, ferias, medios de comunicación locales, etc.).
+  \item
+    Crear casos o situaciones para debates, estudios de caso o trabajo
+    en grupo.
+  \end{itemize}
+\item
+  \textbf{Adaptación y diferenciación:}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Adaptar un mismo texto a distintos niveles de complejidad (más
+    sencillo o más desafiante).
+  \item
+    Crear versiones alternativas de una actividad para diferentes
+    niveles de logro dentro del mismo curso.
+  \item
+    Reformular instrucciones para que sean más claras para estudiantes
+    de distintos cursos o para quienes presentan NEE.
+  \end{itemize}
+\item
+  \textbf{Transformación de formatos:}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Transformar un contenido en distintos formatos: preguntas de opción
+    múltiple, desarrollo, verdadero/falso, organizadores gráficos, etc.
+  \item
+    Generar bancos iniciales de preguntas a partir de un texto escolar o
+    una guía ya existente.
+  \end{itemize}
+\end{itemize}
+
+\textbf{Ejemplo de prompt para generar y adaptar materiales:}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{Actúa como profesor/a de }\CommentTok{[}\OtherTok{ASIGNATURA}\CommentTok{]}\NormalTok{ con experiencia en diseño de materiales didácticos para escuelas públicas chilenas.}
+
+\NormalTok{Tu objetivo es ayudarme a generar y adaptar materiales para trabajar el tema }\CommentTok{[}\OtherTok{TEMA ESPECÍFICO}\CommentTok{]}\NormalTok{ con un curso de }\CommentTok{[}\OtherTok{NIVEL}\CommentTok{]}\NormalTok{ en el marco de las Bases Curriculares.}
+
+\NormalTok{Contexto:}
+\SpecialStringTok{{-} }\NormalTok{Tipo de establecimiento: }\CommentTok{[}\OtherTok{público, subvencionado, técnico{-}profesional, rural, urbano, etc.}\CommentTok{]}\NormalTok{.}
+\SpecialStringTok{{-} }\NormalTok{Características del grupo: }\CommentTok{[}\OtherTok{tamaño del curso, diversidad de niveles, presencia de PIE, estudiantes con diferentes trayectorias escolares, etc.}\CommentTok{]}\NormalTok{.}
+\SpecialStringTok{{-} }\NormalTok{Recursos disponibles: }\CommentTok{[}\OtherTok{pizarra, cuadernos, proyector, fotocopias, laboratorio, etc.}\CommentTok{]}\NormalTok{.}
+
+\NormalTok{Instrucciones:}
+\SpecialStringTok{1. }\NormalTok{Propón }\CommentTok{[}\OtherTok{NÚMERO}\CommentTok{]}\NormalTok{ ejercicios o actividades breves para trabajar este contenido.}
+\SpecialStringTok{   {-} }\NormalTok{Para cada actividad, indica: propósito, descripción breve y tiempo estimado.}
+\SpecialStringTok{2. }\NormalTok{Luego, elige UNA de las actividades y genera:}
+\SpecialStringTok{   {-} }\NormalTok{Una versión más sencilla para estudiantes que necesitan mayor apoyo (por ejemplo, con ejemplos resueltos o pasos más guiados).}
+\SpecialStringTok{   {-} }\NormalTok{Una versión más desafiante para estudiantes que avanzan más rápido (por ejemplo, con preguntas abiertas o aplicación a nuevas situaciones).}
+
+\NormalTok{Formato de salida:}
+\SpecialStringTok{{-} }\NormalTok{Primero, una lista numerada de actividades con su propósito, descripción y tiempo.}
+\SpecialStringTok{{-} }\NormalTok{Después, subtítulos “Versión más sencilla” y “Versión más desafiante” para la actividad elegida, explicadas en no más de 6 líneas cada una.}
+
+\NormalTok{Criterios y restricciones:}
+\SpecialStringTok{{-} }\NormalTok{Usa lenguaje claro, adecuado al nivel del curso.}
+\SpecialStringTok{{-} }\NormalTok{No incluyas recursos costosos ni que requieran conexión a internet permanente, a menos que los haya mencionado explícitamente.}
+\SpecialStringTok{{-} }\NormalTok{No cambies el contenido central; solo ajusta la complejidad y el tipo de apoyo.}
+\SpecialStringTok{{-} }\NormalTok{Si te falta información importante, hazme hasta 3 preguntas breves antes de responder.}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-note-color-frame, arc=.35mm, colbacktitle=quarto-callout-note-color!10!white, bottomrule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Nota}, leftrule=.75mm, bottomtitle=1mm, toprule=.15mm, rightrule=.15mm, toptitle=1mm, titlerule=0mm, opacityback=0, colback=white, coltitle=black, breakable, left=2mm, opacitybacktitle=0.6]
+
+\textbf{Idea fuerza:} la IA puede apoyar la creación y adaptación de
+materiales, pero siempre como borrador inicial. El ajuste fino, la
+pertinencia cultural y la coherencia con el proyecto educativo dependen
+de la revisión y edición de la/el docente.
+
+\end{tcolorbox}
+
+\section{IA para diversificar actividades según
+curso}\label{ia-para-diversificar-actividades-seguxfan-curso}
+
+En un mismo curso suelen convivir estudiantes con ritmos de aprendizaje
+distintos, intereses variados, trayectorias escolares diversas y, en
+muchos casos, con participación de programas de integración escolar
+(PIE). La IA puede ayudar a generar variantes de una misma actividad
+para atender esta diversidad, siempre que la/el docente mantenga el
+control sobre los objetivos, la evaluación y el sentido formativo de las
+adaptaciones.
+
+El papel de la IA no es decidir quién hace qué, sino ofrecer un abanico
+de opciones que la/el profesor/a puede asignar, combinar o adaptar a su
+grupo, evitando etiquetar estudiantes y resguardando una mirada
+inclusiva y de derechos.
+
+\textbf{Usos posibles en diversificación:}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Niveles de apoyo y desafío:}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Diseñar tres niveles de dificultad para una misma actividad (más
+    guiada, intermedia, profundización).
+  \item
+    Proponer actividades de repaso para quienes necesitan consolidar y
+    desafíos extra para quienes avanzan más rápido.
+  \end{itemize}
+\item
+  \textbf{Canales y formas de expresión:}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Proponer actividades que privilegien diferentes canales: oral,
+    escrito, visual, manipulativo.
+  \item
+    Sugerir formas alternativas de mostrar lo aprendido (afiches,
+    pequeñas presentaciones, mapas conceptuales, cápsulas de audio,
+    etc.).
+  \end{itemize}
+\item
+  \textbf{Apoyos adicionales:}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Sugerir apoyos (preguntas guía, ejemplos resueltos, organizadores
+    gráficos, listas de palabras clave) para estudiantes con NEE o
+    trayectorias más interrumpidas.
+  \item
+    Adaptar consignas para que sean más claras y breves, manteniendo el
+    mismo objetivo de aprendizaje.
+  \end{itemize}
+\end{itemize}
+
+\textbf{Ejemplo de prompt para diversificar una actividad base:}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{Actúa como especialista en diferenciación pedagógica e inclusión educativa en contexto escolar chileno.}
+
+\NormalTok{Tu objetivo es ayudarme a diversificar una actividad sobre }\CommentTok{[}\OtherTok{TEMA}\CommentTok{]}\NormalTok{ para un curso de }\CommentTok{[}\OtherTok{NIVEL}\CommentTok{]}\NormalTok{, manteniendo el mismo contenido central y una mirada inclusiva.}
+
+\NormalTok{Contexto:}
+\SpecialStringTok{{-} }\NormalTok{Tipo de establecimiento: }\CommentTok{[}\OtherTok{público/subvencionado/particular, rural/urbano}\CommentTok{]}\NormalTok{.}
+\SpecialStringTok{{-} }\NormalTok{Curso diverso en niveles de logro; hay estudiantes que requieren más apoyo, otros que avanzan más rápido y presencia de PIE.}
+\SpecialStringTok{{-} }\NormalTok{Recursos disponibles: }\CommentTok{[}\OtherTok{pizarra, cuadernos, proyector, impresora, etc.}\CommentTok{]}\NormalTok{.}
+
+\NormalTok{Actividad base:}
+\CommentTok{[}\OtherTok{PEGAR AQUÍ LA ACTIVIDAD ORIGINAL QUE YA DISEÑÓ EL/LA DOCENTE}\CommentTok{]}\NormalTok{.}
+
+\NormalTok{Instrucciones:}
+\SpecialStringTok{1. }\NormalTok{A partir de la actividad base, propone tres versiones:}
+\SpecialStringTok{   {-} }\NormalTok{Una “Versión más guiada” para estudiantes que necesitan mayor apoyo.}
+\SpecialStringTok{   {-} }\NormalTok{Una “Versión intermedia” para la mayoría del curso.}
+\SpecialStringTok{   {-} }\NormalTok{Una “Versión de profundización” para quienes pueden avanzar más rápido.}
+\SpecialStringTok{2. }\NormalTok{Para cada versión, indica:}
+\SpecialStringTok{   {-} }\NormalTok{Propósito.}
+\SpecialStringTok{   {-} }\NormalTok{Pasos principales de la actividad.}
+\SpecialStringTok{   {-} }\NormalTok{Tipo de apoyo o desafío que se incluye (ejemplos, preguntas guía, uso de material concreto, etc.).}
+\SpecialStringTok{3. }\NormalTok{Evita etiquetar a los grupos como “buenos” o “malos”; describe las versiones sin juicios de valor.}
+
+\NormalTok{Formato de salida:}
+\SpecialStringTok{{-} }\NormalTok{Subtítulos: “Versión más guiada”, “Versión intermedia” y “Versión de profundización”.}
+\SpecialStringTok{{-} }\NormalTok{Bajo cada subtítulo, un breve párrafo de 6 a 8 líneas describiendo la propuesta.}
+
+\NormalTok{Criterios:}
+\SpecialStringTok{{-} }\NormalTok{Mantén el mismo contenido central en las tres versiones.}
+\SpecialStringTok{{-} }\NormalTok{Usa lenguaje claro y respetuoso, sin etiquetas que estigmaticen a estudiantes.}
+\SpecialStringTok{{-} }\NormalTok{No propongas actividades que dependan de tecnologías que no se han mencionado.}
+\SpecialStringTok{{-} }\NormalTok{Si te falta información importante, hazme hasta 3 preguntas breves antes de responder.}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-note-color-frame, arc=.35mm, colbacktitle=quarto-callout-note-color!10!white, bottomrule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Nota}, leftrule=.75mm, bottomtitle=1mm, toprule=.15mm, rightrule=.15mm, toptitle=1mm, titlerule=0mm, opacityback=0, colback=white, coltitle=black, breakable, left=2mm, opacitybacktitle=0.6]
+
+\textbf{Idea fuerza:} la IA puede ayudar a pensar distintas puertas de
+entrada a un mismo contenido, pero nunca para clasificar ni segregar.
+Las decisiones sobre qué versión ofrece a quién, y cómo se comunica,
+siguen siendo parte del criterio pedagógico e inclusivo de la/el docente
+y del equipo de apoyo.
+
+\end{tcolorbox}
+
+\section{IA para organizar el trabajo cotidiano (síntesis,
+comunicaciones, actas,
+etc.)}\label{ia-para-organizar-el-trabajo-cotidiano-suxedntesis-comunicaciones-actas-etc.}
+
+Además de las tareas directamente pedagógicas, el trabajo docente
+incluye una importante carga administrativa y de organización: lectura
+de documentos extensos, elaboración de actas, sistematización de
+acuerdos, redacción de comunicaciones a familias, entre otras. La IA
+puede ser un apoyo para sintetizar, ordenar y redactar borradores,
+siempre que se tengan resguardos claros para no exponer datos sensibles
+de estudiantes, familias o colegas (RUT, nombres completos,
+diagnósticos, antecedentes de salud, etc.).
+
+Utilizada con cuidado, la IA puede ayudar a disminuir el tiempo dedicado
+a la redacción inicial de estos documentos, de modo que las y los
+profesores puedan concentrarse en la toma de decisiones, la coordinación
+con sus equipos y la atención directa a estudiantes.
+
+\textbf{Usos posibles en organización del trabajo:}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Síntesis y sistematización:}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Resumir documentos largos, orientaciones o actas en síntesis breves
+    y claras.
+  \item
+    Transformar un conjunto de notas dispersas en listas de acuerdos o
+    tareas ordenadas por prioridad o responsable.
+  \end{itemize}
+\item
+  \textbf{Comunicaciones:}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Proponer borradores de comunicaciones a familias (reuniones,
+    actividades especiales, cambios de horario), que luego la/el docente
+    revisa y ajusta.
+  \item
+    Sugerir versiones alternativas del mismo mensaje para distintos
+    medios (agenda, correo, WhatsApp).
+  \end{itemize}
+\item
+  \textbf{Estructura de documentos:}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Sugerir estructuras de actas o pautas para registrar acuerdos de
+    reuniones de ciclo, subdirecciones, consejos escolares, etc.
+  \item
+    Ordenar ideas para proyectos, unidades o talleres en esquemas más
+    claros.
+  \end{itemize}
+\end{itemize}
+
+\textbf{Ejemplo de prompt para síntesis y organización de información}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{Actúa como asistente de organización de trabajo docente en una escuela pública de Chile.}
+
+\NormalTok{Tu objetivo es ayudarme a sintetizar y ordenar información para facilitar mi trabajo.}
+
+\NormalTok{Contexto:}
+\SpecialStringTok{{-} }\NormalTok{Soy profesor/a de }\CommentTok{[}\OtherTok{NIVEL/ASIGNATURA}\CommentTok{]}\NormalTok{.}
+\SpecialStringTok{{-} }\NormalTok{Necesito convertir un conjunto de notas e información en un resumen claro y una lista de acuerdos o tareas.}
+
+\NormalTok{Instrucciones:}
+\SpecialStringTok{1. }\NormalTok{A partir del texto que pegaré a continuación (sin datos sensibles como RUT, diagnósticos o nombres completos), genera:}
+\SpecialStringTok{   {-} }\NormalTok{Un resumen breve de máximo 150 palabras.}
+\SpecialStringTok{   {-} }\NormalTok{Una lista de 5 a 7 acuerdos o tareas concretas.}
+\SpecialStringTok{2. }\NormalTok{Si detectas información poco clara o contradictoria, señálalo al final en un apartado de observaciones.}
+
+\NormalTok{Texto a sintetizar:}
+\CommentTok{[}\OtherTok{PEGAR AQUÍ NOTAS, ACTA O DOCUMENTO SIN DATOS SENSIBLES}\CommentTok{]}\NormalTok{.}
+
+\NormalTok{Formato de salida:}
+\SpecialStringTok{{-} }\NormalTok{Subtítulo “Resumen breve” y el resumen en un párrafo.}
+\SpecialStringTok{{-} }\NormalTok{Subtítulo “Lista de acuerdos o tareas” y la lista numerada.}
+\SpecialStringTok{{-} }\NormalTok{Si corresponde, subtítulo “Observaciones” con 2 a 3 líneas.}
+
+\NormalTok{Criterios y restricciones:}
+\SpecialStringTok{{-} }\NormalTok{No inventes acuerdos ni información que no esté en el texto.}
+\SpecialStringTok{{-} }\NormalTok{Usa lenguaje claro y profesional.}
+\SpecialStringTok{{-} }\NormalTok{No incluyas nombres propios ni datos personales; reemplázalos por descripciones generales (por ejemplo, “un/a estudiante”, “un/a apoderado/a”).}
+\SpecialStringTok{{-} }\NormalTok{Si te falta información importante, hazme hasta 3 preguntas breves antes de responder.}
+\end{Highlighting}
+\end{Shaded}
+
+\textbf{Ejemplo de prompt para redactar un comunicado breve a familias}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{Actúa como profesor/a jefe con experiencia en comunicación clara y respetuosa con familias en el sistema escolar chileno.}
+
+\NormalTok{Tu objetivo es ayudarme a redactar un comunicado breve para apoderadas y apoderados sobre }\CommentTok{[}\OtherTok{TEMA: por ejemplo, reunión, actividad especial, cambio de horario}\CommentTok{]}\NormalTok{.}
+
+\NormalTok{Contexto:}
+\SpecialStringTok{{-} }\NormalTok{Curso: }\CommentTok{[}\OtherTok{por ejemplo, 5º básico}\CommentTok{]}\NormalTok{.}
+\SpecialStringTok{{-} }\NormalTok{Tipo de establecimiento: }\CommentTok{[}\OtherTok{público/subvencionado/particular}\CommentTok{]}\NormalTok{.}
+\SpecialStringTok{{-} }\NormalTok{Medio de envío: }\CommentTok{[}\OtherTok{agenda, correo electrónico, WhatsApp}\CommentTok{]}\NormalTok{.}
+
+\NormalTok{Instrucciones:}
+\SpecialStringTok{{-} }\NormalTok{Redacta un texto de máximo 180 palabras.}
+\SpecialStringTok{{-} }\NormalTok{Usa un tono cercano, respetuoso y profesional.}
+\SpecialStringTok{{-} }\NormalTok{Explica de forma sencilla qué ocurrirá, cuándo, dónde y por qué es importante la actividad o la información.}
+\SpecialStringTok{{-} }\NormalTok{Incluye, si corresponde, qué se espera de las familias (asistencia, autorización, envío de materiales, etc.).}
+
+\NormalTok{Formato de salida:}
+\SpecialStringTok{{-} }\NormalTok{Texto continuo, listo para copiar y pegar en el medio de comunicación indicado.}
+
+\NormalTok{Criterios y restricciones:}
+\SpecialStringTok{{-} }\NormalTok{Evita tecnicismos; si mencionas “inteligencia artificial” u otros conceptos, explícalos en palabras simples.}
+\SpecialStringTok{{-} }\NormalTok{No incluyas datos personales ni información que no te haya proporcionado.}
+\SpecialStringTok{{-} }\NormalTok{Mantén un enfoque colaborativo, reconociendo el rol de las familias en el proceso educativo.}
+\SpecialStringTok{{-} }\NormalTok{Si te falta información importante, hazme hasta 3 preguntas breves antes de responder.}
+\end{Highlighting}
+\end{Shaded}
+
+En todos estos casos, la IA se utiliza como apoyo para organizar,
+sintetizar y redactar, pero la revisión final, la adecuación al contexto
+y la decisión sobre qué se envía o se registra siguen siendo
+responsabilidad profesional de la/el docente y de los equipos escolares.
+
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-note-color-frame, arc=.35mm, colbacktitle=quarto-callout-note-color!10!white, bottomrule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Nota}, leftrule=.75mm, bottomtitle=1mm, toprule=.15mm, rightrule=.15mm, toptitle=1mm, titlerule=0mm, opacityback=0, colback=white, coltitle=black, breakable, left=2mm, opacitybacktitle=0.6]
+
+\textbf{Idea fuerza:} la IA puede aliviar parte de la carga de escritura
+y organización, pero nunca debe recibir ni procesar datos sensibles, y
+su producción siempre debe pasar por una revisión crítica antes de
+compartirse con estudiantes, familias o equipos directivos.
+
+\end{tcolorbox}
+
+\section{IA para proponer ítems, rúbricas y
+criterios}\label{ia-para-proponer-uxedtems-ruxfabricas-y-criterios}
+
+El diseño de evaluaciones es una de las tareas más exigentes del trabajo
+docente: hay que formular buenas preguntas, definir criterios claros,
+cuidar la coherencia con los objetivos de aprendizaje y, además, hacerlo
+con poco tiempo. La inteligencia artificial puede apoyar este proceso
+como asistente de borradores: propone ideas iniciales de ítems, rúbricas
+y criterios que luego la/el docente revisa, ajusta y valida según las
+Bases Curriculares chilenas y el proyecto educativo del establecimiento.
+
+Usada de manera crítica y situada, la IA permite ganar tiempo en la fase
+inicial de diseño, ampliar el repertorio de ejemplos y explicitar
+criterios, sin reemplazar nunca las decisiones profesionales sobre qué,
+cómo y para qué evaluar.
+
+\textbf{{Usos posibles (ejemplos concretos)}.}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Ítems e instrumentos de evaluación}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Proponer ítems de evaluación (alternativa, desarrollo,
+    verdadero/falso, preguntas abiertas) coherentes con OA u objetivos
+    priorizados.
+  \item
+    Sugerir tareas de desempeño simples (pequeños proyectos,
+    exposiciones, informes breves) alineadas con habilidades de las
+    Bases Curriculares.
+  \item
+    Ofrecer variantes de una misma pregunta con distintos niveles de
+    dificultad para usar en distintos cursos o en evaluaciones
+    diferenciadas.
+  \end{itemize}
+\item
+  \textbf{Rúbricas y criterios}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Sugerir rúbricas simples o pautas de corrección para trabajos
+    escritos, proyectos, presentaciones orales, etc.
+  \item
+    Ayudar a redactar criterios de evaluación en lenguaje claro,
+    comprensible para estudiantes y familias.
+  \item
+    Transformar criterios ``técnicos'' del equipo docente en
+    descriptores más concretos (``se entiende la idea principal'', ``usa
+    al menos dos ejemplos del texto'', etc.).
+  \end{itemize}
+\item
+  \textbf{Organización del banco de ítems}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Generar bancos iniciales de preguntas sobre un contenido que luego
+    el equipo docente revisa, selecciona y ajusta.
+  \item
+    Proponer agrupaciones de ítems según habilidad (comprensión,
+    análisis, aplicación) o nivel de complejidad.
+  \end{itemize}
+\end{itemize}
+
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-note-color-frame, arc=.35mm, colbacktitle=quarto-callout-note-color!10!white, bottomrule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Nota}, leftrule=.75mm, bottomtitle=1mm, toprule=.15mm, rightrule=.15mm, toptitle=1mm, titlerule=0mm, opacityback=0, colback=white, coltitle=black, breakable, left=2mm, opacitybacktitle=0.6]
+
+\textbf{Idea fuerza:} la IA puede ayudar a ``llenar la hoja en blanco''
+con ideas de preguntas, criterios y rúbricas, pero lo que se evalúa y
+cómo se califica siempre lo decide la/el docente.
+
+\end{tcolorbox}
+
+\textbf{Ejemplo de prompt para proponer ítems, rúbricas y criterios}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{Actúa como asesor/a en evaluación formativa en el sistema escolar chileno.}
+
+\NormalTok{Tu objetivo es ayudarme a diseñar una evaluación breve y una rúbrica sencilla para }\CommentTok{[}\OtherTok{TIPO DE TAREA: por ejemplo, informe escrito, presentación oral, proyecto grupal}\CommentTok{]}\NormalTok{ en la asignatura de }\CommentTok{[}\OtherTok{ASIGNATURA}\CommentTok{]}\NormalTok{ para un curso de }\CommentTok{[}\OtherTok{NIVEL}\CommentTok{]}\NormalTok{.}
+
+\NormalTok{Contexto:}
+\SpecialStringTok{{-} }\NormalTok{Curso: }\CommentTok{[}\OtherTok{por ejemplo, 8º básico, 40 estudiantes}\CommentTok{]}\NormalTok{.}
+\SpecialStringTok{{-} }\NormalTok{Tipo de establecimiento: }\CommentTok{[}\OtherTok{público/subvencionado/particular}\CommentTok{]}\NormalTok{.}
+\SpecialStringTok{{-} }\NormalTok{Contenidos y habilidades a evaluar: }\CommentTok{[}\OtherTok{describir brevemente o pegar OA de las Bases Curriculares}\CommentTok{]}\NormalTok{.}
+\SpecialStringTok{{-} }\NormalTok{Tiempo estimado para la tarea: }\CommentTok{[}\OtherTok{por ejemplo, 2 clases}\CommentTok{]}\NormalTok{.}
+\SpecialStringTok{{-} }\NormalTok{Realidad del grupo: }\CommentTok{[}\OtherTok{curso diverso, presencia de PIE, diferencias importantes en niveles de logro, etc.}\CommentTok{]}\NormalTok{.}
+
+\NormalTok{Instrucciones:}
+\SpecialStringTok{1. }\NormalTok{Propón entre 5 y 8 ítems o tareas concretas que permitan evaluar estos contenidos y habilidades.}
+\SpecialStringTok{   {-} }\NormalTok{Incluye, si es posible, al menos una pregunta de desarrollo y una de alternativa.}
+\SpecialStringTok{2. }\NormalTok{Diseña una rúbrica sencilla con 3 o 4 criterios clave (por ejemplo, dominio de contenidos, claridad, organización, uso de ejemplos) y 4 niveles de logro.}
+\SpecialStringTok{3. }\NormalTok{Redacta los criterios y descriptores en lenguaje claro, comprensible para estudiantes y familias.}
+\SpecialStringTok{4. }\NormalTok{Incluye una breve nota final con recomendaciones para usar esta rúbrica en clave formativa (por ejemplo, para retroalimentar y no solo calificar).}
+
+\NormalTok{Formato de salida:}
+\SpecialStringTok{{-} }\NormalTok{Primero, una lista numerada de ítems o tareas.}
+\SpecialStringTok{{-} }\NormalTok{Luego, una tabla con la rúbrica (filas = criterios, columnas = niveles de logro).}
+\SpecialStringTok{{-} }\NormalTok{Finalmente, una sección breve llamada “Recomendaciones para el uso formativo”.}
+
+\NormalTok{Criterios y restricciones:}
+\SpecialStringTok{{-} }\NormalTok{Usa lenguaje sencillo y adecuado al nivel del curso.}
+\SpecialStringTok{{-} }\NormalTok{No inventes contenidos fuera de las Bases Curriculares; mantente dentro de lo que se ha trabajado en clase.}
+\SpecialStringTok{{-} }\NormalTok{No incluyas ejemplos que requieran recursos tecnológicos que no he mencionado.}
+\SpecialStringTok{{-} }\NormalTok{Mantén un enfoque inclusivo y respetuoso, evitando estereotipos o juicios hacia estudiantes.}
+\end{Highlighting}
+\end{Shaded}
+
+\section{Ejemplos de retroalimentación formativa apoyada por
+IA}\label{ejemplos-de-retroalimentaciuxf3n-formativa-apoyada-por-ia}
+
+La retroalimentación formativa es una de las prácticas más potentes para
+el aprendizaje, pero también una de las más demandantes en tiempo,
+especialmente en cursos numerosos. La IA puede colaborar generando
+borradores de comentarios que la/el docente revisa, ajusta y personaliza
+para sus estudiantes, manteniendo el foco en criterios claros y en
+orientaciones concretas de mejora.
+
+Más que sustituir la voz del profesor o profesora, la IA puede ayudar a
+encontrar palabras claras, respetuosas y específicas, especialmente
+cuando hay muchos trabajos que retroalimentar en poco tiempo y cuando se
+busca comunicar de manera comprensible a estudiantes y familias.
+
+\textbf{{Usos posibles (ejemplos concretos)}.}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Modelos de comentarios}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Redactar comentarios modelo para distintos niveles de logro, a
+    partir de una rúbrica o pauta ya definida por el equipo docente.
+  \item
+    Generar versiones más breves o más extensas de un mismo comentario
+    según el medio (agenda, plataforma, informe, conversación
+    presencial).
+  \end{itemize}
+\item
+  \textbf{Foco en el proceso y la mejora}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Proponer frases de retroalimentación centradas en el proceso, no
+    solo en el resultado (``lo que hiciste bien fue\ldots{}'', ``un
+    próximo paso posible sería\ldots{}'').
+  \item
+    Sugerir preguntas que inviten a la reflexión del/la estudiante sobre
+    su propio trabajo (``¿qué parte te resultó más difícil y por
+    qué?'').
+  \end{itemize}
+\item
+  \textbf{Diversidad de estudiantes}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Apoyar la elaboración de retroalimentación escrita para estudiantes
+    con distintas necesidades, por ejemplo, formulando comentarios en
+    lenguaje más sencillo o más visual.
+  \item
+    Ayudar a redactar mensajes diferenciados para estudiantes que
+    requieren más acompañamiento y para quienes pueden asumir desafíos
+    adicionales.
+  \end{itemize}
+\end{itemize}
+
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-note-color-frame, arc=.35mm, colbacktitle=quarto-callout-note-color!10!white, bottomrule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Nota}, leftrule=.75mm, bottomtitle=1mm, toprule=.15mm, rightrule=.15mm, toptitle=1mm, titlerule=0mm, opacityback=0, colback=white, coltitle=black, breakable, left=2mm, opacitybacktitle=0.6]
+
+\textbf{Idea fuerza:} la IA puede ayudar a ``afinar'' el lenguaje de la
+retroalimentación y a ganar tiempo, pero la mirada pedagógica sobre qué
+decirle a cada estudiante sigue siendo insustituible.
+
+\end{tcolorbox}
+
+\textbf{Ejemplo de prompt para generar retroalimentación formativa}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{Actúa como asesor/a en evaluación formativa y retroalimentación para el sistema escolar chileno.}
+
+\NormalTok{Tu objetivo es ayudarme a redactar comentarios de retroalimentación formativa para estudiantes de }\CommentTok{[}\OtherTok{NIVEL}\CommentTok{]}\NormalTok{ que han realizado la siguiente tarea:}
+\CommentTok{[}\OtherTok{DESCRIBIR BREVE LA TAREA: por ejemplo, “ensayo argumentativo sobre el uso de celulares en el aula”}\CommentTok{]}\NormalTok{.}
+
+\NormalTok{Contexto:}
+\SpecialStringTok{{-} }\NormalTok{Asignatura: }\CommentTok{[}\OtherTok{ASIGNATURA}\CommentTok{]}\NormalTok{.}
+\SpecialStringTok{{-} }\NormalTok{Tipo de establecimiento: }\CommentTok{[}\OtherTok{público/subvencionado/particular}\CommentTok{]}\NormalTok{.}
+\SpecialStringTok{{-} }\NormalTok{Criterios de evaluación: }\CommentTok{[}\OtherTok{pegar criterios o rúbrica resumida}\CommentTok{]}\NormalTok{.}
+\SpecialStringTok{{-} }\NormalTok{Realidad del curso: }\CommentTok{[}\OtherTok{por ejemplo, curso numeroso, presencia de PIE, diferencias importantes en comprensión lectora}\CommentTok{]}\NormalTok{.}
+\SpecialStringTok{{-} }\NormalTok{Necesito ejemplos para tres niveles de desempeño: inicial, intermedio y avanzado.}
+
+\NormalTok{Instrucciones:}
+\SpecialStringTok{1. }\NormalTok{Propón 3 comentarios de retroalimentación formativa:}
+\SpecialStringTok{   {-} }\NormalTok{Uno para desempeño inicial.}
+\SpecialStringTok{   {-} }\NormalTok{Uno para desempeño intermedio.}
+\SpecialStringTok{   {-} }\NormalTok{Uno para desempeño avanzado.}
+\SpecialStringTok{2. }\NormalTok{Cada comentario debe:}
+\SpecialStringTok{   {-} }\NormalTok{Mencionar al menos un aspecto logrado.}
+\SpecialStringTok{   {-} }\NormalTok{Señalar con claridad qué se puede mejorar.}
+\SpecialStringTok{   {-} }\NormalTok{Sugerir un próximo paso concreto para el/la estudiante.}
+\SpecialStringTok{3. }\NormalTok{Redacta los comentarios en segunda persona (“tú”) y en lenguaje cercano, respetuoso y motivador.}
+
+\NormalTok{Formato de salida:}
+\SpecialStringTok{{-} }\NormalTok{Subtítulos: “Desempeño inicial”, “Desempeño intermedio”, “Desempeño avanzado”.}
+\SpecialStringTok{{-} }\NormalTok{Bajo cada subtítulo, un comentario de máximo 6 líneas.}
+
+\NormalTok{Criterios y restricciones:}
+\SpecialStringTok{{-} }\NormalTok{No uses un tono punitivo ni culposo.}
+\SpecialStringTok{{-} }\NormalTok{Evita tecnicismos; prioriza explicaciones sencillas.}
+\SpecialStringTok{{-} }\NormalTok{Mantén el foco en el aprendizaje y la mejora, no solo en la calificación.}
+\SpecialStringTok{{-} }\NormalTok{No incluyas datos personales ni información sensible sobre estudiantes.}
+\end{Highlighting}
+\end{Shaded}
+
+\section{IA como apoyo a la autorregulación del
+aprendizaje}\label{ia-como-apoyo-a-la-autorregulaciuxf3n-del-aprendizaje}
+
+La autorregulación del aprendizaje implica que las y los estudiantes
+puedan planificar, monitorear y evaluar su propio trabajo. La IA puede
+contribuir ofreciendo andamiajes para que revisen sus producciones,
+comparen con criterios de calidad y tomen decisiones sobre cómo mejorar,
+siempre bajo acompañamiento y orientación docente.
+
+El énfasis no está en que la IA ``corrija'' por ellos, sino en que
+entregue preguntas guía, listas de chequeo y sugerencias que ayuden a
+los estudiantes a mirar críticamente lo que hicieron y a hacerse
+responsables de sus procesos de aprendizaje, en coherencia con los
+objetivos del curso y con las Bases Curriculares.
+
+\textbf{{Usos posibles (ejemplos concretos)}.}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Revisión antes de entregar}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Generar listas de verificación (checklists) para que estudiantes
+    revisen sus trabajos antes de entregarlos (``revisé que\ldots{}'',
+    ``me aseguré de\ldots{}'').
+  \item
+    Transformar criterios de evaluación en lenguaje amigable para
+    estudiantes, que puedan usar como guía.
+  \end{itemize}
+\item
+  \textbf{Autoevaluación y metacognición}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Proponer preguntas de autoevaluación alineadas con criterios o
+    rúbricas (``¿qué parte de tu trabajo muestra mejor tu argumento?'').
+  \item
+    Sugerir preguntas para reflexionar sobre el proceso (``¿en qué
+    momento te sentiste más perdido/a?'').
+  \end{itemize}
+\item
+  \textbf{Estrategias de mejora}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Sugerir estrategias de estudio o de mejora a partir de dificultades
+    detectadas (por ejemplo, ``si te costó organizar tus ideas, prueba
+    primero hacer un esquema'').
+  \item
+    Crear esquemas de planificación (pasos para desarrollar un proyecto,
+    un informe, una investigación corta) que los estudiantes puedan
+    completar.
+  \end{itemize}
+\end{itemize}
+
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-note-color-frame, arc=.35mm, colbacktitle=quarto-callout-note-color!10!white, bottomrule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Nota}, leftrule=.75mm, bottomtitle=1mm, toprule=.15mm, rightrule=.15mm, toptitle=1mm, titlerule=0mm, opacityback=0, colback=white, coltitle=black, breakable, left=2mm, opacitybacktitle=0.6]
+
+\textbf{Idea fuerza:} la IA puede ayudar a que los y las estudiantes se
+hagan mejores preguntas sobre su propio trabajo, pero la construcción de
+hábitos de estudio y responsabilidad sigue dependiendo del
+acompañamiento humano.
+
+\end{tcolorbox}
+
+\textbf{Ejemplo de prompt para apoyar la autorregulación del
+aprendizaje}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{Actúa como orientador/a pedagógico/a especializado/a en autorregulación del aprendizaje en educación básica/media.}
+
+\NormalTok{Tu objetivo es ayudarme a generar apoyos para que estudiantes de }\CommentTok{[}\OtherTok{NIVEL}\CommentTok{]}\NormalTok{ se autoevalúen y mejoren su trabajo en }\CommentTok{[}\OtherTok{TIPO DE TAREA: por ejemplo, informe escrito, proyecto de ciencias, presentación oral}\CommentTok{]}\NormalTok{.}
+
+\NormalTok{Contexto:}
+\SpecialStringTok{{-} }\NormalTok{Asignatura: }\CommentTok{[}\OtherTok{ASIGNATURA}\CommentTok{]}\NormalTok{.}
+\SpecialStringTok{{-} }\NormalTok{Tipo de establecimiento: }\CommentTok{[}\OtherTok{público/subvencionado/particular}\CommentTok{]}\NormalTok{.}
+\SpecialStringTok{{-} }\NormalTok{Criterios de evaluación que usamos: }\CommentTok{[}\OtherTok{describir brevemente o pegar criterios/rúbrica}\CommentTok{]}\NormalTok{.}
+\SpecialStringTok{{-} }\NormalTok{Realidad del grupo: }\CommentTok{[}\OtherTok{por ejemplo, curso diverso, presencia de PIE, diferencias en hábitos de estudio}\CommentTok{]}\NormalTok{.}
+
+\NormalTok{Instrucciones:}
+\SpecialStringTok{1. }\NormalTok{Elabora una lista de verificación (“checklist”) que los estudiantes puedan usar antes de entregar su trabajo.}
+\SpecialStringTok{   {-} }\NormalTok{Máximo 10 ítems, redactados en primera persona (“revisé que…”, “me aseguré de…”).}
+\SpecialStringTok{2. }\NormalTok{Propón 5 preguntas de autoevaluación que les ayuden a reflexionar sobre su proceso (no solo sobre la nota).}
+\SpecialStringTok{3. }\NormalTok{Sugiere 3 ideas de “próximos pasos” que puedan tomar si se dan cuenta de que necesitan mejorar.}
+
+\NormalTok{Formato de salida:}
+\SpecialStringTok{{-} }\NormalTok{Sección “Checklist de revisión antes de entregar” con la lista numerada.}
+\SpecialStringTok{{-} }\NormalTok{Sección “Preguntas para autoevaluar mi trabajo” con 5 preguntas.}
+\SpecialStringTok{{-} }\NormalTok{Sección “Qué puedo hacer para mejorar” con 3 sugerencias breves.}
+
+\NormalTok{Criterios y restricciones:}
+\SpecialStringTok{{-} }\NormalTok{Usa lenguaje claro, dirigido a estudiantes de }\CommentTok{[}\OtherTok{NIVEL}\CommentTok{]}\NormalTok{.}
+\SpecialStringTok{{-} }\NormalTok{Evita frases negativas; formula los ítems y preguntas en clave de apoyo y mejora.}
+\SpecialStringTok{{-} }\NormalTok{Aclara que estas herramientas son para que el/la estudiante mejore su trabajo, no para reemplazar la retroalimentación del/la docente.}
+\end{Highlighting}
+\end{Shaded}
+
+\section{Desafío}\label{desafuxedo}
+
+Armar una propuesta o borrador lista para usar, eligiendo un tema que
+les sirva o les gustaria planificar para un curso (OA pendiente,
+habilidad clave o contenido difícil).
+
+El desafío es diseñar, en tiempo acotado, una propuesta \textbf{lista
+para usar}: planificar dos clases, construir una evaluación breve con su
+rúbrica, crear un material para estudiantes y redactar un correo. Todo
+lo que proponga la IA debe ser \textbf{revisado, corregido y decidido}
+por el equipo docente.
+
+\textbf{A generar (intentar hacer la mayor cantidad posible de
+borradores):}
+
+\begin{itemize}
+\item
+  Una \textbf{micro-secuencia de dos clases} (dos bloques seguidos)
+  sobre un tema que elijan, con:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{2--3 objetivos de aprendizaje claros} (OA u objetivos
+    específicos).
+  \item
+    \textbf{Actividades de inicio, desarrollo y cierre} para cada clase.
+  \item
+    \textbf{Indicación rápida de recursos necesarios} (pizarra,
+    cuaderno, proyector, etc.).
+  \end{itemize}
+\item
+  Una \textbf{actividad evaluativa breve} alineada con la
+  micro-secuencia, por ejemplo:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{3--5 ítems} (preguntas abiertas, de desarrollo u opción
+    múltiple), \textbf{o}
+  \item
+    \textbf{Una tarea corta} (producto escrito, ejercicio aplicado,
+    pequeña presentación).
+  \end{itemize}
+\item
+  Una \textbf{rúbrica simple o pauta de corrección} para esa actividad,
+  con:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{3--4 criterios} (por ejemplo: comprensión del contenido,
+    claridad, uso de conceptos, presentación).
+  \item
+    \textbf{3 o 4 niveles de logro}, descritos en \textbf{lenguaje
+    claro} para estudiantes.
+  \end{itemize}
+\item
+  \textbf{Un material adicional para estudiantes}, distinto de la
+  planificación, por ejemplo:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Una \textbf{hoja de trabajo o guía breve} para usar durante la
+    clase, \textbf{o}
+  \item
+    Una \textbf{``ficha de criterios''} donde se explique la rúbrica en
+    lenguaje sencillo (por ejemplo: ``qué significa hacerlo bien'',
+    ``qué se espera de mí'').
+  \end{itemize}
+
+  \textbf{Extensión sugerida:} \emph{1 plana máximo}, lista para
+  imprimir o subir a la plataforma del colegio.
+\item
+  Un \textbf{mensaje o correo breve para apoderadas y apoderados},
+  comunicando una salida pedagógica al Museo de la Educación Gabriela
+  Mistral y la firma de consentimiento.
+\end{itemize}
+
+Se recomienda \textbf{subir como referencia} pautas, guías o actividades
+que ya hayan usado antes, para que la IA \textbf{genere un borrador
+similar en estilo y estructura}, que luego el equipo docente revisa y
+ajusta.
+
+\pandocbounded{\includegraphics[keepaspectratio]{assets/Referencia.png}}
+
+\textbf{Recomendación de uso (flujo de trabajo con IA):} mantén la
+herramienta de IA abierta (por ejemplo, a la izquierda) y, en paralelo,
+un documento de trabajo (Word/Google Docs) donde vayas pegando y
+ordenando lo útil que te entregue la IA (borradores, listas, tablas). Al
+final.
+
+\bookmarksetup{startatroot}
+
+\chapter{IA e inclusión educativa}\label{ia-e-inclusiuxf3n-educativa}
+
+\section{Ajuste de lenguaje, formato y extensión de
+materiales}\label{ajuste-de-lenguaje-formato-y-extensiuxf3n-de-materiales}
+
+En muchos cursos, el primer obstáculo para la participación de las y los
+estudiantes es el \textbf{lenguaje y el formato} de los materiales:
+textos muy largos, vocabulario técnico, consignas confusas o poco
+explícitas. La IA puede apoyar como \textbf{asistente de edición y de
+borradores}, ayudando a simplificar, acortar, ampliar o reestructurar
+materiales \textbf{sin cambiar el contenido disciplinar central}
+definido por el equipo pedagógico.
+
+Usada de forma crítica y situada, la IA permite generar
+\textbf{versiones paralelas} de un mismo recurso (más breve, más
+explicada, más visual, con apoyos adicionales, etc.), de modo que el
+profesorado pueda elegir cuál se ajusta mejor a las características de
+su curso, o bien ofrecer varias alternativas dentro de la misma clase,
+en línea con principios de \textbf{Diseño Universal para el Aprendizaje
+(DUA)}.
+
+\textbf{{Usos posibles (ejemplos concretos)}.}
+
+\textbf{Ajustes de lenguaje}
+
+\begin{itemize}
+\tightlist
+\item
+  Reescribir una guía que fue pensada para adultos en un lenguaje
+  comprensible para estudiantes de enseñanza básica o media.\\
+\item
+  Simplificar el vocabulario de un texto, manteniendo las ideas
+  principales y explicando palabras clave con ejemplos cotidianos.\\
+\item
+  Reformular consignas de actividades para que sean más claras, paso a
+  paso y con verbos de acción explícitos.
+\end{itemize}
+
+\textbf{Ajustes de formato}
+
+\begin{itemize}
+\tightlist
+\item
+  Cambiar la presentación de un texto largo a un formato con subtítulos,
+  viñetas o cuadros comparativos.\\
+\item
+  Transformar párrafos extensos en una \textbf{ficha de estudio} breve
+  que destaque ideas claves, conceptos y ejemplos.\\
+\item
+  Crear un pequeño glosario de términos importantes para acompañar una
+  lectura o una guía.
+\end{itemize}
+
+\textbf{Apoyos adicionales}
+
+\begin{itemize}
+\tightlist
+\item
+  Generar recordatorios de conceptos previos que el curso ya trabajó y
+  que son necesarios para entender el nuevo contenido.\\
+\item
+  Redactar una versión ``para familias'' de una circular o explicación
+  de proyecto, con lenguaje claro y cercano.\\
+\item
+  Proponer ejemplos y situaciones cercanas a la realidad de estudiantes
+  en escuelas públicas, rurales o urbanas, según el contexto.
+\end{itemize}
+
+\textbf{Ejemplo de prompt para ajustar lenguaje, formato y extensión de
+un material}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{Actúa como profesor/a de }\CommentTok{[}\OtherTok{ASIGNATURA}\CommentTok{]}\NormalTok{ con experiencia en educación inclusiva y en DUA en escuelas públicas chilenas.}
+
+\NormalTok{Tu objetivo es ayudarme a adaptar el siguiente texto para que sea más accesible a estudiantes de }\CommentTok{[}\OtherTok{NIVEL}\CommentTok{]}\NormalTok{ en el marco de las Bases Curriculares de Chile.}
+
+\NormalTok{Contexto:}
+\SpecialStringTok{{-} }\NormalTok{Curso diverso en niveles de lectura, con presencia de estudiantes del PIE.}
+\SpecialStringTok{{-} }\NormalTok{El texto original es una explicación sobre }\CommentTok{[}\OtherTok{TEMA}\CommentTok{]}\NormalTok{ pensada para personas adultas.}
+\SpecialStringTok{{-} }\NormalTok{Lo necesito para trabajarlo en una clase de aproximadamente }\CommentTok{[}\OtherTok{N°}\CommentTok{]}\NormalTok{ minutos.}
+\SpecialStringTok{{-} }\NormalTok{Recursos disponibles: }\CommentTok{[}\OtherTok{por ejemplo, pizarra y cuadernos; no hay computadores para todo el curso}\CommentTok{]}\NormalTok{.}
+
+\NormalTok{Instrucciones:}
+\SpecialStringTok{1. }\NormalTok{Genera una primera versión del texto:}
+\SpecialStringTok{   {-} }\NormalTok{Con lenguaje más sencillo, sin perder las ideas principales.}
+\SpecialStringTok{   {-} }\NormalTok{De extensión máxima de }\CommentTok{[}\OtherTok{N°}\CommentTok{]}\NormalTok{ palabras.}
+\SpecialStringTok{   {-} }\NormalTok{Organizada en párrafos breves y con viñetas cuando sea útil.}
+\SpecialStringTok{2. }\NormalTok{Genera una segunda versión en formato de “ficha de estudio” que incluya:}
+\SpecialStringTok{   {-} }\NormalTok{3–5 definiciones clave en lenguaje simple.}
+\SpecialStringTok{   {-} }\NormalTok{2–3 ejemplos cotidianos cercanos a la realidad de estudiantes en escuelas chilenas.}
+\SpecialStringTok{   {-} }\NormalTok{3 preguntas de autoevaluación para que las y los estudiantes revisen si entendieron.}
+\SpecialStringTok{3. }\NormalTok{Si consideras que falta algún concepto básico para que se entienda el texto, indícalo al final en 3–4 líneas, sin agregarlo dentro del texto principal.}
+
+\NormalTok{Formato de salida:}
+\SpecialStringTok{{-} }\NormalTok{Título: “Versión simplificada para }\CommentTok{[}\OtherTok{NIVEL}\CommentTok{]}\NormalTok{” y luego el texto adaptado.}
+\SpecialStringTok{{-} }\NormalTok{Título: “Ficha de apoyo” y luego la ficha de estudio con secciones claras.}
+
+\NormalTok{Criterios y restricciones:}
+\SpecialStringTok{{-} }\NormalTok{No cambies el contenido disciplinar central; solo ajusta lenguaje, formato y extensión.}
+\SpecialStringTok{{-} }\NormalTok{No incluyas imágenes ni recursos que requieran conexión a internet.}
+\SpecialStringTok{{-} }\NormalTok{Usa ejemplos y situaciones cercanas a la realidad de estudiantes en escuelas públicas chilenas.}
+\SpecialStringTok{{-} }\NormalTok{No incluyas nombres propios ni datos personales de estudiantes ni familias.}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-note-color-frame, arc=.35mm, colbacktitle=quarto-callout-note-color!10!white, bottomrule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Nota}, leftrule=.75mm, bottomtitle=1mm, toprule=.15mm, rightrule=.15mm, toptitle=1mm, titlerule=0mm, opacityback=0, colback=white, coltitle=black, breakable, left=2mm, opacitybacktitle=0.6]
+
+\textbf{Idea fuerza para el profesorado:}\\
+La IA puede ayudar a ajustar lenguaje, formato y extensión de los
+materiales para abrir puertas a más estudiantes, pero el sentido
+pedagógico de esos materiales y su coherencia con el currículum siempre
+lo define el equipo docente.
+
+\end{tcolorbox}
+
+\section{Ejemplos de adaptaciones para distintas trayectorias y
+necesidades}\label{ejemplos-de-adaptaciones-para-distintas-trayectorias-y-necesidades}
+
+En un mismo curso conviven estudiantes con trayectorias muy diversas:
+quienes han cambiado de escuela con frecuencia, quienes participan en
+programas de integración escolar (PIE), quienes tienen responsabilidades
+de cuidado o trabajo, quienes se están incorporando recientemente al
+sistema escolar chileno, entre muchas otras realidades. La IA puede
+ayudar a pensar variantes de actividades y materiales que dialoguen con
+esta diversidad, siempre bajo el criterio profesional docente y
+resguardando la confidencialidad de información sensible.
+
+El propósito no es etiquetar estudiantes (``los buenos'', ``los malos'',
+``los que saben, los que no''), sino eliminar barreras y contar con un
+abanico de opciones que permita ajustar apoyos y desafíos sin perder de
+vista el currículum común, la pertenencia al grupo curso y los
+principios del Diseño Universal para el Aprendizaje (DUA).
+
+\textbf{{Usos posibles (ejemplos concretos)}.}
+
+\textbf{Apoyos para trayectorias diversas}
+
+\begin{itemize}
+\tightlist
+\item
+  Proponer actividades alternativas para estudiantes con ausencias
+  prolongadas o reincorporaciones tardías (por ejemplo, una versión de
+  la tarea que permita retomar lo esencial sin repetir toda la
+  unidad).\\
+\item
+  Sugerir apoyos adicionales para quienes se están adaptando al idioma o
+  al sistema escolar chileno (glosarios, ejemplos contextualizados,
+  consignas más guiadas).\\
+\item
+  Ajustar tareas para estudiantes que viven situaciones de cuidado o
+  trabajo, priorizando lo esencial del objetivo de aprendizaje con
+  tiempos y formatos más flexibles.
+\end{itemize}
+
+\textbf{Variantes de una misma actividad}
+
+\begin{itemize}
+\tightlist
+\item
+  Diseñar una versión de la actividad que se pueda realizar tanto en el
+  aula como en el hogar, con o sin acceso a tecnologías.\\
+\item
+  Proponer opciones de producto final (texto breve, esquema, audio,
+  afiche) para que estudiantes puedan demostrar lo aprendido de
+  distintas maneras.\\
+\item
+  Generar ejemplos y contextos vinculados a distintas realidades
+  territoriales y culturales (rural/urbano, norte/centro/sur, etc.).
+\end{itemize}
+
+\textbf{Articulación con PIE y DUA}
+
+\begin{itemize}
+\tightlist
+\item
+  Sugerir ideas que complementen los planes individualizados ya
+  acordados por el PIE (por ejemplo, actividades de repaso o apoyo
+  visual).\\
+\item
+  Proponer ejemplos de andamiajes (preguntas guía, pasos numerados,
+  modelos resueltos) que luego el equipo revise y adapte a cada caso.
+\end{itemize}
+
+\textbf{Ejemplo de prompt para generar adaptaciones según trayectorias
+diversas}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{Actúa como especialista en educación inclusiva y en Diseño Universal para el Aprendizaje (DUA) en contexto escolar chileno.}
+
+\NormalTok{Tu objetivo es proponer adaptaciones de una actividad de }\CommentTok{[}\OtherTok{ASIGNATURA}\CommentTok{]}\NormalTok{ sobre }\CommentTok{[}\OtherTok{TEMA}\CommentTok{]}\NormalTok{ para estudiantes con trayectorias y necesidades diversas, manteniendo el mismo objetivo de aprendizaje.}
+
+\NormalTok{Contexto:}
+\SpecialStringTok{{-} }\NormalTok{Curso: }\CommentTok{[}\OtherTok{NIVEL, por ejemplo “8º básico”}\CommentTok{]}\NormalTok{ en escuela }\CommentTok{[}\OtherTok{pública/subvencionada/particular}\CommentTok{]}\NormalTok{ con cursos numerosos.}
+\SpecialStringTok{{-} }\NormalTok{En el grupo hay:}
+\SpecialStringTok{  {-} }\NormalTok{Estudiantes que han tenido ausencias prolongadas.}
+\SpecialStringTok{  {-} }\NormalTok{Estudiantes recién incorporados al sistema escolar chileno.}
+\SpecialStringTok{  {-} }\NormalTok{Estudiantes que participan en el PIE.}
+\SpecialStringTok{{-} }\NormalTok{Recursos disponibles: }\CommentTok{[}\OtherTok{pizarra, cuadernos, proyector, impresora, etc.}\CommentTok{]}\NormalTok{.}
+\SpecialStringTok{{-} }\NormalTok{Ya existe un trabajo previo del equipo PIE y acuerdos de curso que debemos respetar.}
+
+\NormalTok{Actividad original:}
+\CommentTok{[}\OtherTok{PEGAR AQUÍ LA DESCRIPCIÓN DE LA ACTIVIDAD DE CLASE QUE YA DISEÑÓ EL/LA DOCENTE, SIN NOMBRES NI DATOS SENSIBLES}\CommentTok{]}\NormalTok{.}
+
+\NormalTok{Instrucciones:}
+\SpecialStringTok{1. }\NormalTok{Propón al menos 3 adaptaciones posibles de la actividad original:}
+\SpecialStringTok{   {-} }\NormalTok{Adaptación A: pensada para estudiantes con ausencias prolongadas o reincorporaciones tardías.}
+\SpecialStringTok{   {-} }\NormalTok{Adaptación B: pensada para estudiantes recién incorporados al sistema escolar chileno o con nivel de lectura diferente.}
+\SpecialStringTok{   {-} }\NormalTok{Adaptación C: pensada para estudiantes que requieren mayor apoyo estructurado (por ejemplo, acompañados por PIE).}
+\SpecialStringTok{2. }\NormalTok{Para cada adaptación, indica:}
+\SpecialStringTok{   {-} }\NormalTok{Propósito.}
+\SpecialStringTok{   {-} }\NormalTok{Pasos principales de la actividad.}
+\SpecialStringTok{   {-} }\NormalTok{Tipo de apoyo que se ofrece (andamiajes, ejemplos, materiales de apoyo, consignas más guiadas, etc.).}
+\SpecialStringTok{   {-} }\NormalTok{Cómo se vincula explícitamente con el mismo objetivo de aprendizaje de la actividad original.}
+\SpecialStringTok{3. }\NormalTok{Incluye una breve sugerencia sobre cómo presentar estas opciones al curso sin etiquetar ni separar a las y los estudiantes.}
+
+\NormalTok{Formato de salida:}
+\SpecialStringTok{{-} }\NormalTok{Subtítulos: “Adaptación A”, “Adaptación B” y “Adaptación C”.}
+\SpecialStringTok{{-} }\NormalTok{Bajo cada subtítulo, un párrafo de 8–10 líneas describiendo la propuesta.}
+
+\NormalTok{Criterios y restricciones:}
+\SpecialStringTok{{-} }\NormalTok{No cambies el objetivo de aprendizaje; solo ajusta la forma de abordarlo.}
+\SpecialStringTok{{-} }\NormalTok{No incluyas datos personales ni ejemplos que permitan identificar estudiantes específicos.}
+\SpecialStringTok{{-} }\NormalTok{Usa lenguaje claro y respetuoso, evitando etiquetas como “buenos/malos alumnos”.}
+\SpecialStringTok{{-} }\NormalTok{Formula las propuestas de manera que puedan ser útiles para todo el grupo, no solo para un estudiante en particular.}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-note-color-frame, arc=.35mm, colbacktitle=quarto-callout-note-color!10!white, bottomrule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Nota}, leftrule=.75mm, bottomtitle=1mm, toprule=.15mm, rightrule=.15mm, toptitle=1mm, titlerule=0mm, opacityback=0, colback=white, coltitle=black, breakable, left=2mm, opacitybacktitle=0.6]
+
+\textbf{Idea fuerza para el profesorado:}\\
+Las adaptaciones apoyadas por IA deben ampliar las posibilidades de
+participación y conexión con el currículum común, sin separar ni
+etiquetar. La herramienta sugiere opciones; el equipo docente y el PIE
+deciden qué tiene sentido en su curso.
+
+\end{tcolorbox}
+
+\section{Posibilidades y límites en contextos de integración y educación
+especial}\label{posibilidades-y-luxedmites-en-contextos-de-integraciuxf3n-y-educaciuxf3n-especial}
+
+En contextos de integración y educación especial, la IA abre
+oportunidades relevantes: permite generar materiales con distintos
+niveles de apoyo, crear ejemplos personalizados, proponer formatos
+alternativos (texto, viñetas, esquemas), entre otros. Sin embargo,
+también existen límites importantes: la IA no conoce a las y los
+estudiantes, no reemplaza la evaluación diagnóstica ni las decisiones
+del equipo PIE, y puede reproducir sesgos o proponer estrategias poco
+adecuadas si no se la orienta y revisa críticamente.
+
+Por eso es clave usar estas herramientas como soporte para pensar
+estrategias, nunca como sustituto de la observación profesional, de los
+acuerdos con las familias o de los planes individualizados (PII,
+adecuaciones curriculares, informes del PIE). Además, es fundamental no
+ingresar datos sensibles en las herramientas de IA (RUT, nombres,
+diagnósticos, antecedentes de salud, situaciones familiares específicas,
+etc.).
+
+\textbf{{Usos posibles (ejemplos concretos)}.}
+
+\textbf{Apoyos generales para todo el curso}
+
+\begin{itemize}
+\tightlist
+\item
+  Sugerir ideas de adaptaciones curriculares no significativas que
+  puedan beneficiar al grupo completo (por ejemplo, consignas más
+  claras, uso de organizadores gráficos, actividades por estaciones).\\
+\item
+  Generar materiales complementarios como glosarios, tarjetas visuales,
+  pasos de una rutina o ejemplos resueltos que apoyen la comprensión de
+  todo el curso.\\
+\item
+  Proponer formas alternativas de demostrar aprendizaje (productos
+  orales, visuales, manipulativos) para diversificar las evidencias sin
+  modificar los objetivos de aprendizaje.
+\end{itemize}
+
+\textbf{Trabajo con equipo PIE y familias}
+
+\begin{itemize}
+\tightlist
+\item
+  Sistematizar acuerdos del equipo PIE en un lenguaje claro para
+  compartir con el resto del profesorado (borrador de orientaciones
+  internas que luego el equipo revisa).\\
+\item
+  Redactar borradores de orientaciones generales para familias sobre
+  cómo apoyar tareas en casa, que después el equipo ajuste a su
+  realidad.\\
+\item
+  Ordenar información dispersa (notas de reuniones, acuerdos, ideas) en
+  esquemas que faciliten la coordinación entre docentes, asistentes de
+  la educación y profesionales del PIE.
+\end{itemize}
+
+\textbf{Límites y cuidados}
+
+\begin{itemize}
+\tightlist
+\item
+  Recordar que la IA no puede definir adecuaciones curriculares
+  significativas ni planes individuales por sí sola.\\
+\item
+  Evitar pedir a la IA diagnósticos, etiquetas o decisiones individuales
+  sobre estudiantes.\\
+\item
+  Revisar críticamente las sugerencias, ya que la IA puede reproducir
+  estereotipos o suposiciones sobre discapacidad, lengua, género, etc.
+\end{itemize}
+
+\textbf{Ejemplo de prompt para explorar posibilidades y límites en un
+curso con PIE}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{Actúa como profesional de apoyo en un Programa de Integración Escolar (PIE) con experiencia en adecuaciones curriculares no significativas y en DUA.}
+
+\NormalTok{Tu objetivo es sugerir ideas de apoyo pedagógico para un curso de }\CommentTok{[}\OtherTok{NIVEL}\CommentTok{]}\NormalTok{ que trabaja el contenido }\CommentTok{[}\OtherTok{TEMA}\CommentTok{]}\NormalTok{ en la asignatura de }\CommentTok{[}\OtherTok{ASIGNATURA}\CommentTok{]}\NormalTok{, respetando el currículum común y el trabajo del equipo PIE.}
+
+\NormalTok{Contexto:}
+\SpecialStringTok{{-} }\NormalTok{Escuela pública con PIE y cursos numerosos.}
+\SpecialStringTok{{-} }\NormalTok{En el curso hay estudiantes con:}
+\SpecialStringTok{  {-} }\NormalTok{Dificultades específicas de aprendizaje.}
+\SpecialStringTok{  {-} }\NormalTok{TDAH.}
+\SpecialStringTok{  {-} }\NormalTok{Discapacidad intelectual leve.}
+\SpecialStringTok{{-} }\NormalTok{El equipo docente ya definió los objetivos de aprendizaje para todo el curso.}
+\SpecialStringTok{{-} }\NormalTok{Ya existen planes y acuerdos del PIE que se deben respetar (no los detallaré aquí por confidencialidad).}
+
+\NormalTok{Instrucciones:}
+\SpecialStringTok{1. }\NormalTok{Propón 5 ideas de apoyos generales que puedan beneficiar a todo el curso (no solo a estudiantes del PIE), tales como:}
+\SpecialStringTok{   {-} }\NormalTok{Ajustes en la presentación de la información.}
+\SpecialStringTok{   {-} }\NormalTok{Estrategias de trabajo colaborativo.}
+\SpecialStringTok{   {-} }\NormalTok{Formas alternativas de demostrar lo aprendido (oral, escrito, gráfico, manipulativo).}
+\SpecialStringTok{2. }\NormalTok{Luego, sugiere 3 ejemplos de adecuaciones curriculares no significativas para el mismo contenido, aclarando:}
+\SpecialStringTok{   {-} }\NormalTok{Qué se mantiene igual para todos (objetivo de aprendizaje, criterio de logro).}
+\SpecialStringTok{   {-} }\NormalTok{Qué se adapta (tiempo, formato, cantidad de ejercicios, grado de apoyo, etc.).}
+\SpecialStringTok{3. }\NormalTok{Finalmente, incluye una breve sección “Límites y cuidados” con 4–5 puntos que recuerden:}
+\SpecialStringTok{   {-} }\NormalTok{Que las decisiones deben ser revisadas y validadas por el equipo PIE y el profesorado del curso.}
+\SpecialStringTok{   {-} }\NormalTok{Que no se debe incluir información sensible de estudiantes en herramientas de IA.}
+\SpecialStringTok{   {-} }\NormalTok{Que la IA no reemplaza la evaluación diagnóstica ni la comunicación con las familias.}
+
+\NormalTok{Formato de salida:}
+\SpecialStringTok{{-} }\NormalTok{Sección con subtítulo “Apoyos generales para todo el curso”.}
+\SpecialStringTok{{-} }\NormalTok{Sección con subtítulo “Ejemplos de adecuaciones no significativas”.}
+\SpecialStringTok{{-} }\NormalTok{Sección con subtítulo “Límites y cuidados”.}
+
+\NormalTok{Criterios y restricciones:}
+\SpecialStringTok{{-} }\NormalTok{No sugieras diagnósticos ni decisiones individuales sobre estudiantes.}
+\SpecialStringTok{{-} }\NormalTok{Usa lenguaje respetuoso y centrado en apoyos, no en déficits.}
+\SpecialStringTok{{-} }\NormalTok{Enfatiza que la IA es un apoyo para pensar estrategias pedagógicas, no un reemplazo de la evaluación profesional ni de los acuerdos del equipo PIE.}
+\SpecialStringTok{{-} }\NormalTok{No incluyas nombres propios, RUT ni ningún dato que permita identificar a estudiantes o familias.}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-note-color-frame, arc=.35mm, colbacktitle=quarto-callout-note-color!10!white, bottomrule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Nota}, leftrule=.75mm, bottomtitle=1mm, toprule=.15mm, rightrule=.15mm, toptitle=1mm, titlerule=0mm, opacityback=0, colback=white, coltitle=black, breakable, left=2mm, opacitybacktitle=0.6]
+
+\textbf{Idea fuerza para el profesorado:}\\
+En contextos de integración y educación especial, la IA puede ser un
+buen apoyo para imaginar estrategias y apoyos generales, pero las
+decisiones sobre adecuaciones, planes individuales y comunicación con
+familias siguen estando en manos del equipo profesional y de la
+comunidad escolar. La herramienta aporta ideas; el criterio pedagógico y
+ético lo ponen las personas.
+
+\end{tcolorbox}
+
+\bookmarksetup{startatroot}
+
+\chapter{Privacidad, sesgos y brechas de
+acceso}\label{privacidad-sesgos-y-brechas-de-acceso}
+
+\section{Privacidad, sesgos y brechas de
+acceso}\label{privacidad-sesgos-y-brechas-de-acceso-1}
+
+El uso de herramientas de inteligencia artificial en la escuela implica
+trabajar con datos, decisiones y recursos tecnológicos que no son
+neutros. Antes de pensar en ``todo lo que la IA puede hacer'', es clave
+preguntarse qué riesgos abre, quién controla estas tecnologías y cómo
+podemos minimizarlos desde la responsabilidad profesional docente y el
+enfoque de derechos.
+
+\subsection{Privacidad y protección de
+datos}\label{privacidad-y-protecciuxf3n-de-datos}
+
+En términos de privacidad, cualquier información que permita identificar
+a una persona (nombre, RUT, curso específico, diagnóstico, dirección,
+teléfono, correo, antecedentes familiares, etc.) no debiera ser
+ingresada en herramientas de IA abiertas. Tampoco es recomendable copiar
+actas sensibles, listados completos de notas, informes psicológicos u
+otros documentos similares.
+
+Cuando se requiera trabajar con ejemplos, es preferible anonimizar los
+datos (``estudiante A'', ``curso de 6º básico'', ``apoderado'') o usar
+situaciones ficticias. La regla práctica es: si no lo pegarías en una
+red social, no lo pegues en una IA abierta.
+
+\subsection{Sesgos, narrativas y poder}\label{sesgos-narrativas-y-poder}
+
+Los modelos de IA aprenden a partir de grandes volúmenes de texto e
+imagen producidos en contextos desiguales. Eso significa que pueden
+reproducir y amplificar sesgos de género, raza, clase, territorio,
+discapacidad, orientación sexual, religión, entre otros.
+
+En los ejemplos que mostramos en el taller se observa:
+
+\begin{itemize}
+\tightlist
+\item
+  Un reportaje sobre el uso de ChatGPT como herramienta de diplomacia
+  pública, donde Isarel invierte grandes sumas para influir en cómo los
+  sistemas de IA responden a preguntas sobre un conflicto político. Esto
+  muestra que la IA puede ser usada para modelar narrativas oficiales y
+  reforzar ciertos puntos de vista sobre temas sensibles (por ejemplo,
+  guerras, ocupaciones, violaciones a derechos humanos), invisibilizando
+  otros.
+\end{itemize}
+
+\pandocbounded{\includegraphics[keepaspectratio]{assets/no.png}}
+
+\begin{itemize}
+\tightlist
+\item
+  Un conjunto de materiales sobre racismo algorítmico y
+  tecnopatriarcado: algoritmos de contratación que favorecen a hombres,
+  sistemas de moderación de contenidos que censuran cuerpos femeninos, o
+  tecnologías de reconocimiento facial usadas para control policial y
+  estatal. La idea de tecnopatriarcado subraya que la industria
+  tecnológica se desarrolla en un mundo atravesado por relaciones de
+  poder patriarcales, racistas y coloniales; si no se interviene
+  críticamente, la IA tiende a reforzar esas mismas estructuras.
+\end{itemize}
+
+\pandocbounded{\includegraphics[keepaspectratio]{assets/no1.png}}
+
+Para la escuela esto implica que, al trabajar con IA, no solo debemos
+fijarnos en ``si la respuesta está bien escrita'', sino también en desde
+qué mirada está hablando la herramienta:
+
+\begin{itemize}
+\tightlist
+\item
+  ¿A quién muestra como protagonista y a quién invisibiliza?
+\item
+  ¿Cómo nombra a ciertos grupos (migrantes, pueblos originarios,
+  mujeres, personas LGBTIQ+, personas con discapacidad)?
+\item
+  ¿Qué conflictos aparecen como ``controvertidos'', ``complejos'' o
+  directamente silenciados?
+\end{itemize}
+
+\subsection{Brechas de acceso y uso}\label{brechas-de-acceso-y-uso}
+
+El uso de IA también exige conectividad, dispositivos y competencias
+digitales, lo que puede profundizar las brechas entre establecimientos
+(públicos/particulares, rurales/urbanos) y dentro de un mismo curso. No
+es lo mismo diseñar actividades con IA en un liceo con laboratorio
+disponible todos los días que en una escuela rural donde solo hay un
+proyector y conectividad inestable.
+
+\subsection{Orientaciones básicas para la práctica
+escolar}\label{orientaciones-buxe1sicas-para-la-pruxe1ctica-escolar}
+
+\begin{itemize}
+\tightlist
+\item
+  Evitar ingresar datos personales identificables de estudiantes,
+  familias o colegas.
+\item
+  Trabajar con ejemplos anonimizados (``estudiante A'', ``apoderado'',
+  ``curso de 6º básico'') o con situaciones ficticias.
+\item
+  No copiar en la IA diagnósticos, informes psicológicos, antecedentes
+  de salud ni situaciones familiares específicas.
+\item
+  Revisar críticamente los ejemplos y respuestas de la IA para detectar
+  estereotipos o sesgos (racistas, sexistas, colonialistas,
+  capacitistas, etc.), discutiéndolos con el curso cuando sea
+  pertinente.
+\item
+  Triangular siempre la información sobre temas controversiales
+  (conflictos armados, migración, seguridad, etc.) con múltiples fuentes
+  y no solo con la respuesta de una IA.
+\item
+  No tomar decisiones disciplinarias, diagnósticas o de atención
+  individual basadas únicamente en lo que sugiere una IA.
+\item
+  Considerar las desigualdades de acceso a dispositivos y conectividad
+  al diseñar actividades que involucren tecnología, buscando opciones
+  que no excluyan a quienes tienen menos recursos.
+\end{itemize}
+
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-note-color-frame, arc=.35mm, colbacktitle=quarto-callout-note-color!10!white, bottomrule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Nota}, leftrule=.75mm, bottomtitle=1mm, toprule=.15mm, rightrule=.15mm, toptitle=1mm, titlerule=0mm, opacityback=0, colback=white, coltitle=black, breakable, left=2mm, opacitybacktitle=0.6]
+
+\textbf{Idea fuerza para docentes:} la IA no es neutra ni objetiva.
+Puede ayudarnos, pero trabaja con datos marcados por desigualdades y
+relaciones de poder. Nuestra tarea profesional es cuidar la privacidad,
+detectar sesgos y tomar decisiones que no profundicen las brechas
+educativas.
+
+\end{tcolorbox}
+
+\section{Criterios pedagógicos para decidir cuándo usar
+IA}\label{criterios-pedaguxf3gicos-para-decidir-cuuxe1ndo-usar-ia}
+
+No toda tarea pedagógica necesita o se beneficia del uso de IA. Una
+decisión responsable considera cuándo tiene sentido apoyarse en estas
+herramientas y cuándo es mejor prescindir de ellas. La IA puede ser
+especialmente útil para tareas repetitivas, de borrador o de exploración
+de ideas; en cambio, las decisiones sobre el sentido pedagógico, la
+evaluación fina y el acompañamiento socioemocional siguen siendo de
+la/el docente y de los equipos escolares.
+
+\subsection{Criterios posibles para
+decidir}\label{criterios-posibles-para-decidir}
+
+\textbf{Pertinencia pedagógica}\\
+Preguntarse si la IA aporta algo que no podría hacerse razonablemente
+con otros recursos, o si solo se está usando ``porque está de moda''.
+Por ejemplo, puede ser pertinente para generar borradores de
+actividades, pero no para definir el informe final de personalidad de un
+estudiante.
+
+\textbf{Ahorro de tiempo sin pérdida de calidad}\\
+Priorizar la IA en tareas de redacción inicial (borradores de guías,
+propuestas de actividades, ejemplos) que luego se revisan y ajustan, no
+en la toma de decisiones evaluativas finales ni en informes sensibles.
+
+\textbf{Control docente del proceso}\\
+Asegurarse de que la/el profesor/a mantenga el control sobre los
+objetivos, los criterios de evaluación y las decisiones de cierre,
+incluso cuando use IA para generar insumos. La herramienta propone; el
+equipo docente decide.
+
+\textbf{Equidad y acceso}\\
+Evaluar si el uso de IA generará nuevas desigualdades dentro del curso o
+entre cursos (por ejemplo, si solo algunos estudiantes pueden usar
+dispositivos en casa). Si se pide una tarea con IA, ofrecer siempre
+alternativas sin IA que permitan demostrar los mismos aprendizajes.
+
+\textbf{Transparencia y explicabilidad}\\
+Evitar decisiones importantes que no se puedan justificar frente a
+estudiantes y familias más allá de ``lo dijo la IA''. Si una decisión se
+apoya en un insumo generado por IA, debe poder explicarse con criterios
+pedagógicos y normativos claros.
+
+\textbf{Cuidado con temas sensibles y controversiales}\\
+En temas como racismo, género, territorio, violencia, conflictos
+internacionales o política, la IA puede reproducir visiones sesgadas. Es
+preferible usarla, si acaso, para explorar ejemplos que luego se
+analizan críticamente, y no como fuente principal de verdad.
+
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-note-color-frame, arc=.35mm, colbacktitle=quarto-callout-note-color!10!white, bottomrule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Nota}, leftrule=.75mm, bottomtitle=1mm, toprule=.15mm, rightrule=.15mm, toptitle=1mm, titlerule=0mm, opacityback=0, colback=white, coltitle=black, breakable, left=2mm, opacitybacktitle=0.6]
+
+\textbf{Idea fuerza para docentes:} la IA es útil cuando reduce carga de
+trabajo sin sacrificar criterios pedagógicos ni equidad. Si complica el
+proceso, aumenta las brechas o pone en riesgo la confianza de
+estudiantes y familias, es mejor no usarla.
+
+\end{tcolorbox}
+
+\section{Cómo conversar con estudiantes y familias sobre el uso
+responsable}\label{cuxf3mo-conversar-con-estudiantes-y-familias-sobre-el-uso-responsable}
+
+La presencia de la IA en la vida cotidiana de niñas, niños y jóvenes
+hace necesario abordar el tema abiertamente en la escuela. Más que
+prohibir o celebrar sin matices, se trata de generar conversaciones que
+permitan desarrollar criterios, pensar riesgos y oportunidades, y
+acordar normas de uso responsable.
+
+Con estudiantes, estas conversaciones pueden articularse con formación
+ciudadana, orientación, ética, filosofía, lenguaje, historia u otras
+asignaturas. Con familias, es importante transmitir información clara y
+sencilla, evitando tecnicismos, para que puedan acompañar a sus hijos e
+hijas en el uso de estas herramientas.
+
+A partir de las noticias e imágenes que mostramos en el taller, se
+pueden trabajar preguntas como:
+
+\begin{itemize}
+\tightlist
+\item
+  ¿Qué significa que un gobierno invierta millones para influir en cómo
+  responde la IA sobre un conflicto político?
+\item
+  ¿Por qué organismos como Naciones Unidas hablan de racismo
+  algorítmico?
+\item
+  ¿Qué nos quiere decir el concepto de tecnopatriarcado sobre quién
+  diseña estas tecnologías y a quién benefician o perjudican?
+\end{itemize}
+
+\subsection{Ideas clave para trabajar en aula y con la
+comunidad}\label{ideas-clave-para-trabajar-en-aula-y-con-la-comunidad}
+
+\begin{itemize}
+\tightlist
+\item
+  Explicar en lenguaje simple qué es y qué no es la IA (no es
+  ``inteligencia humana'', no ``sabe todo'', puede equivocarse y
+  reproducir injusticias).
+\item
+  Conversar sobre la importancia de no compartir datos personales y de
+  preguntar siempre qué se hace con la información.
+\item
+  Trabajar ejemplos de sesgos y errores de la IA, analizando cómo
+  afectan a distintos grupos y qué relaciones de poder se reflejan en
+  esos ejemplos.
+\item
+  Discutir los límites del uso de IA en tareas escolares: qué se
+  considera apoyo legítimo (por ejemplo, pedir ideas o ejemplos) y qué
+  se considera copia o falta a la honestidad académica (entregar un
+  trabajo hecho íntegramente por la IA).
+\item
+  Construir junto al curso acuerdos de uso responsable (por ejemplo,
+  ``no pegamos datos personales'', ``si usamos IA citamos que lo
+  hicimos'', ``si algo nos parece raro, lo verificamos''), que luego
+  puedan compartirse con las familias.
+\item
+  Invitar a las familias a compartir sus dudas y experiencias,
+  enfatizando que el objetivo de la escuela es acompañar y orientar, no
+  vigilar el uso doméstico de tecnología.
+\end{itemize}
+
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-note-color-frame, arc=.35mm, colbacktitle=quarto-callout-note-color!10!white, bottomrule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Nota}, leftrule=.75mm, bottomtitle=1mm, toprule=.15mm, rightrule=.15mm, toptitle=1mm, titlerule=0mm, opacityback=0, colback=white, coltitle=black, breakable, left=2mm, opacitybacktitle=0.6]
+
+\textbf{Idea fuerza para docentes:} hablar de IA con estudiantes y
+familias es una oportunidad para formar criterio, cuidado y ciudadanía
+digital. La herramienta cambia rápido, pero los principios de respeto,
+honestidad y justicia siguen siendo los mismos: la IA debe estar al
+servicio de esos principios, no al revés.
+
+\end{tcolorbox}
+
+\bookmarksetup{startatroot}
+
+\chapter{Buenas prácticas y pasos pequeños para
+empezar}\label{buenas-pruxe1cticas-y-pasos-pequeuxf1os-para-empezar}
+
+\section{Herramientas de IA: mapa visual para elegir rápido (versión más
+``lectiva'')}\label{herramientas-de-ia-mapa-visual-para-elegir-ruxe1pido-versiuxf3n-muxe1s-lectiva}
+
+En el trabajo docente, la IA funciona mejor si la pensamos como un
+\textbf{conjunto de herramientas} con fortalezas distintas. No existe
+``la mejor IA para todo'': lo que cambia es \textbf{la tarea}
+(planificar, redactar, sintetizar textos, crear material visual, generar
+una cápsula) y el \textbf{contexto real} (tiempo, curso, recursos
+disponibles, diversidad del aula).
+
+\textbf{Regla de oro:} usa la IA como \textbf{asistente de borradores}.
+La herramienta propone; \textbf{el equipo docente decide}, ajusta y
+valida con el currículum, la experiencia pedagógica y el conocimiento
+del curso.
+
+\section{Herramientas de IA: ¿cuál usar para qué? (mapa
+rápido)}\label{herramientas-de-ia-cuuxe1l-usar-para-quuxe9-mapa-ruxe1pido}
+
+En el trabajo docente conviene pensar la IA como un \textbf{set de
+herramientas} con fortalezas distintas. La clave es elegir la
+herramienta según la tarea (planificación, síntesis, creación de
+materiales) y usarla como \textbf{asistente de borradores}: tú y tu
+equipo \textbf{deciden, ajustan y validan} con Bases Curriculares,
+acuerdos del establecimiento y el contexto real del curso.
+
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, arc=.35mm, colbacktitle=quarto-callout-tip-color!10!white, bottomrule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Sugerencia práctica (muy útil para ahorrar tiempo)}, leftrule=.75mm, bottomtitle=1mm, toprule=.15mm, rightrule=.15mm, toptitle=1mm, titlerule=0mm, opacityback=0, colback=white, coltitle=black, breakable, left=2mm, opacitybacktitle=0.6]
+
+Si ya tienen \textbf{pautas, guías o actividades previas} (sin datos
+sensibles), pueden pegarlas o subirlas como referencia (anonimizadas)
+para que la IA genere una versión \textbf{similar en estilo y
+exigencia}, ajustada al curso y al tiempo disponible.
+
+\end{tcolorbox}
+
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-note-color-frame, arc=.35mm, colbacktitle=quarto-callout-note-color!10!white, bottomrule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Recomendación para el uso cotidiano: trabaja con un set pequeño}, leftrule=.75mm, bottomtitle=1mm, toprule=.15mm, rightrule=.15mm, toptitle=1mm, titlerule=0mm, opacityback=0, colback=white, coltitle=black, breakable, left=2mm, opacitybacktitle=0.6]
+
+Para crear un \textbf{hábito de trabajo} (y no saturarse), conviene
+elegir un set pequeño de 3--4 herramientas y usarlas de manera
+consistente. Eso ayuda a construir una ``memoria de trabajo'' del equipo
+(formatos, prompts, plantillas, criterios) y mejora la calidad de los
+resultados.
+
+\end{tcolorbox}
+
+\section{Galería: ¿qué herramienta usar para
+qué?}\label{galeruxeda-quuxe9-herramienta-usar-para-quuxe9}
+
+\subsection{ChatGPT (texto y
+borradores)}\label{chatgpt-texto-y-borradores}
+
+\includegraphics[width=5.20833in,height=\textheight,keepaspectratio]{assets/chat.png}
+
+\textbf{Sirve para:} escribir, ordenar y dar formato a
+\textbf{planificaciones}, \textbf{actividades}, \textbf{rúbricas},
+\textbf{comunicados}, \textbf{guías}, \textbf{variantes DUA}, ejemplos y
+bancos de preguntas.
+
+\textbf{Úsalo cuando:} - necesitas \textbf{redacción guiada} (listas,
+tablas, pasos); - quieres iterar rápido (``mejorarlo'', ``hacerlo más
+simple'', ``crear 3 variantes'').
+
+\textbf{Evítalo para:} - decisiones finales de evaluación, -
+diagnósticos o decisiones individuales, - casos con \textbf{datos
+sensibles}.
+
+\subsection{Gemini (imagen y video, según
+disponibilidad)}\label{gemini-imagen-y-video-seguxfan-disponibilidad}
+
+\includegraphics[width=5.20833in,height=\textheight,keepaspectratio]{assets/gemini.png}
+
+\textbf{Sirve para:} crear \textbf{material visual} (afiches simples,
+íconos, diagramas, escenas genéricas) y, si está disponible,
+\textbf{video breve} tipo cápsula (apertura de unidad, motivación,
+explicación general).
+
+\textbf{Úsalo cuando:} - quieres apoyar una clase con un recurso
+\textbf{más visual} (sin depender de mucho texto).
+
+\textbf{Evítalo para:} - rostros reales de estudiantes, - referencias
+identificables del colegio, - situaciones sensibles o estereotipos.
+
+\subsection{NotebookLM (lectura y síntesis con
+fuentes)}\label{notebooklm-lectura-y-suxedntesis-con-fuentes}
+
+\includegraphics[width=5.20833in,height=\textheight,keepaspectratio]{assets/notebooklm.png}
+
+\textbf{Sirve para:} entender rápido documentos largos que tú subes
+(orientaciones, reglamentos, planes, artículos, actas). Ayuda a sacar
+\textbf{ideas clave}, comparar documentos y redactar minutas o FAQ.
+
+\textbf{Úsalo cuando:} - necesitas \textbf{síntesis con trazabilidad}
+(basada en tus textos), - no quieres que la herramienta ``invente''
+fuera de la fuente.
+
+\textbf{Evítalo para:} - documentos con información sensible (informes
+individuales, datos personales, antecedentes de salud).
+
+\subsection{Otras herramientas útiles
+(sugerencias)}\label{otras-herramientas-uxfatiles-sugerencias}
+
+Estas herramientas no son ``obligatorias''. Son opciones que pueden
+sumar si el establecimiento ya las usa o si están disponibles. La idea
+es \textbf{probar con pocas}, quedarse con las más útiles y sostener un
+flujo estable.
+
+\subsubsection{Google Forms + IA (aplicación simple de evaluación
+formativa)}\label{google-forms-ia-aplicaciuxf3n-simple-de-evaluaciuxf3n-formativa}
+
+\textbf{Sirve para:} aplicar tickets de salida, quizzes y encuestas
+breves, con resultados ordenados para retroalimentar.
+
+\textbf{Úsalo cuando:} - necesitas una aplicación rápida y práctica, -
+quieres evidencia simple para ajustar la enseñanza.
+
+\textbf{Evítalo para:} - recolectar datos personales innecesarios, -
+``automatizar'' decisiones de calificación sin revisión docente.
+
+\subsubsection{1) Presentaciones y material de clase (rápido y
+ordenado)}\label{presentaciones-y-material-de-clase-ruxe1pido-y-ordenado}
+
+\begin{itemize}
+\item
+  \textbf{Canva (Magic Write / Presentations / diseño)}\\
+  Para transformar una idea en \textbf{láminas, afiches y guías
+  visuales} sin ``pelear'' con el formato.\\
+  \textbf{Útil cuando:} necesitas algo \textbf{presentable} en poco
+  tiempo.\\
+  \textbf{Cuidado:} no subas fotos de estudiantes ni datos del curso.
+\item
+  \textbf{Microsoft Copilot (Word/PowerPoint)}\\
+  Bueno si el colegio ya trabaja con \textbf{Office}; ayuda a generar
+  borradores y dar formato.\\
+  \textbf{Útil cuando:} tu flujo ya está en Word/PowerPoint.
+\end{itemize}
+
+\subsubsection{2) Evaluación formativa y bancos de
+preguntas}\label{evaluaciuxf3n-formativa-y-bancos-de-preguntas}
+
+\begin{itemize}
+\item
+  \textbf{QuestionWell (u otras herramientas de ``question
+  generation'')}\\
+  Genera preguntas, tickets de salida y quizzes por nivel.\\
+  \textbf{Útil cuando:} quieres variedad rápida de ítems.\\
+  \textbf{Cuidado:} revisar calidad, sesgos y alineación con OA.
+\item
+  \textbf{Formularios (Google Forms) + IA}\\
+  Redactas preguntas con IA y luego las pegas en Forms para aplicar y
+  retroalimentar.\\
+  \textbf{Útil cuando:} buscas aplicación simple y resultados ordenados.
+\end{itemize}
+
+\subsubsection{3) Lenguaje claro, reescritura y apoyo a
+lectura/escritura}\label{lenguaje-claro-reescritura-y-apoyo-a-lecturaescritura}
+
+\begin{itemize}
+\item
+  \textbf{LanguageTool}\\
+  Corrección ortográfica y estilo (muy práctico en español).\\
+  \textbf{Útil cuando:} necesitas mejorar redacción de
+  guías/comunicados.
+\item
+  \textbf{DeepL Write / DeepL}\\
+  Reescritura y traducción (si trabajas con material bilingüe).\\
+  \textbf{Útil cuando:} quieres versiones ``más claras'' o traducciones
+  cuidando tono.\\
+  \textbf{Cuidado:} revisar términos curriculares y nombres propios.
+\end{itemize}
+
+\subsubsection{4) Audio, accesibilidad y apoyos para
+estudiantes}\label{audio-accesibilidad-y-apoyos-para-estudiantes}
+
+\begin{itemize}
+\item
+  \textbf{Text-to-Speech (TTS)} (lectores integrados o servicios de
+  voz)\\
+  Para convertir guías en audio y apoyar el acceso a información
+  (DUA).\\
+  \textbf{Útil cuando:} quieres otra vía de acceso.\\
+  \textbf{Cuidado:} no subir textos con datos sensibles.
+\item
+  \textbf{Whisper / transcripción (cuando se permite)}\\
+  Para pasar audio a texto y armar minutas o guías.\\
+  \textbf{Útil cuando:} tienes grabaciones propias (reuniones,
+  clases).\\
+  \textbf{Cuidado:} consentimiento y resguardo de privacidad.
+\end{itemize}
+
+\subsubsection{5) Video y edición rápida (sin
+complicarse)}\label{video-y-ediciuxf3n-ruxe1pida-sin-complicarse}
+
+\begin{itemize}
+\item
+  \textbf{CapCut}\\
+  Edición simple, subtítulos automáticos y clips.\\
+  \textbf{Útil cuando:} quieres cápsulas cortas o material
+  motivacional.\\
+  \textbf{Cuidado:} derechos de música e imágenes; no usar rostros
+  reales de estudiantes.
+\item
+  \textbf{Loom}\\
+  Grabar explicación breve (pantalla + voz) para apoyar a quienes
+  faltaron.\\
+  \textbf{Útil cuando:} necesitas ``ponerse al día'' sin repetir todo.\\
+  \textbf{Cuidado:} no mostrar listados, notas ni datos del curso.
+\end{itemize}
+
+\subsubsection{6) Investigación docente, búsqueda con fuentes y ``apoyo
+con
+evidencia''}\label{investigaciuxf3n-docente-buxfasqueda-con-fuentes-y-apoyo-con-evidencia}
+
+\begin{itemize}
+\item
+  \textbf{Perplexity (u otros buscadores con IA)}\\
+  Para explorar información con referencias (contexto, bibliografía).\\
+  \textbf{Útil cuando:} necesitas buscar rápido y comparar fuentes.\\
+  \textbf{Cuidado:} siempre verificar y no usar como única fuente.
+\item
+  \textbf{Elicit}\\
+  Ayuda a encontrar y resumir artículos académicos.\\
+  \textbf{Útil cuando:} estás escribiendo tu guía como \textbf{paper
+  metodológico} o estado del arte.
+\end{itemize}
+
+\subsubsection{7) Pizarras y co-creación en
+equipo}\label{pizarras-y-co-creaciuxf3n-en-equipo}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Miro / FigJam}\\
+  Para trabajo colaborativo (mapas, lluvia de ideas, planificación).\\
+  \textbf{Útil cuando:} el taller es grupal y quieres visualizar
+  acuerdos.\\
+  \textbf{Cuidado:} no pegar datos personales; usar ejemplos genéricos.
+\end{itemize}
+
+\bookmarksetup{startatroot}
+
+\chapter{Extras}\label{extras}
+
+\section{Contacto}\label{contacto}
+
+\begin{itemize}
+\tightlist
+\item
+  Katherine Aravena Herrera:
+  \href{mailto:katherine.aravena.h@gmail.com}{\nolinkurl{katherine.aravena.h@gmail.com}}
+\item
+\item
+\item
+\end{itemize}
+
+\phantomsection\label{refs}
+\begin{CSLReferences}{1}{0}
+\bibitem[\citeproctext]{ref-vaswani2017attention}
+Vaswani, A., Shazeer, N., Parmar, N., Uszkoreit, J., Jones, L., Gomez,
+A. N., Kaiser, Ł., \& Polosukhin, I. (2017). Attention is all you need.
+\emph{Advances in neural information processing systems}, \emph{30}.
+
+\end{CSLReferences}
+
+
+\backmatter
+
+% --- Cuerpo del libro (capítulos) en arábigos ---
+\mainmatter
+\pagestyle{scrheadings}
+
+% --- (Opcional) Estilo del índice general ---
+% \addtocontents{toc}{\protect\thispagestyle{plain}}
+
+
+\end{document}
