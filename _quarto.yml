@@ -14,9 +14,13 @@ book:
   repo-url: "https://github.com/KAravena/Taller-IA-Docentes-MEGM-2026"
   author:
     - name: Katherine Aravena Herrera 
-      affiliation: Departamento de Sociologia, Universidad de Chile
+      affiliation: Museo de la Educación Gabriela Mistral
       email: "katherine.aravena.h@gmail.com"
-    - name: Manuel Sierra
+    - name: Juan Castaño Giraldo
+      affiliation: Departamento de Sociologia, Universidad de Chile
+    - name: Paula Cerda Torres
+      affiliation: Departamento de Sociologia, Universidad de Chile
+    - name: Manuel Sierras
       affiliation: Museo de la Educación Gabriela Mistral
   date: today             # Usa fecha fija (YYYY-MM-DD) si necesitas control editorial
   date-format: D [de] MMMM [de] YYYY

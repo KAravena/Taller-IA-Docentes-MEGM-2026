@@ -86,7 +86,7 @@ Estas herramientas no son “obligatorias”. Son opciones que pueden sumar si e
 - “automatizar” decisiones de calificación sin revisión docente.
 
 
-#### 1) Presentaciones y material de clase (rápido y ordenado)
+#### Presentaciones y material de clase (rápido y ordenado)
 
 - **Canva (Magic Write / Presentations / diseño)**  
   Para transformar una idea en **láminas, afiches y guías visuales** sin “pelear” con el formato.  
@@ -97,7 +97,7 @@ Estas herramientas no son “obligatorias”. Son opciones que pueden sumar si e
   Bueno si el colegio ya trabaja con **Office**; ayuda a generar borradores y dar formato.  
   **Útil cuando:** tu flujo ya está en Word/PowerPoint.
 
-#### 2) Evaluación formativa y bancos de preguntas
+#### Evaluación formativa y bancos de preguntas
 
 - **QuestionWell (u otras herramientas de “question generation”)**  
   Genera preguntas, tickets de salida y quizzes por nivel.  
@@ -108,7 +108,7 @@ Estas herramientas no son “obligatorias”. Son opciones que pueden sumar si e
   Redactas preguntas con IA y luego las pegas en Forms para aplicar y retroalimentar.  
   **Útil cuando:** buscas aplicación simple y resultados ordenados.
 
-#### 3) Lenguaje claro, reescritura y apoyo a lectura/escritura
+#### Lenguaje claro, reescritura y apoyo a lectura/escritura
 
 - **LanguageTool**  
   Corrección ortográfica y estilo (muy práctico en español).  
@@ -119,7 +119,7 @@ Estas herramientas no son “obligatorias”. Son opciones que pueden sumar si e
   **Útil cuando:** quieres versiones “más claras” o traducciones cuidando tono.  
   **Cuidado:** revisar términos curriculares y nombres propios.
 
-#### 4) Audio, accesibilidad y apoyos para estudiantes
+#### Audio, accesibilidad y apoyos para estudiantes
 
 - **Text-to-Speech (TTS)** (lectores integrados o servicios de voz)  
   Para convertir guías en audio y apoyar el acceso a información (DUA).  
@@ -131,7 +131,7 @@ Estas herramientas no son “obligatorias”. Son opciones que pueden sumar si e
   **Útil cuando:** tienes grabaciones propias (reuniones, clases).  
   **Cuidado:** consentimiento y resguardo de privacidad.
 
-#### 5) Video y edición rápida (sin complicarse)
+#### Video y edición rápida (sin complicarse)
 
 - **CapCut**  
   Edición simple, subtítulos automáticos y clips.  
@@ -143,7 +143,7 @@ Estas herramientas no son “obligatorias”. Son opciones que pueden sumar si e
   **Útil cuando:** necesitas “ponerse al día” sin repetir todo.  
   **Cuidado:** no mostrar listados, notas ni datos del curso.
 
-#### 6) Investigación docente, búsqueda con fuentes y “apoyo con evidencia”
+#### Investigación docente, búsqueda con fuentes y “apoyo con evidencia”
 
 - **Perplexity (u otros buscadores con IA)**  
   Para explorar información con referencias (contexto, bibliografía).  
@@ -154,7 +154,7 @@ Estas herramientas no son “obligatorias”. Son opciones que pueden sumar si e
   Ayuda a encontrar y resumir artículos académicos.  
   **Útil cuando:** estás escribiendo tu guía como **paper metodológico** o estado del arte.
 
-#### 7) Pizarras y co-creación en equipo
+#### Pizarras y co-creación en equipo
 
 - **Miro / FigJam**  
   Para trabajo colaborativo (mapas, lluvia de ideas, planificación).  
