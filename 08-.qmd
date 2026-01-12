@@ -4,7 +4,32 @@ title: "Extras"
 
 ## Contacto
 
-- Katherine Aravena Herrera: <katherine.aravena.h@gmail.com>
-- 
-- 
-- 
+- <katherine.aravena.h@gmail.com>
+- <Paula.cerda.t@ug.uchile.cl>
+- <juan.castano@ug.uchile.cl>
+
+
+## Encuesta
+
+- [Encuesta del taller (Google Forms)](https://docs.google.com/forms/d/e/1FAIpQLSd7LhB3fQZ46iEG-4h5_EFQadj2gtLfIfPsfVcaZqHES6825Q/viewform)
+
+Gracias por participar. Esperamos que el taller haya sido útil y que se lleven ideas prácticas para su trabajo docente. Si pueden completar la encuesta, nos ayudan mucho a mejorar futuras versiones.
+
+
+## 
+::: {.content-visible when-format="html"}
+<iframe
+  src="https://karavena.github.io/presentacion/MEGM-2026.html#/portada"
+  width="100%"
+  height="562"
+  style="border:0; border-radius:14px;"
+  allowfullscreen
+  loading="lazy">
+</iframe>
+
+
+:::
+
+::: {.content-visible when-format="pdf"}
+\textit{La presentación es interactiva y se visualiza solo en la versión HTML.}
+:::
