@@ -598,7 +598,7 @@ body label {
     <div>
     <div class="quarto-title-meta-heading">Fecha de publicación</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">22 de diciembre de 2025</p>
+      <p class="date">11 de enero de 2026</p>
     </div>
   </div>
   
@@ -623,7 +623,7 @@ body.index-hero .page-columns {
   max-width: 100%;
   margin: 0;
   padding: 1rem 1.6rem 2.4rem;
-  background: rgba(255, 255, 255, 0.82);
+  background: rgba(255, 255, 255, 0.85);
   border-radius: 0;
   box-shadow: none;
 }
@@ -1345,9 +1345,34 @@ document.addEventListener("DOMContentLoaded", () => {
   const tocLinks = toc.querySelectorAll("a.nav-link[data-scroll-target]");
   if (!tocLinks.length) return;
 
+  const getTarget = (link) => {
+    const rawTarget = link.getAttribute("data-scroll-target") || "";
+    if (!rawTarget) return null;
+
+    const targetId = rawTarget.startsWith("#") ? rawTarget.slice(1) : rawTarget;
+    if (!targetId) return null;
+
+    const byId = document.getElementById(targetId);
+    if (byId) return byId;
+
+    if (window.CSS && typeof window.CSS.escape === "function") {
+      try {
+        return document.querySelector(`#${CSS.escape(targetId)}`);
+      } catch (err) {
+        return null;
+      }
+    }
+
+    try {
+      return document.querySelector(rawTarget);
+    } catch (err) {
+      return null;
+    }
+  };
+
   const sections = Array.from(tocLinks)
     .map((link) => {
-      const target = document.querySelector(link.getAttribute("data-scroll-target"));
+      const target = getTarget(link);
       return target ? { link, target, top: 0 } : null;
     })
     .filter(Boolean);
@@ -1922,7 +1947,7 @@ document.addEventListener("DOMContentLoaded", () => {
 <span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>  <span class="kw">max-width</span><span class="ch">:</span> <span class="dv">100</span><span class="dt">%</span><span class="op">;</span></span>
 <span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>  <span class="kw">margin</span><span class="ch">:</span> <span class="dv">0</span><span class="op">;</span></span>
 <span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>  <span class="kw">padding</span><span class="ch">:</span> <span class="dv">1</span><span class="dt">rem</span> <span class="dv">1.6</span><span class="dt">rem</span> <span class="dv">2.4</span><span class="dt">rem</span><span class="op">;</span></span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>  <span class="kw">background</span><span class="ch">:</span> <span class="fu">rgba(</span><span class="dv">255</span><span class="op">,</span> <span class="dv">255</span><span class="op">,</span> <span class="dv">255</span><span class="op">,</span> <span class="dv">0.82</span><span class="fu">)</span><span class="op">;</span></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>  <span class="kw">background</span><span class="ch">:</span> <span class="fu">rgba(</span><span class="dv">255</span><span class="op">,</span> <span class="dv">255</span><span class="op">,</span> <span class="dv">255</span><span class="op">,</span> <span class="dv">0.85</span><span class="fu">)</span><span class="op">;</span></span>
 <span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>  <span class="kw">border-radius</span><span class="ch">:</span> <span class="dv">0</span><span class="op">;</span></span>
 <span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>  <span class="kw">box-shadow</span><span class="ch">:</span> <span class="dv">none</span><span class="op">;</span></span>
 <span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>}</span>

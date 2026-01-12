@@ -1372,9 +1372,34 @@ document.addEventListener("DOMContentLoaded", () => {
   const tocLinks = toc.querySelectorAll("a.nav-link[data-scroll-target]");
   if (!tocLinks.length) return;
 
+  const getTarget = (link) => {
+    const rawTarget = link.getAttribute("data-scroll-target") || "";
+    if (!rawTarget) return null;
+
+    const targetId = rawTarget.startsWith("#") ? rawTarget.slice(1) : rawTarget;
+    if (!targetId) return null;
+
+    const byId = document.getElementById(targetId);
+    if (byId) return byId;
+
+    if (window.CSS && typeof window.CSS.escape === "function") {
+      try {
+        return document.querySelector(`#${CSS.escape(targetId)}`);
+      } catch (err) {
+        return null;
+      }
+    }
+
+    try {
+      return document.querySelector(rawTarget);
+    } catch (err) {
+      return null;
+    }
+  };
+
   const sections = Array.from(tocLinks)
     .map((link) => {
-      const target = document.querySelector(link.getAttribute("data-scroll-target"));
+      const target = getTarget(link);
       return target ? { link, target, top: 0 } : null;
     })
     .filter(Boolean);

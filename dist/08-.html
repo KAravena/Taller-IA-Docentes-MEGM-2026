@@ -584,7 +584,9 @@ body label {
 <h2 data-number="8.1" class="anchored" data-anchor-id="contacto"><span class="header-section-number">8.1</span> Contacto</h2>
 <ul>
 <li>Katherine Aravena Herrera: <a href="mailto:katherine.aravena.h@gmail.com" class="email">katherine.aravena.h@gmail.com</a></li>
-<li>Manuel Sierra: [agrega aquí el correo si corresponde]</li>
+<li></li>
+<li></li>
+<li></li>
 </ul>
 
 
@@ -1240,9 +1242,34 @@ document.addEventListener("DOMContentLoaded", () => {
   const tocLinks = toc.querySelectorAll("a.nav-link[data-scroll-target]");
   if (!tocLinks.length) return;
 
+  const getTarget = (link) => {
+    const rawTarget = link.getAttribute("data-scroll-target") || "";
+    if (!rawTarget) return null;
+
+    const targetId = rawTarget.startsWith("#") ? rawTarget.slice(1) : rawTarget;
+    if (!targetId) return null;
+
+    const byId = document.getElementById(targetId);
+    if (byId) return byId;
+
+    if (window.CSS && typeof window.CSS.escape === "function") {
+      try {
+        return document.querySelector(`#${CSS.escape(targetId)}`);
+      } catch (err) {
+        return null;
+      }
+    }
+
+    try {
+      return document.querySelector(rawTarget);
+    } catch (err) {
+      return null;
+    }
+  };
+
   const sections = Array.from(tocLinks)
     .map((link) => {
-      const target = document.querySelector(link.getAttribute("data-scroll-target"));
+      const target = getTarget(link);
       return target ? { link, target, top: 0 } : null;
     })
     .filter(Boolean);
@@ -1793,7 +1820,9 @@ document.addEventListener("DOMContentLoaded", () => {
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">## Contacto</span></span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Katherine Aravena Herrera: <span class="ot">&lt;katherine.aravena.h@gmail.com&gt;</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Manuel Sierra: <span class="co">[</span><span class="ot">agrega aquí el correo si corresponde</span><span class="co">]</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 

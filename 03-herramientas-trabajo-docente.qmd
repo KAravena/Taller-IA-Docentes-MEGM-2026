@@ -437,3 +437,38 @@ Criterios y restricciones:
 - Aclara que estas herramientas son para que el/la estudiante mejore su trabajo, no para reemplazar la retroalimentación del/la docente.
 ```
 
+## Desafío
+
+Armar una propuesta o borrador lista para usar, eligiendo un tema que les sirva o les gustaria planificar para un curso (OA pendiente, habilidad clave o contenido difícil).
+
+El desafío es diseñar, en tiempo acotado, una propuesta **lista para usar**: planificar dos clases, construir una evaluación breve con su rúbrica, crear un material para estudiantes y redactar un correo. Todo lo que proponga la IA debe ser **revisado, corregido y decidido** por el equipo docente.
+
+
+**A generar (intentar hacer la mayor cantidad posible de borradores):**
+
+- Una **micro-secuencia de dos clases** (dos bloques seguidos) sobre un tema que elijan, con:
+  - **2–3 objetivos de aprendizaje claros** (OA u objetivos específicos).
+  - **Actividades de inicio, desarrollo y cierre** para cada clase.
+  - **Indicación rápida de recursos necesarios** (pizarra, cuaderno, proyector, etc.).
+
+- Una **actividad evaluativa breve** alineada con la micro-secuencia, por ejemplo:
+  - **3–5 ítems** (preguntas abiertas, de desarrollo u opción múltiple), **o**
+  - **Una tarea corta** (producto escrito, ejercicio aplicado, pequeña presentación).
+
+- Una **rúbrica simple o pauta de corrección** para esa actividad, con:
+  - **3–4 criterios** (por ejemplo: comprensión del contenido, claridad, uso de conceptos, presentación).
+  - **3 o 4 niveles de logro**, descritos en **lenguaje claro** para estudiantes.
+
+- **Un material adicional para estudiantes**, distinto de la planificación, por ejemplo:
+  - Una **hoja de trabajo o guía breve** para usar durante la clase, **o**
+  - Una **“ficha de criterios”** donde se explique la rúbrica en lenguaje sencillo (por ejemplo: “qué significa hacerlo bien”, “qué se espera de mí”).
+
+  **Extensión sugerida:** *1 plana máximo*, lista para imprimir o subir a la plataforma del colegio.
+
+- Un **mensaje o correo breve para apoderadas y apoderados**, comunicando una salida pedagógica al Museo de la Educación Gabriela Mistral y la firma de consentimiento.
+
+Se recomienda **subir como referencia** pautas, guías o actividades que ya hayan usado antes, para que la IA **genere un borrador similar en estilo y estructura**, que luego el equipo docente revisa y ajusta.
+
+![](assets/Referencia.png){fig-alt="Flujo de trabajo sugerido para usar IA como asistente de borradores: herramienta a la izquierda, documento de trabajo al centro y registro de fuentes/páginas al final." fig-cap="Flujo de trabajo sugerido: IA como asistente de borradores + documento de trabajo + registro de fuentes."}
+
+**Recomendación de uso (flujo de trabajo con IA):** mantén la herramienta de IA abierta (por ejemplo, a la izquierda) y, en paralelo, un documento de trabajo (Word/Google Docs) donde vayas pegando y ordenando lo útil que te entregue la IA (borradores, listas, tablas). Al final.
